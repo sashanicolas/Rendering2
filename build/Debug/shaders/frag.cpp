@@ -1,4 +1,4 @@
-#version 330
+#version 330 core
 
 in vec3 color_from_vshader;
 in vec3 Position_worldspace;
@@ -18,7 +18,7 @@ void main() {
 	
 	// Material properties
 	vec3 MaterialDiffuseColor = color_from_vshader;
-	vec3 MaterialAmbientColor = vec3(0.1,0.1,0.1) * MaterialDiffuseColor;
+	vec3 MaterialAmbientColor = vec3(0.3,0.3,0.3) * MaterialDiffuseColor;
 	vec3 MaterialSpecularColor = vec3(0.3,0.3,0.3);
 
 	// Distance to the light
@@ -51,5 +51,6 @@ void main() {
 		// Diffuse : "color" of the object
 		MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance*distance) +
 		// Specular : reflective highlight, like a mirror
-		MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha,5) / (distance*distance);;
+		MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha,5) / (distance*distance);
+
 }

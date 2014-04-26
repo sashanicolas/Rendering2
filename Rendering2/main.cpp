@@ -113,7 +113,7 @@ public:
         GLint v = glGetUniformLocation(shaderProgram, "V" );
         glUniformMatrix4fv(v, 1, GL_FALSE, glm::value_ptr(View));
         
-        glm::vec3 lightPos = glm::vec3(0,2,4);
+        glm::vec3 lightPos = glm::vec3(0,2,-5.0f);
         GLint LightID = glGetUniformLocation(shaderProgram, "LightPosition_worldspace" );
 		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
     }
@@ -226,7 +226,6 @@ public:
             colors[k++]=0;
         }
         k = 0;
-        
         for (int j=0; j<m_nx*m_ny*6; j++) {
             normals[k++]=0;
             normals[k++]=1;
@@ -249,7 +248,6 @@ public:
                 printf("(%.2f,%.2f,%.2f)\n\n",vertices_position[18*k+15],vertices_position[18*k+16],vertices_position[18*k+17]);
             }
         }*/
-        //glm::mat4 myScalingMatrix = glm::scale(2.0f, 2.0f ,2.0f);
         
     }
     
@@ -317,24 +315,50 @@ public:
             }
         }
         int k = 0;
-        
-        k = 0;
         for (int j=0; j<m_nx*m_ny*6; j++) {
             colors[k++]=1;
             colors[k++]=0;
             colors[k++]=0;
         }
-        for (int j=0; j<m_nx*m_ny*6; j++) {
-            normals[k++]=0;
-            normals[k++]=1;
-            normals[k++]=0;
-        }
+//        for (int j=0; j<m_nx*m_ny*6; j++) {
+//            normals[k++]=0;
+//            normals[k++]=1;
+//            normals[k++]=0;
+//        }
+        //k=0;
         for (int j=0; j<m_ny*m_nx*6*3; j++) {
+//            glm::vec3 coord = glm::vec3(vertices_position[k],vertices_position[k+1],vertices_position[k+2]);
+//            coord = glm::normalize(coord);
+            
             normals[j] = vertices_position[j];
+//            normals[k++]= coord.x;
+//            normals[k++]= coord.y;
+//            normals[k++]= coord.z;
+            
+            //k+=3;
         }
         
-        
-    }
+        /*for (int j=0; j<m_ny; j++) {
+            for (int i=0; i<m_nx; i++) {
+                int k = Index(i, j);
+                printf("i=%d j=%d\n",i,j);
+                
+                printf("triangulo 1\n");
+                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k],vertices_position[18*k+1],vertices_position[18*k+2]);
+                printf("(%.4f,%.4f,%.4f)\n",normals[18*k],normals[18*k+1],normals[18*k+2]);
+                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+3],vertices_position[18*k+4],vertices_position[18*k+5]);
+                printf("(%.4f,%.4f,%.4f)\n",normals[18*k+3],normals[18*k+4],normals[18*k+5]);
+                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+6],vertices_position[18*k+7],vertices_position[18*k+8]);
+                printf("(%.4f,%.4f,%.4f)\n",normals[18*k+6],normals[18*k+7],normals[18*k+8]);
+                
+                printf("triangulo 2\n");
+                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+9],vertices_position[18*k+10],vertices_position[18*k+11]);
+                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+12],vertices_position[18*k+13],vertices_position[18*k+14]);
+                printf("(%.2f,%.2f,%.2f)\n\n",vertices_position[18*k+15],vertices_position[18*k+16],vertices_position[18*k+17]);
+            }
+        }*/
+    }//end construtor
+    
     
     int sizeOfAllFloats(){
         return m_nx*m_ny*6*3*sizeof(GLfloat); //10 vezes 10 sub quadrados com dois triangulos. Cada triangulo 3 vertices. Cada Vertice sao 3 floats
@@ -362,8 +386,8 @@ void display(GLuint &vao);
 void init();
 
 Shader *myShader;
-Sphere *s;
-Grid *g;
+Sphere *g;
+//Grid *g;
 
 int main () {
 	// Initialize GLFW
@@ -424,9 +448,7 @@ int main () {
         //display(myShader->vao);
         glClear(GL_COLOR_BUFFER_BIT);
         
-        
         glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
-        
         
         // Swap front and back buffers
         glfwSwapBuffers();
@@ -444,11 +466,11 @@ int main () {
 }
 
 void init(){
-    g = new Grid(10,10);
-    g->genGrid();
+//    g = new Grid(10,10);
+//    g->genGrid();
 
-//    s = new Sphere(40,40);
-//    s->genSphere();
+    g = new Sphere(40,40);
+    g->genSphere();
     
     
     // Create a Vector Buffer Object that will store the vertices on video memory
@@ -518,7 +540,7 @@ void display(GLuint &vao) {
 	glClear(GL_COLOR_BUFFER_BIT);
     
 	glBindVertexArray(vao);
-	glDrawArrays(GL_TRIANGLES, 0, s->numberOfPoints());
+	glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
     
 	// Swap front and back buffers
     //glfwSwapBuffers();
