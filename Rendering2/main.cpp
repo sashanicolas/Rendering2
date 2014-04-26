@@ -22,38 +22,11 @@ typedef struct MyVertex
 class Shader{
 public:
     //================ Variaveis ================//
-    // Create a vertex array object
-    GLuint vao;
-    // Create a Vector Buffer Object that will store the vertices on video memory
-    GLuint vbo;
     // id para o programa e os shaders
     GLuint shaderProgram, vertexShader, fragmentShader;
-    //model view projection matrix
-    //glm::mat4 MVP;
-    
+
     //================ Metodos ================//
-    Shader (GLfloat *vertices_position, GLfloat *colors, GLfloat *normals,
-            std::size_t v, std::size_t c, std::size_t n){
-        
-        printf("sizet of v %lu\n",v);
-        // Use a Vertex Array Object
-        glGenVertexArrays(1, &vao);
-        glBindVertexArray(vao);
-        
-        //generate buffer object names
-        glGenBuffers(1, &vbo);
-        
-        // Allocate space for vertex positions and colors
-        glBindBuffer(GL_ARRAY_BUFFER, vbo);
-        glBufferData(GL_ARRAY_BUFFER, v+c+n, NULL, GL_STATIC_DRAW);
-        
-        // Transfer the vertex positions:
-        glBufferSubData(GL_ARRAY_BUFFER, 0, v, vertices_position);
-        // Transfer the vertex colors:
-        glBufferSubData(GL_ARRAY_BUFFER, v, c, colors);
-        // Transfer the vertex normals:
-        glBufferSubData(GL_ARRAY_BUFFER, v+c, n, normals);
-        
+    Shader (){
         // create a program
         this->VertexShader("shaders/vert.cpp");
         this->FragmentShader("shaders/frag.cpp");
@@ -68,26 +41,14 @@ public:
         
         this->Link();
         
-        // Get the location of the attributes that enters in the vertex shader
-        GLint position_attribute = glGetAttribLocation(shaderProgram, "position");
-        // Specify how the data for position can be accessed
-        glVertexAttribPointer(position_attribute, 3, GL_FLOAT, GL_FALSE, 0, 0);
-        // Enable the attribute
-        glEnableVertexAttribArray(position_attribute);
-        
-        // Color attribute
-        GLint color_attribute = glGetAttribLocation(shaderProgram, "color");
-        glVertexAttribPointer(color_attribute, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)v);
-        glEnableVertexAttribArray(color_attribute);
-        
-        // Normal attribute
-        GLint normal_attribute = glGetAttribLocation(shaderProgram, "normal");
-        glVertexAttribPointer(normal_attribute, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(v+c));
-        glEnableVertexAttribArray(normal_attribute);
-        
         SetUniformMVP();
     }
     ~Shader ();
+    
+    GLuint programID(){
+        return shaderProgram;
+    }
+    
     bool VertexShader (const char* source){
         vertexShader = load_and_compile_shader(source, GL_VERTEX_SHADER);
         
@@ -143,6 +104,18 @@ public:
         // Transfer the transformation matrices to the shader program
         GLint mvp = glGetUniformLocation(shaderProgram, "MVP" );
         glUniformMatrix4fv(mvp, 1, GL_FALSE, glm::value_ptr(MVP));
+        
+        // Transfer the transformation matrices to the shader program
+        GLint m = glGetUniformLocation(shaderProgram, "M" );
+        glUniformMatrix4fv(m, 1, GL_FALSE, glm::value_ptr(Model));
+        
+        // Transfer the transformation matrices to the shader program
+        GLint v = glGetUniformLocation(shaderProgram, "V" );
+        glUniformMatrix4fv(v, 1, GL_FALSE, glm::value_ptr(View));
+        
+        glm::vec3 lightPos = glm::vec3(0,2,4);
+        GLint LightID = glGetUniformLocation(shaderProgram, "LightPosition_worldspace" );
+		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
     }
     
     // Read a shader source from a file
@@ -280,15 +253,18 @@ public:
         
     }
     
-    int getSizeV(){
+    int sizeOfAllFloats(){
         return m_nx*m_ny*6*3*sizeof(GLfloat); //10 vezes 10 sub quadrados com dois triangulos. Cada triangulo 3 vertices. Cada Vertice sao 3 floats
     }
     
     int Index (int i, int j) {
         return i + j*(m_ny);
     }
+    
+    int numberOfPoints(){
+        return m_nx*m_ny*2*3;
+    }
 };
-
 
 class Sphere {
     // Create a sphere with the specified number of subdivisions
@@ -360,7 +336,7 @@ public:
         
     }
     
-    int getSizeV(){
+    int sizeOfAllFloats(){
         return m_nx*m_ny*6*3*sizeof(GLfloat); //10 vezes 10 sub quadrados com dois triangulos. Cada triangulo 3 vertices. Cada Vertice sao 3 floats
     }
     
@@ -385,10 +361,9 @@ void display(GLuint &vao);
 
 void init();
 
-// Create a vertex array object
-GLuint vao;
-
-Shader *gridShader;
+Shader *myShader;
+Sphere *s;
+Grid *g;
 
 int main () {
 	// Initialize GLFW
@@ -403,18 +378,13 @@ int main () {
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
     
+    
 	// Open a window and attach an OpenGL rendering context to the window surface
 	if( !glfwOpenWindow(800, 800, 8, 8, 8, 0, 0, 0, GLFW_WINDOW)) {
 		std::cerr << "Failed to open a window! I'm out!" << std::endl;
 		glfwTerminate();
 		exit(-1);
 	}
-    
-	// Register a callback function for window resize events
-	glfwSetWindowSizeCallback( window_resized );
-    
-	// Register a callback function for keyboard pressed events
-	glfwSetKeyCallback(keyboard);
     
 	// Print the OpenGL version
 	int major, minor, rev;
@@ -429,7 +399,21 @@ int main () {
 		exit(-1);
 	}
     
-	
+    // Dark blue background
+	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
+    // Enable depth test
+	glEnable(GL_DEPTH_TEST);
+	// Register a callback function for window resize events
+	glfwSetWindowSizeCallback( window_resized );
+    // Register a callback function for keyboard pressed events
+	glfwSetKeyCallback(keyboard);
+    
+    // Create a vertex array object
+    GLuint VertexArrayID;
+    // Use a Vertex Array Object
+    glGenVertexArrays(1, &VertexArrayID);
+    glBindVertexArray(VertexArrayID);
+    
     init();
     
 	// Create a rendering loop
@@ -437,7 +421,12 @@ int main () {
     
 	while(running) {
 		// Display scene
-        display(gridShader->vao);
+        //display(myShader->vao);
+        glClear(GL_COLOR_BUFFER_BIT);
+        
+        
+        glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
+        
         
         // Swap front and back buffers
         glfwSwapBuffers();
@@ -454,23 +443,74 @@ int main () {
 	return 0;
 }
 
-Sphere *s;
-
 void init(){
-//    Grid *g = new Grid(10,10);
-//    g->genGrid();
-//    
-//    gridShader = new Shader(g->vertices_position, g->colors, g->normals,
-//                            g->getSizeV(),g->getSizeV(),g->getSizeV()); //mesmo valor pq cada vetor tem tres cordenadas, posicao, cor e normal
+    g = new Grid(10,10);
+    g->genGrid();
+
+//    s = new Sphere(40,40);
+//    s->genSphere();
     
-    s = new Sphere(40,40);
-    s->genSphere();
     
-    gridShader = new Shader(s->vertices_position, s->colors, s->normals,
-                          s->getSizeV(),s->getSizeV(),s->getSizeV()); //mesmo valor pq cada vetor tem tres cordenadas, posicao, cor e normal
+    // Create a Vector Buffer Object that will store the vertices on video memory
+    GLuint vertexbuffer;
+    glGenBuffers(1, &vertexbuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+    glBufferData(GL_ARRAY_BUFFER, g->sizeOfAllFloats(), g->vertices_position, GL_STATIC_DRAW);
     
-    //printf("getsizeV %d\n",g->getSizeV());
-    //printf("getsizeV %d\n",s->getSizeV());
+    // Create a Vector Buffer Object that will store the colors on video memory
+    GLuint colorsbuffer;
+    glGenBuffers(1, &colorsbuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, colorsbuffer);
+    glBufferData(GL_ARRAY_BUFFER, g->sizeOfAllFloats(), g->colors, GL_STATIC_DRAW);
+    
+    // Create a Vector Buffer Object that will store the colors on video memory
+    GLuint normalsbuffer;
+    glGenBuffers(1, &normalsbuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, normalsbuffer);
+    glBufferData(GL_ARRAY_BUFFER, g->sizeOfAllFloats(), g->normals, GL_STATIC_DRAW);
+    
+    myShader = new Shader();
+    
+    GLuint shaderProgram = myShader->programID();
+    
+    // 1rst attribute buffer : vertices
+    GLint position_attribute = glGetAttribLocation(shaderProgram, "vertexPosition_modelspace");
+    glEnableVertexAttribArray(position_attribute);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+    glVertexAttribPointer(
+                          position_attribute,                  // attribute
+                          3,                  // size
+                          GL_FLOAT,           // type
+                          GL_FALSE,           // normalized?
+                          0,                  // stride
+                          (void*)0            // array buffer offset
+                          );
+    
+    // 2nd attribute buffer : colorsbuffer
+    GLint color_attribute = glGetAttribLocation(shaderProgram, "vertexColor");
+    glEnableVertexAttribArray(color_attribute);
+    glBindBuffer(GL_ARRAY_BUFFER, colorsbuffer);
+    glVertexAttribPointer(
+                          color_attribute,                                // attribute
+                          3,                                // size
+                          GL_FLOAT,                         // type
+                          GL_FALSE,                         // normalized?
+                          0,                                // stride
+                          (void*)0                          // array buffer offset
+                          );
+    
+    // 3rd attribute buffer : normals
+    GLint normal_attribute = glGetAttribLocation(shaderProgram, "vertexNormal_modelspace");
+    glEnableVertexAttribArray(normal_attribute);
+    glBindBuffer(GL_ARRAY_BUFFER, normalsbuffer);
+    glVertexAttribPointer(
+                          normal_attribute,                                // attribute
+                          3,                                // size
+                          GL_FLOAT,                         // type
+                          GL_FALSE,                         // normalized?
+                          0,                                // stride
+                          (void*)0                          // array buffer offset
+                          );
 }
 
 // Render scene
