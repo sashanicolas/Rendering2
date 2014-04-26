@@ -35,6 +35,7 @@ public:
     Shader (GLfloat *vertices_position, GLfloat *colors, GLfloat *normals,
             std::size_t v, std::size_t c, std::size_t n){
         
+        printf("sizet of v %lu\n",v);
         // Use a Vertex Array Object
         glGenVertexArrays(1, &vao);
         glBindVertexArray(vao);
@@ -122,19 +123,20 @@ public:
     void SetUniformMatrix (const char* name, int row, int col, int count, float* v);
     
     void SetUniformMVP(){
-        //glm::mat4 MVP;
-        //MVP = glm::translate(MVP, glm::vec3(0.5f, 0.5f, 0.0f));
-        
         // Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
-        glm::mat4 Projection = glm::perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
+        glm::mat4 Projection = glm::perspective(45.0f, 1.0f/*4.0f / 3.0f*/, 0.1f, 100.0f);
         // Camera matrix
         glm::mat4 View = glm::lookAt(
-                                     glm::vec3(0,2,4), // Camera is at (4,3,3), in World Space
+                                     glm::vec3(0,5,10), // Camera is at (x,y,z), in World Space
                                      glm::vec3(0,0,0), // and looks at the origin
                                      glm::vec3(0,1,0) // Head is up (set to 0,-1,0 to look upside-down)
                                      );
         // Model matrix : an identity matrix (model will be at the origin)
         glm::mat4 Model = glm::mat4(1.0f); // Changes for each model !
+        //Model = glm::translate(Model, glm::vec3(-4.0f, 0, -4.0f));
+        //Model = glm::scale(Model, glm::vec3(8,1,8));
+        
+
         // Our ModelViewProjection : multiplication of our 3 matrices
         glm::mat4 MVP = Projection * View * Model; // Remember, matrix multiplication is the other way around
         
@@ -198,13 +200,6 @@ public:
     
 };
 
-
-const double PI = 3.1415926535897;
-int m_nx = 10, m_ny = 10;
-int Index (int i, int j) {
-    return i + j*(m_nx);
-}
-
 class Grid {
     // Create a grid with nx x ny quadrilateral.
     // The grid coordinates varies from 0.0 to 1.0 in the xz plane
@@ -264,13 +259,119 @@ public:
             normals[k++]=1;
             normals[k++]=0;
         }
-        
+        /*
+        for (int j=0; j<m_ny; j++) {
+            for (int i=0; i<m_nx; i++) {
+                int k = Index(i, j);
+                printf("i=%d j=%d\n",i,j);
+                
+                printf("triangulo 1\n");
+                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k],vertices_position[18*k+1],vertices_position[18*k+2]);
+                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+3],vertices_position[18*k+4],vertices_position[18*k+5]);
+                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+6],vertices_position[18*k+7],vertices_position[18*k+8]);
+                
+                printf("triangulo 2\n");
+                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+9],vertices_position[18*k+10],vertices_position[18*k+11]);
+                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+12],vertices_position[18*k+13],vertices_position[18*k+14]);
+                printf("(%.2f,%.2f,%.2f)\n\n",vertices_position[18*k+15],vertices_position[18*k+16],vertices_position[18*k+17]);
+            }
+        }*/
         //glm::mat4 myScalingMatrix = glm::scale(2.0f, 2.0f ,2.0f);
         
     }
+    
     int getSizeV(){
-        return m_nx*m_ny*6*3; //10 vezes 10 sub quadrados com dois triangulos. Cada triangulo 3 vertices. Cada Vertice sao 3 floats
+        return m_nx*m_ny*6*3*sizeof(GLfloat); //10 vezes 10 sub quadrados com dois triangulos. Cada triangulo 3 vertices. Cada Vertice sao 3 floats
     }
+    
+    int Index (int i, int j) {
+        return i + j*(m_ny);
+    }
+};
+
+
+class Sphere {
+    // Create a sphere with the specified number of subdivisions
+    // The sphere is centered at the origin with radius 1.0
+public:
+    int m_nx, m_ny;
+    const float PI = 3.1415926;
+    
+    GLfloat vertices_position[500000];
+    GLfloat colors[500000];
+    GLfloat normals[500000];
+    
+    Sphere (int slices, int stack){
+        this->m_nx = slices;
+        this->m_ny = stack;
+    }
+    
+    // Destroy a sphere
+    ~Sphere ();
+    
+    // Draw a sphere
+    void genSphere (){
+        for (int j=0; j<m_ny; j++) {
+            for (int i=0; i<m_ny; i++) {
+                int k = Index(i, j);
+                vertices_position[18*k] = cos( 2*PI*((float)i / (float)m_nx)) * sin( PI*((float)j / (float)m_nx) ) ;
+                vertices_position[18*k+1] = cos( PI*((float)j / (float)m_nx) );
+                vertices_position[18*k+2] = sin( 2*PI*((float)i / (float)m_nx) ) * sin( PI*((float)j / (float)m_nx) ) ;
+                
+                vertices_position[18*k+3] = cos( 2*PI*(((float)i+1) / (float)m_nx)) * sin( PI*(((float)j+1) / (float)m_nx) ) ;
+                vertices_position[18*k+4] = cos( PI*(((float)j+1) / (float)m_nx) );
+                vertices_position[18*k+5] = sin( 2*PI*(((float)i+1) / (float)m_nx) ) * sin( PI*(((float)j+1) / (float)m_nx) ) ;
+                
+                vertices_position[18*k+6] = cos( 2*PI*(((float)i+1) / (float)m_nx)) * sin( PI*((float)j / (float)m_nx) ) ;
+                vertices_position[18*k+7] = cos( PI*((float)j / (float)m_nx) );
+                vertices_position[18*k+8] = sin( 2*PI*(((float)i+1) / (float)m_nx) ) * sin( PI*((float)j / (float)m_nx) ) ;
+                
+                
+                vertices_position[18*k+9] = cos( 2*PI*((float)i / (float)m_nx)) * sin( PI*((float)j / (float)m_nx) ) ;
+                vertices_position[18*k+10] = cos( PI*((float)j / (float)m_nx) );
+                vertices_position[18*k+11] = sin( 2*PI*((float)i / (float)m_nx) ) * sin( PI*((float)j / (float)m_nx) ) ;
+                
+                vertices_position[18*k+12] = cos( 2*PI*(((float)i+1) / (float)m_nx)) * sin( PI*(((float)j+1) / (float)m_nx) ) ;
+                vertices_position[18*k+13] = cos( PI*(((float)j+1) / (float)m_nx) );
+                vertices_position[18*k+14] = sin( 2*PI*(((float)i+1) / (float)m_nx) ) * sin( PI*(((float)j+1) / (float)m_nx) ) ;
+                
+                vertices_position[18*k+15] = cos( 2*PI*((float)i / (float)m_nx)) * sin( PI*(((float)j+1) / (float)m_nx) ) ;
+                vertices_position[18*k+16] = cos( PI*(((float)j+1) / (float)m_nx) );
+                vertices_position[18*k+17] = sin( 2*PI*((float)i / (float)m_nx) ) * sin( PI*(((float)j+1) / (float)m_nx) ) ;
+            }
+        }
+        int k = 0;
+        
+        k = 0;
+        for (int j=0; j<m_nx*m_ny*6; j++) {
+            colors[k++]=1;
+            colors[k++]=0;
+            colors[k++]=0;
+        }
+        for (int j=0; j<m_nx*m_ny*6; j++) {
+            normals[k++]=0;
+            normals[k++]=1;
+            normals[k++]=0;
+        }
+        for (int j=0; j<m_ny*m_nx*6*3; j++) {
+            normals[j] = vertices_position[j];
+        }
+        
+        
+    }
+    
+    int getSizeV(){
+        return m_nx*m_ny*6*3*sizeof(GLfloat); //10 vezes 10 sub quadrados com dois triangulos. Cada triangulo 3 vertices. Cada Vertice sao 3 floats
+    }
+    
+    int Index (int i, int j) {
+        return i + j*(m_ny);
+    }
+    
+    int numberOfPoints(){
+        return m_nx*m_ny*2*3;
+    }
+    
 };
 
 // Called when the window is resized
@@ -353,76 +454,23 @@ int main () {
 	return 0;
 }
 
+Sphere *s;
+
 void init(){
-    // 4 triangles to be rendered
-	GLfloat vertices_position[] = {
-		0.0, 0.0, 0.0,
-		0.5, 0.0, 0.0,
-		0.5, 0.5, 0.0,
-        
-		0.0, 0.0, 0.0,
-		0.0, 0.5, 0.0,
-		-0.5, 0.5, 0.0,
-        
-		0.0, 0.0, 0.0,
-		-0.5, 0.0, 0.0,
-		-0.5, -0.5, 0.0,
-        
-		0.0, 0.0, 0.0,
-		0.0, -0.5, 0.0,
-		0.5, -0.5, 0.0,
-	};
+//    Grid *g = new Grid(10,10);
+//    g->genGrid();
+//    
+//    gridShader = new Shader(g->vertices_position, g->colors, g->normals,
+//                            g->getSizeV(),g->getSizeV(),g->getSizeV()); //mesmo valor pq cada vetor tem tres cordenadas, posicao, cor e normal
     
-	GLfloat colors[36];
-    GLfloat normals[36];
+    s = new Sphere(40,40);
+    s->genSphere();
     
-    // Initialize the random seed from the system time
-	srand(time(NULL));
+    gridShader = new Shader(s->vertices_position, s->colors, s->normals,
+                          s->getSizeV(),s->getSizeV(),s->getSizeV()); //mesmo valor pq cada vetor tem tres cordenadas, posicao, cor e normal
     
-	// Fill colors with random numbers from 0 to 1, use continuous polynomials for r,g,b:
-	int k = 0;
-	for(int i = 0; i < sizeof(colors)/sizeof(float)/3; ++i) {
-		float t = (float)rand()/(float)RAND_MAX;
-		colors[k] = 9*(1-t)*t*t*t;
-		k++;
-		colors[k] = 15*(1-t)*(1-t)*t*t;
-		k++;
-		colors[k] = 8.5*(1-t)*(1-t)*(1-t)*t;
-		k++;
-        
-	}
-    // Fill normals, 0,0,1
-    k=0;
-	for(int i = 0; i < sizeof(colors)/sizeof(float)/3; ++i) {
-        normals[k] = 0;
-		k++;
-		normals[k] = 0;
-		k++;
-		normals[k] = 1.0f;
-		k++;
-        
-	}
-    
-    Grid *g = new Grid(10,10);
-    g->genGrid();
-    gridShader = new Shader(g->vertices_position, g->colors, g->normals,
-                          g->getSizeV(),g->getSizeV(),g->getSizeV());
-    
-    //gridShader = new Shader(vertices_position, colors, normals,
-      //                      sizeof(vertices_position),sizeof(colors),sizeof(normals));
-    
-    glm::mat4 Model, View, Projection;
-    // Set the projection matrix
-    Projection = glm::ortho(-4.0f/3.0f, 4.0f/3.0f, -1.0f, 1.0f, -1.0f, 1.0f);
-    // Translation
-    Model = glm::translate(Model, glm::vec3(0.1f, 0.2f, 0.5f));
-    // Rotation around Oz with 45 degrees
-    Model = glm::rotate(Model, 45.0f, glm::vec3(0.0f, 0.0f, 1.0f));
-    
-    // Transfer the transformation matrices to the shader program
-    //  GLint model = glGetUniformLocation(shaderProgram, "Model" );
-    //    glUniformMatrix4fv(model, 1, GL_FALSE, glm::value_ptr(Model));
-    
+    //printf("getsizeV %d\n",g->getSizeV());
+    //printf("getsizeV %d\n",s->getSizeV());
 }
 
 // Render scene
@@ -430,7 +478,7 @@ void display(GLuint &vao) {
 	glClear(GL_COLOR_BUFFER_BIT);
     
 	glBindVertexArray(vao);
-	glDrawArrays(GL_TRIANGLES, 0, 12);
+	glDrawArrays(GL_TRIANGLES, 0, s->numberOfPoints());
     
 	// Swap front and back buffers
     //glfwSwapBuffers();
@@ -450,7 +498,7 @@ void GLFWCALL window_resized(int width, int height) {
 
 // Called for keyboard events
 void keyboard(int key, int action) {
-	if(key == 'Q' && action == GLFW_PRESS) {
+	if( key == 'Q' && action == GLFW_PRESS) {
 		glfwTerminate();
 		exit(0);
 	}
