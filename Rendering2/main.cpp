@@ -17,7 +17,8 @@ public:
     //================ Variaveis ================//
     // id para o programa e os shaders
     GLuint shaderProgram, vertexShader, fragmentShader;
-
+    glm::mat4 Model;
+    
     //================ Metodos ================//
     Shader (){
         // create a program
@@ -34,7 +35,7 @@ public:
         
         this->Link();
         
-        SetUniformMVP();
+        //SetUniformMVP();
     }
     ~Shader ();
     
@@ -76,20 +77,27 @@ public:
     void SetUniformI (const char* name, int size, int count, int* v) ;
     void SetUniformMatrix (const char* name, int row, int col, int count, float* v);
     
+    void SetUniform (const char* name, glm::mat4 Model){
+        this->Model = Model;
+        // Transfer the transformation matrices to the shader program
+        GLint m = glGetUniformLocation(shaderProgram, name );
+        glUniformMatrix4fv(m, 1, GL_FALSE, glm::value_ptr(Model));
+        
+    }
+    
     void SetUniformMVP(){
         // Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
         glm::mat4 Projection = glm::perspective(45.0f, 1.0f/*4.0f / 3.0f*/, 0.1f, 100.0f);
         // Camera matrix
         glm::mat4 View = glm::lookAt(
-                                     glm::vec3(0,5,10), // Camera is at (x,y,z), in World Space
+                                     glm::vec3(0,4,8), // Camera is at (x,y,z), in World Space
                                      glm::vec3(0,0,0), // and looks at the origin
                                      glm::vec3(0,1,0) // Head is up (set to 0,-1,0 to look upside-down)
                                      );
         // Model matrix : an identity matrix (model will be at the origin)
-        glm::mat4 Model = glm::mat4(1.0f); // Changes for each model !
+        //glm::mat4 Model = glm::mat4(1.0f); // Changes for each model !
         //Model = glm::translate(Model, glm::vec3(-4.0f, 0, -4.0f));
         //Model = glm::scale(Model, glm::vec3(8,1,8));
-        
 
         // Our ModelViewProjection : multiplication of our 3 matrices
         glm::mat4 MVP = Projection * View * Model; // Remember, matrix multiplication is the other way around
@@ -99,14 +107,14 @@ public:
         glUniformMatrix4fv(mvp, 1, GL_FALSE, glm::value_ptr(MVP));
         
         // Transfer the transformation matrices to the shader program
-        GLint m = glGetUniformLocation(shaderProgram, "M" );
-        glUniformMatrix4fv(m, 1, GL_FALSE, glm::value_ptr(Model));
+        //GLint m = glGetUniformLocation(shaderProgram, "M" );
+        //glUniformMatrix4fv(m, 1, GL_FALSE, glm::value_ptr(Model));
         
         // Transfer the transformation matrices to the shader program
         GLint v = glGetUniformLocation(shaderProgram, "V" );
         glUniformMatrix4fv(v, 1, GL_FALSE, glm::value_ptr(View));
         
-        glm::vec3 lightPos = glm::vec3(0,2,5.0f);
+        glm::vec3 lightPos = glm::vec3(0, 6.0f, -3.0f);
         GLint LightID = glGetUniformLocation(shaderProgram, "LightPosition_worldspace" );
 		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
     }
@@ -174,6 +182,7 @@ public:
     GLfloat vertices_position[50000];
     GLfloat colors[50000];
     GLfloat normals[50000];
+    glm::mat4 Model;
     
     Grid (int nx, int ny){
         this->m_nx = nx;
@@ -244,7 +253,9 @@ public:
         
     }
     
-    void draw(GLuint shaderProgram){
+    void draw(Shader *myShader){
+        GLuint shaderProgram = myShader->programID();
+        
         // Create a Vector Buffer Object that will store the vertices on video memory
         GLuint vertexbuffer;
         glGenBuffers(1, &vertexbuffer);
@@ -303,6 +314,13 @@ public:
                               (void*)0                          // array buffer offset
                               );
         
+        // Model matrix : an identity matrix (model will be at the origin)
+        Model = glm::mat4(1.0f); // Changes for each model !
+        Model = glm::translate(Model, glm::vec3(-4.0f, 0, -4.0f));
+        Model = glm::scale(Model, glm::vec3(8,1,8));
+        
+        myShader->SetUniform("M", Model);
+        
     }
     
     int sizeOfAllFloats(){
@@ -328,6 +346,8 @@ public:
     GLfloat vertices_position[500000];
     GLfloat colors[500000];
     GLfloat normals[500000];
+    glm::mat4 Model;
+    float x, z;
     
     Sphere (int slices, int stack){
         this->m_nx = slices;
@@ -336,6 +356,12 @@ public:
     
     // Destroy a sphere
     ~Sphere ();
+    
+    
+    void setPositionXZ(int i,int j){
+        x = 0.8*i - 3.6f;
+        z = 0.8*j - 3.6f;
+    }
     
     // Draw a sphere
     void genSphere (){
@@ -440,7 +466,9 @@ public:
         }*/
     }//end construtor
     
-    void draw(GLuint shaderProgram){
+    void draw(Shader *myShader){
+        GLuint shaderProgram = myShader->programID();
+
         // Create a Vector Buffer Object that will store the vertices on video memory
         GLuint vertexbuffer;
         glGenBuffers(1, &vertexbuffer);
@@ -498,7 +526,12 @@ public:
                               0,                                // stride
                               (void*)0                          // array buffer offset
                               );
+        // Model matrix : an identity matrix (model will be at the origin)
+        Model = glm::mat4(1.0f); // Changes for each model !
+        Model = glm::translate(Model, glm::vec3(x, 0.2f, z));
+        Model = glm::scale(Model, glm::vec3(0.2f,0.2f,0.2f));
 
+        myShader->SetUniform("M", Model);
     }
     
     int mostra=0;
@@ -577,7 +610,6 @@ public:
     int numberOfPoints(){
         return m_nx*m_ny*2*3;
     }
-    
 };
 
 // Called when the window is resized
@@ -586,13 +618,10 @@ void GLFWCALL window_resized(int width, int height);
 // Called for keyboard events
 void keyboard(int key, int action);
 
-// Render scene
-void display(GLuint &vao);
-
 void init();
 
-Shader *myShader;
-Sphere *s;
+Shader * myShader;
+Sphere * s[10][10];
 Grid *g;
 
 int main () {
@@ -607,7 +636,6 @@ int main () {
 	glfwOpenWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
-    
     
 	// Open a window and attach an OpenGL rendering context to the window surface
 	if( !glfwOpenWindow(800, 800, 8, 8, 8, 0, 0, 0, GLFW_WINDOW)) {
@@ -651,11 +679,25 @@ int main () {
     
 	while(running) {
 		// Display scene
-        //display(myShader->vao);
-        glClear(GL_COLOR_BUFFER_BIT);
+        
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        //glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
-        glDrawArrays(GL_TRIANGLES, 0, s->numberOfPoints());
+        g->draw(myShader);
+        myShader->SetUniformMVP();
+        glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
+        
+//        s[0][0]->draw(myShader);
+//        myShader->SetUniformMVP();
+//        glDrawArrays(GL_TRIANGLES, 0, s[0][0]->numberOfPoints());
+
+        for (int i=0;i<10;i++){
+            for (int j=0; j<10; j++) {
+                s[i][j]->draw(myShader);
+                myShader->SetUniformMVP();
+                glDrawArrays(GL_TRIANGLES, 0, s[i][j]->numberOfPoints());
+                
+            }
+        }
         
         // Swap front and back buffers
         glfwSwapBuffers();
@@ -674,32 +716,26 @@ int main () {
 
 void init(){
     myShader = new Shader();
-    GLuint shaderProgram = myShader->programID();
     
-    s = new Sphere(40,40);
-    s->genSphere();
-    s->draw(shaderProgram);
+//    s[0][0] = new Sphere(32,32);
+//    s[0][0]->genSphere();
     
-    //g = new Grid(10,10);
-    //g->genGrid();
-    //g->draw(shaderProgram);
-}
-
-// Render scene
-void display(GLuint &vao) {
-	glClear(GL_COLOR_BUFFER_BIT);
+    for (int i=0;i<10;i++){
+        for (int j=0; j<10; j++) {
+            s[i][j] = new Sphere(32,32);
+            s[i][j]->setPositionXZ(i,j);
+            s[i][j]->genSphere();
+        }
+    }
     
-	glBindVertexArray(vao);
-	glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
-    
-	// Swap front and back buffers
-    //glfwSwapBuffers();
+    g = new Grid(20,20);
+    g->genGrid();
 }
 
 // Called when the window is resized
 void GLFWCALL window_resized(int width, int height) {
 	// Use red to clear the screen
-	glClearColor(0.9f, 0.9f, 0.9f, 1);
+	glClearColor(1, 1, 1, 1);
     
 	// Set the viewport
 	glViewport(0, 0, width, height);

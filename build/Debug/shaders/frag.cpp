@@ -18,8 +18,8 @@ void main() {
 	
 	// Material properties
 	vec3 MaterialDiffuseColor = color_from_vshader;
-	vec3 MaterialAmbientColor = vec3(0.1,0.1,0.1) * MaterialDiffuseColor;
-	vec3 MaterialSpecularColor = vec3(0.3,0.3,0.3);
+	vec3 MaterialAmbientColor = vec3(0.2,0.2,0.2) * MaterialDiffuseColor;
+	vec3 MaterialSpecularColor = vec3(0.9,0.9,0.9);
 
 	// Distance to the light
 	float distance = length( LightPosition_worldspace - Position_worldspace );
@@ -45,20 +45,12 @@ void main() {
 	//  - Looking elsewhere -> < 1
 	float cosAlpha = clamp( dot( E,R ), 0,1 );
 
-	//out_color = 
-		// Ambient : simulates indirect lighting
-	//	MaterialAmbientColor +
-		// Diffuse : "color" of the object
-	//	MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance*distance) +
-		// Specular : reflective highlight, like a mirror
-	//	MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha,5) / (distance*distance);
+	 out_color = 
+	// 	// Ambient : simulates indirect lighting
+	 	MaterialAmbientColor +
+	// 	// Diffuse : "color" of the object
+	 	MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance*distance) +
+	// 	// Specular : reflective highlight, like a mirror
+	 	MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha,9) / (distance*distance);
 			
-	out_color = 
-		// Ambient : simulates indirect lighting
-		MaterialAmbientColor +
-		// Diffuse : "color" of the object
-		MaterialDiffuseColor  +
-		// Specular : reflective highlight, like a mirror
-		MaterialSpecularColor * pow(cosAlpha,5);
-	
 }
