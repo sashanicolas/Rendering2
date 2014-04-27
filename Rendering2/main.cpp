@@ -12,13 +12,6 @@
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-typedef struct MyVertex
-{
-    float x, y, z;        //Vertex
-    float nx, ny, nz;     //Normal
-    float r, g, b, a;     //color
-}MyVertex;
-
 class Shader{
 public:
     //================ Variaveis ================//
@@ -113,7 +106,7 @@ public:
         GLint v = glGetUniformLocation(shaderProgram, "V" );
         glUniformMatrix4fv(v, 1, GL_FALSE, glm::value_ptr(View));
         
-        glm::vec3 lightPos = glm::vec3(0,2,-5.0f);
+        glm::vec3 lightPos = glm::vec3(0,2,5.0f);
         GLint LightID = glGetUniformLocation(shaderProgram, "LightPosition_worldspace" );
 		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
     }
@@ -251,6 +244,67 @@ public:
         
     }
     
+    void draw(GLuint shaderProgram){
+        // Create a Vector Buffer Object that will store the vertices on video memory
+        GLuint vertexbuffer;
+        glGenBuffers(1, &vertexbuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+        glBufferData(GL_ARRAY_BUFFER, this->sizeOfAllFloats(), this->vertices_position, GL_STATIC_DRAW);
+        
+        // Create a Vector Buffer Object that will store the colors on video memory
+        GLuint colorsbuffer;
+        glGenBuffers(1, &colorsbuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, colorsbuffer);
+        glBufferData(GL_ARRAY_BUFFER, this->sizeOfAllFloats(), this->colors, GL_STATIC_DRAW);
+        
+        // Create a Vector Buffer Object that will store the colors on video memory
+        GLuint normalsbuffer;
+        glGenBuffers(1, &normalsbuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, normalsbuffer);
+        glBufferData(GL_ARRAY_BUFFER, this->sizeOfAllFloats(), this->normals, GL_STATIC_DRAW);
+        
+        
+        // 1rst attribute buffer : vertices
+        GLint position_attribute = glGetAttribLocation(shaderProgram, "vertexPosition_modelspace");
+        glEnableVertexAttribArray(position_attribute);
+        glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+        glVertexAttribPointer(
+                              position_attribute,                  // attribute
+                              3,                  // size
+                              GL_FLOAT,           // type
+                              GL_FALSE,           // normalized?
+                              0,                  // stride
+                              (void*)0            // array buffer offset
+                              );
+        
+        // 2nd attribute buffer : colorsbuffer
+        GLint color_attribute = glGetAttribLocation(shaderProgram, "vertexColor");
+        glEnableVertexAttribArray(color_attribute);
+        glBindBuffer(GL_ARRAY_BUFFER, colorsbuffer);
+        glVertexAttribPointer(
+                              color_attribute,                                // attribute
+                              3,                                // size
+                              GL_FLOAT,                         // type
+                              GL_FALSE,                         // normalized?
+                              0,                                // stride
+                              (void*)0                          // array buffer offset
+                              );
+        
+        // 3rd attribute buffer : normals
+        GLint normal_attribute = glGetAttribLocation(shaderProgram, "vertexNormal_modelspace");
+        glEnableVertexAttribArray(normal_attribute);
+        glBindBuffer(GL_ARRAY_BUFFER, normalsbuffer);
+        glVertexAttribPointer(
+                              normal_attribute,                                // attribute
+                              3,                                // size
+                              GL_FLOAT,                         // type
+                              GL_FALSE,                         // normalized?
+                              0,                                // stride
+                              (void*)0                          // array buffer offset
+                              );
+        
+    }
+    
     int sizeOfAllFloats(){
         return m_nx*m_ny*6*3*sizeof(GLfloat); //10 vezes 10 sub quadrados com dois triangulos. Cada triangulo 3 vertices. Cada Vertice sao 3 floats
     }
@@ -320,45 +374,197 @@ public:
             colors[k++]=0;
             colors[k++]=0;
         }
-//        for (int j=0; j<m_nx*m_ny*6; j++) {
-//            normals[k++]=0;
-//            normals[k++]=1;
-//            normals[k++]=0;
-//        }
-        //k=0;
+
         for (int j=0; j<m_ny*m_nx*6*3; j++) {
-//            glm::vec3 coord = glm::vec3(vertices_position[k],vertices_position[k+1],vertices_position[k+2]);
-//            coord = glm::normalize(coord);
-            
             normals[j] = vertices_position[j];
-//            normals[k++]= coord.x;
-//            normals[k++]= coord.y;
-//            normals[k++]= coord.z;
-            
-            //k+=3;
         }
+
+        /*k=0;
+        for (int j=0; j<m_ny; j++) {
+            for (int i=0; i<m_nx; i++) {
+
+                glm::vec3 normal;// = getNormalVertex(i, j);
+                if(i==3 && j==3) mostra=1;
+                normal = getNormalVertex(i, j);
+                if(mostra==1) printf("normal nomalizada %f,%f,%f\n",normal.x,normal.y,normal.z);
+                mostra=0;
+                normals[k++]= normal.x;
+                normals[k++]= normal.y;
+                normals[k++]= normal.z;
+                normal = getNormalVertex(i+1, j+1);
+                normals[k++]= normal.x;
+                normals[k++]= normal.y;
+                normals[k++]= normal.z;
+                normal = getNormalVertex(i+1, j);
+                normals[k++]= normal.x;
+                normals[k++]= normal.y;
+                normals[k++]= normal.z;
+                
+                normal = getNormalVertex(i, j);
+                normals[k++]= normal.x;
+                normals[k++]= normal.y;
+                normals[k++]= normal.z;
+                normal = getNormalVertex(i+1, j+1);
+                normals[k++]= normal.x;
+                normals[k++]= normal.y;
+                normals[k++]= normal.z;
+                normal = getNormalVertex(i, j+1);
+                normals[k++]= normal.x;
+                normals[k++]= normal.y;
+                normals[k++]= normal.z;
+            }
+        }*/
         
         /*for (int j=0; j<m_ny; j++) {
             for (int i=0; i<m_nx; i++) {
                 int k = Index(i, j);
-                printf("i=%d j=%d\n",i,j);
-                
-                printf("triangulo 1\n");
-                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k],vertices_position[18*k+1],vertices_position[18*k+2]);
-                printf("(%.4f,%.4f,%.4f)\n",normals[18*k],normals[18*k+1],normals[18*k+2]);
-                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+3],vertices_position[18*k+4],vertices_position[18*k+5]);
-                printf("(%.4f,%.4f,%.4f)\n",normals[18*k+3],normals[18*k+4],normals[18*k+5]);
-                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+6],vertices_position[18*k+7],vertices_position[18*k+8]);
-                printf("(%.4f,%.4f,%.4f)\n",normals[18*k+6],normals[18*k+7],normals[18*k+8]);
-                
-                printf("triangulo 2\n");
-                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+9],vertices_position[18*k+10],vertices_position[18*k+11]);
-                printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+12],vertices_position[18*k+13],vertices_position[18*k+14]);
-                printf("(%.2f,%.2f,%.2f)\n\n",vertices_position[18*k+15],vertices_position[18*k+16],vertices_position[18*k+17]);
+                //if(i==3 && j==3) mostra=1;
+                if(mostra==1){
+                    printf("i=%d j=%d k=%d\n",i,j,k);
+                    
+                    printf("triangulo 1\n");
+                    printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k],vertices_position[18*k+1],vertices_position[18*k+2]);
+                    printf("(%.4f,%.4f,%.4f)\n",normals[18*k],normals[18*k+1],normals[18*k+2]);
+                    printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+3],vertices_position[18*k+4],vertices_position[18*k+5]);
+                    printf("(%.4f,%.4f,%.4f)\n",normals[18*k+3],normals[18*k+4],normals[18*k+5]);
+                    printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+6],vertices_position[18*k+7],vertices_position[18*k+8]);
+                    printf("(%.4f,%.4f,%.4f)\n",normals[18*k+6],normals[18*k+7],normals[18*k+8]);
+                    
+                    printf("triangulo 2\n");
+                    printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+9],vertices_position[18*k+10],vertices_position[18*k+11]);
+                    printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+12],vertices_position[18*k+13],vertices_position[18*k+14]);
+                    printf("(%.2f,%.2f,%.2f)\n\n",vertices_position[18*k+15],vertices_position[18*k+16],vertices_position[18*k+17]);
+                }
+                mostra=0;
             }
         }*/
     }//end construtor
     
+    void draw(GLuint shaderProgram){
+        // Create a Vector Buffer Object that will store the vertices on video memory
+        GLuint vertexbuffer;
+        glGenBuffers(1, &vertexbuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+        glBufferData(GL_ARRAY_BUFFER, this->sizeOfAllFloats(), this->vertices_position, GL_STATIC_DRAW);
+        
+        // Create a Vector Buffer Object that will store the colors on video memory
+        GLuint colorsbuffer;
+        glGenBuffers(1, &colorsbuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, colorsbuffer);
+        glBufferData(GL_ARRAY_BUFFER, this->sizeOfAllFloats(), this->colors, GL_STATIC_DRAW);
+        
+        // Create a Vector Buffer Object that will store the colors on video memory
+        GLuint normalsbuffer;
+        glGenBuffers(1, &normalsbuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, normalsbuffer);
+        glBufferData(GL_ARRAY_BUFFER, this->sizeOfAllFloats(), this->normals, GL_STATIC_DRAW);
+        
+        
+        // 1rst attribute buffer : vertices
+        GLint position_attribute = glGetAttribLocation(shaderProgram, "vertexPosition_modelspace");
+        glEnableVertexAttribArray(position_attribute);
+        glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+        glVertexAttribPointer(
+                              position_attribute,                  // attribute
+                              3,                  // size
+                              GL_FLOAT,           // type
+                              GL_FALSE,           // normalized?
+                              0,                  // stride
+                              (void*)0            // array buffer offset
+                              );
+        
+        // 2nd attribute buffer : colorsbuffer
+        GLint color_attribute = glGetAttribLocation(shaderProgram, "vertexColor");
+        glEnableVertexAttribArray(color_attribute);
+        glBindBuffer(GL_ARRAY_BUFFER, colorsbuffer);
+        glVertexAttribPointer(
+                              color_attribute,                                // attribute
+                              3,                                // size
+                              GL_FLOAT,                         // type
+                              GL_FALSE,                         // normalized?
+                              0,                                // stride
+                              (void*)0                          // array buffer offset
+                              );
+        
+        // 3rd attribute buffer : normals
+        GLint normal_attribute = glGetAttribLocation(shaderProgram, "vertexNormal_modelspace");
+        glEnableVertexAttribArray(normal_attribute);
+        glBindBuffer(GL_ARRAY_BUFFER, normalsbuffer);
+        glVertexAttribPointer(
+                              normal_attribute,                                // attribute
+                              3,                                // size
+                              GL_FLOAT,                         // type
+                              GL_FALSE,                         // normalized?
+                              0,                                // stride
+                              (void*)0                          // array buffer offset
+                              );
+
+    }
+    
+    int mostra=0;
+    glm::vec3 getNormalVertex(int i, int j){
+        glm::vec3 normal = glm::vec3(0,0,0);
+//        triangle ( v1, v2, v3 )
+//        edge1 = v2-v1
+//        edge2 = v3-v1
+//        triangle.normal = cross(edge1, edge2).normalize()
+        
+//        vertex v1, v2, v3, ....
+//        triangle tr1, tr2, tr3 // all share vertex v1
+//        v1.normal = normalize( tr1.normal + tr2.normal + tr3.normal )
+
+        if(i>0 && j<m_ny-1){ //triangulo 1
+            if(mostra==1) printf("triangulo 1\n");
+            normal = normal + getNormalTriangle(i-1, j, 1);
+        }
+        if(i>0 && j>0){ //triangulo 2 e 3
+            if(mostra==1) printf("triangulo 2 e 3\n");
+            normal = normal + getNormalTriangle(i-1, j-1, 0) + getNormalTriangle(i-1, j-1, 1);
+        }
+        if(i<m_nx-1 && j>0){ //triangulo 4
+            if(mostra==1) printf("triangulo 4\n");
+            normal = normal + getNormalTriangle(i, j-1, 0);
+        }
+        if(i<m_nx-1 && j<m_ny-1){ //triangulo 5 e 6
+            if(mostra==1) printf("triangulo 5 e 6\n");
+            normal = normal + getNormalTriangle(i, j, 1) + getNormalTriangle(i, j, 0);
+//            float x = normal.x;
+
+            if(mostra==1) printf("normal somada %f,%f,%f\n",normal.x,normal.y,normal.z);
+        }
+        
+        return glm::normalize(normal);
+    }
+    
+    glm::vec3 getNormalTriangle(int i, int j, int lado){
+        if (lado == 0) { //a
+            if(mostra==1) {
+                printf("lado a\n");
+                printf("edge 1 = v2(%d,%d) - v1(%d,%d)\n",i+1,j+1,i,j);
+                printf("edge 2 = v3(%d,%d) - v1(%d,%d)\n",i,j+1,i,j);
+                printf("cross(edge1, edge2)\n\n");
+            }
+            return glm::normalize( glm::cross(getVertexCoord(i+1, j+1)-getVertexCoord(i, j), getVertexCoord(i, j+1)-getVertexCoord(i, j)) );
+        }else{ //b
+            if(mostra==1) {
+                printf("lado b\n");
+                printf("edge 1 = v2(%d,%d) - v1(%d,%d)\n",i+1,j,i,j);
+                printf("edge 2 = v3(%d,%d) - v1(%d,%d)\n",i+1,j+1,i,j);
+                printf("v1 (%f,%f,%f)\n",getVertexCoord(i, j).x,getVertexCoord(i, j).y,getVertexCoord(i, j).z);
+                printf("v2 (%f,%f,%f)\n",getVertexCoord(i+1, j).x,getVertexCoord(i+1, j).y,getVertexCoord(i+1, j).z);
+                printf("v3 (%f,%f,%f)\n",getVertexCoord(i+1, j+1).x,getVertexCoord(i+1, j+1).y,getVertexCoord(i+1, j+1).z);
+                printf("cross(edge1, edge2)\n\n");
+            }
+            return glm::normalize( glm::cross(getVertexCoord(i+1, j)-getVertexCoord(i, j), getVertexCoord(i+1, j+1)-getVertexCoord(i, j)) );
+        }
+        
+    }
+    
+    glm::vec3 getVertexCoord(int i, int j){
+        int k = Index(i, j);
+        //printf("vertice em k=%d\n",k);
+        return glm::vec3(vertices_position[18*k],vertices_position[18*k+1],vertices_position[18*k+2]);
+    }
     
     int sizeOfAllFloats(){
         return m_nx*m_ny*6*3*sizeof(GLfloat); //10 vezes 10 sub quadrados com dois triangulos. Cada triangulo 3 vertices. Cada Vertice sao 3 floats
@@ -386,8 +592,8 @@ void display(GLuint &vao);
 void init();
 
 Shader *myShader;
-Sphere *g;
-//Grid *g;
+Sphere *s;
+Grid *g;
 
 int main () {
 	// Initialize GLFW
@@ -447,8 +653,9 @@ int main () {
 		// Display scene
         //display(myShader->vao);
         glClear(GL_COLOR_BUFFER_BIT);
-        
-        glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
+
+        //glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
+        glDrawArrays(GL_TRIANGLES, 0, s->numberOfPoints());
         
         // Swap front and back buffers
         glfwSwapBuffers();
@@ -466,73 +673,16 @@ int main () {
 }
 
 void init(){
-//    g = new Grid(10,10);
-//    g->genGrid();
-
-    g = new Sphere(40,40);
-    g->genSphere();
-    
-    
-    // Create a Vector Buffer Object that will store the vertices on video memory
-    GLuint vertexbuffer;
-    glGenBuffers(1, &vertexbuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-    glBufferData(GL_ARRAY_BUFFER, g->sizeOfAllFloats(), g->vertices_position, GL_STATIC_DRAW);
-    
-    // Create a Vector Buffer Object that will store the colors on video memory
-    GLuint colorsbuffer;
-    glGenBuffers(1, &colorsbuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, colorsbuffer);
-    glBufferData(GL_ARRAY_BUFFER, g->sizeOfAllFloats(), g->colors, GL_STATIC_DRAW);
-    
-    // Create a Vector Buffer Object that will store the colors on video memory
-    GLuint normalsbuffer;
-    glGenBuffers(1, &normalsbuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, normalsbuffer);
-    glBufferData(GL_ARRAY_BUFFER, g->sizeOfAllFloats(), g->normals, GL_STATIC_DRAW);
-    
     myShader = new Shader();
-    
     GLuint shaderProgram = myShader->programID();
     
-    // 1rst attribute buffer : vertices
-    GLint position_attribute = glGetAttribLocation(shaderProgram, "vertexPosition_modelspace");
-    glEnableVertexAttribArray(position_attribute);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-    glVertexAttribPointer(
-                          position_attribute,                  // attribute
-                          3,                  // size
-                          GL_FLOAT,           // type
-                          GL_FALSE,           // normalized?
-                          0,                  // stride
-                          (void*)0            // array buffer offset
-                          );
+    s = new Sphere(40,40);
+    s->genSphere();
+    s->draw(shaderProgram);
     
-    // 2nd attribute buffer : colorsbuffer
-    GLint color_attribute = glGetAttribLocation(shaderProgram, "vertexColor");
-    glEnableVertexAttribArray(color_attribute);
-    glBindBuffer(GL_ARRAY_BUFFER, colorsbuffer);
-    glVertexAttribPointer(
-                          color_attribute,                                // attribute
-                          3,                                // size
-                          GL_FLOAT,                         // type
-                          GL_FALSE,                         // normalized?
-                          0,                                // stride
-                          (void*)0                          // array buffer offset
-                          );
-    
-    // 3rd attribute buffer : normals
-    GLint normal_attribute = glGetAttribLocation(shaderProgram, "vertexNormal_modelspace");
-    glEnableVertexAttribArray(normal_attribute);
-    glBindBuffer(GL_ARRAY_BUFFER, normalsbuffer);
-    glVertexAttribPointer(
-                          normal_attribute,                                // attribute
-                          3,                                // size
-                          GL_FLOAT,                         // type
-                          GL_FALSE,                         // normalized?
-                          0,                                // stride
-                          (void*)0                          // array buffer offset
-                          );
+    //g = new Grid(10,10);
+    //g->genGrid();
+    //g->draw(shaderProgram);
 }
 
 // Render scene
@@ -549,7 +699,7 @@ void display(GLuint &vao) {
 // Called when the window is resized
 void GLFWCALL window_resized(int width, int height) {
 	// Use red to clear the screen
-	glClearColor(1, 1, 1, 1);
+	glClearColor(0.9f, 0.9f, 0.9f, 1);
     
 	// Set the viewport
 	glViewport(0, 0, width, height);
