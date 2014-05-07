@@ -22,8 +22,8 @@ public:
     //================ Metodos ================//
     Shader (){
         // create a program
-        this->VertexShader("shaders/vert.cpp");
-        this->FragmentShader("shaders/frag.cpp");
+        this->VertexShader("shaders5/vert.cpp");
+        this->FragmentShader("shaders5/frag.cpp");
         
         shaderProgram = glCreateProgram();
         glAttachShader(shaderProgram, vertexShader);
@@ -88,33 +88,34 @@ public:
     void SetUniformMVP(){
         // Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
         glm::mat4 Projection = glm::perspective(45.0f, 1.0f/*4.0f / 3.0f*/, 0.1f, 100.0f);
+        
         // Camera matrix
         glm::mat4 View = glm::lookAt(
-                                     glm::vec3(0,4,8), // Camera is at (x,y,z), in World Space
+                                     glm::vec3(0,-2.0f,4.0f), // Camera is at (x,y,z), in World Space
                                      glm::vec3(0,0,0), // and looks at the origin
-                                     glm::vec3(0,1,0) // Head is up (set to 0,-1,0 to look upside-down)
+                                     glm::vec3(0,1.0f,0) // Head is up (set to 0,-1,0 to look upside-down)
                                      );
-        // Model matrix : an identity matrix (model will be at the origin)
-        //glm::mat4 Model = glm::mat4(1.0f); // Changes for each model !
-        //Model = glm::translate(Model, glm::vec3(-4.0f, 0, -4.0f));
-        //Model = glm::scale(Model, glm::vec3(8,1,8));
+        
 
         // Our ModelViewProjection : multiplication of our 3 matrices
         glm::mat4 MVP = Projection * View * Model; // Remember, matrix multiplication is the other way around
+        //glm::mat4 MVP = glm::mat4(1.0f);
+        
+        glm::mat4 ITMV =   glm::transpose(glm::inverse(View * Model));
         
         // Transfer the transformation matrices to the shader program
         GLint mvp = glGetUniformLocation(shaderProgram, "MVP" );
         glUniformMatrix4fv(mvp, 1, GL_FALSE, glm::value_ptr(MVP));
         
         // Transfer the transformation matrices to the shader program
-        //GLint m = glGetUniformLocation(shaderProgram, "M" );
-        //glUniformMatrix4fv(m, 1, GL_FALSE, glm::value_ptr(Model));
+        GLint itmv = glGetUniformLocation(shaderProgram, "NormalMatrix" );
+        glUniformMatrix4fv(itmv, 1, GL_FALSE, glm::value_ptr(ITMV));
         
         // Transfer the transformation matrices to the shader program
         GLint v = glGetUniformLocation(shaderProgram, "V" );
         glUniformMatrix4fv(v, 1, GL_FALSE, glm::value_ptr(View));
         
-        glm::vec3 lightPos = glm::vec3(0, 6.0f, -3.0f);
+        glm::vec3 lightPos = glm::vec3(5.0f, 0, 0);
         GLint LightID = glGetUniformLocation(shaderProgram, "LightPosition_worldspace" );
 		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
     }
@@ -202,11 +203,12 @@ public:
                 
                 vertices_position[18*k+3] = ((float)i+1) / (float)m_nx;
                 vertices_position[18*k+4] = 0.0f;
-                vertices_position[18*k+5] = ((float)j+1) / (float)m_ny;
+                vertices_position[18*k+5] = (float)j / (float)m_ny;
                 
                 vertices_position[18*k+6] = ((float)i+1) / (float)m_nx;
                 vertices_position[18*k+7] = 0.0f;
-                vertices_position[18*k+8] = (float)j / (float)m_ny;
+                vertices_position[18*k+8] = ((float)j+1) / (float)m_ny;
+                
                 
                 vertices_position[18*k+9] = (float)i / (float)m_nx;
                 vertices_position[18*k+10] = 0.0f;
@@ -343,6 +345,14 @@ public:
     int m_nx, m_ny;
     const float PI = 3.1415926;
     
+    std::vector<GLfloat> Vertices;
+    std::vector<GLfloat> Normals;
+    std::vector<GLfloat> Colors;
+    std::vector<GLushort> Indices;
+    unsigned int rings;
+    unsigned int sectors;
+    
+    
     GLfloat vertices_position[500000];
     GLfloat colors[500000];
     GLfloat normals[500000];
@@ -352,6 +362,12 @@ public:
     Sphere (int slices, int stack){
         this->m_nx = slices;
         this->m_ny = stack;
+        
+        rings = stack;
+        sectors = slices;
+        
+        //sector = slice
+        //ring = stack
     }
     
     // Destroy a sphere
@@ -365,21 +381,59 @@ public:
     
     // Draw a sphere
     void genSphere (){
+        /*float const R = 1./(float)(rings-1);
+        float const S = 1./(float)(sectors-1);
+        int r, s;
+        
+        Vertices.resize(rings * sectors * 3);
+        Normals.resize(rings * sectors * 3);
+        Colors.resize(rings * sectors * 2);
+        std::vector<GLfloat>::iterator v = Vertices.begin();
+        std::vector<GLfloat>::iterator n = Normals.begin();
+        std::vector<GLfloat>::iterator t = Colors.begin();
+        
+        float radius = 1.0;
+        for(r = 0; r < rings; r++) for(s = 0; s < sectors; s++) {
+            float const y = sin( -M_PI_2 + M_PI * r * R );
+            float const x = cos(2*M_PI * s * S) * sin( M_PI * r * R );
+            float const z = sin(2*M_PI * s * S) * sin( M_PI * r * R );
+            
+            *t++ = s*S;
+            *t++ = r*R;
+            
+            *v++ = x * radius;
+            *v++ = y * radius;
+            *v++ = z * radius;
+            
+            *n++ = x;
+            *n++ = y;
+            *n++ = z;
+        }
+        
+        Indices.resize(rings * sectors * 4);
+        std::vector<GLushort>::iterator i = Indices.begin();
+        for(r = 0; r < rings-1; r++) for(s = 0; s < sectors-1; s++) {
+            *i++ = r * sectors + s;
+            *i++ = r * sectors + (s+1);
+            *i++ = (r+1) * sectors + (s+1);
+            *i++ = (r+1) * sectors + s;
+        }*/
+
         for (int j=0; j<m_ny; j++) {
-            for (int i=0; i<m_ny; i++) {
+            for (int i=0; i<m_nx; i++) {
                 int k = Index(i, j);
                 vertices_position[18*k] = cos( 2*PI*((float)i / (float)m_nx)) * sin( PI*((float)j / (float)m_nx) ) ;
                 vertices_position[18*k+1] = cos( PI*((float)j / (float)m_nx) );
                 vertices_position[18*k+2] = sin( 2*PI*((float)i / (float)m_nx) ) * sin( PI*((float)j / (float)m_nx) ) ;
                 
-                vertices_position[18*k+3] = cos( 2*PI*(((float)i+1) / (float)m_nx)) * sin( PI*(((float)j+1) / (float)m_nx) ) ;
-                vertices_position[18*k+4] = cos( PI*(((float)j+1) / (float)m_nx) );
-                vertices_position[18*k+5] = sin( 2*PI*(((float)i+1) / (float)m_nx) ) * sin( PI*(((float)j+1) / (float)m_nx) ) ;
+                vertices_position[18*k+3] = cos( 2*PI*(((float)i+1) / (float)m_nx)) * sin( PI*((float)j / (float)m_nx) ) ;
+                vertices_position[18*k+4] = cos( PI*((float)j / (float)m_nx) );
+                vertices_position[18*k+5] = sin( 2*PI*(((float)i+1) / (float)m_nx) ) * sin( PI*((float)j / (float)m_nx) ) ;
                 
-                vertices_position[18*k+6] = cos( 2*PI*(((float)i+1) / (float)m_nx)) * sin( PI*((float)j / (float)m_nx) ) ;
-                vertices_position[18*k+7] = cos( PI*((float)j / (float)m_nx) );
-                vertices_position[18*k+8] = sin( 2*PI*(((float)i+1) / (float)m_nx) ) * sin( PI*((float)j / (float)m_nx) ) ;
-                
+                vertices_position[18*k+6] = cos( 2*PI*(((float)i+1) / (float)m_nx)) * sin( PI*(((float)j+1) / (float)m_nx) ) ;
+                vertices_position[18*k+7] = cos( PI*(((float)j+1) / (float)m_nx) );
+                vertices_position[18*k+8] = sin( 2*PI*(((float)i+1) / (float)m_nx) ) * sin( PI*(((float)j+1) / (float)m_nx) ) ;
+
                 
                 vertices_position[18*k+9] = cos( 2*PI*((float)i / (float)m_nx)) * sin( PI*((float)j / (float)m_nx) ) ;
                 vertices_position[18*k+10] = cos( PI*((float)j / (float)m_nx) );
@@ -394,13 +448,30 @@ public:
                 vertices_position[18*k+17] = sin( 2*PI*((float)i / (float)m_nx) ) * sin( PI*(((float)j+1) / (float)m_nx) ) ;
             }
         }
+        
         int k = 0;
         for (int j=0; j<m_nx*m_ny*6; j++) {
             colors[k++]=1;
             colors[k++]=0;
             colors[k++]=0;
         }
+        
+        /*
+        k=0;
+        for (int j=0; j<m_ny; j++) {
+            float cor = (float)(j+1)/(float)m_ny;
+            printf("cor vermelho: %f\n",cor);
+            for (int i=0; i<m_nx; i++) {
+                float cor2 = (float)(i+1)/(float)m_nx;
+                for (int l=0; l<6; l++) {
+                    colors[k++]=cor2;
+                    colors[k++]=0;
+                    colors[k++]=0;
 
+                }
+            }
+        }*/
+        
         for (int j=0; j<m_ny*m_nx*6*3; j++) {
             normals[j] = vertices_position[j];
         }
@@ -528,8 +599,8 @@ public:
                               );
         // Model matrix : an identity matrix (model will be at the origin)
         Model = glm::mat4(1.0f); // Changes for each model !
-        Model = glm::translate(Model, glm::vec3(x, 0.2f, z));
-        Model = glm::scale(Model, glm::vec3(0.2f,0.2f,0.2f));
+        //Model = glm::translate(Model, glm::vec3(x, 0.2f, z));
+        //Model = glm::scale(Model, glm::vec3(0.2f,0.2f,0.2f));
 
         myShader->SetUniform("M", Model);
     }
@@ -610,6 +681,10 @@ public:
     int numberOfPoints(){
         return m_nx*m_ny*2*3;
     }
+    
+    void show(){
+        //glDrawElements(GL_QUADS, Indices.size(), GL_UNSIGNED_SHORT, &Indices[0]);
+    }
 };
 
 // Called when the window is resized
@@ -623,6 +698,75 @@ void init();
 Shader * myShader;
 Sphere * s[10][10];
 Grid *g;
+
+
+class SolidSphere
+{
+protected:
+    std::vector<GLfloat> vertices;
+    std::vector<GLfloat> normals;
+    std::vector<GLfloat> texcoords;
+    std::vector<GLushort> indices;
+    
+public:
+    SolidSphere(float radius, unsigned int rings, unsigned int sectors)
+    {
+        float const R = 1./(float)(rings-1);
+        float const S = 1./(float)(sectors-1);
+        int r, s;
+        
+        vertices.resize(rings * sectors * 3);
+        normals.resize(rings * sectors * 3);
+        texcoords.resize(rings * sectors * 2);
+        std::vector<GLfloat>::iterator v = vertices.begin();
+        std::vector<GLfloat>::iterator n = normals.begin();
+        std::vector<GLfloat>::iterator t = texcoords.begin();
+        for(r = 0; r < rings; r++) for(s = 0; s < sectors; s++) {
+            float const y = sin( -M_PI_2 + M_PI * r * R );
+            float const x = cos(2*M_PI * s * S) * sin( M_PI * r * R );
+            float const z = sin(2*M_PI * s * S) * sin( M_PI * r * R );
+            
+            *t++ = s*S;
+            *t++ = r*R;
+            
+            *v++ = x * radius;
+            *v++ = y * radius;
+            *v++ = z * radius;
+            
+            *n++ = x;
+            *n++ = y;
+            *n++ = z;
+        }
+        
+        indices.resize(rings * sectors * 4);
+        std::vector<GLushort>::iterator i = indices.begin();
+        for(r = 0; r < rings-1; r++) for(s = 0; s < sectors-1; s++) {
+            *i++ = r * sectors + s;
+            *i++ = r * sectors + (s+1);
+            *i++ = (r+1) * sectors + (s+1);
+            *i++ = (r+1) * sectors + s;
+        }
+    }
+    
+    void draw(GLfloat x, GLfloat y, GLfloat z)
+    {
+        glMatrixMode(GL_MODELVIEW);
+        glPushMatrix();
+        glTranslatef(x,y,z);
+        
+        glEnableClientState(GL_VERTEX_ARRAY);
+        glEnableClientState(GL_NORMAL_ARRAY);
+        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+        
+        glVertexPointer(3, GL_FLOAT, 0, &vertices[0]);
+        glNormalPointer(GL_FLOAT, 0, &normals[0]);
+        glTexCoordPointer(2, GL_FLOAT, 0, &texcoords[0]);
+        glDrawElements(GL_QUADS, indices.size(), GL_UNSIGNED_SHORT, &indices[0]);
+        glPopMatrix();
+    }
+};
+
+SolidSphere sphere(1, 12, 24);
 
 int main () {
 	// Initialize GLFW
@@ -661,6 +805,10 @@ int main () {
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
     // Enable depth test
 	glEnable(GL_DEPTH_TEST);
+
+    //glEnable(GL_CULL_FACE);
+//    glFrontFace(GL_CCW);
+    
 	// Register a callback function for window resize events
 	glfwSetWindowSizeCallback( window_resized );
     // Register a callback function for keyboard pressed events
@@ -682,22 +830,22 @@ int main () {
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        g->draw(myShader);
-        myShader->SetUniformMVP();
-        glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
-        
-//        s[0][0]->draw(myShader);
+//        g->draw(myShader);
 //        myShader->SetUniformMVP();
-//        glDrawArrays(GL_TRIANGLES, 0, s[0][0]->numberOfPoints());
-
-        for (int i=0;i<10;i++){
-            for (int j=0; j<10; j++) {
-                s[i][j]->draw(myShader);
-                myShader->SetUniformMVP();
-                glDrawArrays(GL_TRIANGLES, 0, s[i][j]->numberOfPoints());
-                
-            }
-        }
+//        glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
+        
+        s[0][0]->draw(myShader);
+        myShader->SetUniformMVP();
+        glDrawArrays(GL_TRIANGLES, 0, s[0][0]->numberOfPoints());
+        
+//        for (int i=0;i<10;i++){
+//            for (int j=0; j<10; j++) {
+//                s[i][j]->draw(myShader);
+//                myShader->SetUniformMVP();
+//                glDrawArrays(GL_TRIANGLES, 0, s[i][j]->numberOfPoints());
+//                
+//            }
+//        }
         
         // Swap front and back buffers
         glfwSwapBuffers();
@@ -717,19 +865,19 @@ int main () {
 void init(){
     myShader = new Shader();
     
-//    s[0][0] = new Sphere(32,32);
-//    s[0][0]->genSphere();
+    s[0][0] = new Sphere(64,64);
+    s[0][0]->genSphere();
     
-    for (int i=0;i<10;i++){
-        for (int j=0; j<10; j++) {
-            s[i][j] = new Sphere(32,32);
-            s[i][j]->setPositionXZ(i,j);
-            s[i][j]->genSphere();
-        }
-    }
+//    for (int i=0;i<10;i++){
+//        for (int j=0; j<10; j++) {
+//            s[i][j] = new Sphere(32,32);
+//            s[i][j]->setPositionXZ(i,j);
+//            s[i][j]->genSphere();
+//        }
+//    }
     
-    g = new Grid(20,20);
-    g->genGrid();
+//    g = new Grid(20,20);
+//    g->genGrid();
 }
 
 // Called when the window is resized
