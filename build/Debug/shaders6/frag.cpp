@@ -16,7 +16,7 @@ void main() {
     vec3 reflection = normalize( reflect( -normalize(lightDir),normalize(normal) ) );
     float spec = max( 0.0, dot( normalize(normal), reflection ) );
     if(diff!=0){
-        float fSpec = pow(spec, 32.0);
+        float fSpec = pow(spec, 128.0);
         out_color.rgb += vec3(fSpec,fSpec,fSpec);
     }
     

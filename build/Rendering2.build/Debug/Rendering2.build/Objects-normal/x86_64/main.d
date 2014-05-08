@@ -76,11 +76,13 @@ dependencies: /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp \
   third_party/include/glm/detail/func_integer.inl \
   third_party/include/glm/gtc/matrix_transform.hpp \
   third_party/include/glm/gtc/matrix_transform.inl \
-  third_party/include/glm/gtx/transform.hpp \
-  third_party/include/glm/gtx/transform.inl \
   third_party/include/glm/gtc/type_ptr.hpp \
   third_party/include/glm/gtc/../gtc/quaternion.hpp \
   third_party/include/glm/gtc/../gtc/constants.hpp \
   third_party/include/glm/gtc/constants.inl \
   third_party/include/glm/gtc/quaternion.inl \
-  third_party/include/glm/gtc/type_ptr.inl
+  third_party/include/glm/gtc/type_ptr.inl \
+  third_party/include/glm/gtx/rotate_vector.hpp \
+  third_party/include/glm/gtx/../gtx/transform.hpp \
+  third_party/include/glm/gtx/transform.inl \
+  third_party/include/glm/gtx/rotate_vector.inl

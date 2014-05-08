@@ -9,8 +9,14 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtx/transform.hpp>
+//#include <glm/gtx/transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/rotate_vector.hpp>
+
+struct Camera{
+    float x, y, z;
+};
+Camera c;
 
 class Shader{
 public:
@@ -91,7 +97,7 @@ public:
         
         // Camera matrix
         glm::mat4 View = glm::lookAt(
-                                     glm::vec3(0, 2.0f, 4.0f), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
+                                     glm::vec3(0, 4, 8), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
                                      glm::vec3(0, 0, 0), // and looks at the origin
                                      glm::vec3(0,1.0f,0) // Head is up (set to 0,-1,0 to look upside-down)
                                      );
@@ -114,7 +120,7 @@ public:
         GLint v = glGetUniformLocation(shaderProgram, "V" );
         glUniformMatrix4fv(v, 1, GL_FALSE, glm::value_ptr(View));
         
-        glm::vec3 lightPos = glm::vec3(0, 6.0f, 4.0f);//bom = 5.0f, 4.0f, 4.0f
+        glm::vec3 lightPos = glm::vec3(c.x, c.y, c.z);//bom = 5.0f, 4.0f, 4.0f
         GLint LightID = glGetUniformLocation(shaderProgram, "LightPosition_worldspace" );
 		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
     }
@@ -202,20 +208,20 @@ public:
                 
                 vertices_position[18*k+3] = ((float)i+1) / (float)m_nx;
                 vertices_position[18*k+4] = 0.0f;
-                vertices_position[18*k+5] = (float)j / (float)m_ny;
-                
+                vertices_position[18*k+5] = ((float)j+1) / (float)m_ny;
+
                 vertices_position[18*k+6] = ((float)i+1) / (float)m_nx;
                 vertices_position[18*k+7] = 0.0f;
-                vertices_position[18*k+8] = ((float)j+1) / (float)m_ny;
+                vertices_position[18*k+8] = (float)j / (float)m_ny;
                 
                 
-                vertices_position[18*k+9] = (float)i / (float)m_nx;
+                vertices_position[18*k+9] = ((float)i+1) / (float)m_nx;
                 vertices_position[18*k+10] = 0.0f;
-                vertices_position[18*k+11] = (float)j / (float)m_ny;
+                vertices_position[18*k+11] = ((float)j+1) / (float)m_ny;
                 
-                vertices_position[18*k+12] = ((float)i+1) / (float)m_nx;
+                vertices_position[18*k+12] = (float)i / (float)m_nx;
                 vertices_position[18*k+13] = 0.0f;
-                vertices_position[18*k+14] = ((float)j+1) / (float)m_ny;
+                vertices_position[18*k+14] = (float)j / (float)m_ny;
                 
                 vertices_position[18*k+15] = (float)i / (float)m_nx;
                 vertices_position[18*k+16] = 0.0f;
@@ -805,8 +811,8 @@ int main () {
     // Enable depth test
 	glEnable(GL_DEPTH_TEST);
 
-    //glEnable(GL_CULL_FACE);
-//    glFrontFace(GL_CCW);
+    glEnable(GL_CULL_FACE);
+//    glFrontFace(GL_CW);
     
 	// Register a callback function for window resize events
 	glfwSetWindowSizeCallback( window_resized );
@@ -829,13 +835,14 @@ int main () {
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        g->draw(myShader);
-        myShader->SetUniformMVP();
-        glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
         
 //        s[0][0]->draw(myShader);
 //        myShader->SetUniformMVP();
 //        glDrawArrays(GL_TRIANGLES, 0, s[0][0]->numberOfPoints());
+
+        g->draw(myShader);
+        myShader->SetUniformMVP();
+        glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
         
         for (int i=0;i<10;i++){
             for (int j=0; j<10; j++) {
@@ -853,6 +860,15 @@ int main () {
 		glfwPollEvents();
 		// Check if the window was closed
 		running = glfwGetWindowParam(GLFW_OPENED);
+
+        glm::vec3 cam = glm::vec3(c.x,c.y,c.z);
+//        cam = glm::rotateX(cam, 1.0f);
+        cam = glm::rotateY(cam, 1.0f);
+//        cam = glm::rotateZ(cam, 1.0f);
+        c.x = cam.x;
+        c.y = cam.y;
+        c.z = cam.z;
+        
 	}
     
 	// Terminate GLFW
@@ -862,12 +878,16 @@ int main () {
 }
 
 void init(){
+    c.x =0;
+    c.y =4;
+    c.z =8.0f;
+    
     myShader = new Shader();
     
-//    s[0][0] = new Sphere(64,64);
+//    s[0][0] = new Sphere(128,128);
 //    s[0][0]->genSphere();
     
-    for (int i=0;i<10;i++){
+   for (int i=0;i<10;i++){
         for (int j=0; j<10; j++) {
             s[i][j] = new Sphere(32,32);
             s[i][j]->setPositionXZ(i,j);
