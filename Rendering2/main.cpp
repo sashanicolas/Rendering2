@@ -22,8 +22,8 @@ public:
     //================ Metodos ================//
     Shader (){
         // create a program
-        this->VertexShader("shaders5/vert.cpp");
-        this->FragmentShader("shaders5/frag.cpp");
+        this->VertexShader("shaders6/vert.cpp");
+        this->FragmentShader("shaders6/frag.cpp");
         
         shaderProgram = glCreateProgram();
         glAttachShader(shaderProgram, vertexShader);
@@ -91,17 +91,16 @@ public:
         
         // Camera matrix
         glm::mat4 View = glm::lookAt(
-                                     glm::vec3(0,-2.0f,4.0f), // Camera is at (x,y,z), in World Space
-                                     glm::vec3(0,0,0), // and looks at the origin
+                                     glm::vec3(0, 2.0f, 4.0f), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
+                                     glm::vec3(0, 0, 0), // and looks at the origin
                                      glm::vec3(0,1.0f,0) // Head is up (set to 0,-1,0 to look upside-down)
                                      );
         
-
         // Our ModelViewProjection : multiplication of our 3 matrices
         glm::mat4 MVP = Projection * View * Model; // Remember, matrix multiplication is the other way around
         //glm::mat4 MVP = glm::mat4(1.0f);
         
-        glm::mat4 ITMV =   glm::transpose(glm::inverse(View * Model));
+        glm::mat4 ITMV = glm::transpose(glm::inverse(View * Model));
         
         // Transfer the transformation matrices to the shader program
         GLint mvp = glGetUniformLocation(shaderProgram, "MVP" );
@@ -115,7 +114,7 @@ public:
         GLint v = glGetUniformLocation(shaderProgram, "V" );
         glUniformMatrix4fv(v, 1, GL_FALSE, glm::value_ptr(View));
         
-        glm::vec3 lightPos = glm::vec3(5.0f, 0, 0);
+        glm::vec3 lightPos = glm::vec3(0, 6.0f, 4.0f);//bom = 5.0f, 4.0f, 4.0f
         GLint LightID = glGetUniformLocation(shaderProgram, "LightPosition_worldspace" );
 		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
     }
@@ -515,14 +514,14 @@ public:
         /*for (int j=0; j<m_ny; j++) {
             for (int i=0; i<m_nx; i++) {
                 int k = Index(i, j);
-                //if(i==3 && j==3) mostra=1;
+                if(i==3 && j==3) mostra=1;
                 if(mostra==1){
                     printf("i=%d j=%d k=%d\n",i,j,k);
                     
                     printf("triangulo 1\n");
-                    printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k],vertices_position[18*k+1],vertices_position[18*k+2]);
+                    printf("(%.4f,%.4f,%.4f)\n",vertices_position[18*k],vertices_position[18*k+1],vertices_position[18*k+2]);
                     printf("(%.4f,%.4f,%.4f)\n",normals[18*k],normals[18*k+1],normals[18*k+2]);
-                    printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+3],vertices_position[18*k+4],vertices_position[18*k+5]);
+                    printf("(%.4f,%.4f,%.4f)\n",vertices_position[18*k+3],vertices_position[18*k+4],vertices_position[18*k+5]);
                     printf("(%.4f,%.4f,%.4f)\n",normals[18*k+3],normals[18*k+4],normals[18*k+5]);
                     printf("(%.2f,%.2f,%.2f)\n",vertices_position[18*k+6],vertices_position[18*k+7],vertices_position[18*k+8]);
                     printf("(%.4f,%.4f,%.4f)\n",normals[18*k+6],normals[18*k+7],normals[18*k+8]);
@@ -599,8 +598,8 @@ public:
                               );
         // Model matrix : an identity matrix (model will be at the origin)
         Model = glm::mat4(1.0f); // Changes for each model !
-        //Model = glm::translate(Model, glm::vec3(x, 0.2f, z));
-        //Model = glm::scale(Model, glm::vec3(0.2f,0.2f,0.2f));
+        Model = glm::translate(Model, glm::vec3(x, 0.2f, z));
+        Model = glm::scale(Model, glm::vec3(0.2f,0.2f,0.2f));
 
         myShader->SetUniform("M", Model);
     }
@@ -830,22 +829,22 @@ int main () {
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-//        g->draw(myShader);
-//        myShader->SetUniformMVP();
-//        glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
-        
-        s[0][0]->draw(myShader);
+        g->draw(myShader);
         myShader->SetUniformMVP();
-        glDrawArrays(GL_TRIANGLES, 0, s[0][0]->numberOfPoints());
+        glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
         
-//        for (int i=0;i<10;i++){
-//            for (int j=0; j<10; j++) {
-//                s[i][j]->draw(myShader);
-//                myShader->SetUniformMVP();
-//                glDrawArrays(GL_TRIANGLES, 0, s[i][j]->numberOfPoints());
-//                
-//            }
-//        }
+//        s[0][0]->draw(myShader);
+//        myShader->SetUniformMVP();
+//        glDrawArrays(GL_TRIANGLES, 0, s[0][0]->numberOfPoints());
+        
+        for (int i=0;i<10;i++){
+            for (int j=0; j<10; j++) {
+                s[i][j]->draw(myShader);
+                myShader->SetUniformMVP();
+                glDrawArrays(GL_TRIANGLES, 0, s[i][j]->numberOfPoints());
+                
+            }
+        }
         
         // Swap front and back buffers
         glfwSwapBuffers();
@@ -865,19 +864,19 @@ int main () {
 void init(){
     myShader = new Shader();
     
-    s[0][0] = new Sphere(64,64);
-    s[0][0]->genSphere();
+//    s[0][0] = new Sphere(64,64);
+//    s[0][0]->genSphere();
     
-//    for (int i=0;i<10;i++){
-//        for (int j=0; j<10; j++) {
-//            s[i][j] = new Sphere(32,32);
-//            s[i][j]->setPositionXZ(i,j);
-//            s[i][j]->genSphere();
-//        }
-//    }
+    for (int i=0;i<10;i++){
+        for (int j=0; j<10; j++) {
+            s[i][j] = new Sphere(32,32);
+            s[i][j]->setPositionXZ(i,j);
+            s[i][j]->genSphere();
+        }
+    }
     
-//    g = new Grid(20,20);
-//    g->genGrid();
+    g = new Grid(20,20);
+    g->genGrid();
 }
 
 // Called when the window is resized
