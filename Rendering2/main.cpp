@@ -97,7 +97,7 @@ public:
         
         // Camera matrix
         glm::mat4 View = glm::lookAt(
-                                     glm::vec3(0, 4, 8), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
+                                     glm::vec3(c.x, c.y, c.z), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
                                      glm::vec3(0, 0, 0), // and looks at the origin
                                      glm::vec3(0,1.0f,0) // Head is up (set to 0,-1,0 to look upside-down)
                                      );
@@ -120,7 +120,7 @@ public:
         GLint v = glGetUniformLocation(shaderProgram, "V" );
         glUniformMatrix4fv(v, 1, GL_FALSE, glm::value_ptr(View));
         
-        glm::vec3 lightPos = glm::vec3(c.x, c.y, c.z);//bom = 5.0f, 4.0f, 4.0f
+        glm::vec3 lightPos = glm::vec3(0,4,4);//bom = 5.0f, 4.0f, 4.0f
         GLint LightID = glGetUniformLocation(shaderProgram, "LightPosition_worldspace" );
 		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
     }
@@ -320,7 +320,6 @@ public:
                               0,                                // stride
                               (void*)0                          // array buffer offset
                               );
-        
         // Model matrix : an identity matrix (model will be at the origin)
         Model = glm::mat4(1.0f); // Changes for each model !
         Model = glm::translate(Model, glm::vec3(-4.0f, 0, -4.0f));
@@ -843,6 +842,13 @@ int main () {
         g->draw(myShader);
         myShader->SetUniformMVP();
         glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
+
+        GLint position_attribute = glGetAttribLocation(myShader->programID(), "vertexPosition_modelspace");
+        GLint color_attribute = glGetAttribLocation(myShader->programID(), "vertexColor");
+        GLint normal_attribute = glGetAttribLocation(myShader->programID(), "vertexNormal_modelspace");
+        glDisableVertexAttribArray(position_attribute);
+        glDisableVertexAttribArray(color_attribute);
+        glDisableVertexAttribArray(normal_attribute);
         
         for (int i=0;i<10;i++){
             for (int j=0; j<10; j++) {
@@ -850,8 +856,17 @@ int main () {
                 myShader->SetUniformMVP();
                 glDrawArrays(GL_TRIANGLES, 0, s[i][j]->numberOfPoints());
                 
+                GLint position_attribute = glGetAttribLocation(myShader->programID(), "vertexPosition_modelspace");
+                GLint color_attribute = glGetAttribLocation(myShader->programID(), "vertexColor");
+                GLint normal_attribute = glGetAttribLocation(myShader->programID(), "vertexNormal_modelspace");
+                glDisableVertexAttribArray(position_attribute);
+                glDisableVertexAttribArray(color_attribute);
+                glDisableVertexAttribArray(normal_attribute);
+
             }
         }
+
+        
         
         // Swap front and back buffers
         glfwSwapBuffers();
@@ -863,13 +878,18 @@ int main () {
 
         glm::vec3 cam = glm::vec3(c.x,c.y,c.z);
 //        cam = glm::rotateX(cam, 1.0f);
-        cam = glm::rotateY(cam, 1.0f);
+        cam = glm::rotateY(cam, 5.0f);
 //        cam = glm::rotateZ(cam, 1.0f);
         c.x = cam.x;
         c.y = cam.y;
         c.z = cam.z;
         
 	}
+    
+    // Cleanup VBO and shader
+	glDeleteProgram(myShader->programID());
+	glDeleteVertexArrays(1, &VertexArrayID);
+    
     
 	// Terminate GLFW
 	glfwTerminate();
