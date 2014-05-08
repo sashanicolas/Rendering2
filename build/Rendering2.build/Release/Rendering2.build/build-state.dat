@@ -1,0 +1,1083 @@
+TRendering2
+v6
+r1
+cCheck dependencies
+cCompileC build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/main.o /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2 normal x86_64
+cGenerateDSYMFile /Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2.dSYM /Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+c0000000053471FE200000000000000AA
+t1397170146
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c000000005268268B000000000000044C
+t1382557323
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000532B9B4600000000000001DE
+t1395366726
+s478
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
+c00000000532B9B470000000000268434
+t1395366727
+s2524212
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
+c000000005268268C0000000000007D5C
+t1382557324
+s32092
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+c00000000532B9B470000000000020D64
+t1395366727
+s134500
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+c000000005268268C000000000001B3B8
+t1382557324
+s111544
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+c00000000532B9B470000000000034FAC
+t1395366727
+s217004
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+c000000005268268C000000000000CB08
+t1382557324
+s51976
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+c000000005268268C000000000002C5F4
+t1382557324
+s181748
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+c000000005268268C000000000002B9A8
+t1382557324
+s178600
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+c00000000532B9B470000000000011EF8
+t1395366727
+s73464
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c00000000532B9B4700000000000598A8
+t1395366727
+s366760
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000005268268C000000000000253C
+t1382557324
+s9532
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c00000000532B9B47000000000004C7C4
+t1395366727
+s313284
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c00000000532B9B470000000000085C70
+t1395366727
+s547952
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000532B9B47000000000008B334
+t1395366727
+s570164
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/CoreServices
+c000000005268268C000000000000979C
+t1382557324
+s38812
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+c000000005268268C00000000000223B4
+t1382557324
+s140212
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+c00000000532B9B470000000000071CA8
+t1395366727
+s466088
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+c000000005268268C0000000000017E1C
+t1382557324
+s97820
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+c00000000532B9B47000000000004F090
+t1395366727
+s323728
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+c00000000532B9B47000000000003AA48
+t1395366727
+s240200
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+c00000000532B9B4700000000000383CC
+t1395366727
+s230348
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+c000000005268268C000000000001B66C
+t1382557324
+s112236
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+c00000000532B9B470000000000030448
+t1395366727
+s197704
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c00000000532B9B4700000000000C9E38
+t1395366727
+s826936
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/IOKit.framework/IOKit
+c00000000532B9B47000000000004426C
+t1395366727
+s279148
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
+c00000000532B9B4700000000000394B0
+t1395366727
+s234672
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
+c00000000532B9B47000000000000BB7C
+t1395366727
+s47996
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+c00000000532B9B4700000000000211A0
+t1395366727
+s135584
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+c00000000532B9B470000000000005F00
+t1395366727
+s24320
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+c00000000532B9B48000000000000681C
+t1395366728
+s26652
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libc++.dylib
+c0000000052682691000000000006E8B0
+t1382557329
+s452784
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libobjc.A.dylib
+c00000000526826910000000000014EF8
+t1382557329
+s85752
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+c00000000526826910000000000004734
+t1382557329
+s18228
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+c0000000052682691000000000000FC6C
+t1382557329
+s64620
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+c0000000052682691000000000000F6A0
+t1382557329
+s63136
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+c00000000526826910000000000006254
+t1382557329
+s25172
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+c0000000052682691000000000000E0F8
+t1382557329
+s57592
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+c00000000532B9B48000000000000D6DC
+t1395366728
+s55004
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+c00000000532B9B480000000000006308
+t1395366728
+s25352
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+c00000000526826910000000000004050
+t1382557329
+s16464
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+c00000000532B9B480000000000008570
+t1395366728
+s34160
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+c00000000526826910000000000005EA0
+t1382557329
+s24224
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+c00000000526826910000000000005FAC
+t1382557329
+s24492
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+c00000000526826910000000000004440
+t1382557329
+s17472
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+c0000000052682691000000000000AA28
+t1382557329
+s43560
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+c00000000526826910000000000003E2C
+t1382557329
+s15916
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+c00000000532B9B480000000000030B04
+t1395366728
+s199428
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+c00000000532B9B480000000000005E54
+t1395366728
+s24148
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+c00000000532B9B480000000000006A90
+t1395366728
+s27280
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+c000000005268269100000000000178AC
+t1382557329
+s96428
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+c00000000532B9B48000000000001ADC8
+t1395366728
+s110024
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+c0000000052682691000000000001028C
+t1382557329
+s66188
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+c00000000532B9B480000000000008800
+t1395366728
+s34816
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+c00000000526826910000000000011090
+t1382557329
+s69776
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+c0000000052682691000000000000882C
+t1382557329
+s34860
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+c00000000532B9B4800000000000067AC
+t1395366728
+s26540
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+c00000000526826910000000000008DEC
+t1382557329
+s36332
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+c00000000532B9B480000000000004C08
+t1395366728
+s19464
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_stats.dylib
+c00000000532B9B480000000000002428
+t1395366728
+s9256
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+c0000000052682691000000000000439C
+t1382557329
+s17308
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+c00000000526826910000000000006768
+t1382557329
+s26472
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+c00000000532B9B4800000000000172F4
+t1395366728
+s94964
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
+c00000000532B9B490000000000000ADC
+t1395366729
+s2780
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.osx.a
+c0000000053471FCA0000000000001770
+t1397170122
+s6000
+
+N/Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp
+c00000000536BD9570000000000008A4B
+t1399576919
+s35403
+
+N/Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2
+t1399576923
+s653596
+
+N/Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2.dSYM
+t1399263702
+s102
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/Rendering2.LinkFileList
+c00000000536711D40000000000000075
+t1399263700
+s117
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/main.o
+t1399576923
+s336876
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/GL/glew.h
+c000000005356F91A00000000000E655A
+t1398208794
+s943450
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/GL/glfw.h
+c000000005356EA700000000000004DD9
+t1398205040
+s19929
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/common.hpp
+c0000000052D20E18000000000000065C
+t1389497880
+s1628
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/_fixes.hpp
+c0000000052D20E18000000000000077A
+t1389497880
+s1914
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/_vectorize.hpp
+c00000000530D238A00000000000018B5
+t1393369994
+s6325
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_common.hpp
+c0000000052F6D9B60000000000005988
+t1391909302
+s22920
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_common.inl
+c00000000530D238A00000000000068C2
+t1393369994
+s26818
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_exponential.hpp
+c00000000530D238A0000000000001A28
+t1393369994
+s6696
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_exponential.inl
+c00000000533A3D4A0000000000001D5F
+t1396325706
+s7519
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_geometric.hpp
+c0000000052D20E180000000000001A2C
+t1389497880
+s6700
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_geometric.inl
+c00000000533A3B1000000000000024CA
+t1396325136
+s9418
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_integer.hpp
+c0000000052D20E18000000000000268F
+t1389497880
+s9871
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_integer.inl
+c00000000533256D20000000000003FD4
+t1395807954
+s16340
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_matrix.hpp
+c0000000052D20E180000000000001B84
+t1389497880
+s7044
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_matrix.inl
+c00000000533256D20000000000003B86
+t1395807954
+s15238
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_packing.hpp
+c0000000052D20E1800000000000030A0
+t1389497880
+s12448
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_packing.inl
+c00000000530D238A0000000000000ED0
+t1393369994
+s3792
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_trigonometric.hpp
+c0000000052D20E1800000000000027B1
+t1389497880
+s10161
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_trigonometric.inl
+c0000000052D20E180000000000001835
+t1389497880
+s6197
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_vector_relational.hpp
+c0000000052D20E180000000000001E55
+t1389497880
+s7765
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_vector_relational.inl
+c0000000052D20E1800000000000016AD
+t1389497880
+s5805
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/precision.hpp
+c0000000052D20E1800000000000006C8
+t1389497880
+s1736
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/setup.hpp
+c00000000533A39FC0000000000006E99
+t1396324860
+s28313
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_float.hpp
+c0000000052D20E1800000000000010AA
+t1389497880
+s4266
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_half.hpp
+c0000000052D20E180000000000000791
+t1389497880
+s1937
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_half.inl
+c0000000052D20E1800000000000018EE
+t1389497880
+s6382
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_int.hpp
+c0000000052D20E1800000000000021D7
+t1389497880
+s8663
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat.hpp
+c0000000052D20E18000000000000A98A
+t1389497880
+s43402
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x2.hpp
+c00000000533256D20000000000001FEC
+t1395807954
+s8172
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x2.inl
+c00000000533256D20000000000003B81
+t1395807954
+s15233
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x3.hpp
+c00000000533256D20000000000001AEC
+t1395807954
+s6892
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x3.inl
+c00000000530D238A0000000000003748
+t1393369994
+s14152
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x4.hpp
+c00000000533256D20000000000001B43
+t1395807954
+s6979
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x4.inl
+c00000000530D238A0000000000003B19
+t1393369994
+s15129
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x2.hpp
+c00000000533256D20000000000001B1B
+t1395807954
+s6939
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x2.inl
+c00000000530D238A0000000000003B1A
+t1393369994
+s15130
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x3.hpp
+c00000000533256D2000000000000209A
+t1395807954
+s8346
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x3.inl
+c00000000533256D20000000000005014
+t1395807954
+s20500
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x4.hpp
+c00000000533256D20000000000001C1E
+t1395807954
+s7198
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x4.inl
+c00000000530D238A000000000000450C
+t1393369994
+s17676
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x2.hpp
+c00000000533256D20000000000001BBE
+t1395807954
+s7102
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x2.inl
+c00000000530D238A00000000000042FC
+t1393369994
+s17148
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x3.hpp
+c00000000533256D20000000000001C83
+t1395807954
+s7299
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x3.inl
+c00000000530D238A0000000000004B58
+t1393369994
+s19288
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x4.hpp
+c00000000533256D20000000000002234
+t1395807954
+s8756
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x4.inl
+c00000000530D238A0000000000007064
+t1393369994
+s28772
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec.hpp
+c0000000052D20E180000000000006CCD
+t1389497880
+s27853
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec1.hpp
+c00000000533256D200000000000027F1
+t1395807954
+s10225
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec1.inl
+c00000000530D2BAE0000000000003DD2
+t1393372078
+s15826
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec2.hpp
+c00000000533256D20000000000002BA3
+t1395807954
+s11171
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec2.inl
+c00000000530D2BAE00000000000041FF
+t1393372078
+s16895
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec3.hpp
+c00000000533256D20000000000002E83
+t1395807954
+s11907
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec3.inl
+c00000000530D2BAE000000000000475A
+t1393372078
+s18266
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec4.hpp
+c00000000533256D20000000000003649
+t1395807954
+s13897
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec4.inl
+c00000000533256D2000000000000527C
+t1395807954
+s21116
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/exponential.hpp
+c0000000052D20E180000000000000675
+t1389497880
+s1653
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/fwd.hpp
+c0000000052D20E180000000000015225
+t1389497880
+s86565
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/geometric.hpp
+c0000000052D20E18000000000000066B
+t1389497880
+s1643
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/glm.hpp
+c0000000052D20E1800000000000011EA
+t1389497880
+s4586
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/constants.hpp
+c00000000530D238A000000000000147A
+t1393369994
+s5242
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/constants.inl
+c0000000052D20E1800000000000012F6
+t1389497880
+s4854
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp
+c0000000052D20E180000000000002E9B
+t1389497880
+s11931
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl
+c0000000053254BBC0000000000003485
+t1394953148
+s13445
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp
+c00000000530D238A00000000000033E9
+t1393369994
+s13289
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl
+c00000000530D238A0000000000005AB4
+t1393369994
+s23220
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp
+c0000000052D20E1800000000000017C7
+t1389497880
+s6087
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.inl
+c0000000052D20E180000000000003041
+t1389497880
+s12353
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/transform.hpp
+c000000005325024C0000000000000D09
+t1394934348
+s3337
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/transform.inl
+c0000000052D20E180000000000000472
+t1389497880
+s1138
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/integer.hpp
+c0000000052D20E180000000000000661
+t1389497880
+s1633
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat2x2.hpp
+c0000000052D20E1800000000000011A3
+t1389497880
+s4515
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat2x3.hpp
+c0000000052D20E180000000000000C13
+t1389497880
+s3091
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat2x4.hpp
+c0000000052D20E180000000000000C15
+t1389497880
+s3093
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat3x2.hpp
+c0000000052D20E180000000000000C11
+t1389497880
+s3089
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat3x3.hpp
+c0000000052D20E1800000000000011A3
+t1389497880
+s4515
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat3x4.hpp
+c0000000052D20E180000000000000C15
+t1389497880
+s3093
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat4x2.hpp
+c0000000052D20E180000000000000C15
+t1389497880
+s3093
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat4x3.hpp
+c0000000052D20E180000000000000C15
+t1389497880
+s3093
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat4x4.hpp
+c0000000052D20E1800000000000011A3
+t1389497880
+s4515
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/matrix.hpp
+c0000000052D20E18000000000000065C
+t1389497880
+s1628
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/packing.hpp
+c0000000052D20E180000000000000661
+t1389497880
+s1633
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/trigonometric.hpp
+c0000000052D20E18000000000000067F
+t1389497880
+s1663
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vec2.hpp
+c0000000052D20E180000000000000652
+t1389497880
+s1618
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vec3.hpp
+c0000000052D20E180000000000000652
+t1389497880
+s1618
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vec4.hpp
+c0000000052D20E180000000000000652
+t1389497880
+s1618
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vector_relational.hpp
+c0000000052D20E180000000000000693
+t1389497880
+s1683
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/lib/libGLEW.a
+c000000005356F91A00000000000CAC58
+t1398208794
+s830552
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/lib/libglfw.a
+c000000005356EA700000000000019C48
+t1398205040
+s105544
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesefe79cd7101cb941^be86acd7101cb941^---0#1#1#--18"Check dependencies36"CBEECFE1-4E20-4D51-A51C-07ABF213213F-
+
+CCompileC build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/main.o /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s421269719.680569
+e421269723.373087
+r1
+xCompileC
+xbuild/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/main.o
+x/Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/GL/glew.h
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/GL/glfw.h
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/glm.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/_fixes.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/fwd.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_int.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/setup.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_float.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/precision.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vec2.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec2.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec2.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vec3.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec3.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec3.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vec4.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec4.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec4.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat2x2.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x2.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x2.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat2x3.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x3.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x3.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat2x4.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x4.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x4.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat3x2.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x2.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x2.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat3x3.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x3.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x3.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat3x4.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x4.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x4.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat4x2.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x2.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x2.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat4x3.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x3.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x3.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat4x4.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x4.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x4.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/trigonometric.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_trigonometric.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_trigonometric.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/_vectorize.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec1.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec1.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/exponential.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_exponential.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_exponential.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_vector_relational.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_vector_relational.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/common.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_common.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_common.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/packing.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_packing.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_packing.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_half.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_half.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/geometric.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_geometric.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_geometric.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/matrix.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_matrix.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_matrix.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vector_relational.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/integer.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_integer.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_integer.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/constants.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/constants.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/transform.hpp
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/transform.inl
+d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.inl
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:11:
+oIn file included from third_party/include/glm/gtc/matrix_transform.hpp:292:
+othird_party/include/glm/gtc/matrix_transform.inl:58:11: warning: GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/matrix_transform.inl:99:11: warning: GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/matrix_transform.inl:232:11: warning: GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/matrix_transform.inl:264:11: warning: GLM: perspectiveFov function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: perspectiveFov function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/matrix_transform.inl:290:11: warning: GLM: infinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: infinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/matrix_transform.inl:318:11: warning: GLM: tweakedInfinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: tweakedInfinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:13:
+oIn file included from third_party/include/glm/gtc/type_ptr.hpp:63:
+oIn file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:
+othird_party/include/glm/gtc/quaternion.inl:626:11: warning: GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/quaternion.inl:653:11: warning: GLM: roll function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: roll function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/quaternion.inl:667:11: warning: GLM: pitch function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: pitch function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/quaternion.inl:681:11: warning: GLM: yaw function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: yaw function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/quaternion.inl:811:11: warning: GLM: angle function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: angle function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/quaternion.inl:841:11: warning: GLM: angleAxis function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: angleAxis function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:14:
+oIn file included from third_party/include/glm/gtx/rotate_vector.hpp:130:
+othird_party/include/glm/gtx/rotate_vector.inl:24:11: warning: GLM: rotate function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotate function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtx/rotate_vector.inl:79:11: warning: GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtx/rotate_vector.inl:102:11: warning: GLM: rotateY function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotateY function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtx/rotate_vector.inl:125:11: warning: GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtx/rotate_vector.inl:148:11: warning: GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtx/rotate_vector.inl:171:11: warning: GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtx/rotate_vector.inl:194:11: warning: GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtx/rotate_vector.inl:218:12: warning: GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#                       pragma message("GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                               ^
+o/Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:172:40: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'GLsizei' (aka 'int') [-Wshorten-64-to-32]
+o            glGetShaderInfoLog(shader, compilation_log.size(), NULL, &compilation_log[0]);
+o            ~~~~~~~~~~~~~~~~~~         ^~~~~~~~~~~~~~~~~~~~~~
+o/Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:768:34: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'GLsizei' (aka 'int') [-Wshorten-64-to-32]
+o        glDrawElements(GL_QUADS, indices.size(), GL_UNSIGNED_SHORT, &indices[0]);
+o        ~~~~~~~~~~~~~~           ^~~~~~~~~~~~~~
+o/Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:847:15: warning: unused variable 'color_attribute' [-Wunused-variable]
+o        GLint color_attribute = glGetAttribLocation(myShader->programID(), "vertexColor");
+o              ^
+o/Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:848:15: warning: unused variable 'normal_attribute' [-Wunused-variable]
+o        GLint normal_attribute = glGetAttribLocation(myShader->programID(), "vertexNormal_modelspace");
+o              ^
+o24 warnings generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Compile /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp167"CompileC build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/main.o Rendering2/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler54acaed7101cb941^2c825fdb101cb941^-10419"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:11:In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:third_party/include/glm/gtc/matrix_transform.inl:58:11: warning: GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/matrix_transform.inl:99:11: warning: GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/matrix_transform.inl:232:11: warning: GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/matrix_transform.inl:264:11: warning: GLM: perspectiveFov function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: perspectiveFov function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/matrix_transform.inl:290:11: warning: GLM: infinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: infinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/matrix_transform.inl:318:11: warning: GLM: tweakedInfinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: tweakedInfinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:13:In file included from third_party/include/glm/gtc/type_ptr.hpp:63:In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:third_party/include/glm/gtc/quaternion.inl:626:11: warning: GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/quaternion.inl:653:11: warning: GLM: roll function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: roll function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/quaternion.inl:667:11: warning: GLM: pitch function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: pitch function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/quaternion.inl:681:11: warning: GLM: yaw function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: yaw function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/quaternion.inl:811:11: warning: GLM: angle function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: angle function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/quaternion.inl:841:11: warning: GLM: angleAxis function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: angleAxis function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:14:In file included from third_party/include/glm/gtx/rotate_vector.hpp:130:third_party/include/glm/gtx/rotate_vector.inl:24:11: warning: GLM: rotate function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotate function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtx/rotate_vector.inl:79:11: warning: GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtx/rotate_vector.inl:102:11: warning: GLM: rotateY function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotateY function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtx/rotate_vector.inl:125:11: warning: GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtx/rotate_vector.inl:148:11: warning: GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtx/rotate_vector.inl:171:11: warning: GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtx/rotate_vector.inl:194:11: warning: GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtx/rotate_vector.inl:218:12: warning: GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#                       pragma message("GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                               ^/Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:172:40: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'GLsizei' (aka 'int') [-Wshorten-64-to-32]            glGetShaderInfoLog(shader, compilation_log.size(), NULL, &compilation_log[0]);            ~~~~~~~~~~~~~~~~~~         ^~~~~~~~~~~~~~~~~~~~~~/Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:768:34: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'GLsizei' (aka 'int') [-Wshorten-64-to-32]        glDrawElements(GL_QUADS, indices.size(), GL_UNSIGNED_SHORT, &indices[0]);        ~~~~~~~~~~~~~~           ^~~~~~~~~~~~~~/Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:847:15: warning: unused variable 'color_attribute' [-Wunused-variable]        GLint color_attribute = glGetAttribLocation(myShader->programID(), "vertexColor");              ^/Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:848:15: warning: unused variable 'normal_attribute' [-Wunused-variable]        GLint normal_attribute = glGetAttribLocation(myShader->programID(), "vertexNormal_modelspace");              ^24 warnings generated.24(36%IDEClangDiagnosticActivityLogMessage2@144"GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:11:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^10#9#10#9#211#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^57#10#57#10#2182#0#25"#pragma message Directive--2@149"GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:11:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^10#9#10#9#211#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^98#10#98#10#3632#0#25"#pragma message Directive--2@149"GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:11:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^10#9#10#9#211#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^231#10#231#10#7391#0#25"#pragma message Directive--2@152"GLM: perspectiveFov function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:11:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^10#9#10#9#211#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^263#10#263#10#8391#0#25"#pragma message Directive--2@157"GLM: infinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:11:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^10#9#10#9#211#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^289#10#289#10#9269#0#25"#pragma message Directive--2@164"GLM: tweakedInfinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:11:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^10#9#10#9#211#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^317#10#317#10#10091#0#25"#pragma message Directive--2@144"GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:13:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^12#9#12#9#286#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^625#10#625#10#14879#0#25"#pragma message Directive--2@130"GLM: roll function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:13:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^12#9#12#9#286#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^652#10#652#10#15805#0#25"#pragma message Directive--2@131"GLM: pitch function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:13:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^12#9#12#9#286#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^666#10#666#10#16323#0#25"#pragma message Directive--2@129"GLM: yaw function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:13:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^12#9#12#9#286#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^680#10#680#10#16791#0#25"#pragma message Directive--2@131"GLM: angle function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:13:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^12#9#12#9#286#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^810#10#810#10#20209#0#25"#pragma message Directive--2@147"GLM: angleAxis function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:13:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^12#9#12#9#286#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^840#10#840#10#21021#0#25"#pragma message Directive--2@143"GLM: rotate function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:14:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^13#9#13#9#318#0#21"Apple LLVM 5.0 Notice--2@72"In file included from third_party/include/glm/gtx/rotate_vector.hpp:130:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.hpp0000000000000000^129#9#129#9#4705#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.inl0000000000000000^23#10#23#10#822#0#25"#pragma message Directive--2@144"GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:14:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^13#9#13#9#318#0#21"Apple LLVM 5.0 Notice--2@72"In file included from third_party/include/glm/gtx/rotate_vector.hpp:130:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.hpp0000000000000000^129#9#129#9#4705#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.inl0000000000000000^78#10#78#10#2287#0#25"#pragma message Directive--2@144"GLM: rotateY function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:14:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^13#9#13#9#318#0#21"Apple LLVM 5.0 Notice--2@72"In file included from third_party/include/glm/gtx/rotate_vector.hpp:130:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.hpp0000000000000000^129#9#129#9#4705#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.inl0000000000000000^101#10#101#10#2915#0#25"#pragma message Directive--2@144"GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:14:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^13#9#13#9#318#0#21"Apple LLVM 5.0 Notice--2@72"In file included from third_party/include/glm/gtx/rotate_vector.hpp:130:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.hpp0000000000000000^129#9#129#9#4705#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.inl0000000000000000^124#10#124#10#3543#0#25"#pragma message Directive--2@144"GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:14:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^13#9#13#9#318#0#21"Apple LLVM 5.0 Notice--2@72"In file included from third_party/include/glm/gtx/rotate_vector.hpp:130:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.hpp0000000000000000^129#9#129#9#4705#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.inl0000000000000000^147#10#147#10#4169#0#25"#pragma message Directive--2@144"GLM: rotateX function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:14:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^13#9#13#9#318#0#21"Apple LLVM 5.0 Notice--2@72"In file included from third_party/include/glm/gtx/rotate_vector.hpp:130:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.hpp0000000000000000^129#9#129#9#4705#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.inl0000000000000000^170#10#170#10#4795#0#25"#pragma message Directive--2@144"GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:14:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^13#9#13#9#318#0#21"Apple LLVM 5.0 Notice--2@72"In file included from third_party/include/glm/gtx/rotate_vector.hpp:130:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.hpp0000000000000000^129#9#129#9#4705#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.inl0000000000000000^193#10#193#10#5423#0#25"#pragma message Directive--2@144"GLM: rotateZ function taking degrees as parameters is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-421269723#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp:14:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^13#9#13#9#318#0#21"Apple LLVM 5.0 Notice--2@72"In file included from third_party/include/glm/gtx/rotate_vector.hpp:130:-421269723#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.hpp0000000000000000^129#9#129#9#4705#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@92"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/rotate_vector.inl0000000000000000^217#11#217#11#6153#0#25"#pragma message Directive--2@103"Implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'GLsizei' (aka 'int')-421269723#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^171#39#171#39#6320#0#22"Value Conversion Issue2(3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^171#39#171#61#6320#21#3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^171#12#171#30#6293#0#-2@103"Implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'GLsizei' (aka 'int')-421269723#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^767#33#767#33#31165#0#22"Value Conversion Issue2(3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^767#33#767#47#31165#13#3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^767#8#767#22#31140#0#-2@33"Unused variable 'color_attribute'-421269723#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^846#14#846#14#33442#0#19"Unused Entity Issue--2@34"Unused variable 'normal_attribute'-421269723#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^847#14#847#14#33533#0#19"Unused Entity Issue--0#0#1#-19%DVTDocumentLocation4@66"file:///Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp0000000000000000^2904"CompileC build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/main.o Rendering2/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Rendering2-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Rendering2-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Rendering2-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Rendering2-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Release/include -Ithird_party/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Release -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/main.dia -c /Users/sashanicolas/Projects/Rendering2/Rendering2/main.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/main.o36"E0EB1DEB-E89C-41F9-B9A6-E2952C8FF708-
+b2CE102CC-FF9B-41A6-9B7A-7D263BF110AC
+
+CGenerateDSYMFile /Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2.dSYM /Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2
+s421269723.790852
+e421269723.848853
+r1
+xGenerateDSYMFile
+x/Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2.dSYM
+x/Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Generate /Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2.dSYM71"GenerateDSYMFile build/Release/Rendering2.dSYM build/Release/Rendering28c84cadb101cb941^6bd5eedb101cb941^---0#0#1#-19%DVTDocumentLocation2@77"file:///Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2.dSYM/0000000000000000^357"GenerateDSYMFile build/Release/Rendering2.dSYM build/Release/Rendering2    cd /Users/sashanicolas/Projects/Rendering2    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2 -o /Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2.dSYM36"B1EBF2B0-A0B5-4DFA-8A31-CCC2763E9C5A-
+b2CE102CC-FF9B-41A6-9B7A-7D263BF110AC
+
+CLd /Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2 normal x86_64
+s421269723.396017
+e421269723.789355
+r1
+xLd
+x/Users/sashanicolas/Projects/Rendering2/build/Release/Rendering2
+xnormal
+xx86_64
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/Rendering2.LinkFileList
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/main.o
+d/Users/sashanicolas/Projects/Rendering2/third_party/lib/libglfw.a
+d/Users/sashanicolas/Projects/Rendering2/third_party/lib/libGLEW.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/IOKit.framework/IOKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libc++.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.osx.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_stats.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/CoreServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libobjc.A.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Link /Users/sashanicolas/Projects/Rendering2/build/Release/Rendering241"Ld build/Release/Rendering2 normal x86_644a7965db101cb941^4415cadb101cb941^---0#0#1#--976"Ld build/Release/Rendering2 normal x86_64    cd /Users/sashanicolas/Projects/Rendering2    export MACOSX_DEPLOYMENT_TARGET=10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/sashanicolas/Projects/Rendering2/build/Release -Lthird_party/lib -F/Users/sashanicolas/Projects/Rendering2/build/Release -filelist /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/Rendering2.LinkFileList -mmacosx-version-min=10.9 -lglfw -lglew -stdlib=libc++ -framework IOKit -framework OpenGL -framework Cocoa -Xlinker -dependency_info -Xlinker /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Release/Rendering2.build/Objects-normal/x86_64/Rendering2_dependency_info.dat -o /Users/sashanicolas/Projects/Rendering2/build/Release/Rendering236"BD00EEC1-DB4D-4033-97E5-84580BAD09F4-
+b2CE102CC-FF9B-41A6-9B7A-7D263BF110AC
+

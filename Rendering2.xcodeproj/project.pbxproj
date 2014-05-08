@@ -355,6 +355,7 @@
 				B791EA3F191C1324005A03F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B7CA9576190743FC007FDC87 /* Build configuration list for PBXProject "Rendering2" */ = {
 			isa = XCConfigurationList;
