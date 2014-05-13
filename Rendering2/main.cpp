@@ -13,10 +13,28 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/rotate_vector.hpp>
 
+//Classes
 struct Camera{
     float x, y, z;
 };
 Camera c;
+
+
+
+class Luz{
+public:
+    glm::vec3 pos;
+    glm::vec3 cor;
+    
+    Luz(glm::vec3 pos, glm::vec3 cor){
+        this->pos = pos;
+        this->cor = cor;
+    }
+    
+    void setPos(glm::vec3 pos){
+        this->pos = pos;
+    }
+};
 
 class Shader{
 public:
@@ -35,8 +53,8 @@ public:
     //================ Metodos ================//
     Shader (){
         // create a program
-        this->VertexShader("shaders7/vert.cpp");
-        this->FragmentShader("shaders7/frag.cpp");
+        this->VertexShader("shaders4/vert.cpp");
+        this->FragmentShader("shaders4/frag.cpp");
         
         shaderProgram = glCreateProgram();
         glAttachShader(shaderProgram, vertexShader);
@@ -104,7 +122,7 @@ public:
         
         // Camera matrix
         View = glm::lookAt(
-                           glm::vec3(0,4,8), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
+                           glm::vec3(c.x,c.y,c.z), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
                            glm::vec3(0, 0, 0), // and looks at the origin
                            glm::vec3(0,1.0f,0) // Head is up (set to 0,-1,0 to look upside-down)
                            );
@@ -127,7 +145,7 @@ public:
         v = glGetUniformLocation(shaderProgram, "V" );
         glUniformMatrix4fv(v, 1, GL_FALSE, glm::value_ptr(View));
         
-        lightPos = glm::vec3(c.x,c.y,c.z);//bom = 5.0f, 4.0f, 4.0f
+        lightPos = glm::vec3(0,4,6);//bom = 5.0f, 4.0f, 4.0f
         LightID = glGetUniformLocation(shaderProgram, "LightPosition_worldspace" );
 		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
     }
@@ -192,9 +210,9 @@ class Grid {
     // The grid coordinates varies from 0.0 to 1.0 in the xz plane
 public:
     int m_nx, m_ny;
-    GLfloat vertices_position[50000];
-    GLfloat colors[50000];
-    GLfloat normals[50000];
+    GLfloat vertices_position[500000];
+    GLfloat colors[500000];
+    GLfloat normals[500000];
     glm::mat4 Model;
     
     //buffers
@@ -335,7 +353,13 @@ public:
         Model = glm::scale(Model, glm::vec3(8,1,8));
         
         myShader->SetUniform("M", Model);
+        myShader->SetUniformMVP();
+        glDrawArrays(GL_TRIANGLES, 0, this->numberOfPoints());
         
+        glDisableVertexAttribArray(position_attribute);
+        glDisableVertexAttribArray(color_attribute);
+        glDisableVertexAttribArray(normal_attribute);
+
     }
     
     int sizeOfAllFloats(){
@@ -618,6 +642,13 @@ public:
         Model = glm::scale(Model, glm::vec3(0.2f,0.2f,0.2f));
         
         myShader->SetUniform("M", Model);
+        myShader->SetUniformMVP();
+        glDrawArrays(GL_TRIANGLES, 0, this->numberOfPoints());
+        
+        glDisableVertexAttribArray(position_attribute);
+        glDisableVertexAttribArray(color_attribute);
+        glDisableVertexAttribArray(normal_attribute);
+
     }
     
     int mostra=0;
@@ -704,18 +735,17 @@ public:
     }
 };
 
-// Called when the window is resized
+// ========== Prototipos funcoes ==========
 void GLFWCALL window_resized(int width, int height);
-
-// Called for keyboard events
 void keyboard(int key, int action);
+void configuraContexto();
+void configuraCena();
 
-void init();
-
+// ========== Variaveis globais ==========
 Shader * myShader;
 Sphere * s[10][10];
 Grid *g;
-
+Sphere * luz;
 
 class SolidSphere
 {
@@ -782,11 +812,89 @@ public:
         glPopMatrix();
     }
 };
-
 SolidSphere sphere(1, 12, 24);
 
+// ========== Main ==========
 int main () {
-	// Initialize GLFW
+    configuraContexto();
+    
+    // Create a vertex array object
+    GLuint VertexArrayID;
+    
+    // Use a Vertex Array Object
+    glGenVertexArrays(1, &VertexArrayID);
+    glBindVertexArray(VertexArrayID);
+    
+    configuraCena();
+    
+	// Create a rendering loop
+	int running = GL_TRUE;
+    
+	while(running) {
+		// Display scene
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        
+//        s[0][0]->draw(myShader);
+        
+        for (int i=0;i<10;i++){
+            for (int j=0; j<10; j++) {
+                s[i][j]->draw(myShader);
+            }
+        }
+        
+        g->draw(myShader);
+        
+        luz->setPosition(glm::vec3(c.x,c.y,c.z));
+        luz->draw(myShader);
+        
+        glm::vec3 cam = glm::vec3(c.x,c.y,c.z);
+        cam = glm::rotateY(cam, 0.5f);
+        c.x = cam.x;
+        c.y = cam.y;
+        c.z = cam.z;
+        
+        // Swap front and back buffers
+        glfwSwapBuffers();
+        
+		// Pool for events
+		glfwPollEvents();
+		// Check if the window was closed
+		running = glfwGetWindowParam(GLFW_OPENED);
+	}
+    
+    // Cleanup VBO and shader
+	glDeleteProgram(myShader->programID());
+	glDeleteVertexArrays(1, &VertexArrayID);
+    
+	// Terminate GLFW
+	glfwTerminate();
+	return 0;
+}
+
+void configuraCena(){
+    c.x =0;
+    c.y =4;
+    c.z =6;
+    
+    myShader = new Shader();
+//    
+//        s[0][0] = new Sphere(128,128);
+//        s[0][0]->genSphere();
+    
+    for (int i=0;i<10;i++){
+        for (int j=0; j<10; j++) {
+            s[i][j] = new Sphere(64,64);
+            s[i][j]->setPositionXZ(i,j);
+        }
+    }
+    
+    g = new Grid(64,64);
+    luz = new Sphere(32,32);
+    
+}
+
+void configuraContexto(){
+    // Initialize GLFW
 	if ( !glfwInit()) {
 		std::cerr << "Failed to initialize GLFW! I'm out!" << std::endl;
 		exit(-1);
@@ -799,7 +907,7 @@ int main () {
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
     
 	// Open a window and attach an OpenGL rendering context to the window surface
-	if( !glfwOpenWindow(800, 800, 8, 8, 8, 0, 0, 0, GLFW_WINDOW)) {
+	if( !glfwOpenWindow(800, 800, 8, 8, 8, 8, 24, 8, GLFW_WINDOW)) {
 		std::cerr << "Failed to open a window! I'm out!" << std::endl;
 		glfwTerminate();
 		exit(-1);
@@ -821,7 +929,7 @@ int main () {
     // Dark blue background
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
     // Enable depth test
-	glEnable(GL_DEPTH_TEST);
+    glEnable(GL_DEPTH_TEST);
     
     glEnable(GL_CULL_FACE);
     
@@ -829,118 +937,12 @@ int main () {
 	glfwSetWindowSizeCallback( window_resized );
     // Register a callback function for keyboard pressed events
 	glfwSetKeyCallback(keyboard);
-    
-    // Create a vertex array object
-    GLuint VertexArrayID;
-    // Use a Vertex Array Object
-    glGenVertexArrays(1, &VertexArrayID);
-    glBindVertexArray(VertexArrayID);
-    
-    init();
-    
-	// Create a rendering loop
-	int running = GL_TRUE;
-    
-    Sphere * luz = new Sphere(32,32);
-    
-	while(running) {
-		// Display scene
-        
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        
-        
-        g->draw(myShader);
-        myShader->SetUniformMVP();
-        glDrawArrays(GL_TRIANGLES, 0, g->numberOfPoints());
-        
-        
-        //        s[3][3]->draw(myShader);
-        //        myShader->SetUniformMVP();
-        //        glDrawArrays(GL_TRIANGLES, 0, s[0][0]->numberOfPoints());
-        
-        
-        GLint position_attribute = glGetAttribLocation(myShader->programID(), "vertexPosition_modelspace");
-        GLint color_attribute = glGetAttribLocation(myShader->programID(), "vertexColor");
-        GLint normal_attribute = glGetAttribLocation(myShader->programID(), "vertexNormal_modelspace");
-        glDisableVertexAttribArray(position_attribute);
-        glDisableVertexAttribArray(color_attribute);
-        glDisableVertexAttribArray(normal_attribute);
-        
-        for (int i=0;i<10;i++){
-            for (int j=0; j<10; j++) {
-                s[i][j]->draw(myShader);
-                myShader->SetUniformMVP();
-                glDrawArrays(GL_TRIANGLES, 0, s[i][j]->numberOfPoints());
-                
-                GLint position_attribute = glGetAttribLocation(myShader->programID(), "vertexPosition_modelspace");
-                GLint color_attribute = glGetAttribLocation(myShader->programID(), "vertexColor");
-                GLint normal_attribute = glGetAttribLocation(myShader->programID(), "vertexNormal_modelspace");
-                glDisableVertexAttribArray(position_attribute);
-                glDisableVertexAttribArray(color_attribute);
-                glDisableVertexAttribArray(normal_attribute);
-                
-            }
-        }
-        
-        luz->setPosition(glm::vec3(c.x,c.y,c.z));
-        luz->draw(myShader);
-        myShader->SetUniformMVP();
-        glDrawArrays(GL_TRIANGLES, 0, luz->numberOfPoints());
-        
-        // Swap front and back buffers
-        glfwSwapBuffers();
-        
-		// Pool for events
-		glfwPollEvents();
-		// Check if the window was closed
-		running = glfwGetWindowParam(GLFW_OPENED);
-        
-        glm::vec3 cam = glm::vec3(c.x,c.y,c.z);
-        //        cam = glm::rotateX(cam, 1.0f);
-        cam = glm::rotateY(cam, 1.0f);
-        //        cam = glm::rotateZ(cam, 1.0f);
-        c.x = cam.x;
-        c.y = cam.y;
-        c.z = cam.z;
-        //printf("%f,%f,%f\n",cam.x,cam.y,cam.z);
-	}
-    
-    // Cleanup VBO and shader
-	glDeleteProgram(myShader->programID());
-	glDeleteVertexArrays(1, &VertexArrayID);
-    
-    
-	// Terminate GLFW
-	glfwTerminate();
-    
-	return 0;
-}
-
-void init(){
-    c.x =0;
-    c.y =2;
-    c.z =6;
-    
-    myShader = new Shader();
-    
-    //    s[0][0] = new Sphere(128,128);
-    //    s[0][0]->genSphere();
-    
-    for (int i=0;i<10;i++){
-        for (int j=0; j<10; j++) {
-            s[i][j] = new Sphere(32,32);
-            s[i][j]->setPositionXZ(i,j);
-        }
-    }
-    
-    g = new Grid(20,20);
-    
 }
 
 // Called when the window is resized
 void GLFWCALL window_resized(int width, int height) {
 	// Use red to clear the screen
-	glClearColor(1, 1, 1, 1);
+	glClearColor(0, 0, 0, 1);
     
 	// Set the viewport
 	glViewport(0, 0, width, height);
