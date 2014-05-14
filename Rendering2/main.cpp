@@ -13,13 +13,16 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/rotate_vector.hpp>
 
+#define ARRAY_SIZE_IN_ELEMENTS(a) (sizeof(a)/sizeof(a[0]))
+#define ZERO_MEM(a) memset(a, 0, sizeof(a))
+#define WINDOW_WIDTH  800
+#define WINDOW_HEIGHT 800
+
 //Classes
 struct Camera{
     float x, y, z;
 };
 Camera c;
-
-
 
 class Luz{
 public:
@@ -743,6 +746,111 @@ public:
     }
 };
 
+/*
+ Copyright 2011 Etay Meiri
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+class GBuffer{
+public:
+    
+    enum GBUFFER_TEXTURE_TYPE {
+        GBUFFER_TEXTURE_TYPE_POSITION,
+        GBUFFER_TEXTURE_TYPE_DIFFUSE,
+        GBUFFER_TEXTURE_TYPE_NORMAL,
+        GBUFFER_TEXTURE_TYPE_TEXCOORD,
+        GBUFFER_NUM_TEXTURES
+    };
+    
+    GBuffer(){
+        m_fbo = 0;
+        m_depthTexture = 0;
+        ZERO_MEM(m_textures);
+    }
+    
+    ~GBuffer(){
+        if (m_fbo != 0) {
+            glDeleteFramebuffers(1, &m_fbo);
+        }
+        
+        if (m_textures[0] != 0) {
+            glDeleteTextures(ARRAY_SIZE_IN_ELEMENTS(m_textures), m_textures);
+        }
+        
+        if (m_depthTexture != 0) {
+            glDeleteTextures(1, &m_depthTexture);
+        }
+    }
+    
+    bool Init(unsigned int WindowWidth, unsigned int WindowHeight){
+        // Create the FBO
+        glGenFramebuffers(1, &m_fbo);
+        glBindFramebuffer(GL_FRAMEBUFFER, m_fbo);
+        
+        // Create the gbuffer textures
+        glGenTextures(ARRAY_SIZE_IN_ELEMENTS(m_textures), m_textures);
+        glGenTextures(1, &m_depthTexture);
+        
+        for (unsigned int i = 0 ; i < ARRAY_SIZE_IN_ELEMENTS(m_textures) ; i++) {
+            glBindTexture(GL_TEXTURE_2D, m_textures[i]);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB32F, WindowWidth, WindowHeight, 0, GL_RGB, GL_FLOAT, NULL);
+            glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + i, GL_TEXTURE_2D, m_textures[i], 0);
+        }
+        
+        // depth
+        glBindTexture(GL_TEXTURE_2D, m_depthTexture);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32F, WindowWidth, WindowHeight, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+        glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, m_depthTexture, 0);
+        
+        GLenum DrawBuffers[] = { GL_COLOR_ATTACHMENT0,
+            GL_COLOR_ATTACHMENT1,
+            GL_COLOR_ATTACHMENT2,
+            GL_COLOR_ATTACHMENT3 };
+        
+        glDrawBuffers(ARRAY_SIZE_IN_ELEMENTS(DrawBuffers), DrawBuffers);
+        
+        GLenum Status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
+        
+        if (Status != GL_FRAMEBUFFER_COMPLETE) {
+            printf("FB error, status: 0x%x\n", Status);
+            return false;
+        }
+        
+        // restore default FBO
+        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+        
+        return true;
+    }
+    
+    void BindForWriting(){
+        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, m_fbo);
+    }
+    
+    void BindForReading(){
+        glBindFramebuffer(GL_READ_FRAMEBUFFER, m_fbo);
+    }
+    void SetReadBuffer(GBUFFER_TEXTURE_TYPE TextureType){
+        glReadBuffer(GL_COLOR_ATTACHMENT0 + TextureType);
+    }
+    
+private:
+    
+    GLuint m_fbo;
+    GLuint m_textures[GBUFFER_NUM_TEXTURES];
+    GLuint m_depthTexture;
+};
+
 // ========== Prototipos funcoes ==========
 void GLFWCALL window_resized(int width, int height);
 void keyboard(int key, int action);
@@ -755,6 +863,7 @@ Sphere * s[10][10];
 Grid *g;
 Sphere * luz;
 
+// ========== Testes ====================
 class SolidSphere
 {
 protected:
@@ -822,6 +931,32 @@ public:
 };
 SolidSphere sphere(1, 12, 24);
 
+GBuffer m_gbuffer;
+
+void DSLightPass()
+{
+    glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+    
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    m_gbuffer.BindForReading();
+    
+    GLint HalfWidth = (GLint)(WINDOW_WIDTH / 2.0f);
+    GLint HalfHeight = (GLint)(WINDOW_HEIGHT / 2.0f);
+    
+    m_gbuffer.SetReadBuffer(GBuffer::GBUFFER_TEXTURE_TYPE_POSITION);
+    glBlitFramebuffer(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, 0, 0, HalfWidth, HalfHeight, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+    
+    m_gbuffer.SetReadBuffer(GBuffer::GBUFFER_TEXTURE_TYPE_DIFFUSE);
+    glBlitFramebuffer(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, 0, HalfHeight, HalfWidth, WINDOW_HEIGHT, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+    
+    m_gbuffer.SetReadBuffer(GBuffer::GBUFFER_TEXTURE_TYPE_NORMAL);
+    glBlitFramebuffer(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, HalfWidth, HalfHeight, WINDOW_WIDTH, WINDOW_HEIGHT, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+    
+    m_gbuffer.SetReadBuffer(GBuffer::GBUFFER_TEXTURE_TYPE_TEXCOORD);
+    glBlitFramebuffer(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, HalfWidth, 0, WINDOW_WIDTH, HalfHeight, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+}
+
 // ========== Main ==========
 int main () {
     configuraContexto();
@@ -835,160 +970,42 @@ int main () {
     
     configuraCena();
     
- 
-	// ---------------------------------------------
-	// Render to Texture - specific code begins here
-	// ---------------------------------------------
-    
-	// The framebuffer, which regroups 0, 1, or more textures, and 0 or 1 depth buffer.
-	GLuint FramebufferName = 0;
-	glGenFramebuffers(1, &FramebufferName);
-	glBindFramebuffer(GL_FRAMEBUFFER, FramebufferName);
-    //glFramebufferParameteri(GL_DRAW_FRAMEBUFFER, GL_FRAMEBUFFER_DEFAULT_SAMPLES, 4);
-    
-	// The texture we're going to render to
-	GLuint renderedTexture;
-	glGenTextures(1, &renderedTexture);
-	
-	// "Bind" the newly created texture : all future texture functions will modify this texture
-	glBindTexture(GL_TEXTURE_2D, renderedTexture);
-    
-	// Give an empty image to OpenGL ( the last "0" means "empty" )
-	glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB, 800, 800, 0,GL_RGB, GL_UNSIGNED_BYTE, 0);
-//    glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, );
-    
-	// Poor filtering
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    
-	// The depth buffer
-	GLuint depthrenderbuffer;
-	glGenRenderbuffers(1, &depthrenderbuffer);
-	glBindRenderbuffer(GL_RENDERBUFFER, depthrenderbuffer);
-	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 800, 800);
-	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthrenderbuffer);
-    
-	// Alternative : Depth texture. Slower, but you can sample it later in your shader
-//	GLuint depthTexture;
-//	glGenTextures(1, &depthTexture);
-//	glBindTexture(GL_TEXTURE_2D, depthTexture);
-//	glTexImage2D(GL_TEXTURE_2D, 0,GL_DEPTH_COMPONENT16, 800, 800, 0,GL_DEPTH_COMPONENT, GL_FLOAT, 0);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    
-	// Set "renderedTexture" as our colour attachement #0
-	glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, renderedTexture, 0);
-    
-	// Depth texture alternative :
-	//glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, depthTexture, 0);
-    
-    
-	// Set the list of draw buffers.
-	GLenum DrawBuffers[1] = {GL_COLOR_ATTACHMENT0};
-	glDrawBuffers(1, DrawBuffers); // "1" is the size of DrawBuffers
-    
-	// Always check that our framebuffer is ok
-	if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
-		return false;
-    
-	
-	// The fullscreen quad's FBO
-	static const GLfloat g_quad_vertex_buffer_data[] = {
-		-1.0f, -1.0f, 0.0f,
-        1.0f, -1.0f, 0.0f,
-		-1.0f,  1.0f, 0.0f,
-		-1.0f,  1.0f, 0.0f,
-        1.0f, -1.0f, 0.0f,
-        1.0f,  1.0f, 0.0f,
-	};
-    
-	GLuint quad_vertexbuffer;
-	glGenBuffers(1, &quad_vertexbuffer);
-	glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(g_quad_vertex_buffer_data), g_quad_vertex_buffer_data, GL_STATIC_DRAW);
-    
-    
-	// Create and compile our GLSL program from the shaders
-    Shader * quadShader = new Shader("shaders5/Passthrough.vertexshader", "shaders5/WobblyTexture.fragmentshader");
-    
-    GLuint texID = glGetUniformLocation(quadShader->programID(), "renderedTexture");
-	GLuint timeID = glGetUniformLocation(quadShader->programID(), "time");
-
+    if (!m_gbuffer.Init(WINDOW_WIDTH, WINDOW_HEIGHT)) {
+        return false;
+    }
     
 	// Create a rendering loop
 	int running = GL_TRUE;
     
 	while(running) {
-        // Render to our framebuffer
-		glBindFramebuffer(GL_FRAMEBUFFER, FramebufferName);
-		glViewport(0,0,800,800); // Render on the whole framebuffer, complete from the lower left corner to the upper right
-
-		// Clear the screen
+        
+        m_gbuffer.BindForWriting();
+		
+        // Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// Use our shader
 		glUseProgram(myShader->programID());
         
 		// ====== Display scene - render to the renderbuffer
-        
-//        s[0][0]->draw(myShader);
-        
         for (int i=0;i<10;i++){
             for (int j=0; j<10; j++) {
                 s[i][j]->draw(myShader);
             }
         }
-        
         g->draw(myShader);
         
-//        luz->setPosition(glm::vec3(c.x,c.y,c.z));
-//        luz->draw(myShader);
+        DSLightPass();
         
-//        glm::vec3 cam = glm::vec3(c.x,c.y,c.z);
-//        cam = glm::rotateY(cam, 0.5f);
-//        c.x = cam.x;
-//        c.y = cam.y;
-//        c.z = cam.z;
-        
-        // ====== Render to the screen
-		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-		glViewport(0,0,800,800); // Render on the whole framebuffer, complete from the lower left corner to the upper right
-        
-		// Clear the screen
-		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        
-		// Use our shader
-		glUseProgram(quadShader->programID());
-        
-		// Bind our texture in Texture Unit 0
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, renderedTexture);
-//		glBindTexture(GL_TEXTURE_2D, depthTexture);
-		// Set our "renderedTexture" sampler to user Texture Unit 0
-		glUniform1i(texID, 0);
-        
-		glUniform1f(timeID, (float)(glfwGetTime()*10.0f) );
-        
-		// 1rst attribute buffer : vertices
-		glEnableVertexAttribArray(0);
-		glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
-		glVertexAttribPointer(
-                              0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-                              3,                  // size
-                              GL_FLOAT,           // type
-                              GL_FALSE,           // normalized?
-                              0,                  // stride
-                              (void*)0            // array buffer offset
-                              );
-        
-		// Draw the triangles !
-		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
-        
-		glDisableVertexAttribArray(0);
+        /*
+        luz->setPosition(glm::vec3(c.x,c.y,c.z));
+        luz->draw(myShader);
+        glm::vec3 cam = glm::vec3(c.x,c.y,c.z);
+        cam = glm::rotateY(cam, 0.5f);
+        c.x = cam.x;
+        c.y = cam.y;
+        c.z = cam.z;
+        */
         
         // Swap front and back buffers
         glfwSwapBuffers();
@@ -1014,7 +1031,7 @@ void configuraCena(){
     c.y =4;
     c.z =8;
     
-    myShader = new Shader("shaders5/vert.cpp","shaders5/frag.cpp");
+    myShader = new Shader("shaders6/vert.cpp","shaders6/frag.cpp");
 //    
 //        s[0][0] = new Sphere(128,128);
 //        s[0][0]->genSphere();
