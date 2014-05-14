@@ -17,9 +17,10 @@ uniform vec3 LightPosition_worldspace;
 void main() {
 
 	WorldPosOut = Position_worldspace;
+	color = color_from_vshader;
 	NormalOut = Normal_cameraspace;
 	TexCoordOut = color_from_vshader;
-
+/*
     // Light emission properties
 	// You probably want to put them as uniforms
 	vec3 LightColor = vec3(1,1,1);
@@ -61,6 +62,6 @@ void main() {
 		MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance*distance) +
 		// Specular : reflective highlight, like a mirror
 		MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha,16) / (distance*distance);
-    
+    */
     
 }

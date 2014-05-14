@@ -73,7 +73,9 @@ public:
         this->Link();
         
     }
-    ~Shader ();
+    ~Shader (){
+        
+    }
     
     GLuint programID(){
         return shaderProgram;
@@ -317,6 +319,9 @@ public:
     
     void draw(Shader *myShader){
         GLuint shaderProgram = myShader->programID();
+        
+        // Use our shader
+		glUseProgram(myShader->programID());
         
         // 1rst attribute buffer : vertices
         GLint position_attribute = glGetAttribLocation(shaderProgram, "vertexPosition_modelspace");
@@ -608,6 +613,9 @@ public:
     void draw(Shader *myShader){
         GLuint shaderProgram = myShader->programID();
         
+        // Use our shader
+		glUseProgram(myShader->programID());
+        
         // 1rst attribute buffer : vertices
         GLint position_attribute = glGetAttribLocation(shaderProgram, "vertexPosition_modelspace");
         glEnableVertexAttribArray(position_attribute);
@@ -844,11 +852,134 @@ public:
         glReadBuffer(GL_COLOR_ATTACHMENT0 + TextureType);
     }
     
-private:
+//private:
     
     GLuint m_fbo;
     GLuint m_textures[GBUFFER_NUM_TEXTURES];
     GLuint m_depthTexture;
+};
+
+class DeferRender{
+public:
+    Shader * quadShader;
+    
+    GLuint texID;
+    GLuint quad_vertexbuffer;
+    
+    DeferRender(){
+        GLfloat g_quad_vertex_buffer_data[] = {
+            -1.0f, -1.0f, 0.0f,
+            1.0f, -1.0f, 0.0f,
+            -1.0f,  1.0f, 0.0f,
+            -1.0f,  1.0f, 0.0f,
+            1.0f, -1.0f, 0.0f,
+            1.0f,  1.0f, 0.0f,
+        };
+        
+        glGenBuffers(1, &quad_vertexbuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(g_quad_vertex_buffer_data), g_quad_vertex_buffer_data, GL_STATIC_DRAW);
+        
+        // Create and compile our GLSL program from the shaders
+        quadShader = new Shader("shaders6/deferVertex.cpp", "shaders6/deferFrag.cpp");
+        
+        texID = glGetUniformLocation(quadShader->programID(), "renderedTexture");
+    }
+    ~DeferRender(){
+        
+    }
+    void showTexture(GLuint renderedTexture){
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		glViewport(0,0,800,800); // Render on the whole framebuffer, complete from the lower left corner to the upper right
+        
+		// Clear the screen
+		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        
+        
+		// Bind our texture in Texture Unit 0
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, renderedTexture);
+        //		glBindTexture(GL_TEXTURE_2D, depthTexture);
+        
+		// Set our "renderedTexture" sampler to user Texture Unit 0
+		glUniform1i(this->texID, 0);
+        
+		// 1rst attribute buffer : vertices
+		glEnableVertexAttribArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, this->quad_vertexbuffer);
+		glVertexAttribPointer(
+                              0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+                              3,                  // size
+                              GL_FLOAT,           // type
+                              GL_FALSE,           // normalized?
+                              0,                  // stride
+                              (void*)0            // array buffer offset
+                              );
+        
+        // Use our shader
+		glUseProgram(this->quadShader->programID());
+		// Draw the triangles !
+		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
+        
+		glDisableVertexAttribArray(0);
+    }
+    
+};
+
+class FBO{
+public:
+    GLuint m_fbo;
+    GLuint m_textures[3];
+    GLuint m_depthTexture;
+    
+    GLuint FramebufferName;
+    GLuint renderedTexture;
+    GLuint depthrenderbuffer;
+    
+    FBO(){
+        // The framebuffer, which regroups 0, 1, or more textures, and 0 or 1 depth buffer.
+        FramebufferName = 0;
+        glGenFramebuffers(1, &FramebufferName);
+        glBindFramebuffer(GL_FRAMEBUFFER, FramebufferName);
+        
+        // The texture we're going to render to
+        glGenTextures(1, &renderedTexture);
+        
+        // "Bind" the newly created texture : all future texture functions will modify this texture
+        glBindTexture(GL_TEXTURE_2D, renderedTexture);
+        
+        // Give an empty image to OpenGL ( the last "0" means "empty" )
+        glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB, 800, 800, 0,GL_RGB, GL_UNSIGNED_BYTE, 0);
+        //    glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, );
+        
+        // Poor filtering
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        
+        // The depth buffer
+        glGenRenderbuffers(1, &depthrenderbuffer);
+        glBindRenderbuffer(GL_RENDERBUFFER, depthrenderbuffer);
+        glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 800, 800);
+        glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthrenderbuffer);
+        
+        // Set "renderedTexture" as our colour attachement #0
+        glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, renderedTexture, 0);
+        
+        // Depth texture alternative :
+        //glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, depthTexture, 0);
+        
+        
+        // Set the list of draw buffers.
+        GLenum DrawBuffers[1] = {GL_COLOR_ATTACHMENT0};
+        glDrawBuffers(1, DrawBuffers); // "1" is the size of DrawBuffers
+        
+        // Always check that our framebuffer is ok
+        if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+            return;
+
+    }
 };
 
 // ========== Prototipos funcoes ==========
@@ -856,81 +987,17 @@ void GLFWCALL window_resized(int width, int height);
 void keyboard(int key, int action);
 void configuraContexto();
 void configuraCena();
+void displayCena();
+void updateLuz();
 
 // ========== Variaveis globais ==========
 Shader * myShader;
 Sphere * s[10][10];
 Grid *g;
 Sphere * luz;
+Luz * luzes;
 
 // ========== Testes ====================
-class SolidSphere
-{
-protected:
-    std::vector<GLfloat> vertices;
-    std::vector<GLfloat> normals;
-    std::vector<GLfloat> texcoords;
-    std::vector<GLushort> indices;
-    
-public:
-    SolidSphere(float radius, unsigned int rings, unsigned int sectors)
-    {
-        float const R = 1./(float)(rings-1);
-        float const S = 1./(float)(sectors-1);
-        int r, s;
-        
-        vertices.resize(rings * sectors * 3);
-        normals.resize(rings * sectors * 3);
-        texcoords.resize(rings * sectors * 2);
-        std::vector<GLfloat>::iterator v = vertices.begin();
-        std::vector<GLfloat>::iterator n = normals.begin();
-        std::vector<GLfloat>::iterator t = texcoords.begin();
-        for(r = 0; r < rings; r++) for(s = 0; s < sectors; s++) {
-            float const y = sin( -M_PI_2 + M_PI * r * R );
-            float const x = cos(2*M_PI * s * S) * sin( M_PI * r * R );
-            float const z = sin(2*M_PI * s * S) * sin( M_PI * r * R );
-            
-            *t++ = s*S;
-            *t++ = r*R;
-            
-            *v++ = x * radius;
-            *v++ = y * radius;
-            *v++ = z * radius;
-            
-            *n++ = x;
-            *n++ = y;
-            *n++ = z;
-        }
-        
-        indices.resize(rings * sectors * 4);
-        std::vector<GLushort>::iterator i = indices.begin();
-        for(r = 0; r < rings-1; r++) for(s = 0; s < sectors-1; s++) {
-            *i++ = r * sectors + s;
-            *i++ = r * sectors + (s+1);
-            *i++ = (r+1) * sectors + (s+1);
-            *i++ = (r+1) * sectors + s;
-        }
-    }
-    
-    void draw(GLfloat x, GLfloat y, GLfloat z)
-    {
-        glMatrixMode(GL_MODELVIEW);
-        glPushMatrix();
-        glTranslatef(x,y,z);
-        
-        glEnableClientState(GL_VERTEX_ARRAY);
-        glEnableClientState(GL_NORMAL_ARRAY);
-        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-        
-        glVertexPointer(3, GL_FLOAT, 0, &vertices[0]);
-        glNormalPointer(GL_FLOAT, 0, &normals[0]);
-        glTexCoordPointer(2, GL_FLOAT, 0, &texcoords[0]);
-        glDrawElements(GL_QUADS, indices.size(), GL_UNSIGNED_SHORT, &indices[0]);
-        glPopMatrix();
-    }
-};
-SolidSphere sphere(1, 12, 24);
-
 GBuffer m_gbuffer;
 
 void DSLightPass()
@@ -956,6 +1023,42 @@ void DSLightPass()
     m_gbuffer.SetReadBuffer(GBuffer::GBUFFER_TEXTURE_TYPE_TEXCOORD);
     glBlitFramebuffer(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, HalfWidth, 0, WINDOW_WIDTH, HalfHeight, GL_COLOR_BUFFER_BIT, GL_LINEAR);
 }
+void DSPointLightsPass()
+{
+    //m_DSPointLightPassTech.Enable();
+    //m_DSPointLightPassTech.SetEyeWorldPos(m_pGameCamera->GetPos());
+    
+    //Pipeline p;
+    //p.SetCamera(m_pGameCamera->GetPos(), m_pGameCamera->GetTarget(), m_pGameCamera->GetUp());
+    //p.SetPerspectiveProj(m_persProjInfo);
+    
+    //for (unsigned int i = 0 ; i < ARRAY_SIZE_IN_ELEMENTS(m_pointLight); i++) {
+        //m_DSPointLightPassTech.SetPointLight(m_pointLight[i]);
+        //p.WorldPos(m_pointLight[i].Position);
+        //float BSphereScale = CalcPointLightBSphere(m_pointLight[i]);
+        //p.Scale(BSphereScale, BSphereScale, BSphereScale);
+        //m_DSPointLightPassTech.SetWVP(p.GetWVPTrans());
+        //m_bsphere.Render();
+    //}
+}
+void DSDirectionalLightPass()
+{
+    //m_DSDirLightPassTech.Enable();
+    //m_DSDirLightPassTech.SetEyeWorldPos(m_pGameCamera->GetPos());
+    //Matrix4f WVP;
+    //WVP.InitIdentity();
+    //m_DSDirLightPassTech.SetWVP(WVP);
+    //m_quad.Render();
+}
+void BeginLightPasses()
+{
+    glEnable(GL_BLEND);
+    glBlendEquation(GL_FUNC_ADD);
+    glBlendFunc(GL_ONE, GL_ONE);
+    
+    m_gbuffer.BindForReading();
+    glClear(GL_COLOR_BUFFER_BIT);
+}
 
 // ========== Main ==========
 int main () {
@@ -963,56 +1066,37 @@ int main () {
     
     // Create a vertex array object
     GLuint VertexArrayID;
-    
     // Use a Vertex Array Object
     glGenVertexArrays(1, &VertexArrayID);
     glBindVertexArray(VertexArrayID);
     
     configuraCena();
     
-    if (!m_gbuffer.Init(WINDOW_WIDTH, WINDOW_HEIGHT)) {
-        return false;
-    }
+//    if (!m_gbuffer.Init(WINDOW_WIDTH, WINDOW_HEIGHT)) {
+//        return false;
+//    }
+
+    FBO * fbo = new FBO();
+    DeferRender * dr = new DeferRender();
     
 	// Create a rendering loop
 	int running = GL_TRUE;
     
 	while(running) {
+        //glViewport(0,0,800,800); // Render on the whole framebuffer, complete from the lower left corner to the upper right
         
-        m_gbuffer.BindForWriting();
-		
-        // Clear the screen
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        //Render to the frame buffer
+        glBindFramebuffer(GL_FRAMEBUFFER, fbo->FramebufferName);
+        displayCena();
+        updateLuz();
+        
+        //Render to the screen
+		dr->showTexture(fbo->renderedTexture);
 
-		// Use our shader
-		glUseProgram(myShader->programID());
-        
-		// ====== Display scene - render to the renderbuffer
-        for (int i=0;i<10;i++){
-            for (int j=0; j<10; j++) {
-                s[i][j]->draw(myShader);
-            }
-        }
-        g->draw(myShader);
-        
-        DSLightPass();
-        
-        /*
-        luz->setPosition(glm::vec3(c.x,c.y,c.z));
-        luz->draw(myShader);
-        glm::vec3 cam = glm::vec3(c.x,c.y,c.z);
-        cam = glm::rotateY(cam, 0.5f);
-        c.x = cam.x;
-        c.y = cam.y;
-        c.z = cam.z;
-        */
-        
         // Swap front and back buffers
         glfwSwapBuffers();
-        
 		// Pool for events
 		glfwPollEvents();
-		
         // Check if the window was closed
 		running = glfwGetWindowParam(GLFW_OPENED);
 	}
@@ -1032,10 +1116,7 @@ void configuraCena(){
     c.z =8;
     
     myShader = new Shader("shaders6/vert.cpp","shaders6/frag.cpp");
-//    
-//        s[0][0] = new Sphere(128,128);
-//        s[0][0]->genSphere();
-    
+
     for (int i=0;i<10;i++){
         for (int j=0; j<10; j++) {
             s[i][j] = new Sphere(64,64);
@@ -1092,6 +1173,29 @@ void configuraContexto(){
 	glfwSetWindowSizeCallback( window_resized );
     // Register a callback function for keyboard pressed events
 	glfwSetKeyCallback(keyboard);
+}
+
+void updateLuz(){
+    luz->setPosition(glm::vec3(c.x,c.y,c.z));
+    luz->draw(myShader);
+    glm::vec3 cam = glm::vec3(c.x,c.y,c.z);
+    cam = glm::rotateY(cam, 0.5f);
+    c.x = cam.x;
+    c.y = cam.y;
+    c.z = cam.z;
+
+}
+
+void displayCena(){
+    // Clear the screen
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    for (int i=0;i<10;i++){
+        for (int j=0; j<10; j++) {
+            s[i][j]->draw(myShader);
+        }
+    }
+    g->draw(myShader);
 }
 
 // Called when the window is resized
