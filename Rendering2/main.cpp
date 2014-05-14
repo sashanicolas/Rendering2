@@ -52,9 +52,12 @@ public:
     
     //================ Metodos ================//
     Shader (){
+        
+    }
+    Shader (const char* v, const char* f){
         // create a program
-        this->VertexShader("shaders4/vert.cpp");
-        this->FragmentShader("shaders4/frag.cpp");
+        this->VertexShader(v);
+        this->FragmentShader(f);
         
         shaderProgram = glCreateProgram();
         glAttachShader(shaderProgram, vertexShader);
@@ -66,7 +69,6 @@ public:
         
         this->Link();
         
-        //SetUniformMVP();
     }
     ~Shader ();
     
@@ -98,7 +100,10 @@ public:
     void Unload ();
     void SetUniform (const char* name, float x);
     void SetUniform (const char* name, float x, float y);
-    void SetUniform (const char* name, float x, float y, float z);
+    void SetUniform (const char* name, float x, float y, float z){
+        GLint ID = glGetUniformLocation(shaderProgram, name );
+        glUniform3f(ID, x, y, z);
+    }
     void SetUniform (const char* name, float x, float y, float z, float w);
     void SetUniform (const char* name, int size, int count, float* v);
     void SetUniformI (const char* name, int x);
@@ -108,14 +113,15 @@ public:
     void SetUniformI (const char* name, int size, int count, int* v) ;
     void SetUniformMatrix (const char* name, int row, int col, int count, float* v);
     
-    void SetUniform (const char* name, glm::mat4 Model){
-        this->Model = Model;
+    void SetUniform (const char* name, glm::mat4 mat){
         // Transfer the transformation matrices to the shader program
         m = glGetUniformLocation(shaderProgram, name );
-        glUniformMatrix4fv(m, 1, GL_FALSE, glm::value_ptr(Model));
+        glUniformMatrix4fv(m, 1, GL_FALSE, glm::value_ptr(mat));
         
     }
-    
+    void setModelMatrix(glm::mat4 Model){
+        this->Model = Model;
+    }
     void SetUniformMVP(){
         // Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
         Projection = glm::perspective(45.0f, 1.0f/*4.0f / 3.0f*/, 0.1f, 100.0f);
@@ -145,7 +151,7 @@ public:
         v = glGetUniformLocation(shaderProgram, "V" );
         glUniformMatrix4fv(v, 1, GL_FALSE, glm::value_ptr(View));
         
-        lightPos = glm::vec3(0,4,6);//bom = 5.0f, 4.0f, 4.0f
+        lightPos = glm::vec3(0,7,7);//bom = 5.0f, 4.0f, 4.0f
         LightID = glGetUniformLocation(shaderProgram, "LightPosition_worldspace" );
 		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
     }
@@ -352,6 +358,7 @@ public:
         Model = glm::translate(Model, glm::vec3(-4.0f, 0, -4.0f));
         Model = glm::scale(Model, glm::vec3(8,1,8));
         
+        myShader->setModelMatrix(Model);
         myShader->SetUniform("M", Model);
         myShader->SetUniformMVP();
         glDrawArrays(GL_TRIANGLES, 0, this->numberOfPoints());
@@ -641,6 +648,7 @@ public:
         Model = glm::translate(Model, glm::vec3(x, y, z));
         Model = glm::scale(Model, glm::vec3(0.2f,0.2f,0.2f));
         
+        myShader->setModelMatrix(Model);
         myShader->SetUniform("M", Model);
         myShader->SetUniformMVP();
         glDrawArrays(GL_TRIANGLES, 0, this->numberOfPoints());
@@ -827,12 +835,105 @@ int main () {
     
     configuraCena();
     
+ 
+	// ---------------------------------------------
+	// Render to Texture - specific code begins here
+	// ---------------------------------------------
+    
+	// The framebuffer, which regroups 0, 1, or more textures, and 0 or 1 depth buffer.
+	GLuint FramebufferName = 0;
+	glGenFramebuffers(1, &FramebufferName);
+	glBindFramebuffer(GL_FRAMEBUFFER, FramebufferName);
+    //glFramebufferParameteri(GL_DRAW_FRAMEBUFFER, GL_FRAMEBUFFER_DEFAULT_SAMPLES, 4);
+    
+	// The texture we're going to render to
+	GLuint renderedTexture;
+	glGenTextures(1, &renderedTexture);
+	
+	// "Bind" the newly created texture : all future texture functions will modify this texture
+	glBindTexture(GL_TEXTURE_2D, renderedTexture);
+    
+	// Give an empty image to OpenGL ( the last "0" means "empty" )
+	glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB, 800, 800, 0,GL_RGB, GL_UNSIGNED_BYTE, 0);
+//    glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, );
+    
+	// Poor filtering
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    
+	// The depth buffer
+	GLuint depthrenderbuffer;
+	glGenRenderbuffers(1, &depthrenderbuffer);
+	glBindRenderbuffer(GL_RENDERBUFFER, depthrenderbuffer);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 800, 800);
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthrenderbuffer);
+    
+	// Alternative : Depth texture. Slower, but you can sample it later in your shader
+//	GLuint depthTexture;
+//	glGenTextures(1, &depthTexture);
+//	glBindTexture(GL_TEXTURE_2D, depthTexture);
+//	glTexImage2D(GL_TEXTURE_2D, 0,GL_DEPTH_COMPONENT16, 800, 800, 0,GL_DEPTH_COMPONENT, GL_FLOAT, 0);
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    
+	// Set "renderedTexture" as our colour attachement #0
+	glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, renderedTexture, 0);
+    
+	// Depth texture alternative :
+	//glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, depthTexture, 0);
+    
+    
+	// Set the list of draw buffers.
+	GLenum DrawBuffers[1] = {GL_COLOR_ATTACHMENT0};
+	glDrawBuffers(1, DrawBuffers); // "1" is the size of DrawBuffers
+    
+	// Always check that our framebuffer is ok
+	if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+		return false;
+    
+	
+	// The fullscreen quad's FBO
+	static const GLfloat g_quad_vertex_buffer_data[] = {
+		-1.0f, -1.0f, 0.0f,
+        1.0f, -1.0f, 0.0f,
+		-1.0f,  1.0f, 0.0f,
+		-1.0f,  1.0f, 0.0f,
+        1.0f, -1.0f, 0.0f,
+        1.0f,  1.0f, 0.0f,
+	};
+    
+	GLuint quad_vertexbuffer;
+	glGenBuffers(1, &quad_vertexbuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(g_quad_vertex_buffer_data), g_quad_vertex_buffer_data, GL_STATIC_DRAW);
+    
+    
+	// Create and compile our GLSL program from the shaders
+    Shader * quadShader = new Shader("shaders5/Passthrough.vertexshader", "shaders5/WobblyTexture.fragmentshader");
+    
+    GLuint texID = glGetUniformLocation(quadShader->programID(), "renderedTexture");
+	GLuint timeID = glGetUniformLocation(quadShader->programID(), "time");
+
+    
 	// Create a rendering loop
 	int running = GL_TRUE;
     
 	while(running) {
-		// Display scene
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        // Render to our framebuffer
+		glBindFramebuffer(GL_FRAMEBUFFER, FramebufferName);
+		glViewport(0,0,800,800); // Render on the whole framebuffer, complete from the lower left corner to the upper right
+
+		// Clear the screen
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		// Use our shader
+		glUseProgram(myShader->programID());
+        
+		// ====== Display scene - render to the renderbuffer
         
 //        s[0][0]->draw(myShader);
         
@@ -844,21 +945,58 @@ int main () {
         
         g->draw(myShader);
         
-        luz->setPosition(glm::vec3(c.x,c.y,c.z));
-        luz->draw(myShader);
+//        luz->setPosition(glm::vec3(c.x,c.y,c.z));
+//        luz->draw(myShader);
         
-        glm::vec3 cam = glm::vec3(c.x,c.y,c.z);
-        cam = glm::rotateY(cam, 0.5f);
-        c.x = cam.x;
-        c.y = cam.y;
-        c.z = cam.z;
+//        glm::vec3 cam = glm::vec3(c.x,c.y,c.z);
+//        cam = glm::rotateY(cam, 0.5f);
+//        c.x = cam.x;
+//        c.y = cam.y;
+//        c.z = cam.z;
+        
+        // ====== Render to the screen
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		glViewport(0,0,800,800); // Render on the whole framebuffer, complete from the lower left corner to the upper right
+        
+		// Clear the screen
+		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        
+		// Use our shader
+		glUseProgram(quadShader->programID());
+        
+		// Bind our texture in Texture Unit 0
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, renderedTexture);
+//		glBindTexture(GL_TEXTURE_2D, depthTexture);
+		// Set our "renderedTexture" sampler to user Texture Unit 0
+		glUniform1i(texID, 0);
+        
+		glUniform1f(timeID, (float)(glfwGetTime()*10.0f) );
+        
+		// 1rst attribute buffer : vertices
+		glEnableVertexAttribArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
+		glVertexAttribPointer(
+                              0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+                              3,                  // size
+                              GL_FLOAT,           // type
+                              GL_FALSE,           // normalized?
+                              0,                  // stride
+                              (void*)0            // array buffer offset
+                              );
+        
+		// Draw the triangles !
+		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
+        
+		glDisableVertexAttribArray(0);
         
         // Swap front and back buffers
         glfwSwapBuffers();
         
 		// Pool for events
 		glfwPollEvents();
-		// Check if the window was closed
+		
+        // Check if the window was closed
 		running = glfwGetWindowParam(GLFW_OPENED);
 	}
     
@@ -874,9 +1012,9 @@ int main () {
 void configuraCena(){
     c.x =0;
     c.y =4;
-    c.z =6;
+    c.z =8;
     
-    myShader = new Shader();
+    myShader = new Shader("shaders5/vert.cpp","shaders5/frag.cpp");
 //    
 //        s[0][0] = new Sphere(128,128);
 //        s[0][0]->genSphere();
