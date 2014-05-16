@@ -7,6 +7,7 @@ in vec3 vertexNormal_modelspace;
 out vec3 color_from_vshader;
 out vec3 Position_worldspace;
 out vec3 Normal_cameraspace;
+out vec3 Normal_modelspace;
 out vec3 EyeDirection_cameraspace;
 out vec3 LightDirection_cameraspace;
 
@@ -35,6 +36,7 @@ void main() {
 	
 	// Normal of the the vertex, in camera space
 	Normal_cameraspace = ( NormalMatrix * vec4(vertexNormal_modelspace,0)).xyz; // Only correct if ModelMatrix does not scale the model ! Use its inverse transpose if not.
-	
+	Normal_modelspace = vertexNormal_modelspace;
+
     color_from_vshader = vertexColor;
 }

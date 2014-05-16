@@ -862,6 +862,7 @@ public:
 class DeferRender{
 public:
     Shader * quadShader;
+    Shader * lightingShader;
     
     GLuint texID;
     GLuint quad_vertexbuffer;
@@ -881,20 +882,28 @@ public:
         glBufferData(GL_ARRAY_BUFFER, sizeof(g_quad_vertex_buffer_data), g_quad_vertex_buffer_data, GL_STATIC_DRAW);
         
         // Create and compile our GLSL program from the shaders
-        quadShader = new Shader("shaders6/deferVertex.cpp", "shaders6/deferFrag.cpp");
+        quadShader = new Shader("shaders6/ex-deferVertex.cpp", "shaders6/ex-deferFrag.cpp");
+        lightingShader = new Shader("shaders6/deferVertex.cpp", "shaders6/deferFrag.cpp");
         
         texID = glGetUniformLocation(quadShader->programID(), "renderedTexture");
     }
     ~DeferRender(){
         
     }
-    void showTexture(GLuint renderedTexture){
+    
+    void setRenderToFrameBuffer(GLuint FramebufferName){
+        glBindFramebuffer(GL_FRAMEBUFFER, FramebufferName);
+    }
+    void setRenderToScreen(){
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    }
+    
+    void showTexture(GLuint renderedTexture){
+        setRenderToScreen();
 		glViewport(0,0,800,800); // Render on the whole framebuffer, complete from the lower left corner to the upper right
         
 		// Clear the screen
 		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        
         
 		// Bind our texture in Texture Unit 0
 		glActiveTexture(GL_TEXTURE0);
@@ -924,6 +933,9 @@ public:
 		glDisableVertexAttribArray(0);
     }
     
+    void render(){
+        
+    }
 };
 
 class FBO{
@@ -933,30 +945,34 @@ public:
     GLuint m_depthTexture;
     
     GLuint FramebufferName;
-    GLuint renderedTexture;
+//    GLuint renderedTexture;
     GLuint depthrenderbuffer;
     
     FBO(){
+        m_fbo = 0;
+        m_depthTexture = 0;
+        ZERO_MEM(m_textures);
+        
+    }
+    bool Init(unsigned int WindowWidth, unsigned int WindowHeight){
+        
         // The framebuffer, which regroups 0, 1, or more textures, and 0 or 1 depth buffer.
         FramebufferName = 0;
         glGenFramebuffers(1, &FramebufferName);
         glBindFramebuffer(GL_FRAMEBUFFER, FramebufferName);
         
-        // The texture we're going to render to
-        glGenTextures(1, &renderedTexture);
-        
-        // "Bind" the newly created texture : all future texture functions will modify this texture
-        glBindTexture(GL_TEXTURE_2D, renderedTexture);
-        
-        // Give an empty image to OpenGL ( the last "0" means "empty" )
-        glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB, 800, 800, 0,GL_RGB, GL_UNSIGNED_BYTE, 0);
-        //    glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, );
-        
-        // Poor filtering
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        // Create the gbuffer textures
+        for (unsigned int i = 0 ; i < ARRAY_SIZE_IN_ELEMENTS(m_textures) ; i++) {
+            glGenTextures(1, &m_textures[i]);
+            glBindTexture(GL_TEXTURE_2D, m_textures[i]);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB32F, WindowWidth, WindowHeight, 0, GL_RGB, GL_FLOAT, NULL);
+            glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0+i, GL_TEXTURE_2D, m_textures[i], 0);
+            // Poor filtering
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        }
         
         // The depth buffer
         glGenRenderbuffers(1, &depthrenderbuffer);
@@ -964,21 +980,17 @@ public:
         glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 800, 800);
         glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthrenderbuffer);
         
-        // Set "renderedTexture" as our colour attachement #0
-        glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, renderedTexture, 0);
-        
-        // Depth texture alternative :
-        //glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, depthTexture, 0);
-        
-        
         // Set the list of draw buffers.
-        GLenum DrawBuffers[1] = {GL_COLOR_ATTACHMENT0};
-        glDrawBuffers(1, DrawBuffers); // "1" is the size of DrawBuffers
+        GLenum DrawBuffers[] = { GL_COLOR_ATTACHMENT0,
+            GL_COLOR_ATTACHMENT1,
+            GL_COLOR_ATTACHMENT2 };
+        
+        glDrawBuffers(ARRAY_SIZE_IN_ELEMENTS(DrawBuffers), DrawBuffers);
         
         // Always check that our framebuffer is ok
         if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
-            return;
-
+            return false;
+        return true;
     }
 };
 
@@ -1071,33 +1083,26 @@ int main () {
     glBindVertexArray(VertexArrayID);
     
     configuraCena();
-    
-//    if (!m_gbuffer.Init(WINDOW_WIDTH, WINDOW_HEIGHT)) {
-//        return false;
-//    }
 
     FBO * fbo = new FBO();
+    fbo->Init(WINDOW_WIDTH, WINDOW_HEIGHT);
     DeferRender * dr = new DeferRender();
     
 	// Create a rendering loop
 	int running = GL_TRUE;
     
 	while(running) {
-        //glViewport(0,0,800,800); // Render on the whole framebuffer, complete from the lower left corner to the upper right
         
-        //Render to the frame buffer
-        glBindFramebuffer(GL_FRAMEBUFFER, fbo->FramebufferName);
+        dr->setRenderToFrameBuffer(fbo->FramebufferName);
+        
         displayCena();
         updateLuz();
         
-        //Render to the screen
-		dr->showTexture(fbo->renderedTexture);
+		dr->showTexture(fbo->m_textures[2]);
+		//dr->render();
 
-        // Swap front and back buffers
         glfwSwapBuffers();
-		// Pool for events
 		glfwPollEvents();
-        // Check if the window was closed
 		running = glfwGetWindowParam(GLFW_OPENED);
 	}
     

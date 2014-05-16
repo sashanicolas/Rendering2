@@ -6,10 +6,12 @@ in vec3 Normal_cameraspace;
 in vec3 EyeDirection_cameraspace;
 in vec3 LightDirection_cameraspace;
 
+in vec3 Normal_modelspace;
+
 layout (location = 0) out vec3 WorldPosOut;   
 layout (location = 1) out vec3 color;     
 layout (location = 2) out vec3 NormalOut;     
-layout (location = 3) out vec3 TexCoordOut;   
+//layout (location = 3) out vec3 TexCoordOut;   
 
 //uniform mat4 MV;
 uniform vec3 LightPosition_worldspace;
@@ -18,8 +20,8 @@ void main() {
 
 	WorldPosOut = Position_worldspace;
 	color = color_from_vshader;
-	NormalOut = Normal_cameraspace;
-	TexCoordOut = color_from_vshader;
+	NormalOut = Normal_modelspace;//Normal_cameraspace;
+	//TexCoordOut = color_from_vshader;
 /*
     // Light emission properties
 	// You probably want to put them as uniforms
