@@ -9,18 +9,23 @@ uniform sampler2D corTex;
 uniform sampler2D normalTex;
 
 //uniform vec3 lightPos;
-uniform float lightPos[6];
+uniform float lightPos[150];
+uniform float lightCor[150];
 
 //minhas variaveis
 vec3 normal;
 vec3 position;
 vec3 cor;
 
-vec3 getLightPos(int ind){
-	return vec3(lightPos[ind*3],lightPos[ind*3+1],lightPos[ind*3+2]);
-}
+float numLights;
 
-vec3 lightInfluence(vec3 lightPos){
+vec3 getLightPos(int ind){
+	return vec3( lightPos[ind*3], lightPos[ind*3+1], lightPos[ind*3+2]);
+}
+vec3 getLightCor(int ind){
+	return vec3( lightCor[ind*3], lightCor[ind*3+1], lightCor[ind*3+2]);
+}
+vec3 lightInfluence(vec3 lightPos, vec3 lightCor){
 	vec3 light = lightPos;
 	vec3 lightDir = light - position.xyz ;
 	
@@ -31,11 +36,12 @@ vec3 lightInfluence(vec3 lightPos){
 	vec3 eyeDir = normalize(cameraPosition-position.xyz);
 	vec3 vHalfVector = normalize(lightDir.xyz+eyeDir);
 
-	return max(dot(normal,lightDir),0) * cor + pow(max(dot(normal,vHalfVector),0.0), 50) * 1.5;
+	return ((1/numLights)*max(dot(normal,lightDir),0) * cor + pow(max(dot(normal,vHalfVector),0.0), 128))*lightCor;
 }
 
 void main(){
-	
+	numLights = 50;
+
 	cor = texture( corTex, UV ).xyz;
 	position = texture( posicaoTex, UV ).xyz;
 	normal = texture( normalTex, UV ).xyz;
@@ -44,8 +50,9 @@ void main(){
 
 	vec3 sumLights = vec3(0,0,0);
 
-	sumLights = sumLights + lightInfluence(getLightPos(0));
-	sumLights = sumLights + lightInfluence(getLightPos(1));
-
+	for(int i=0; i<numLights; i++){
+		sumLights = sumLights + lightInfluence( getLightPos(i) , getLightCor(i) );	
+	}
+	
 	color = amb*cor + sumLights;
 }

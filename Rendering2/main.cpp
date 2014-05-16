@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <ctime>
+#include <time.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -1040,15 +1041,21 @@ public:
 
         
         
-        GLfloat lights[6];//={luzes[0]->pos.x, luzes[0]->pos.y, luzes[0]->pos.z};
+        GLfloat lights[50*3];
+        GLfloat lightColors[50*3];
         //passa as posicoes das luzes pra float
-        for (int i=0;i<2;i++){
+        for (int i=0;i<50;i++){
             lights[i*3 +0]=luzes[i]->pos.x;
             lights[i*3 +1]=luzes[i]->pos.y;
             lights[i*3 +2]=luzes[i]->pos.z;
+            
+            lightColors[i*3 +0] = luzes[i]->cor.r;
+            lightColors[i*3 +1] = luzes[i]->cor.g;
+            lightColors[i*3 +2] = luzes[i]->cor.b;
         }
         
-        glUniform1fv(glGetUniformLocation(lightingShader->programID(), "lightPos"), 6, lights);
+        glUniform1fv(glGetUniformLocation(lightingShader->programID(), "lightPos"), 50*3, lights);
+        glUniform1fv(glGetUniformLocation(lightingShader->programID(), "lightCor"), 50*3, lightColors);
 //        lightingShader->SetUniform("lightPos", luzes[0]->pos.x, luzes[0]->pos.y, luzes[0]->pos.z);
         
 		// Draw the triangles !
@@ -1141,11 +1148,19 @@ int main () {
 	glfwTerminate();
 	return 0;
 }
+glm::vec3 randPos(){
+    return glm::vec3(rand()%20 -10, rand()%20-10, rand()%20 -10);
+}
+glm::vec3 randCor(){
+    return glm::vec3((rand()%10+1)/10.0, (rand()%10+1)/10.0, (rand()%10+1)/10.0);
+}
 
 void configuraCena(){
     c.x =0;
     c.y =4;
     c.z =8;
+
+    srand (time(NULL));
     
     //inicializa o primeiro shader
     myShader = new Shader("shaders6/vert.cpp","shaders6/frag.cpp");
@@ -1161,10 +1176,12 @@ void configuraCena(){
     luz = new Sphere(32,32);
     
     //inicializa as luzes
-    for (int i=0;i<1;i++){
-        luzes[i] = new Luz(glm::vec3(0,4,8),glm::vec3(1,1,1));
+    for (int i=0;i<50;i++){
+        glm::vec3 c =randCor();
+        //printf("%.2f,%.2f,%.2f\n",c.r,c.g,c.b);
+        luzes[i] = new Luz(randPos(),c);
     }
-    luzes[1] = new Luz(glm::vec3(8,3,0),glm::vec3(1,1,1));
+
 }
 
 void configuraContexto(){
@@ -1224,7 +1241,7 @@ void updateLuz(){
     
     //inicializa as luzes
     glm::vec3 aux;
-    for (int i=0;i<2;i++){
+    for (int i=0;i<50;i++){
         aux = glm::rotateY(luzes[i]->pos, 0.5f);
         luzes[i]->setPos(aux);
     }
