@@ -859,84 +859,6 @@ public:
     GLuint m_depthTexture;
 };
 
-class DeferRender{
-public:
-    Shader * quadShader;
-    Shader * lightingShader;
-    
-    GLuint texID;
-    GLuint quad_vertexbuffer;
-    
-    DeferRender(){
-        GLfloat g_quad_vertex_buffer_data[] = {
-            -1.0f, -1.0f, 0.0f,
-            1.0f, -1.0f, 0.0f,
-            -1.0f,  1.0f, 0.0f,
-            -1.0f,  1.0f, 0.0f,
-            1.0f, -1.0f, 0.0f,
-            1.0f,  1.0f, 0.0f,
-        };
-        
-        glGenBuffers(1, &quad_vertexbuffer);
-        glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(g_quad_vertex_buffer_data), g_quad_vertex_buffer_data, GL_STATIC_DRAW);
-        
-        // Create and compile our GLSL program from the shaders
-        quadShader = new Shader("shaders6/ex-deferVertex.cpp", "shaders6/ex-deferFrag.cpp");
-        lightingShader = new Shader("shaders6/deferVertex.cpp", "shaders6/deferFrag.cpp");
-        
-        texID = glGetUniformLocation(quadShader->programID(), "renderedTexture");
-    }
-    ~DeferRender(){
-        
-    }
-    
-    void setRenderToFrameBuffer(GLuint FramebufferName){
-        glBindFramebuffer(GL_FRAMEBUFFER, FramebufferName);
-    }
-    void setRenderToScreen(){
-        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    }
-    
-    void showTexture(GLuint renderedTexture){
-        setRenderToScreen();
-		glViewport(0,0,800,800); // Render on the whole framebuffer, complete from the lower left corner to the upper right
-        
-		// Clear the screen
-		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        
-		// Bind our texture in Texture Unit 0
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, renderedTexture);
-        //		glBindTexture(GL_TEXTURE_2D, depthTexture);
-        
-		// Set our "renderedTexture" sampler to user Texture Unit 0
-		glUniform1i(this->texID, 0);
-        
-		// 1rst attribute buffer : vertices
-		glEnableVertexAttribArray(0);
-		glBindBuffer(GL_ARRAY_BUFFER, this->quad_vertexbuffer);
-		glVertexAttribPointer(
-                              0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-                              3,                  // size
-                              GL_FLOAT,           // type
-                              GL_FALSE,           // normalized?
-                              0,                  // stride
-                              (void*)0            // array buffer offset
-                              );
-        
-        // Use our shader
-		glUseProgram(this->quadShader->programID());
-		// Draw the triangles !
-		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
-        
-		glDisableVertexAttribArray(0);
-    }
-    
-    void render(){
-        
-    }
-};
 
 class FBO{
 public:
@@ -945,7 +867,7 @@ public:
     GLuint m_depthTexture;
     
     GLuint FramebufferName;
-//    GLuint renderedTexture;
+    //    GLuint renderedTexture;
     GLuint depthrenderbuffer;
     
     FBO(){
@@ -994,6 +916,131 @@ public:
     }
 };
 
+class DeferRender{
+public:
+    Shader * quadShader;
+    Shader * lightingShader;
+    
+    GLuint texID;
+    GLuint quad_vertexbuffer;
+    
+    GLuint posTex, colorTex, nomalTex;
+    
+    DeferRender(){
+        GLfloat g_quad_vertex_buffer_data[] = {
+            -1.0f, -1.0f, 0.0f,
+            1.0f, -1.0f, 0.0f,
+            -1.0f,  1.0f, 0.0f,
+            -1.0f,  1.0f, 0.0f,
+            1.0f, -1.0f, 0.0f,
+            1.0f,  1.0f, 0.0f,
+        };
+        
+        glGenBuffers(1, &quad_vertexbuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(g_quad_vertex_buffer_data), g_quad_vertex_buffer_data, GL_STATIC_DRAW);
+        
+        // Create and compile our GLSL program from the shaders
+        quadShader = new Shader("shaders6/ex-deferVertex.cpp", "shaders6/ex-deferFrag.cpp");
+        lightingShader = new Shader("shaders6/deferVertex.cpp", "shaders6/deferFrag.cpp");
+        
+        texID = glGetUniformLocation(quadShader->programID(), "renderedTexture");
+    }
+    ~DeferRender(){
+        
+    }
+    
+    void setRenderToFrameBuffer(GLuint FramebufferName){
+        glBindFramebuffer(GL_FRAMEBUFFER, FramebufferName);
+    }
+    void setRenderToScreen(){
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    }
+    
+    void showTexture(GLuint renderedTexture){
+        setRenderToScreen();
+		glViewport(0,0,800,800); // Render on the whole framebuffer, complete from the lower left corner to the upper right
+        
+		// Clear the screen
+		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        
+		// Bind our texture in Texture Unit 0
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, renderedTexture);
+        //		glBindTexture(GL_TEXTURE_2D, depthTexture);
+        
+		// Set our "renderedTexture" sampler to user Texture Unit 0
+		//glUniform1i(this->texID, 4);
+        
+		// 1rst attribute buffer : vertices
+		glEnableVertexAttribArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, this->quad_vertexbuffer);
+		glVertexAttribPointer(
+                              0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+                              3,                  // size
+                              GL_FLOAT,           // type
+                              GL_FALSE,           // normalized?
+                              0,                  // stride
+                              (void*)0            // array buffer offset
+                              );
+        
+        // Use our shader
+		glUseProgram(this->quadShader->programID());
+		// Draw the triangles !
+		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
+        
+		glDisableVertexAttribArray(0);
+    }
+    
+    void render(FBO * fbo){
+        posTex = glGetUniformLocation(lightingShader->programID(), "posTex");
+        colorTex = glGetUniformLocation(lightingShader->programID(), "corTex");
+        nomalTex = glGetUniformLocation(lightingShader->programID(), "normalTex");
+        
+        setRenderToScreen();
+		glViewport(0,0,800,800); // Render on the whole framebuffer, complete from the lower left corner to the upper right
+        
+		// Clear the screen
+		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        
+        // Use our shader
+		glUseProgram(this->lightingShader->programID());
+        
+		// Bind our texture in Texture Unit 0
+        glActiveTexture(GL_TEXTURE0);
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, fbo->m_textures[0]);
+        glUniform1i ( posTex, 0 );
+
+        glActiveTexture(GL_TEXTURE1);
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, fbo->m_textures[1]);
+        glUniform1i ( colorTex, 1 );
+        
+        glActiveTexture(GL_TEXTURE2);
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, fbo->m_textures[2]);
+        glUniform1i ( nomalTex, 2 );
+        
+		// 1rst attribute buffer : vertices
+		glEnableVertexAttribArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, this->quad_vertexbuffer);
+		glVertexAttribPointer(
+                              0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+                              3,                  // size
+                              GL_FLOAT,           // type
+                              GL_FALSE,           // normalized?
+                              0,                  // stride
+                              (void*)0            // array buffer offset
+                              );
+        
+		// Draw the triangles !
+		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
+        
+		glDisableVertexAttribArray(0);
+    }
+};
+
 // ========== Prototipos funcoes ==========
 void GLFWCALL window_resized(int width, int height);
 void keyboard(int key, int action);
@@ -1035,42 +1082,7 @@ void DSLightPass()
     m_gbuffer.SetReadBuffer(GBuffer::GBUFFER_TEXTURE_TYPE_TEXCOORD);
     glBlitFramebuffer(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, HalfWidth, 0, WINDOW_WIDTH, HalfHeight, GL_COLOR_BUFFER_BIT, GL_LINEAR);
 }
-void DSPointLightsPass()
-{
-    //m_DSPointLightPassTech.Enable();
-    //m_DSPointLightPassTech.SetEyeWorldPos(m_pGameCamera->GetPos());
-    
-    //Pipeline p;
-    //p.SetCamera(m_pGameCamera->GetPos(), m_pGameCamera->GetTarget(), m_pGameCamera->GetUp());
-    //p.SetPerspectiveProj(m_persProjInfo);
-    
-    //for (unsigned int i = 0 ; i < ARRAY_SIZE_IN_ELEMENTS(m_pointLight); i++) {
-        //m_DSPointLightPassTech.SetPointLight(m_pointLight[i]);
-        //p.WorldPos(m_pointLight[i].Position);
-        //float BSphereScale = CalcPointLightBSphere(m_pointLight[i]);
-        //p.Scale(BSphereScale, BSphereScale, BSphereScale);
-        //m_DSPointLightPassTech.SetWVP(p.GetWVPTrans());
-        //m_bsphere.Render();
-    //}
-}
-void DSDirectionalLightPass()
-{
-    //m_DSDirLightPassTech.Enable();
-    //m_DSDirLightPassTech.SetEyeWorldPos(m_pGameCamera->GetPos());
-    //Matrix4f WVP;
-    //WVP.InitIdentity();
-    //m_DSDirLightPassTech.SetWVP(WVP);
-    //m_quad.Render();
-}
-void BeginLightPasses()
-{
-    glEnable(GL_BLEND);
-    glBlendEquation(GL_FUNC_ADD);
-    glBlendFunc(GL_ONE, GL_ONE);
-    
-    m_gbuffer.BindForReading();
-    glClear(GL_COLOR_BUFFER_BIT);
-}
+
 
 // ========== Main ==========
 int main () {
@@ -1098,8 +1110,8 @@ int main () {
         displayCena();
         updateLuz();
         
-		dr->showTexture(fbo->m_textures[2]);
-		//dr->render();
+//		dr->showTexture(fbo->m_textures[1]);
+		dr->render(fbo);
 
         glfwSwapBuffers();
 		glfwPollEvents();
