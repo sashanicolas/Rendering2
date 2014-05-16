@@ -133,7 +133,8 @@ public:
         
         // Camera matrix
         View = glm::lookAt(
-                           glm::vec3(c.x,c.y,c.z), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
+//                           glm::vec3(c.x,c.y,c.z), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
+                           glm::vec3(0,4,8), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
                            glm::vec3(0, 0, 0), // and looks at the origin
                            glm::vec3(0,1.0f,0) // Head is up (set to 0,-1,0 to look upside-down)
                            );
@@ -156,7 +157,8 @@ public:
         v = glGetUniformLocation(shaderProgram, "V" );
         glUniformMatrix4fv(v, 1, GL_FALSE, glm::value_ptr(View));
         
-        lightPos = glm::vec3(0,7,7);//bom = 5.0f, 4.0f, 4.0f
+//        lightPos = glm::vec3(0,7,7);//bom = 5.0f, 4.0f, 4.0f
+        lightPos = glm::vec3(c.x,c.y,c.z);//bom = 5.0f, 4.0f, 4.0f
         LightID = glGetUniformLocation(shaderProgram, "LightPosition_worldspace" );
 		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
     }
@@ -1033,6 +1035,8 @@ public:
                               0,                  // stride
                               (void*)0            // array buffer offset
                               );
+
+        lightingShader->SetUniform("lightPos", c.x, c.y, c.z);
         
 		// Draw the triangles !
 		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
