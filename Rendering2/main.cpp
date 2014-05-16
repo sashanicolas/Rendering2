@@ -918,6 +918,8 @@ public:
     }
 };
 
+Luz * luzes[50];
+
 class DeferRender{
 public:
     Shader * quadShader;
@@ -1036,7 +1038,18 @@ public:
                               (void*)0            // array buffer offset
                               );
 
-        lightingShader->SetUniform("lightPos", c.x, c.y, c.z);
+        
+        
+        GLfloat lights[6];//={luzes[0]->pos.x, luzes[0]->pos.y, luzes[0]->pos.z};
+        //passa as posicoes das luzes pra float
+        for (int i=0;i<2;i++){
+            lights[i*3 +0]=luzes[i]->pos.x;
+            lights[i*3 +1]=luzes[i]->pos.y;
+            lights[i*3 +2]=luzes[i]->pos.z;
+        }
+        
+        glUniform1fv(glGetUniformLocation(lightingShader->programID(), "lightPos"), 6, lights);
+//        lightingShader->SetUniform("lightPos", luzes[0]->pos.x, luzes[0]->pos.y, luzes[0]->pos.z);
         
 		// Draw the triangles !
 		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
@@ -1058,7 +1071,6 @@ Shader * myShader;
 Sphere * s[10][10];
 Grid *g;
 Sphere * luz;
-Luz * luzes;
 
 // ========== Testes ====================
 GBuffer m_gbuffer;
@@ -1104,17 +1116,16 @@ int main () {
     fbo->Init(WINDOW_WIDTH, WINDOW_HEIGHT);
     DeferRender * dr = new DeferRender();
     
+    dr->setRenderToFrameBuffer(fbo->FramebufferName);
+    displayCena();
+    
 	// Create a rendering loop
 	int running = GL_TRUE;
     
 	while(running) {
-        
-        dr->setRenderToFrameBuffer(fbo->FramebufferName);
-        
-        displayCena();
         updateLuz();
         
-//		dr->showTexture(fbo->m_textures[1]);
+//		dr->showTexture(fbo->m_textures[2]);
 		dr->render(fbo);
 
         glfwSwapBuffers();
@@ -1136,18 +1147,24 @@ void configuraCena(){
     c.y =4;
     c.z =8;
     
+    //inicializa o primeiro shader
     myShader = new Shader("shaders6/vert.cpp","shaders6/frag.cpp");
 
+    //inicializa os objetos
     for (int i=0;i<10;i++){
         for (int j=0; j<10; j++) {
             s[i][j] = new Sphere(64,64);
             s[i][j]->setPositionXZ(i,j);
         }
     }
-    
     g = new Grid(64,64);
     luz = new Sphere(32,32);
     
+    //inicializa as luzes
+    for (int i=0;i<1;i++){
+        luzes[i] = new Luz(glm::vec3(0,4,8),glm::vec3(1,1,1));
+    }
+    luzes[1] = new Luz(glm::vec3(8,3,0),glm::vec3(1,1,1));
 }
 
 void configuraContexto(){
@@ -1204,6 +1221,13 @@ void updateLuz(){
     c.x = cam.x;
     c.y = cam.y;
     c.z = cam.z;
+    
+    //inicializa as luzes
+    glm::vec3 aux;
+    for (int i=0;i<2;i++){
+        aux = glm::rotateY(luzes[i]->pos, 0.5f);
+        luzes[i]->setPos(aux);
+    }
 
 }
 
