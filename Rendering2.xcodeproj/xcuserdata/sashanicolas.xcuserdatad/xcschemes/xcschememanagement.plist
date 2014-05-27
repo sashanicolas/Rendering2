@@ -4,10 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Raytracing.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Rendering2.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>Trabalho1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Trabalho2.xcscheme</key>
 		<dict>
@@ -28,6 +38,16 @@
 			<true/>
 		</dict>
 		<key>B7FBA6281934E28700E018F1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7FBA6381934E7AC00E018F1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7FBA6481934EBEA00E018F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

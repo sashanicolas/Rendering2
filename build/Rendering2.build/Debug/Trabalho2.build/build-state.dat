@@ -346,8 +346,8 @@ t1401204688
 s30383
 
 N/Users/sashanicolas/Projects/Rendering2/build/Debug/Trabalho2
-t1401204679
-s703068
+t1401204689
+s703060
 
 N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho2.build/Objects-normal/x86_64/Trabalho2.LinkFileList
 c000000005384ABDB0000000000000072
@@ -813,7 +813,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies0fd6af50e734b941^5950b050e734b941^---0#1#1#--18"Check dependencies36"43140C5B-0BAD-4B14-804D-76E52064B822-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesc0427604e834b941^13b98004e834b941^---0#1#1#--18"Check dependencies36"1D9A70C9-9C93-4272-8A13-6EA4CF5B90F6-
 
 CCompileC build/Rendering2.build/Debug/Trabalho2.build/Objects-normal/x86_64/main.o /Users/sashanicolas/Projects/Rendering2/Trabalho2/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
 s422897488.689791

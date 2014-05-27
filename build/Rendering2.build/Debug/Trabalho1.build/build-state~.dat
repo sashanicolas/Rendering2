@@ -1,0 +1,222 @@
+TTrabalho1
+v6
+r1
+cCheck dependencies
+cCompileC build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/main.o /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/sashanicolas/Projects/Rendering2/build/Debug/Trabalho1 normal x86_64
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+c0000000053471FE200000000000000AA
+t1397170146
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c000000005268268B000000000000044C
+t1382557323
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000532B9B4600000000000001DE
+t1395366726
+s478
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
+c00000000532B9B47000000000000BB7C
+t1395366727
+s47996
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
+c00000000532B9B490000000000000ADC
+t1395366729
+s2780
+
+N/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp
+c000000005384B47000000000000021F6
+t1401205872
+s8694
+
+N/Users/sashanicolas/Projects/Rendering2/build/Debug/Trabalho1
+t2
+s0
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/Trabalho1.LinkFileList
+c000000005384B47C0000000000000072
+t1401205884
+s114
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/main.o
+t1401205884
+s18588
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies677cb3fceb34b941^dcf5b6fceb34b941^---0#1#1#--18"Check dependencies36"EA17B597-C0BB-4CC8-8AAC-EEFCF6AB7EE4-
+
+CCompileC build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/main.o /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s422898684.715277
+e422898684.801063
+r1
+xCompileC
+xbuild/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/main.o
+x/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp
+o/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:241:5: warning: 'gluPerspective' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakePerspective" [-Wdeprecated-declarations]
+o    gluPerspective(50.0f,(float)vp[2]/vp[3],1.0,100.0);
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:61:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h:278:13: note: 'gluPerspective' declared here
+oextern void gluPerspective (GLdouble fovy, GLdouble aspect, GLdouble zNear, GLdouble zFar) OPENGL_DEPRECATED_MSG(10_0, 10_9, "Use GLKMatrix4MakePerspective");
+o            ^
+o/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:246:5: warning: 'gluLookAt' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakeLookAt" [-Wdeprecated-declarations]
+o    gluLookAt(0,7,15,0,0,0,0,1,0);
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:61:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h:265:13: note: 'gluLookAt' declared here
+oextern void gluLookAt (GLdouble eyeX, GLdouble eyeY, GLdouble eyeZ, GLdouble centerX, GLdouble centerY, GLdouble centerZ, GLdouble upX, GLdouble upY, GLdouble upZ) OPENGL_DEPRECATED_MSG(10_0, 10_9, "Use GLKMatrix4MakeLookAt");
+o            ^
+o/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:251:5: warning: 'glutSwapBuffers' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o    glutSwapBuffers();
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:448:22: note: 'glutSwapBuffers' declared here
+oextern void APIENTRY glutSwapBuffers(void) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:273:5: warning: 'glutInit' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o    glutInit(&argc, argv);
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:431:22: note: 'glutInit' declared here
+oextern void APIENTRY glutInit(int *argcp, char **argv) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:274:5: warning: 'glutInitDisplayMode' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o    glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGB);
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:432:22: note: 'glutInitDisplayMode' declared here
+oextern void APIENTRY glutInitDisplayMode(unsigned int mode) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:275:5: warning: 'glutInitWindowSize' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o    glutInitWindowSize(800,600);
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:437:22: note: 'glutInitWindowSize' declared here
+oextern void APIENTRY glutInitWindowSize(int width, int height) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:278:5: warning: 'glutCreateWindow' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o    glutCreateWindow ("Spheres");
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:441:21: note: 'glutCreateWindow' declared here
+oextern int APIENTRY glutCreateWindow(const char *title) OPENGL_DEPRECATED(10_0, 10_9);
+o                    ^
+o/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:279:5: warning: 'glutReshapeFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o    glutReshapeFunc(Reshape);
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:506:22: note: 'glutReshapeFunc' declared here
+oextern void APIENTRY glutReshapeFunc(void (*func)(int width, int height)) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:280:5: warning: 'glutDisplayFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o    glutDisplayFunc(Display);
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:505:22: note: 'glutDisplayFunc' declared here
+oextern void APIENTRY glutDisplayFunc(void (*func)(void)) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:281:5: warning: 'glutKeyboardFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o    glutKeyboardFunc(Keyboard);
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:507:22: note: 'glutKeyboardFunc' declared here
+oextern void APIENTRY glutKeyboardFunc(void (*func)(unsigned char key, int x, int y)) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:287:5: warning: 'glutMainLoop' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o    glutMainLoop();
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:438:22: note: 'glutMainLoop' declared here
+oextern void APIENTRY glutMainLoop(void) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o11 warnings generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Compile /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp163"CompileC build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/main.o Trabalho1/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compilerf930b7fceb34b941^4512cdfceb34b941^-7275"/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:241:5: warning: 'gluPerspective' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakePerspective" [-Wdeprecated-declarations]    gluPerspective(50.0f,(float)vp[2]/vp[3],1.0,100.0);    ^In file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:61:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h:278:13: note: 'gluPerspective' declared hereextern void gluPerspective (GLdouble fovy, GLdouble aspect, GLdouble zNear, GLdouble zFar) OPENGL_DEPRECATED_MSG(10_0, 10_9, "Use GLKMatrix4MakePerspective");            ^/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:246:5: warning: 'gluLookAt' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakeLookAt" [-Wdeprecated-declarations]    gluLookAt(0,7,15,0,0,0,0,1,0);    ^In file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:61:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h:265:13: note: 'gluLookAt' declared hereextern void gluLookAt (GLdouble eyeX, GLdouble eyeY, GLdouble eyeZ, GLdouble centerX, GLdouble centerY, GLdouble centerZ, GLdouble upX, GLdouble upY, GLdouble upZ) OPENGL_DEPRECATED_MSG(10_0, 10_9, "Use GLKMatrix4MakeLookAt");            ^/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:251:5: warning: 'glutSwapBuffers' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]    glutSwapBuffers();    ^In file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:448:22: note: 'glutSwapBuffers' declared hereextern void APIENTRY glutSwapBuffers(void) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:273:5: warning: 'glutInit' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]    glutInit(&argc, argv);    ^In file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:431:22: note: 'glutInit' declared hereextern void APIENTRY glutInit(int *argcp, char **argv) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:274:5: warning: 'glutInitDisplayMode' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]    glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGB);    ^In file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:432:22: note: 'glutInitDisplayMode' declared hereextern void APIENTRY glutInitDisplayMode(unsigned int mode) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:275:5: warning: 'glutInitWindowSize' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]    glutInitWindowSize(800,600);    ^In file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:437:22: note: 'glutInitWindowSize' declared hereextern void APIENTRY glutInitWindowSize(int width, int height) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:278:5: warning: 'glutCreateWindow' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]    glutCreateWindow ("Spheres");    ^In file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:441:21: note: 'glutCreateWindow' declared hereextern int APIENTRY glutCreateWindow(const char *title) OPENGL_DEPRECATED(10_0, 10_9);                    ^/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:279:5: warning: 'glutReshapeFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]    glutReshapeFunc(Reshape);    ^In file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:506:22: note: 'glutReshapeFunc' declared hereextern void APIENTRY glutReshapeFunc(void (*func)(int width, int height)) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:280:5: warning: 'glutDisplayFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]    glutDisplayFunc(Display);    ^In file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:505:22: note: 'glutDisplayFunc' declared hereextern void APIENTRY glutDisplayFunc(void (*func)(void)) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:281:5: warning: 'glutKeyboardFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]    glutKeyboardFunc(Keyboard);    ^In file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:507:22: note: 'glutKeyboardFunc' declared hereextern void APIENTRY glutKeyboardFunc(void (*func)(unsigned char key, int x, int y)) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:287:5: warning: 'glutMainLoop' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]    glutMainLoop();    ^In file included from /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp:2:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:438:22: note: 'glutMainLoop' declared hereextern void APIENTRY glutMainLoop(void) OPENGL_DEPRECATED(10_0, 10_9);                     ^11 warnings generated.11(36%IDEClangDiagnosticActivityLogMessage2@95"'gluPerspective' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakePerspective"-422898684#18446744073709551615#0#1(2@30"'gluPerspective' declared here-422898684#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@162"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h0000000000000000^277#12#277#12#15841#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^240#4#240#4#7766#0#12"Deprecations--2@85"'gluLookAt' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakeLookAt"-422898684#18446744073709551615#0#1(2@25"'gluLookAt' declared here-422898684#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@162"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h0000000000000000^264#12#264#12#14161#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^245#4#245#4#7912#0#12"Deprecations--2@62"'glutSwapBuffers' is deprecated: first deprecated in OS X 10.9-422898684#18446744073709551615#0#1(2@31"'glutSwapBuffers' declared here-422898684#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^447#21#447#21#13979#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^250#4#250#4#7992#0#12"Deprecations--2@55"'glutInit' is deprecated: first deprecated in OS X 10.9-422898684#18446744073709551615#0#1(2@24"'glutInit' declared here-422898684#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^430#21#430#21#12845#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^272#4#272#4#8316#0#12"Deprecations--2@66"'glutInitDisplayMode' is deprecated: first deprecated in OS X 10.9-422898684#18446744073709551615#0#1(2@35"'glutInitDisplayMode' declared here-422898684#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^431#21#431#21#12931#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^273#4#273#4#8343#0#12"Deprecations--2@65"'glutInitWindowSize' is deprecated: first deprecated in OS X 10.9-422898684#18446744073709551615#0#1(2@34"'glutInitWindowSize' declared here-422898684#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^436#21#436#21#13273#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^274#4#274#4#8405#0#12"Deprecations--2@63"'glutCreateWindow' is deprecated: first deprecated in OS X 10.9-422898684#18446744073709551615#0#1(2@32"'glutCreateWindow' declared here-422898684#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^440#20#440#20#13465#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^277#4#277#4#8464#0#12"Deprecations--2@62"'glutReshapeFunc' is deprecated: first deprecated in OS X 10.9-422898684#18446744073709551615#0#1(2@31"'glutReshapeFunc' declared here-422898684#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^505#21#505#21#17562#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^278#4#278#4#8498#0#12"Deprecations--2@62"'glutDisplayFunc' is deprecated: first deprecated in OS X 10.9-422898684#18446744073709551615#0#1(2@31"'glutDisplayFunc' declared here-422898684#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^504#21#504#21#17474#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^279#4#279#4#8528#0#12"Deprecations--2@63"'glutKeyboardFunc' is deprecated: first deprecated in OS X 10.9-422898684#18446744073709551615#0#1(2@32"'glutKeyboardFunc' declared here-422898684#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^506#21#506#21#17667#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^280#4#280#4#8558#0#12"Deprecations--2@59"'glutMainLoop' is deprecated: first deprecated in OS X 10.9-422898684#18446744073709551615#0#1(2@28"'glutMainLoop' declared here-422898684#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^437#21#437#21#13367#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^286#4#286#4#8662#0#12"Deprecations--0#0#1#-19%DVTDocumentLocation4@65"file:///Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp0000000000000000^2842"CompileC build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/main.o Trabalho1/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Trabalho1-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Trabalho1-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Trabalho1-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Trabalho1-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/main.dia -c /Users/sashanicolas/Projects/Rendering2/Trabalho1/main.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/main.o36"F7C80B6F-F784-411D-8D64-932D1502E2DA-
+b8B262C0B-F67F-48BD-A840-F83E2071C621
+
+CLd /Users/sashanicolas/Projects/Rendering2/build/Debug/Trabalho1 normal x86_64
+s422898684.801758
+e422898684.829869
+r0
+xLd
+x/Users/sashanicolas/Projects/Rendering2/build/Debug/Trabalho1
+xnormal
+xx86_64
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/Trabalho1.LinkFileList
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/main.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libc++.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.osx.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_stats.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+oUndefined symbols for architecture x86_64:
+o  "_glutCreateWindow", referenced from:
+o      _main in main.o
+o  "_glutDisplayFunc", referenced from:
+o      _main in main.o
+o  "_glutInit", referenced from:
+o      _main in main.o
+o  "_glutInitDisplayMode", referenced from:
+o      _main in main.o
+o  "_glutInitWindowSize", referenced from:
+o      _main in main.o
+o  "_glutKeyboardFunc", referenced from:
+o      _main in main.o
+o  "_glutMainLoop", referenced from:
+o      _main in main.o
+o  "_glutReshapeFunc", referenced from:
+o      _main in main.o
+o  "_glutSwapBuffers", referenced from:
+o      Display() in main.o
+old: symbol(s) not found for architecture x86_64
+oclang: error: linker command failed with exit code 1 (use -v to see invocation)
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Link /Users/sashanicolas/Projects/Rendering2/build/Debug/Trabalho138"Ld build/Debug/Trabalho1 normal x86_64724dcdfceb34b941^f372d4fceb34b941^-723"Undefined symbols for architecture x86_64:  "_glutCreateWindow", referenced from:      _main in main.o  "_glutDisplayFunc", referenced from:      _main in main.o  "_glutInit", referenced from:      _main in main.o  "_glutInitDisplayMode", referenced from:      _main in main.o  "_glutInitWindowSize", referenced from:      _main in main.o  "_glutKeyboardFunc", referenced from:      _main in main.o  "_glutMainLoop", referenced from:      _main in main.o  "_glutReshapeFunc", referenced from:      _main in main.o  "_glutSwapBuffers", referenced from:      Display() in main.old: symbol(s) not found for architecture x86_64clang: error: linker command failed with exit code 1 (use -v to see invocation)20(21%IDEActivityLogMessage2@37""_glutCreateWindow", referenced from:-422898684#43#40#-2#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-422898684#83#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@36""_glutDisplayFunc", referenced from:-422898684#105#39#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-422898684#144#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@29""_glutInit", referenced from:-422898684#166#32#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-422898684#198#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@40""_glutInitDisplayMode", referenced from:-422898684#220#43#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-422898684#263#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@39""_glutInitWindowSize", referenced from:-422898684#285#42#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-422898684#327#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@37""_glutKeyboardFunc", referenced from:-422898684#349#40#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-422898684#389#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@33""_glutMainLoop", referenced from:-422898684#411#36#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-422898684#447#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@36""_glutReshapeFunc", referenced from:-422898684#469#39#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@15"_main in main.o-422898684#508#22#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@36""_glutSwapBuffers", referenced from:-422898684#530#39#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@19"Display() in main.o-422898684#569#26#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@43"Symbol(s) not found for architecture x86_64-422898684#595#48#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@65"Linker command failed with exit code 1 (use -v to see invocation)-422898684#643#80#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--0#0#1#--892"Ld build/Debug/Trabalho1 normal x86_64    cd /Users/sashanicolas/Projects/Rendering2    export MACOSX_DEPLOYMENT_TARGET=10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/sashanicolas/Projects/Rendering2/build/Debug -F/Users/sashanicolas/Projects/Rendering2/build/Debug -filelist /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/Trabalho1.LinkFileList -mmacosx-version-min=10.9 -stdlib=libc++ -framework OpenGL -Xlinker -dependency_info -Xlinker /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Trabalho1.build/Objects-normal/x86_64/Trabalho1_dependency_info.dat -o /Users/sashanicolas/Projects/Rendering2/build/Debug/Trabalho136"2DA84EF7-D98E-48C5-8C91-9AB59AD45359-
+b8B262C0B-F67F-48BD-A840-F83E2071C621
+

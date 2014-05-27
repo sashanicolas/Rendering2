@@ -1,0 +1,1344 @@
+TRaytracing
+v6
+r1
+cCheck dependencies
+cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o /Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o /Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o /Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o /Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o /Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing normal x86_64
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+c0000000053471FE200000000000000AA
+t1397170146
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c000000005268268B000000000000044C
+t1382557323
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000532B9B4600000000000001DE
+t1395366726
+s478
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
+c00000000532B9B470000000000268434
+t1395366727
+s2524212
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
+c000000005268268C0000000000007D5C
+t1382557324
+s32092
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+c00000000532B9B470000000000020D64
+t1395366727
+s134500
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+c000000005268268C000000000001B3B8
+t1382557324
+s111544
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+c00000000532B9B470000000000034FAC
+t1395366727
+s217004
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+c000000005268268C000000000000CB08
+t1382557324
+s51976
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+c000000005268268C000000000002C5F4
+t1382557324
+s181748
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+c000000005268268C000000000002B9A8
+t1382557324
+s178600
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+c00000000532B9B470000000000011EF8
+t1395366727
+s73464
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c00000000532B9B4700000000000598A8
+t1395366727
+s366760
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000005268268C000000000000253C
+t1382557324
+s9532
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c00000000532B9B47000000000004C7C4
+t1395366727
+s313284
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c00000000532B9B470000000000085C70
+t1395366727
+s547952
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000532B9B47000000000008B334
+t1395366727
+s570164
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/CoreServices
+c000000005268268C000000000000979C
+t1382557324
+s38812
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+c000000005268268C00000000000223B4
+t1382557324
+s140212
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+c00000000532B9B470000000000071CA8
+t1395366727
+s466088
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+c000000005268268C0000000000017E1C
+t1382557324
+s97820
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+c00000000532B9B47000000000004F090
+t1395366727
+s323728
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+c00000000532B9B47000000000003AA48
+t1395366727
+s240200
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+c00000000532B9B4700000000000383CC
+t1395366727
+s230348
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+c000000005268268C000000000001B66C
+t1382557324
+s112236
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+c00000000532B9B470000000000030448
+t1395366727
+s197704
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c00000000532B9B4700000000000C9E38
+t1395366727
+s826936
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/GLUT
+c000000005268268C00000000000135D4
+t1382557324
+s79316
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/IOKit.framework/IOKit
+c00000000532B9B47000000000004426C
+t1395366727
+s279148
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
+c00000000532B9B4700000000000394B0
+t1395366727
+s234672
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
+c00000000532B9B47000000000000BB7C
+t1395366727
+s47996
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+c00000000532B9B4700000000000211A0
+t1395366727
+s135584
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+c00000000532B9B470000000000005F00
+t1395366727
+s24320
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+c00000000532B9B48000000000000681C
+t1395366728
+s26652
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libc++.dylib
+c0000000052682691000000000006E8B0
+t1382557329
+s452784
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libobjc.A.dylib
+c00000000526826910000000000014EF8
+t1382557329
+s85752
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+c00000000526826910000000000004734
+t1382557329
+s18228
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+c0000000052682691000000000000FC6C
+t1382557329
+s64620
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+c0000000052682691000000000000F6A0
+t1382557329
+s63136
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+c00000000526826910000000000006254
+t1382557329
+s25172
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+c0000000052682691000000000000E0F8
+t1382557329
+s57592
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+c00000000532B9B48000000000000D6DC
+t1395366728
+s55004
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+c00000000532B9B480000000000006308
+t1395366728
+s25352
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+c00000000526826910000000000004050
+t1382557329
+s16464
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+c00000000532B9B480000000000008570
+t1395366728
+s34160
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+c00000000526826910000000000005EA0
+t1382557329
+s24224
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+c00000000526826910000000000005FAC
+t1382557329
+s24492
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+c00000000526826910000000000004440
+t1382557329
+s17472
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+c0000000052682691000000000000AA28
+t1382557329
+s43560
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+c00000000526826910000000000003E2C
+t1382557329
+s15916
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+c00000000532B9B480000000000030B04
+t1395366728
+s199428
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+c00000000532B9B480000000000005E54
+t1395366728
+s24148
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+c00000000532B9B480000000000006A90
+t1395366728
+s27280
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+c000000005268269100000000000178AC
+t1382557329
+s96428
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+c00000000532B9B48000000000001ADC8
+t1395366728
+s110024
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+c0000000052682691000000000001028C
+t1382557329
+s66188
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+c00000000532B9B480000000000008800
+t1395366728
+s34816
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+c00000000526826910000000000011090
+t1382557329
+s69776
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+c0000000052682691000000000000882C
+t1382557329
+s34860
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+c00000000532B9B4800000000000067AC
+t1395366728
+s26540
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+c00000000526826910000000000008DEC
+t1382557329
+s36332
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+c00000000532B9B480000000000004C08
+t1395366728
+s19464
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_stats.dylib
+c00000000532B9B480000000000002428
+t1395366728
+s9256
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+c0000000052682691000000000000439C
+t1382557329
+s17308
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+c00000000526826910000000000006768
+t1382557329
+s26472
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+c00000000532B9B4800000000000172F4
+t1395366728
+s94964
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
+c00000000532B9B490000000000000ADC
+t1395366729
+s2780
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.osx.a
+c0000000053471FCA0000000000001770
+t1397170122
+s6000
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp
+c0000000051CA112E0000000000000934
+t1372197166
+s2356
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h
+c0000000051CA1120000000000000013F
+t1372197152
+s319
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp
+c0000000051C9B2E200000000000003F4
+t1372173026
+s1012
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.h
+c0000000051C9B2E20000000000000302
+t1372173026
+s770
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp
+c0000000051CA46060000000000000186
+t1372210694
+s390
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/color.h
+c0000000051D61DA60000000000000104
+t1372986790
+s260
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h
+c000000005383FF6200000000000001BA
+t1401159522
+s442
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp
+c000000005384B5C90000000000002436
+t1401206217
+s9270
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp
+c0000000051D633780000000000000603
+t1372992376
+s1539
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/object.h
+c0000000051D6337800000000000003B7
+t1372992376
+s951
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp
+c0000000051C76EB0000000000000007F
+t1372024496
+s127
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
+c0000000051C76EB000000000000000AD
+t1372024496
+s173
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp
+c0000000051C9B7360000000000000462
+t1372174134
+s1122
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h
+c0000000051C9B73600000000000002DD
+t1372174134
+s733
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp
+c0000000051C9AA3E000000000000031E
+t1372170814
+s798
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h
+c0000000051C77AFC0000000000000154
+t1372027644
+s340
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp
+c0000000051C9A71200000000000003AB
+t1372170002
+s939
+
+N/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
+c0000000051C9A7120000000000000190
+t1372170002
+s400
+
+N/Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing
+t1401206173
+s59928
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/Raytracing.LinkFileList
+c000000005384B59B0000000000000413
+t1401206171
+s1043
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o
+t1401206172
+s11560
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o
+t1401206172
+s10472
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o
+t1401206172
+s5100
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o
+t1401206218
+s63652
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o
+t1401206172
+s11432
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o
+t1401206172
+s4752
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o
+t1401206173
+s112376
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o
+t1401206172
+s9976
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o
+t1401206172
+s6912
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/GL/glew.h
+c000000005356F91A00000000000E655A
+t1398208794
+s943450
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/GL/glfw.h
+c000000005356EA700000000000004DD9
+t1398205040
+s19929
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/common.hpp
+c0000000052D20E18000000000000065C
+t1389497880
+s1628
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/_fixes.hpp
+c0000000052D20E18000000000000077A
+t1389497880
+s1914
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/_vectorize.hpp
+c00000000530D238A00000000000018B5
+t1393369994
+s6325
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_common.hpp
+c0000000052F6D9B60000000000005988
+t1391909302
+s22920
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_common.inl
+c00000000530D238A00000000000068C2
+t1393369994
+s26818
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_exponential.hpp
+c00000000530D238A0000000000001A28
+t1393369994
+s6696
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_exponential.inl
+c00000000533A3D4A0000000000001D5F
+t1396325706
+s7519
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_geometric.hpp
+c0000000052D20E180000000000001A2C
+t1389497880
+s6700
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_geometric.inl
+c00000000533A3B1000000000000024CA
+t1396325136
+s9418
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_integer.hpp
+c0000000052D20E18000000000000268F
+t1389497880
+s9871
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_integer.inl
+c00000000533256D20000000000003FD4
+t1395807954
+s16340
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_matrix.hpp
+c0000000052D20E180000000000001B84
+t1389497880
+s7044
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_matrix.inl
+c00000000533256D20000000000003B86
+t1395807954
+s15238
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_packing.hpp
+c0000000052D20E1800000000000030A0
+t1389497880
+s12448
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_packing.inl
+c00000000530D238A0000000000000ED0
+t1393369994
+s3792
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_trigonometric.hpp
+c0000000052D20E1800000000000027B1
+t1389497880
+s10161
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_trigonometric.inl
+c0000000052D20E180000000000001835
+t1389497880
+s6197
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_vector_relational.hpp
+c0000000052D20E180000000000001E55
+t1389497880
+s7765
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/func_vector_relational.inl
+c0000000052D20E1800000000000016AD
+t1389497880
+s5805
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/precision.hpp
+c0000000052D20E1800000000000006C8
+t1389497880
+s1736
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/setup.hpp
+c00000000533A39FC0000000000006E99
+t1396324860
+s28313
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_float.hpp
+c0000000052D20E1800000000000010AA
+t1389497880
+s4266
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_half.hpp
+c0000000052D20E180000000000000791
+t1389497880
+s1937
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_half.inl
+c0000000052D20E1800000000000018EE
+t1389497880
+s6382
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_int.hpp
+c0000000052D20E1800000000000021D7
+t1389497880
+s8663
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat.hpp
+c0000000052D20E18000000000000A98A
+t1389497880
+s43402
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x2.hpp
+c00000000533256D20000000000001FEC
+t1395807954
+s8172
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x2.inl
+c00000000533256D20000000000003B81
+t1395807954
+s15233
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x3.hpp
+c00000000533256D20000000000001AEC
+t1395807954
+s6892
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x3.inl
+c00000000530D238A0000000000003748
+t1393369994
+s14152
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x4.hpp
+c00000000533256D20000000000001B43
+t1395807954
+s6979
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat2x4.inl
+c00000000530D238A0000000000003B19
+t1393369994
+s15129
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x2.hpp
+c00000000533256D20000000000001B1B
+t1395807954
+s6939
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x2.inl
+c00000000530D238A0000000000003B1A
+t1393369994
+s15130
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x3.hpp
+c00000000533256D2000000000000209A
+t1395807954
+s8346
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x3.inl
+c00000000533256D20000000000005014
+t1395807954
+s20500
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x4.hpp
+c00000000533256D20000000000001C1E
+t1395807954
+s7198
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat3x4.inl
+c00000000530D238A000000000000450C
+t1393369994
+s17676
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x2.hpp
+c00000000533256D20000000000001BBE
+t1395807954
+s7102
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x2.inl
+c00000000530D238A00000000000042FC
+t1393369994
+s17148
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x3.hpp
+c00000000533256D20000000000001C83
+t1395807954
+s7299
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x3.inl
+c00000000530D238A0000000000004B58
+t1393369994
+s19288
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x4.hpp
+c00000000533256D20000000000002234
+t1395807954
+s8756
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_mat4x4.inl
+c00000000530D238A0000000000007064
+t1393369994
+s28772
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec.hpp
+c0000000052D20E180000000000006CCD
+t1389497880
+s27853
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec1.hpp
+c00000000533256D200000000000027F1
+t1395807954
+s10225
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec1.inl
+c00000000530D2BAE0000000000003DD2
+t1393372078
+s15826
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec2.hpp
+c00000000533256D20000000000002BA3
+t1395807954
+s11171
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec2.inl
+c00000000530D2BAE00000000000041FF
+t1393372078
+s16895
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec3.hpp
+c00000000533256D20000000000002E83
+t1395807954
+s11907
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec3.inl
+c00000000530D2BAE000000000000475A
+t1393372078
+s18266
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec4.hpp
+c00000000533256D20000000000003649
+t1395807954
+s13897
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/type_vec4.inl
+c00000000533256D2000000000000527C
+t1395807954
+s21116
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/exponential.hpp
+c0000000052D20E180000000000000675
+t1389497880
+s1653
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/fwd.hpp
+c0000000052D20E180000000000015225
+t1389497880
+s86565
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/geometric.hpp
+c0000000052D20E18000000000000066B
+t1389497880
+s1643
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/glm.hpp
+c0000000052D20E1800000000000011EA
+t1389497880
+s4586
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/constants.hpp
+c00000000530D238A000000000000147A
+t1393369994
+s5242
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/constants.inl
+c0000000052D20E1800000000000012F6
+t1389497880
+s4854
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp
+c0000000052D20E180000000000002E9B
+t1389497880
+s11931
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl
+c0000000053254BBC0000000000003485
+t1394953148
+s13445
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp
+c00000000530D238A00000000000033E9
+t1393369994
+s13289
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl
+c00000000530D238A0000000000005AB4
+t1393369994
+s23220
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp
+c0000000052D20E1800000000000017C7
+t1389497880
+s6087
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.inl
+c0000000052D20E180000000000003041
+t1389497880
+s12353
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/transform.hpp
+c000000005325024C0000000000000D09
+t1394934348
+s3337
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtx/transform.inl
+c0000000052D20E180000000000000472
+t1389497880
+s1138
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/integer.hpp
+c0000000052D20E180000000000000661
+t1389497880
+s1633
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat2x2.hpp
+c0000000052D20E1800000000000011A3
+t1389497880
+s4515
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat2x3.hpp
+c0000000052D20E180000000000000C13
+t1389497880
+s3091
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat2x4.hpp
+c0000000052D20E180000000000000C15
+t1389497880
+s3093
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat3x2.hpp
+c0000000052D20E180000000000000C11
+t1389497880
+s3089
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat3x3.hpp
+c0000000052D20E1800000000000011A3
+t1389497880
+s4515
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat3x4.hpp
+c0000000052D20E180000000000000C15
+t1389497880
+s3093
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat4x2.hpp
+c0000000052D20E180000000000000C15
+t1389497880
+s3093
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat4x3.hpp
+c0000000052D20E180000000000000C15
+t1389497880
+s3093
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/mat4x4.hpp
+c0000000052D20E1800000000000011A3
+t1389497880
+s4515
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/matrix.hpp
+c0000000052D20E18000000000000065C
+t1389497880
+s1628
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/packing.hpp
+c0000000052D20E180000000000000661
+t1389497880
+s1633
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/trigonometric.hpp
+c0000000052D20E18000000000000067F
+t1389497880
+s1663
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vec2.hpp
+c0000000052D20E180000000000000652
+t1389497880
+s1618
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vec3.hpp
+c0000000052D20E180000000000000652
+t1389497880
+s1618
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vec4.hpp
+c0000000052D20E180000000000000652
+t1389497880
+s1618
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/vector_relational.hpp
+c0000000052D20E180000000000000693
+t1389497880
+s1683
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/lib/libGLEW.a
+c000000005356F91A00000000000CAC58
+t1398208794
+s830552
+
+N/Users/sashanicolas/Projects/Rendering2/third_party/lib/libglfw.a
+c000000005356EA700000000000019C48
+t1398205040
+s105544
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp
+r0
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp
+r0
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp
+r0
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp
+r0
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp
+r0
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp
+r0
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp
+r0
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp
+r0
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesd498004aed34b941^2f36014aed34b941^---0#1#1#--18"Check dependencies36"DB002D3E-9AE8-419B-A309-086A9FE48911-
+
+CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s422898972.669762
+e422898972.724771
+r1
+xCompileC
+xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o
+x/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/object.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/color.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:22:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]
+o#endif;
+o      ^
+o      //
+o1 warning generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp163"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o Raytracing/box.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compilerde93ab1ced34b941^5cabb91ced34b941^-259"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:22:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]#endif;      ^      //1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@39"Extra tokens at end of #endif directive-422898972#18446744073709551615#0#1(2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:-422898972#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^21#6#21#6#318#0#29"Lexical or Preprocessor Issue1(3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^21#6#21#6#318#0#-0#0#1#-19%DVTDocumentLocation4@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^2874"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o Raytracing/box.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o36"136EC52F-8661-43C9-BBD8-000EF04A717D-
+b6618DE15-B572-4874-B38F-BFC245B3A130
+
+CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o /Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s422898972.569575
+e422898972.675735
+r1
+xCompileC
+xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o
+x/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp169"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o Raytracing/camera.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler8203921ced34b941^6341ad1ced34b941^---0#0#1#-19%DVTDocumentLocation2@68"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp0000000000000000^2892"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o Raytracing/camera.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o36"1E4A721A-B64B-42C1-9A9D-19EF39B89F4E-
+b6618DE15-B572-4874-B38F-BFC245B3A130
+
+CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o /Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s422898971.985159
+e422898972.567623
+r1
+xCompileC
+xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o
+x/Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/color.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp167"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o Raytracing/color.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler6f4bfc1bed34b941^f166911ced34b941^---0#0#1#-19%DVTDocumentLocation2@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp0000000000000000^2886"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o Raytracing/color.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o36"5B95E441-8165-4573-82CD-5807535E882B-
+b6618DE15-B572-4874-B38F-BFC245B3A130
+
+CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s422899018.005555
+e422899018.782999
+r1
+xCompileC
+xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o
+x/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/object.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/color.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:6:
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h:9:
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:29:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]
+o#endif;
+o      ^
+o      //
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:9:
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:22:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]
+o#endif;
+o      ^
+o      //
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:29:6: warning: unused variable 'h' [-Wunused-variable]
+o        int h = INITIAL_HEIGHT;
+o            ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:28:6: warning: unused variable 'w' [-Wunused-variable]
+o        int w = INITIAL_WIDTH;
+o            ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:88:2: warning: 'gluOrtho2D' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakeOrtho" [-Wdeprecated-declarations]
+o        gluOrtho2D(0, w, 0, h);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:61:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h:276:13: note: 'gluOrtho2D' declared here
+oextern void gluOrtho2D (GLdouble left, GLdouble right, GLdouble bottom, GLdouble top) OPENGL_DEPRECATED_MSG(10_0, 10_9, "Use GLKMatrix4MakeOrtho");
+o            ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:146:8: warning: unused variable 'objColor' [-Wunused-variable]
+o        Color objColor = object->getColor();
+o              ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:315:2: warning: 'glutSwapBuffers' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutSwapBuffers();
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:448:22: note: 'glutSwapBuffers' declared here
+oextern void APIENTRY glutSwapBuffers(void) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:337:2: warning: 'glutInit' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutInit(&argc, argv);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:431:22: note: 'glutInit' declared here
+oextern void APIENTRY glutInit(int *argcp, char **argv) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:338:2: warning: 'glutInitDisplayMode' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:432:22: note: 'glutInitDisplayMode' declared here
+oextern void APIENTRY glutInitDisplayMode(unsigned int mode) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:339:2: warning: 'glutInitWindowSize' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutInitWindowSize(INITIAL_WIDTH, INITIAL_HEIGHT);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:437:22: note: 'glutInitWindowSize' declared here
+oextern void APIENTRY glutInitWindowSize(int width, int height) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:340:2: warning: 'glutInitWindowPosition' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutInitWindowPosition(200, 200);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:436:22: note: 'glutInitWindowPosition' declared here
+oextern void APIENTRY glutInitWindowPosition(int x, int y) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:341:2: warning: 'glutCreateWindow' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutCreateWindow("Ray Tracing");
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:441:21: note: 'glutCreateWindow' declared here
+oextern int APIENTRY glutCreateWindow(const char *title) OPENGL_DEPRECATED(10_0, 10_9);
+o                    ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:342:5: warning: 'glutKeyboardFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o    glutKeyboardFunc(Keyboard);
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:507:22: note: 'glutKeyboardFunc' declared here
+oextern void APIENTRY glutKeyboardFunc(void (*func)(unsigned char key, int x, int y)) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:344:2: warning: 'glutReshapeFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutReshapeFunc(reshape);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:506:22: note: 'glutReshapeFunc' declared here
+oextern void APIENTRY glutReshapeFunc(void (*func)(int width, int height)) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:345:2: warning: 'glutDisplayFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutDisplayFunc(drawScene);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:505:22: note: 'glutDisplayFunc' declared here
+oextern void APIENTRY glutDisplayFunc(void (*func)(void)) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:348:2: warning: 'glutMainLoop' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutMainLoop();
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:438:22: note: 'glutMainLoop' declared here
+oextern void APIENTRY glutMainLoop(void) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o16 warnings generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp165"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o Raytracing/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compilerfce3014aed34b941^7e72c84aed34b941^-8096"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:6:In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h:9:/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:29:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]#endif;      ^      //In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:9:/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:22:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]#endif;      ^      ///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:29:6: warning: unused variable 'h' [-Wunused-variable]        int h = INITIAL_HEIGHT;            ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:28:6: warning: unused variable 'w' [-Wunused-variable]        int w = INITIAL_WIDTH;            ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:88:2: warning: 'gluOrtho2D' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakeOrtho" [-Wdeprecated-declarations]        gluOrtho2D(0, w, 0, h);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:61:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h:276:13: note: 'gluOrtho2D' declared hereextern void gluOrtho2D (GLdouble left, GLdouble right, GLdouble bottom, GLdouble top) OPENGL_DEPRECATED_MSG(10_0, 10_9, "Use GLKMatrix4MakeOrtho");            ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:146:8: warning: unused variable 'objColor' [-Wunused-variable]        Color objColor = object->getColor();              ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:315:2: warning: 'glutSwapBuffers' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutSwapBuffers();        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:448:22: note: 'glutSwapBuffers' declared hereextern void APIENTRY glutSwapBuffers(void) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:337:2: warning: 'glutInit' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutInit(&argc, argv);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:431:22: note: 'glutInit' declared hereextern void APIENTRY glutInit(int *argcp, char **argv) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:338:2: warning: 'glutInitDisplayMode' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:432:22: note: 'glutInitDisplayMode' declared hereextern void APIENTRY glutInitDisplayMode(unsigned int mode) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:339:2: warning: 'glutInitWindowSize' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutInitWindowSize(INITIAL_WIDTH, INITIAL_HEIGHT);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:437:22: note: 'glutInitWindowSize' declared hereextern void APIENTRY glutInitWindowSize(int width, int height) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:340:2: warning: 'glutInitWindowPosition' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutInitWindowPosition(200, 200);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:436:22: note: 'glutInitWindowPosition' declared hereextern void APIENTRY glutInitWindowPosition(int x, int y) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:341:2: warning: 'glutCreateWindow' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutCreateWindow("Ray Tracing");        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:441:21: note: 'glutCreateWindow' declared hereextern int APIENTRY glutCreateWindow(const char *title) OPENGL_DEPRECATED(10_0, 10_9);                    ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:342:5: warning: 'glutKeyboardFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]    glutKeyboardFunc(Keyboard);    ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:507:22: note: 'glutKeyboardFunc' declared hereextern void APIENTRY glutKeyboardFunc(void (*func)(unsigned char key, int x, int y)) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:344:2: warning: 'glutReshapeFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutReshapeFunc(reshape);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:506:22: note: 'glutReshapeFunc' declared hereextern void APIENTRY glutReshapeFunc(void (*func)(int width, int height)) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:345:2: warning: 'glutDisplayFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutDisplayFunc(drawScene);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:505:22: note: 'glutDisplayFunc' declared hereextern void APIENTRY glutDisplayFunc(void (*func)(void)) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:348:2: warning: 'glutMainLoop' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutMainLoop();        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:438:22: note: 'glutMainLoop' declared hereextern void APIENTRY glutMainLoop(void) OPENGL_DEPRECATED(10_0, 10_9);                     ^16 warnings generated.16(36%IDEClangDiagnosticActivityLogMessage2@39"Extra tokens at end of #endif directive-422899018#18446744073709551615#0#2(2@84"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:6:-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^5#9#5#9#109#0#21"Apple LLVM 5.0 Notice--2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h:9:-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h0000000000000000^8#9#8#9#130#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/light.h0000000000000000^28#6#28#6#441#0#29"Lexical or Preprocessor Issue1(3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/light.h0000000000000000^28#6#28#6#441#0#-2@39"Extra tokens at end of #endif directive-422899018#18446744073709551615#0#1(2@84"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:9:-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^8#9#8#9#168#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^21#6#21#6#318#0#29"Lexical or Preprocessor Issue1(3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^21#6#21#6#318#0#-2@19"Unused variable 'h'-422899018#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^28#5#28#5#485#0#19"Unused Entity Issue--2@19"Unused variable 'w'-422899018#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^27#5#27#5#461#0#19"Unused Entity Issue--2@85"'gluOrtho2D' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakeOrtho"-422899018#18446744073709551615#0#1(2@26"'gluOrtho2D' declared here-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@162"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h0000000000000000^275#12#275#12#15525#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^87#1#87#1#2463#0#12"Deprecations--2@26"Unused variable 'objColor'-422899018#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^145#7#145#7#3978#0#19"Unused Entity Issue--2@62"'glutSwapBuffers' is deprecated: first deprecated in OS X 10.9-422899018#18446744073709551615#0#1(2@31"'glutSwapBuffers' declared here-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^447#21#447#21#13979#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^314#1#314#1#8535#0#12"Deprecations--2@55"'glutInit' is deprecated: first deprecated in OS X 10.9-422899018#18446744073709551615#0#1(2@24"'glutInit' declared here-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^430#21#430#21#12845#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^336#1#336#1#8943#0#12"Deprecations--2@66"'glutInitDisplayMode' is deprecated: first deprecated in OS X 10.9-422899018#18446744073709551615#0#1(2@35"'glutInitDisplayMode' declared here-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^431#21#431#21#12931#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^337#1#337#1#8967#0#12"Deprecations--2@65"'glutInitWindowSize' is deprecated: first deprecated in OS X 10.9-422899018#18446744073709551615#0#1(2@34"'glutInitWindowSize' declared here-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^436#21#436#21#13273#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^338#1#338#1#9014#0#12"Deprecations--2@69"'glutInitWindowPosition' is deprecated: first deprecated in OS X 10.9-422899018#18446744073709551615#0#1(2@38"'glutInitWindowPosition' declared here-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^435#21#435#21#13184#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^339#1#339#1#9066#0#12"Deprecations--2@63"'glutCreateWindow' is deprecated: first deprecated in OS X 10.9-422899018#18446744073709551615#0#1(2@32"'glutCreateWindow' declared here-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^440#20#440#20#13465#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^340#1#340#1#9101#0#12"Deprecations--2@63"'glutKeyboardFunc' is deprecated: first deprecated in OS X 10.9-422899018#18446744073709551615#0#1(2@32"'glutKeyboardFunc' declared here-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^506#21#506#21#17667#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^341#4#341#4#9138#0#12"Deprecations--2@62"'glutReshapeFunc' is deprecated: first deprecated in OS X 10.9-422899018#18446744073709551615#0#1(2@31"'glutReshapeFunc' declared here-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^505#21#505#21#17562#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^343#1#343#1#9169#0#12"Deprecations--2@62"'glutDisplayFunc' is deprecated: first deprecated in OS X 10.9-422899018#18446744073709551615#0#1(2@31"'glutDisplayFunc' declared here-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^504#21#504#21#17474#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^344#1#344#1#9196#0#12"Deprecations--2@59"'glutMainLoop' is deprecated: first deprecated in OS X 10.9-422899018#18446744073709551615#0#1(2@28"'glutMainLoop' declared here-422899018#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^437#21#437#21#13367#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^347#1#347#1#9242#0#12"Deprecations--0#0#1#-19%DVTDocumentLocation4@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^2880"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o Raytracing/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o36"B60FB698-7C11-4EBA-98D3-418C096E2704-
+b427852D3-FA45-4AC7-BDF2-AD27CA1C18C2
+
+CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o /Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s422898972.676020
+e422898972.717948
+r1
+xCompileC
+xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o
+x/Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/object.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/color.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp169"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o Raytracing/object.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compilerdf34ad1ced34b941^3ae7b71ced34b941^---0#0#1#-19%DVTDocumentLocation2@68"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp0000000000000000^2892"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o Raytracing/object.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o36"EE3C40C5-89AF-4463-A64F-681E25F754FB-
+b6618DE15-B572-4874-B38F-BFC245B3A130
+
+CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o /Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s422898971.984236
+e422898972.568255
+r1
+xCompileC
+xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o
+x/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp163"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o Raytracing/ray.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler9f1dfc1bed34b941^7c81911ced34b941^---0#0#1#-19%DVTDocumentLocation2@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp0000000000000000^2874"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o Raytracing/ray.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o36"BB0A8087-54E5-40B5-B5DC-4C44A3D5C3FA-
+b6618DE15-B572-4874-B38F-BFC245B3A130
+
+CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s422898972.568118
+e422898973.059461
+r1
+xCompileC
+xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o
+x/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/object.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/color.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:1:
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h:9:
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:29:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]
+o#endif;
+o      ^
+o      //
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:34:9: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
+o        return objects.size();
+o        ~~~~~~ ^~~~~~~~~~~~~~
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:46:12: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+o        if (index >= 0 && index < objects.size())
+o            ~~~~~ ^  ~
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:54:9: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
+o        return lights.size();
+o        ~~~~~~ ^~~~~~~~~~~~~
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:66:12: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+o        if (index >= 0 && index < lights.size())
+o            ~~~~~ ^  ~
+o5 warnings generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp167"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o Raytracing/scene.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compilered9d911ced34b941^82380f1ded34b941^-1295"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:1:In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h:9:/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:29:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]#endif;      ^      ///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:34:9: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]        return objects.size();        ~~~~~~ ^~~~~~~~~~~~~~/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:46:12: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]        if (index >= 0 && index < objects.size())            ~~~~~ ^  ~/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:54:9: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]        return lights.size();        ~~~~~~ ^~~~~~~~~~~~~/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:66:12: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]        if (index >= 0 && index < lights.size())            ~~~~~ ^  ~5 warnings generated.5(36%IDEClangDiagnosticActivityLogMessage2@39"Extra tokens at end of #endif directive-422898973#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:1:-422898973#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h:9:-422898973#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h0000000000000000^8#9#8#9#130#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/light.h0000000000000000^28#6#28#6#441#0#29"Lexical or Preprocessor Issue1(3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/light.h0000000000000000^28#6#28#6#441#0#-2@87"Implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int'-422898973#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^33#8#33#8#463#0#22"Value Conversion Issue2(3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^33#8#33#22#463#13#3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^33#1#33#7#456#0#-2@53"Comparison of unsigned expression >= 0 is always true-422898973#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^45#11#45#11#615#0#14"Semantic Issue2(3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^45#5#45#10#609#0#3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^45#14#45#15#618#0#-2@87"Implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int'-422898973#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^53#8#53#8#734#0#22"Value Conversion Issue2(3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^53#8#53#21#734#12#3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^53#1#53#7#727#0#-2@53"Comparison of unsigned expression >= 0 is always true-422898973#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^65#11#65#11#880#0#14"Semantic Issue2(3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^65#5#65#10#874#0#3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^65#14#65#15#883#0#-0#0#1#-19%DVTDocumentLocation4@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^2886"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o Raytracing/scene.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o36"22517C1F-C999-45DA-938E-89619141986B-
+b6618DE15-B572-4874-B38F-BFC245B3A130
+
+CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s422898971.984523
+e422898972.568893
+r1
+xCompileC
+xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o
+x/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/object.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/color.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp169"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o Raytracing/sphere.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler5726fc1bed34b941^3998911ced34b941^---0#0#1#-19%DVTDocumentLocation2@68"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp0000000000000000^2892"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o Raytracing/sphere.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o36"BF61C944-7E0A-4E76-97A8-95BD43BBE04E-
+b6618DE15-B572-4874-B38F-BFC245B3A130
+
+CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o /Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s422898972.569070
+e422898972.668863
+r1
+xCompileC
+xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o
+x/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp
+d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp169"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o Raytracing/vector.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler91f0911ced34b941^8e3dab1ced34b941^---0#0#1#-19%DVTDocumentLocation2@68"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp0000000000000000^2892"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o Raytracing/vector.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o36"7478280B-92B6-4F43-A0F4-6C9BDE5B51C5-
+b6618DE15-B572-4874-B38F-BFC245B3A130
+
+CLd /Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing normal x86_64
+s422899018.786345
+e422899018.870738
+r1
+xLd
+x/Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing
+xnormal
+xx86_64
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/Raytracing.LinkFileList
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o
+d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o
+d/Users/sashanicolas/Projects/Rendering2/third_party/lib/libglfw.a
+d/Users/sashanicolas/Projects/Rendering2/third_party/lib/libGLEW.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/IOKit.framework/IOKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/GLUT
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libc++.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.osx.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_stats.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/CoreServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libobjc.A.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Link /Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing39"Ld build/Debug/Raytracing normal x86_64a664c94aed34b941^5febde4aed34b941^---0#0#1#--980"Ld build/Debug/Raytracing normal x86_64    cd /Users/sashanicolas/Projects/Rendering2    export MACOSX_DEPLOYMENT_TARGET=10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/sashanicolas/Projects/Rendering2/build/Debug -Lthird_party/lib -F/Users/sashanicolas/Projects/Rendering2/build/Debug -filelist /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/Raytracing.LinkFileList -mmacosx-version-min=10.9 -lglfw -lglew -stdlib=libc++ -framework IOKit -framework OpenGL -framework GLUT -framework Cocoa -Xlinker -dependency_info -Xlinker /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/Raytracing_dependency_info.dat -o /Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing36"78CD40D6-2DEC-450E-85DA-8C1A38FEAD83-
+b427852D3-FA45-4AC7-BDF2-AD27CA1C18C2
+
