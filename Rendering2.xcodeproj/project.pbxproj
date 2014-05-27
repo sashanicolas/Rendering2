@@ -7,26 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B791EA41191C133A005A03F7 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958D19074579007FDC87 /* IOKit.framework */; };
-		B791EA42191C133D005A03F7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958B19074575007FDC87 /* OpenGL.framework */; };
-		B791EA43191C1340005A03F7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958919074571007FDC87 /* Cocoa.framework */; };
 		B7CA957F190743FC007FDC87 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7CA957E190743FC007FDC87 /* main.cpp */; };
 		B7CA9581190743FC007FDC87 /* Rendering2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B7CA9580190743FC007FDC87 /* Rendering2.1 */; };
 		B7CA958A19074571007FDC87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958919074571007FDC87 /* Cocoa.framework */; };
 		B7CA958C19074575007FDC87 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958B19074575007FDC87 /* OpenGL.framework */; };
 		B7CA958E19074579007FDC87 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958D19074579007FDC87 /* IOKit.framework */; };
+		B7FBA62C1934E28800E018F1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA62B1934E28800E018F1 /* main.cpp */; };
+		B7FBA62E1934E28800E018F1 /* Trabalho2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B7FBA62D1934E28800E018F1 /* Trabalho2.1 */; };
+		B7FBA6321934E2B800E018F1 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958D19074579007FDC87 /* IOKit.framework */; };
+		B7FBA6331934E2BC00E018F1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958B19074575007FDC87 /* OpenGL.framework */; };
+		B7FBA6341934E2BF00E018F1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958919074571007FDC87 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B791EA36191C1324005A03F7 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		B7CA9579190743FC007FDC87 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,10 +30,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		B7FBA6271934E28700E018F1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				B7FBA62E1934E28800E018F1 /* Trabalho2.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B791EA38191C1324005A03F7 /* Tutorials08 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tutorials08; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7CA957B190743FC007FDC87 /* Rendering2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Rendering2; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7CA957E190743FC007FDC87 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B7CA9580190743FC007FDC87 /* Rendering2.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Rendering2.1; sourceTree = "<group>"; };
@@ -48,19 +50,12 @@
 		B7CA958B19074575007FDC87 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		B7CA958D19074579007FDC87 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		B7CA959019076516007FDC87 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
+		B7FBA6291934E28700E018F1 /* Trabalho2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Trabalho2; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7FBA62B1934E28800E018F1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B7FBA62D1934E28800E018F1 /* Trabalho2.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Trabalho2.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B791EA35191C1324005A03F7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B791EA41191C133A005A03F7 /* IOKit.framework in Frameworks */,
-				B791EA42191C133D005A03F7 /* OpenGL.framework in Frameworks */,
-				B791EA43191C1340005A03F7 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B7CA9578190743FC007FDC87 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,6 +63,16 @@
 				B7CA958E19074579007FDC87 /* IOKit.framework in Frameworks */,
 				B7CA958C19074575007FDC87 /* OpenGL.framework in Frameworks */,
 				B7CA958A19074571007FDC87 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7FBA6261934E28700E018F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7FBA6321934E2B800E018F1 /* IOKit.framework in Frameworks */,
+				B7FBA6331934E2BC00E018F1 /* OpenGL.framework in Frameworks */,
+				B7FBA6341934E2BF00E018F1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +87,7 @@
 				B7CA958B19074575007FDC87 /* OpenGL.framework */,
 				B7CA958919074571007FDC87 /* Cocoa.framework */,
 				B7CA957D190743FC007FDC87 /* Rendering2 */,
+				B7FBA62A1934E28800E018F1 /* Trabalho2 */,
 				B7CA957C190743FC007FDC87 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				B7CA957B190743FC007FDC87 /* Rendering2 */,
-				B791EA38191C1324005A03F7 /* Tutorials08 */,
+				B7FBA6291934E28700E018F1 /* Trabalho2 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,26 +110,18 @@
 			path = Rendering2;
 			sourceTree = "<group>";
 		};
+		B7FBA62A1934E28800E018F1 /* Trabalho2 */ = {
+			isa = PBXGroup;
+			children = (
+				B7FBA62B1934E28800E018F1 /* main.cpp */,
+				B7FBA62D1934E28800E018F1 /* Trabalho2.1 */,
+			);
+			path = Trabalho2;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B791EA37191C1324005A03F7 /* Tutorials08 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B791EA40191C1324005A03F7 /* Build configuration list for PBXNativeTarget "Tutorials08" */;
-			buildPhases = (
-				B791EA34191C1324005A03F7 /* Sources */,
-				B791EA35191C1324005A03F7 /* Frameworks */,
-				B791EA36191C1324005A03F7 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Tutorials08;
-			productName = Tutorials08;
-			productReference = B791EA38191C1324005A03F7 /* Tutorials08 */;
-			productType = "com.apple.product-type.tool";
-		};
 		B7CA957A190743FC007FDC87 /* Rendering2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B7CA9584190743FC007FDC87 /* Build configuration list for PBXNativeTarget "Rendering2" */;
@@ -139,6 +137,23 @@
 			name = Rendering2;
 			productName = Rendering2;
 			productReference = B7CA957B190743FC007FDC87 /* Rendering2 */;
+			productType = "com.apple.product-type.tool";
+		};
+		B7FBA6281934E28700E018F1 /* Trabalho2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7FBA6311934E28800E018F1 /* Build configuration list for PBXNativeTarget "Trabalho2" */;
+			buildPhases = (
+				B7FBA6251934E28700E018F1 /* Sources */,
+				B7FBA6261934E28700E018F1 /* Frameworks */,
+				B7FBA6271934E28700E018F1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Trabalho2;
+			productName = Trabalho2;
+			productReference = B7FBA6291934E28700E018F1 /* Trabalho2 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -163,19 +178,12 @@
 			projectRoot = "";
 			targets = (
 				B7CA957A190743FC007FDC87 /* Rendering2 */,
-				B791EA37191C1324005A03F7 /* Tutorials08 */,
+				B7FBA6281934E28700E018F1 /* Trabalho2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B791EA34191C1324005A03F7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B7CA9577190743FC007FDC87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,47 +192,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7FBA6251934E28700E018F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7FBA62C1934E28800E018F1 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		B791EA3E191C1324005A03F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				HEADER_SEARCH_PATHS = (
-					third_party/include,
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-				);
-				LIBRARY_SEARCH_PATHS = third_party/lib;
-				OTHER_LDFLAGS = (
-					"-lglfw",
-					"-lglew",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		B791EA3F191C1324005A03F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				HEADER_SEARCH_PATHS = (
-					third_party/include,
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-				);
-				LIBRARY_SEARCH_PATHS = third_party/lib;
-				OTHER_LDFLAGS = (
-					"-lglfw",
-					"-lglew",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		B7CA9582190743FC007FDC87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -329,18 +307,44 @@
 			};
 			name = Release;
 		};
+		B7FBA62F1934E28800E018F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					third_party/include,
+				);
+				LIBRARY_SEARCH_PATHS = third_party/lib;
+				OTHER_LDFLAGS = (
+					"-lglfw",
+					"-lglew",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B7FBA6301934E28800E018F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					third_party/include,
+				);
+				LIBRARY_SEARCH_PATHS = third_party/lib;
+				OTHER_LDFLAGS = (
+					"-lglfw",
+					"-lglew",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B791EA40191C1324005A03F7 /* Build configuration list for PBXNativeTarget "Tutorials08" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B791EA3E191C1324005A03F7 /* Debug */,
-				B791EA3F191C1324005A03F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		B7CA9576190743FC007FDC87 /* Build configuration list for PBXProject "Rendering2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -358,6 +362,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B7FBA6311934E28800E018F1 /* Build configuration list for PBXNativeTarget "Trabalho2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7FBA62F1934E28800E018F1 /* Debug */,
+				B7FBA6301934E28800E018F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

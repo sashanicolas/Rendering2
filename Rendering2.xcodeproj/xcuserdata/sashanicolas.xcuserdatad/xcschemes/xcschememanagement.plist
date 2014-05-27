@@ -9,7 +9,7 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Tutorials08.xcscheme</key>
+		<key>Trabalho2.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
@@ -23,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>B7CA957A190743FC007FDC87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7FBA6281934E28700E018F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
