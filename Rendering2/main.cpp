@@ -757,6 +757,112 @@ public:
     }
 };
 
+/*
+ Copyright 2011 Etay Meiri
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+class GBuffer{
+public:
+    
+    enum GBUFFER_TEXTURE_TYPE {
+        GBUFFER_TEXTURE_TYPE_POSITION,
+        GBUFFER_TEXTURE_TYPE_DIFFUSE,
+        GBUFFER_TEXTURE_TYPE_NORMAL,
+        GBUFFER_TEXTURE_TYPE_TEXCOORD,
+        GBUFFER_NUM_TEXTURES
+    };
+    
+    GBuffer(){
+        m_fbo = 0;
+        m_depthTexture = 0;
+        ZERO_MEM(m_textures);
+    }
+    
+    ~GBuffer(){
+        if (m_fbo != 0) {
+            glDeleteFramebuffers(1, &m_fbo);
+        }
+        
+        if (m_textures[0] != 0) {
+            glDeleteTextures(ARRAY_SIZE_IN_ELEMENTS(m_textures), m_textures);
+        }
+        
+        if (m_depthTexture != 0) {
+            glDeleteTextures(1, &m_depthTexture);
+        }
+    }
+    
+    bool Init(unsigned int WindowWidth, unsigned int WindowHeight){
+        // Create the FBO
+        glGenFramebuffers(1, &m_fbo);
+        glBindFramebuffer(GL_FRAMEBUFFER, m_fbo);
+        
+        // Create the gbuffer textures
+        glGenTextures(ARRAY_SIZE_IN_ELEMENTS(m_textures), m_textures);
+        glGenTextures(1, &m_depthTexture);
+        
+        for (unsigned int i = 0 ; i < ARRAY_SIZE_IN_ELEMENTS(m_textures) ; i++) {
+            glBindTexture(GL_TEXTURE_2D, m_textures[i]);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB32F, WindowWidth, WindowHeight, 0, GL_RGB, GL_FLOAT, NULL);
+            glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + i, GL_TEXTURE_2D, m_textures[i], 0);
+        }
+        
+        // depth
+        glBindTexture(GL_TEXTURE_2D, m_depthTexture);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32F, WindowWidth, WindowHeight, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+        glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, m_depthTexture, 0);
+        
+        GLenum DrawBuffers[] = { GL_COLOR_ATTACHMENT0,
+            GL_COLOR_ATTACHMENT1,
+            GL_COLOR_ATTACHMENT2,
+            GL_COLOR_ATTACHMENT3 };
+        
+        glDrawBuffers(ARRAY_SIZE_IN_ELEMENTS(DrawBuffers), DrawBuffers);
+        
+        GLenum Status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
+        
+        if (Status != GL_FRAMEBUFFER_COMPLETE) {
+            printf("FB error, status: 0x%x\n", Status);
+            return false;
+        }
+        
+        // restore default FBO
+        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+        
+        return true;
+    }
+    
+    void BindForWriting(){
+        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, m_fbo);
+    }
+    
+    void BindForReading(){
+        glBindFramebuffer(GL_READ_FRAMEBUFFER, m_fbo);
+    }
+    void SetReadBuffer(GBUFFER_TEXTURE_TYPE TextureType){
+        glReadBuffer(GL_COLOR_ATTACHMENT0 + TextureType);
+    }
+    
+//private:
+    
+    GLuint m_fbo;
+    GLuint m_textures[GBUFFER_NUM_TEXTURES];
+    GLuint m_depthTexture;
+};
+
+
 class FBO{
 public:
     GLuint m_fbo;
@@ -973,6 +1079,34 @@ Sphere * s[10][10];
 Grid *g;
 Sphere * luz;
 
+// ========== Testes ====================
+GBuffer m_gbuffer;
+
+void DSLightPass()
+{
+    glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+    
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    m_gbuffer.BindForReading();
+    
+    GLint HalfWidth = (GLint)(WINDOW_WIDTH / 2.0f);
+    GLint HalfHeight = (GLint)(WINDOW_HEIGHT / 2.0f);
+    
+    m_gbuffer.SetReadBuffer(GBuffer::GBUFFER_TEXTURE_TYPE_POSITION);
+    glBlitFramebuffer(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, 0, 0, HalfWidth, HalfHeight, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+    
+    m_gbuffer.SetReadBuffer(GBuffer::GBUFFER_TEXTURE_TYPE_DIFFUSE);
+    glBlitFramebuffer(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, 0, HalfHeight, HalfWidth, WINDOW_HEIGHT, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+    
+    m_gbuffer.SetReadBuffer(GBuffer::GBUFFER_TEXTURE_TYPE_NORMAL);
+    glBlitFramebuffer(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, HalfWidth, HalfHeight, WINDOW_WIDTH, WINDOW_HEIGHT, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+    
+    m_gbuffer.SetReadBuffer(GBuffer::GBUFFER_TEXTURE_TYPE_TEXCOORD);
+    glBlitFramebuffer(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, HalfWidth, 0, WINDOW_WIDTH, HalfHeight, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+}
+
+
 // ========== Main ==========
 int main () {
     configuraContexto();
@@ -1084,7 +1218,7 @@ void configuraContexto(){
 	}
     
     // Dark blue background
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
     // Enable depth test
     glEnable(GL_DEPTH_TEST);
     
