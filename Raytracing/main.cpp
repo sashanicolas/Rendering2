@@ -2,26 +2,438 @@
 #include <iostream>
 #include <stdio.h>
 #include <cfloat>
-#include "vector.h"
-#include "scene.h"
-#include "object.h"
+#include <vector>
+#include <cmath>
+using namespace std;
+
 #include "sphere.h"
 #include "box.h"
-#include "light.h"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
-#define INITIAL_WIDTH 600
-#define INITIAL_HEIGHT 600
+#define INITIAL_WIDTH 800
+#define INITIAL_HEIGHT 800
 
 #define MAX_DEPTH 3
+
+
+class Ray
+{
+public:
+	Ray( glm::vec3 origin, glm::vec3 direction ){
+        this->origin = origin;
+        this->direction = direction;
+    }
+    
+	glm::vec3 origin;
+	glm::vec3 direction;
+};
+
+class Object
+{
+public:
+	Object( ){
+        color = glm::vec4( 0.0f, 0.0f, 0.0f, 1.0f);
+        diffuseCf = glm::vec4( 0.0f, 0.0f, 0.0f, 1.0f );
+        specularCf = glm::vec4( 0.0f, 0.0f, 0.0f, 1.0f );
+        reflectionCf = 0.0f;
+        refractiveIndex = 1.0f;
+
+    }
+    
+	virtual bool intercepts( Ray r, float* point ) = 0;
+	virtual glm::vec3 getNormal( glm::vec3 point ) = 0;
+	
+	void setColor( float r, float g, float b, float a = 1.0f ){
+        color.r = r;
+        color.g = g;
+        color.b = b;
+        color.a = a;
+    }
+	void setDiffuseCoefficient( float dC ){
+        diffuseCf.r = dC;
+        diffuseCf.g = dC;
+        diffuseCf.b = dC;
+    }
+	void setDiffuseCoefficient( float dcR, float dcG, float dcB ){
+        diffuseCf.r = dcR;
+        diffuseCf.g = dcG;
+        diffuseCf.b = dcB;
+    }
+	void setSpecularCoefficient( float sC ){
+        specularCf.r = sC;
+        specularCf.g = sC;
+        specularCf.b = sC;
+    }
+	void setSpecularCoefficient( float scR, float scG, float scB ){
+        specularCf.r = scR;
+        specularCf.g = scG;
+        specularCf.b = scB;
+    }
+    
+	glm::vec4 getColor( ){
+        	return color;
+    }
+	void getColor( float* r, float* g, float* b ){
+        (*r) = color.r;
+        (*g) = color.g;
+        (*b) = color.b;
+    }
+	glm::vec4 getDiffuseCoefficient(){
+        	return diffuseCf;
+    }
+	glm::vec4 getSpecularCoefficient(){
+        return specularCf;
+
+    }
+    
+	void setReflectionCoefficient( float rcF ){
+        reflectionCf = rcF;
+
+    }
+	float getReflectionCoefficient( ){
+        	return reflectionCf;
+    }
+    
+	void setRefractiveIndex( float rfIndex ){
+        	refractiveIndex = rfIndex;
+    }
+	float getRefractiveIndex( ){
+        	return refractiveIndex;
+    }
+    
+    
+private:
+	glm::vec4 color;
+	glm::vec4 diffuseCf;
+	glm::vec4 specularCf;
+	float reflectionCf;
+	float refractiveIndex;
+};
+
+class Light
+{
+public:
+	Light( glm::vec3 & position, glm::vec3 & color )
+	{
+		this->position = position;
+		this->color = color;
+	}
+    Light(){
+        
+    }
+    void setColor(glm::vec3 & color){
+        this->color = color;
+    }
+    void setPosition(glm::vec3 & position){
+        this->position =position;
+    }
+	glm::vec3 position;
+	glm::vec3 color;
+};
+
+class LinedBox : public Object
+{
+public:
+	LinedBox( glm::vec3 minPoint, glm::vec3 maxPoint ){
+        this->minPoint = minPoint;
+        this->maxPoint = maxPoint;
+    }
+    
+	bool intercepts( Ray r, float* point ){
+        /*Testar a interceÁ„o com cada um dos seis planos da caixa*/
+        
+        float xMin = minPoint.x;
+        float xMax = maxPoint.x;
+        float yMin = minPoint.y;
+        float yMax = maxPoint.y;
+        float zMin = minPoint.z;
+        float zMax = maxPoint.z;
+        
+        Vector point;
+        
+        if ( r.direction.x < 0 ) //O raio intercepta o plano xMax
+        {
+            (*t) = ( xMax - r.origin.x ) / r.direction.x;
+            point = r.origin + r.direction * (*t);
+            
+            if ( point.y >= yMin && point.y <= yMax && point.z >= zMin && point.z <= zMax )
+            {
+                lastCalcNormal = Vector( 1, 0, 0 );
+                return true;
+            }
+        }
+        
+        else //O raio intercepta o plano xMin
+        {
+            (*t) = ( xMin - r.origin.x ) / r.direction.x;
+            point = r.origin + r.direction * (*t);
+            
+            if ( point.y >= yMin && point.y <= yMax && point.z >= zMin && point.z <= zMax )
+            {
+                lastCalcNormal = Vector( -1, 0, 0 );
+                return true;
+            }
+        }
+        
+        if ( r.direction.y < 0 ) //O raio intercepta o plano yMax
+        {
+            (*t) = ( yMax - r.origin.y ) / r.direction.y;
+            point = r.origin + r.direction * (*t);
+            
+            if ( point.x >= xMin && point.x <= xMax && point.z >= zMin && point.z <= zMax )
+            {
+                lastCalcNormal = Vector( 0, 1, 0 );
+                return true;
+            }
+        }
+        
+        else //O raio intercepta o plano yMin
+        {
+            (*t) = ( yMin - r.origin.y ) / r.direction.y;
+            point = r.origin + r.direction * (*t);
+            
+            if ( point.x >= xMin && point.x <= xMax && point.z >= zMin && point.z <= zMax )
+            {
+                lastCalcNormal = Vector( 0, -1, 0 );
+                return true;
+            }
+        }
+        
+        if ( r.direction.z < 0 ) //O raio intercepta o plano zMax
+        {
+            (*t) = ( zMax - r.origin.z ) / r.direction.z;
+            point = r.origin + r.direction * (*t);
+            
+            if ( point.x >= xMin && point.x <= xMax && point.y >= yMin && point.y <= yMax )
+            {
+                lastCalcNormal = Vector( 0, 0, 1 );
+                return true;
+            }
+        }
+        
+        else //O raio intercepta o plano zMin
+        {
+            (*t) = ( zMin - r.origin.z ) / r.direction.z;
+            point = r.origin + r.direction * (*t);
+            
+            if ( point.x >= xMin && point.x <= xMax && point.y >= yMin && point.y <= yMax )
+            {
+                lastCalcNormal = Vector( 0, 0, -1 );
+                return true;
+            }
+        }
+        
+        return false;
+    }
+	glm::vec3 getNormal( glm::vec3 point ){
+        return lastCalcNormal;
+    }
+    
+private:
+	glm::vec3 minPoint;
+	glm::vec3 maxPoint;
+    
+	glm::vec3 lastCalcNormal;
+};
+
+
+class Sphere : public Object
+{
+public:
+	Sphere( glm::vec3 center, float r ){
+        this->center = center;
+        this->ray = r;
+    }
+    
+	bool intercepts( Ray r, float* point ){
+        float a = r.direction *  r.direction;
+        float b = 2 * ( r.direction * ( r.origin - center ) );
+        float c = ( ( r.origin - center ) * ( r.origin - center ) ) - ( ray * ray );
+        
+        float delta = ( b * b ) - ( 4 * a * c );
+        if ( delta > 0 )
+        {
+            float t1 = ( -b + sqrt( delta ) ) / (2 * a);
+            float t2 = ( -b - sqrt( delta ) ) / (2 * a);
+            
+            if ( t1 > 0 || t2 > 0 )
+            {
+                if ( t1 > 0 )
+                    (*t) = t1;
+                if (t2 > 0 && t2 < t1)
+                    (*t) = t2;
+                
+                return true;
+            }
+        }
+        
+        return false;
+    }
+	glm::vec3 getNormal( glm::vec3 point ){
+        Vector normal = point - center;
+        normal = normal / normal.length();
+        return normal;
+    }
+    
+private:
+	glm::vec3 center;
+	float ray;
+};
+
+class Camera
+{
+public:
+	Camera( glm::vec3 eye, glm::vec3 center, glm::vec3 up, float fov, float nearr, float farr, int w, int h ){
+        this->eye = eye;
+        this->center = center;
+        this->up = up;
+        this->fov = fov;
+        this->nearr = nearr;
+        this->farr = farr;
+        this->w = w;
+        this->h = h;
+        
+        initialize();
+    }
+    
+	Ray getRay(int x, int y){
+        glm::vec3 vX = xe * ( b * ( (float) x / w - 0.5f ) );
+        glm::vec3 vY = ye * ( a * ( (float) y / h - 0.5f ) );
+        glm::vec3 vZ = ze * ( - df );
+        
+        return Ray( eye, vX + vY + vZ );
+    }
+    
+	glm::vec3 getEye( ){
+        return eye;
+    }
+	
+	int getWidth( ){
+        return w;
+    }
+	int getHeight( ){
+        	return h;
+    }
+	void setWidth( int w ){
+        	this->w = w;
+    }
+    
+	void setHeight( int h ){
+        	this->h = h;
+    }
+    
+private:
+	//Calcula os par‚metros intrÌnsecos derivados
+	void initialize(){
+        df = nearr;
+        
+        a = 2 * df * tan( fov / 2.0f );
+        
+        b = ( (float) w / h ) * a;
+        
+        ze = ( eye - center );
+//        ze = ze / ze.length();
+        ze = glm::normalize(ze);
+        
+        xe = up % ze;
+//        xe = xe / xe.length();
+        xe = glm::normalize(xe);
+        
+        ye = ze % xe;
+    }
+    
+	/* Par‚metros extrÌnsecos */
+	glm::vec3 eye;
+	glm::vec3 center;
+	glm::vec3 up;
+    
+	/* Par‚metros intrÌnsecos */
+	float nearr;
+	float farr;
+	int w;
+	int h;
+	float fov;
+    
+	/* Par‚metros intrÌnsecos derivados */
+	float df;
+	float a;
+	float b;
+	glm::vec3 xe;
+	glm::vec3 ye;
+	glm::vec3 ze;
+};
+
+class Scene
+{
+public:
+	Scene(){
+        
+    }
+	virtual ~Scene();
+    
+	void createCamera(glm::vec3 eye, glm::vec3 center, glm::vec3 up, float fov, float near, float far, int w, int h ){
+        camera = new Camera( eye, center, up, fov, near, far, w, h );
+    }
+	Camera* getCamera(){
+        return camera;
+        
+    }
+	
+	int getNumObjects(){
+        return objects.size();
+    }
+    
+	void addObject( Object* o ){
+        objects.push_back(o);
+    }
+    
+	Object* getObject( unsigned int index ){
+        if (index >= 0 && index < objects.size())
+            return objects[index];
+        return NULL;
+    }
+	
+	int getNumLights(){
+        return lights.size();
+    }
+    
+	void addLight( Light* l ){
+    	lights.push_back(l);
+    }
+    
+	Light* getLight( unsigned int index ){
+        if (index >= 0 && index < lights.size())
+            return lights[index];
+        return NULL;
+    }
+    
+	void setAmbientColor( float r, float g, float b ){
+        ambientColor = glm::vec3( r, g, b );
+    }
+    
+	glm::vec3 getAmbientColor(){
+        return ambientColor;
+    }
+	
+private:
+	Camera* camera;
+	glm::vec3 ambientColor;
+	vector<Object *> objects;
+	vector<Light *> lights;
+};
 
 Scene* scene = NULL;
 
 void createScene()
 {
-	Vector eye( 100, 40, 40 );
-	Vector center( 0, 0, 0 );
-	Vector up( 0, 1, 0);
+    //	Vector eye( 100, 40, 40 );
+    glm::vec3 eye( 100, 40, 40 );
+    glm::vec3 center( 0, 0, 0 );
+    glm::vec3 up( 0, 1, 0);
 	float fov = 90.0f;
 	float nearr = 30.0f;
 	float farr = 230.0f;
@@ -90,12 +502,12 @@ void reshape(int w, int h)
 	glLoadIdentity();
 }
 
-Color ambientColor( Object *object )
+glm::vec3 ambientColor( Object *object )
 {
-	Color color;
-	Color ambientColor = scene->getAmbientColor( );
-	Color objColor = object->getColor( );
-	Color diffuseCf = object->getDiffuseCoefficient( );
+	glm::vec3 color;
+	glm::vec3 ambientColor = scene->getAmbientColor( );
+	glm::vec4 objColor = object->getColor( );
+	glm::vec4 diffuseCf = object->getDiffuseCoefficient( );
     
 	color.r = ambientColor.r * objColor.r * diffuseCf.r;
 	color.g = ambientColor.g * objColor.g * diffuseCf.g;
@@ -104,20 +516,20 @@ Color ambientColor( Object *object )
 	return color;
 }
 
-Color diffuseColor( Light* light, Object* object, Ray ray, Vector interceptionPoint )
+glm::vec4 diffuseColor( Light* light, Object* object, Ray ray, Vector interceptionPoint )
 {
-	Vector L = light->position - interceptionPoint;
+	glm::vec3 L = light->position - interceptionPoint;
 	L = L / L.length();
     
-	Vector normal = object->getNormal( interceptionPoint );
+	glm::vec4 normal = object->getNormal( interceptionPoint );
     
 	float cosAng = L * normal;
 	
-	Color color = Color( -1.0f, -1.0f, -1.0f );
+	glm::vec3 color = glm::vec3( -1.0f, -1.0f, -1.0f );
 	if ( cosAng > 0 )
 	{
-		Color objColor = object->getColor();
-		Color diffuseCf = object->getDiffuseCoefficient();
+		glm::vec4 objColor = object->getColor();
+		glm::vec4 diffuseCf = object->getDiffuseCoefficient();
 		color.r = light->color.r * diffuseCf.r * cosAng * objColor.r;
 		color.g = light->color.g * diffuseCf.g * cosAng * objColor.g;
 		color.b = light->color.b * diffuseCf.b * cosAng * objColor.b;

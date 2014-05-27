@@ -27,13 +27,6 @@
 		B7FBA6521934EBF600E018F1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958B19074575007FDC87 /* OpenGL.framework */; };
 		B7FBA6541934EC4600E018F1 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FBA6531934EC4600E018F1 /* GLUT.framework */; };
 		B7FBA6551934ECC000E018F1 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FBA6531934EC4600E018F1 /* GLUT.framework */; };
-		B7FBA6671934ED1300E018F1 /* box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA6561934ED1300E018F1 /* box.cpp */; };
-		B7FBA6681934ED1300E018F1 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA6581934ED1300E018F1 /* camera.cpp */; };
-		B7FBA6691934ED1300E018F1 /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA65A1934ED1300E018F1 /* color.cpp */; };
-		B7FBA66A1934ED1300E018F1 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA65D1934ED1300E018F1 /* object.cpp */; };
-		B7FBA66B1934ED1300E018F1 /* ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA65F1934ED1300E018F1 /* ray.cpp */; };
-		B7FBA66C1934ED1300E018F1 /* scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA6611934ED1300E018F1 /* scene.cpp */; };
-		B7FBA66D1934ED1300E018F1 /* sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA6631934ED1300E018F1 /* sphere.cpp */; };
 		B7FBA66E1934ED1300E018F1 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA6651934ED1300E018F1 /* vector.cpp */; };
 /* End PBXBuildFile section */
 
@@ -98,23 +91,7 @@
 		B7FBA64B1934EBEA00E018F1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B7FBA64D1934EBEA00E018F1 /* Trabalho1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Trabalho1.1; sourceTree = "<group>"; };
 		B7FBA6531934EC4600E018F1 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
-		B7FBA6561934ED1300E018F1 /* box.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = box.cpp; sourceTree = "<group>"; };
-		B7FBA6571934ED1300E018F1 /* box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = box.h; sourceTree = "<group>"; };
-		B7FBA6581934ED1300E018F1 /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
-		B7FBA6591934ED1300E018F1 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
-		B7FBA65A1934ED1300E018F1 /* color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = color.cpp; sourceTree = "<group>"; };
-		B7FBA65B1934ED1300E018F1 /* color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = color.h; sourceTree = "<group>"; };
-		B7FBA65C1934ED1300E018F1 /* light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = light.h; sourceTree = "<group>"; };
-		B7FBA65D1934ED1300E018F1 /* object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = object.cpp; sourceTree = "<group>"; };
-		B7FBA65E1934ED1300E018F1 /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
-		B7FBA65F1934ED1300E018F1 /* ray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ray.cpp; sourceTree = "<group>"; };
-		B7FBA6601934ED1300E018F1 /* ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ray.h; sourceTree = "<group>"; };
-		B7FBA6611934ED1300E018F1 /* scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scene.cpp; sourceTree = "<group>"; };
-		B7FBA6621934ED1300E018F1 /* scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scene.h; sourceTree = "<group>"; };
-		B7FBA6631934ED1300E018F1 /* sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sphere.cpp; sourceTree = "<group>"; };
-		B7FBA6641934ED1300E018F1 /* sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sphere.h; sourceTree = "<group>"; };
 		B7FBA6651934ED1300E018F1 /* vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vector.cpp; sourceTree = "<group>"; };
-		B7FBA6661934ED1300E018F1 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,23 +186,7 @@
 		B7FBA63A1934E7AC00E018F1 /* Raytracing */ = {
 			isa = PBXGroup;
 			children = (
-				B7FBA6561934ED1300E018F1 /* box.cpp */,
-				B7FBA6571934ED1300E018F1 /* box.h */,
-				B7FBA6581934ED1300E018F1 /* camera.cpp */,
-				B7FBA6591934ED1300E018F1 /* camera.h */,
-				B7FBA65A1934ED1300E018F1 /* color.cpp */,
-				B7FBA65B1934ED1300E018F1 /* color.h */,
-				B7FBA65C1934ED1300E018F1 /* light.h */,
-				B7FBA65D1934ED1300E018F1 /* object.cpp */,
-				B7FBA65E1934ED1300E018F1 /* object.h */,
-				B7FBA65F1934ED1300E018F1 /* ray.cpp */,
-				B7FBA6601934ED1300E018F1 /* ray.h */,
-				B7FBA6611934ED1300E018F1 /* scene.cpp */,
-				B7FBA6621934ED1300E018F1 /* scene.h */,
-				B7FBA6631934ED1300E018F1 /* sphere.cpp */,
-				B7FBA6641934ED1300E018F1 /* sphere.h */,
 				B7FBA6651934ED1300E018F1 /* vector.cpp */,
-				B7FBA6661934ED1300E018F1 /* vector.h */,
 				B7FBA63B1934E7AC00E018F1 /* main.cpp */,
 				B7FBA63D1934E7AC00E018F1 /* Raytracing.1 */,
 			);
@@ -362,15 +323,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7FBA66B1934ED1300E018F1 /* ray.cpp in Sources */,
 				B7FBA63C1934E7AC00E018F1 /* main.cpp in Sources */,
-				B7FBA66D1934ED1300E018F1 /* sphere.cpp in Sources */,
-				B7FBA6691934ED1300E018F1 /* color.cpp in Sources */,
-				B7FBA66C1934ED1300E018F1 /* scene.cpp in Sources */,
 				B7FBA66E1934ED1300E018F1 /* vector.cpp in Sources */,
-				B7FBA6681934ED1300E018F1 /* camera.cpp in Sources */,
-				B7FBA6671934ED1300E018F1 /* box.cpp in Sources */,
-				B7FBA66A1934ED1300E018F1 /* object.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
