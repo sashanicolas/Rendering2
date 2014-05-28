@@ -6,9 +6,6 @@
 #include <cmath>
 using namespace std;
 
-#include "sphere.h"
-#include "box.h"
-
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform.hpp>
@@ -41,7 +38,7 @@ public:
         specularCf = glm::vec4( 0.0f, 0.0f, 0.0f, 1.0f );
         reflectionCf = 0.0f;
         refractiveIndex = 1.0f;
-
+        
     }
     
 	virtual bool intercepts( Ray r, float* point ) = 0;
@@ -75,7 +72,7 @@ public:
     }
     
 	glm::vec4 getColor( ){
-        	return color;
+        return color;
     }
 	void getColor( float* r, float* g, float* b ){
         (*r) = color.r;
@@ -83,26 +80,26 @@ public:
         (*b) = color.b;
     }
 	glm::vec4 getDiffuseCoefficient(){
-        	return diffuseCf;
+        return diffuseCf;
     }
 	glm::vec4 getSpecularCoefficient(){
         return specularCf;
-
+        
     }
     
 	void setReflectionCoefficient( float rcF ){
         reflectionCf = rcF;
-
+        
     }
 	float getReflectionCoefficient( ){
-        	return reflectionCf;
+        return reflectionCf;
     }
     
 	void setRefractiveIndex( float rfIndex ){
-        	refractiveIndex = rfIndex;
+        refractiveIndex = rfIndex;
     }
 	float getRefractiveIndex( ){
-        	return refractiveIndex;
+        return refractiveIndex;
     }
     
     
@@ -143,7 +140,7 @@ public:
         this->maxPoint = maxPoint;
     }
     
-	bool intercepts( Ray r, float* point ){
+	bool intercepts( Ray r, float* t ){
         /*Testar a interceÁ„o com cada um dos seis planos da caixa*/
         
         float xMin = minPoint.x;
@@ -153,7 +150,7 @@ public:
         float zMin = minPoint.z;
         float zMax = maxPoint.z;
         
-        Vector point;
+        glm::vec3 point;
         
         if ( r.direction.x < 0 ) //O raio intercepta o plano xMax
         {
@@ -162,7 +159,7 @@ public:
             
             if ( point.y >= yMin && point.y <= yMax && point.z >= zMin && point.z <= zMax )
             {
-                lastCalcNormal = Vector( 1, 0, 0 );
+                lastCalcNormal = glm::vec3( 1, 0, 0 );
                 return true;
             }
         }
@@ -174,7 +171,7 @@ public:
             
             if ( point.y >= yMin && point.y <= yMax && point.z >= zMin && point.z <= zMax )
             {
-                lastCalcNormal = Vector( -1, 0, 0 );
+                lastCalcNormal = glm::vec3( -1, 0, 0 );
                 return true;
             }
         }
@@ -186,7 +183,7 @@ public:
             
             if ( point.x >= xMin && point.x <= xMax && point.z >= zMin && point.z <= zMax )
             {
-                lastCalcNormal = Vector( 0, 1, 0 );
+                lastCalcNormal = glm::vec3( 0, 1, 0 );
                 return true;
             }
         }
@@ -198,7 +195,7 @@ public:
             
             if ( point.x >= xMin && point.x <= xMax && point.z >= zMin && point.z <= zMax )
             {
-                lastCalcNormal = Vector( 0, -1, 0 );
+                lastCalcNormal = glm::vec3( 0, -1, 0 );
                 return true;
             }
         }
@@ -210,7 +207,7 @@ public:
             
             if ( point.x >= xMin && point.x <= xMax && point.y >= yMin && point.y <= yMax )
             {
-                lastCalcNormal = Vector( 0, 0, 1 );
+                lastCalcNormal = glm::vec3( 0, 0, 1 );
                 return true;
             }
         }
@@ -222,7 +219,7 @@ public:
             
             if ( point.x >= xMin && point.x <= xMax && point.y >= yMin && point.y <= yMax )
             {
-                lastCalcNormal = Vector( 0, 0, -1 );
+                lastCalcNormal = glm::vec3( 0, 0, -1 );
                 return true;
             }
         }
@@ -240,7 +237,6 @@ private:
 	glm::vec3 lastCalcNormal;
 };
 
-
 class Sphere : public Object
 {
 public:
@@ -249,10 +245,11 @@ public:
         this->ray = r;
     }
     
-	bool intercepts( Ray r, float* point ){
-        float a = r.direction *  r.direction;
-        float b = 2 * ( r.direction * ( r.origin - center ) );
-        float c = ( ( r.origin - center ) * ( r.origin - center ) ) - ( ray * ray );
+	bool intercepts( Ray r, float* t ){
+        //        float a = r.direction *  r.direction;
+        float a = glm::dot(r.direction, r.direction);
+        float b = 2 * ( glm::dot(r.direction,  r.origin - center ) );
+        float c = ( glm::dot( r.origin - center , r.origin - center ) ) - glm::dot( ray , ray );
         
         float delta = ( b * b ) - ( 4 * a * c );
         if ( delta > 0 )
@@ -274,8 +271,9 @@ public:
         return false;
     }
 	glm::vec3 getNormal( glm::vec3 point ){
-        Vector normal = point - center;
-        normal = normal / normal.length();
+        glm::vec3 normal = point - center;
+        //        normal = normal / normal.length();
+        normal = glm::normalize(normal);
         return normal;
     }
     
@@ -283,6 +281,7 @@ private:
 	glm::vec3 center;
 	float ray;
 };
+
 
 class Camera
 {
@@ -316,17 +315,34 @@ public:
         return w;
     }
 	int getHeight( ){
-        	return h;
+        return h;
     }
 	void setWidth( int w ){
-        	this->w = w;
+        this->w = w;
     }
     
 	void setHeight( int h ){
-        	this->h = h;
+        this->h = h;
     }
     
 private:
+    
+    glm::vec3 macabra(glm::vec3 u, glm::vec3 v)
+    {
+        float uX = u.x;
+        float uY = u.y;
+        float uZ = u.z;
+        
+        float vX = v.x;
+        float vY = v.y;
+        float vZ = v.z;
+        
+        float sX = uY * vZ - uZ * vY;
+        float sY = uZ * vX - uX * vZ;
+        float sZ = uX * vY - uY * vX;
+        
+        return glm::vec3( sX, sY, sZ );
+    }
 	//Calcula os par‚metros intrÌnsecos derivados
 	void initialize(){
         df = nearr;
@@ -336,14 +352,16 @@ private:
         b = ( (float) w / h ) * a;
         
         ze = ( eye - center );
-//        ze = ze / ze.length();
+        //        ze = ze / ze.length();
         ze = glm::normalize(ze);
         
-        xe = up % ze;
-//        xe = xe / xe.length();
+//        xe = up % ze;
+        xe = macabra(up, ze);
+        //        xe = xe / xe.length();
         xe = glm::normalize(xe);
         
-        ye = ze % xe;
+//        ye = ze % xe;
+        ye = macabra(ze, xe);
     }
     
 	/* Par‚metros extrÌnsecos */
@@ -373,14 +391,15 @@ public:
 	Scene(){
         
     }
-	virtual ~Scene();
+	~Scene(){
+        
+    }
     
 	void createCamera(glm::vec3 eye, glm::vec3 center, glm::vec3 up, float fov, float near, float far, int w, int h ){
         camera = new Camera( eye, center, up, fov, near, far, w, h );
     }
 	Camera* getCamera(){
         return camera;
-        
     }
 	
 	int getNumObjects(){
@@ -445,26 +464,26 @@ void createScene()
 	//scene->setAmbientColor( 0.5f, 0.5f, 0.5f );
 	scene->setAmbientColor( 1.0f, 1.0f, 1.0f );
     
-	Sphere* sphere = new Sphere( Vector(0, 20, 0), 25 );
+	Sphere* sphere = new Sphere( glm::vec3(0, 20, 0), 25 );
 	sphere->setColor( 0.0f, 0.0f, 1.0f, 1.0f );
 	sphere->setDiffuseCoefficient( 0.3f );
 	sphere->setSpecularCoefficient( 0.7f );
     
-	LinedBox* box1 = new LinedBox( Vector( -80.0f, -50.0f, -50.0f ), Vector( 50.0f, -45.0f, 50.0f ) );
+	LinedBox* box1 = new LinedBox( glm::vec3( -80.0f, -50.0f, -50.0f ), glm::vec3( 50.0f, -45.0f, 50.0f ) );
 	box1->setColor( 0.7f, 0.7f, 0.0f );
 	box1->setDiffuseCoefficient( 0.3f );
 	box1->setSpecularCoefficient( 0.3f );
 	box1->setReflectionCoefficient( 0.0f );
 	//box1->setRefractiveIndex( 1.0f );
     
-	LinedBox* box2 = new LinedBox( Vector( -80.0f, -50.0f, -60.0f ), Vector( 50.0f, 50.0f, -50.0f ) );
+	LinedBox* box2 = new LinedBox( glm::vec3( -80.0f, -50.0f, -60.0f ), glm::vec3( 50.0f, 50.0f, -50.0f ) );
 	box2->setColor( 0.7f, 0.7f, 0.0f );
 	box2->setDiffuseCoefficient( 0.3f );
 	box2->setSpecularCoefficient( 0.3f );
 	box2->setReflectionCoefficient( 0.8f );
 	//box1->setRefractiveIndex( 0.8f );
     
-	LinedBox* box3 = new LinedBox( Vector( 49.8, -44, -50 ), Vector( 50, 35, 50 ) );
+	LinedBox* box3 = new LinedBox( glm::vec3( 49.8, -44, -50 ), glm::vec3( 50, 35, 50 ) );
 	box3->setColor( 0.7f, 0.7f, 0.0f, 0.5f );
 	box3->setDiffuseCoefficient( 0.3f );
 	box3->setSpecularCoefficient( 0.3f );
@@ -477,9 +496,66 @@ void createScene()
     
 	Light* light = new Light( );
     // Vector(60.0f, 120.0f, 40.0f), Color(1.0f, 1.0f, 1.0f)
-    Color c(1.0f, 1.0f, 1.0f);
+    glm::vec3 c(1.0f, 1.0f, 1.0f);
     light->setColor(c);
-    Vector v(60.0f, 120.0f, 40.0f);
+    glm::vec3 v(60.0f, 120.0f, 40.0f);
+    light->setPosition(v);
+	//Light* light2 = new Light( Vector(60.0f, 120.0f, -100.0f), Color(1.0f, 1.0f, 1.0f) );
+	scene->addLight(light);
+	//scene->addLight(light2);
+}
+void createScene2()
+{
+    //	Vector eye( 100, 40, 40 );
+    glm::vec3 eye( 100, 40, 40 );
+    glm::vec3 center( 0, 0, 0 );
+    glm::vec3 up( 0, 1, 0);
+	float fov = 90.0f;
+	float nearr = 30.0f;
+	float farr = 230.0f;
+	int w = INITIAL_WIDTH;
+	int h = INITIAL_HEIGHT;
+    
+	scene = new Scene();
+	scene->createCamera( eye, center, up, fov, nearr, farr, INITIAL_WIDTH, INITIAL_HEIGHT );
+	//scene->setAmbientColor( 0.5f, 0.5f, 0.5f );
+	scene->setAmbientColor( 1.0f, 1.0f, 1.0f );
+    
+	Sphere* sphere = new Sphere( glm::vec3(0, 20, 0), 25 );
+	sphere->setColor( 0.0f, 0.0f, 1.0f, 1.0f );
+	sphere->setDiffuseCoefficient( 0.3f );
+	sphere->setSpecularCoefficient( 0.7f );
+    
+	LinedBox* box1 = new LinedBox( glm::vec3( -80.0f, -50.0f, -50.0f ), glm::vec3( 50.0f, -45.0f, 50.0f ) );
+	box1->setColor( 0.7f, 0.7f, 0.0f );
+	box1->setDiffuseCoefficient( 0.3f );
+	box1->setSpecularCoefficient( 0.3f );
+	box1->setReflectionCoefficient( 0.0f );
+//	box1->setRefractiveIndex( 1.0f );
+    
+	LinedBox* box2 = new LinedBox( glm::vec3( -80.0f, -50.0f, -60.0f ), glm::vec3( 50.0f, 50.0f, -50.0f ) );
+	box2->setColor( 0.7f, 0.7f, 0.0f );
+	box2->setDiffuseCoefficient( 0.3f );
+	box2->setSpecularCoefficient( 0.3f );
+	box2->setReflectionCoefficient( 0.8f );
+	//box1->setRefractiveIndex( 0.8f );
+    
+	LinedBox* box3 = new LinedBox( glm::vec3( 49.8, -44, -50 ), glm::vec3( 50, 35, 50 ) );
+	box3->setColor( 0.7f, 0.7f, 0.0f, 0.5f );
+	box3->setDiffuseCoefficient( 0.3f );
+	box3->setSpecularCoefficient( 0.3f );
+	box3->setReflectionCoefficient( 0.0f );
+    
+	scene->addObject( (Object *) sphere );
+	scene->addObject( (Object *) box1 );
+	scene->addObject( (Object *) box2 );
+//	scene->addObject( (Object *) box3 );
+    
+	Light* light = new Light( );
+    // Vector(60.0f, 120.0f, 40.0f), Color(1.0f, 1.0f, 1.0f)
+    glm::vec3 c(1.0f, 1.0f, 1.0f);
+    light->setColor(c);
+    glm::vec3 v(60.0f, 120.0f, 40.0f);
     light->setPosition(v);
 	//Light* light2 = new Light( Vector(60.0f, 120.0f, -100.0f), Color(1.0f, 1.0f, 1.0f) );
 	scene->addLight(light);
@@ -516,14 +592,16 @@ glm::vec3 ambientColor( Object *object )
 	return color;
 }
 
-glm::vec4 diffuseColor( Light* light, Object* object, Ray ray, Vector interceptionPoint )
+glm::vec3 diffuseColor( Light* light, Object* object, Ray ray, glm::vec3 interceptionPoint )
 {
 	glm::vec3 L = light->position - interceptionPoint;
-	L = L / L.length();
+    //	L = L / L.length();
+    L = glm::normalize(L);
     
-	glm::vec4 normal = object->getNormal( interceptionPoint );
     
-	float cosAng = L * normal;
+	glm::vec3 normal = object->getNormal( interceptionPoint );
+    
+	float cosAng = glm::dot(L , normal);
 	
 	glm::vec3 color = glm::vec3( -1.0f, -1.0f, -1.0f );
 	if ( cosAng > 0 )
@@ -538,25 +616,28 @@ glm::vec4 diffuseColor( Light* light, Object* object, Ray ray, Vector intercepti
 	return color;
 }
 
-Color specularColor( Light* light, Object* object, Ray ray, Vector interceptionPoint )
+glm::vec3 specularColor( Light* light, Object* object, Ray ray, glm::vec3 interceptionPoint )
 {
-	Vector L = light->position - interceptionPoint;
-	L = L / L.length();
+	glm::vec3 L = light->position - interceptionPoint;
+    //	L = L / L.length();
+    L = glm::normalize(L);
 	
-	Vector normal = object->getNormal( interceptionPoint );
+	glm::vec3 normal = object->getNormal( interceptionPoint );
 	
-	Vector r = ( normal * ( 2 * ( L * normal ) ) ) - L;
+    glm::vec3 aux =  2.0f * glm::dot(L, normal) - glm::vec3(0,0,0);
+	glm::vec3 r = glm::dot(normal ,  aux) - L;
     
-	Vector v = ray.origin - interceptionPoint;
-	v = v / v.length( );
+	glm::vec3 v = ray.origin - interceptionPoint;
+    //	v = v / v.length( );
+    v = glm::normalize(v);
     
 	int n = 12;
-	float bright = pow( r * v, n );
+	float bright = pow( glm::dot(r,v), n );
     
-	Color color;
+	glm::vec3 color;
 	
-	Color objColor = object->getColor();
-	Color specularCf = object->getSpecularCoefficient();
+	glm::vec4 objColor = object->getColor();
+	glm::vec4 specularCf = object->getSpecularCoefficient();
 	color.r = light->color.r * specularCf.r * bright;
 	color.g = light->color.g * specularCf.g * bright;
 	color.b = light->color.b * specularCf.b * bright;
@@ -564,12 +645,12 @@ Color specularColor( Light* light, Object* object, Ray ray, Vector interceptionP
 	return color;
 }
 
-Color rayTracing(Ray ray, int depth = 1, Object* exceptionObject = NULL);
+glm::vec3 rayTracing(Ray ray, int depth = 1, Object* exceptionObject = NULL);
 
-Color shade( Object* object, Ray ray, Vector interceptionPoint, int depth )
+glm::vec3 shade( Object* object, Ray ray, glm::vec3 interceptionPoint, int depth )
 {
 	//Por default, a cor ser· a resultante da iluminaÁ„o ambiente
-	Color color = ambientColor( object );
+	glm::vec3 color = ambientColor( object );
 	
 	//Calcular a contribuiÁ„o de todas as luzes da cena para essa cor
 	for (int i = 0; i < scene->getNumLights(); i++)
@@ -610,7 +691,7 @@ Color shade( Object* object, Ray ray, Vector interceptionPoint, int depth )
 		if ( !occlusion )
 		{
 			//Calcula a cor resultante da reflex„o difusa
-			Color dColor = diffuseColor( light, object, ray, interceptionPoint );
+			glm::vec3 dColor = diffuseColor( light, object, ray, interceptionPoint );
 			
 			//Calcula a cor resultante da reflex„o especulada (somente se houve reflex„o difusa)
 			if ( dColor.r != -1.0f )
@@ -619,21 +700,22 @@ Color shade( Object* object, Ray ray, Vector interceptionPoint, int depth )
 	}
 	
 	//Normal do objeto
-	Vector normal = object->getNormal( interceptionPoint );
+	glm::vec3 normal = object->getNormal( interceptionPoint );
 	
 	//Raio ray na direÁ„o oposta
-	Vector opRay = ray.origin - interceptionPoint;
-	opRay = opRay / opRay.length( );
+	glm::vec3 opRay = ray.origin - interceptionPoint;
+//	opRay = opRay / opRay.length( );
+    opRay = glm::normalize(opRay);
     
 	/* Reflex„o de outros objetos */
 	float objReflection = object->getReflectionCoefficient( );
 	if ( objReflection > 0.0f && depth + 1 <= MAX_DEPTH)
 	{
 		//Novo raio a ser lanÁado a partir do ponto de interseÁ„o
-		Ray newRay( interceptionPoint, normal * ( 2 * ( opRay * normal ) ) - opRay );
+		Ray newRay( interceptionPoint, glm::dot(normal, 2* glm::dot( opRay , normal ) - glm::vec3(0,0,0) )  - opRay );
         
 		//Obtendo a cor refletida
-		Color reflectedColor = rayTracing( newRay, depth + 1 );
+		glm::vec3 reflectedColor = rayTracing( newRay, depth + 1 );
         
 		color = color * ( 1 - objReflection ) + reflectedColor * objReflection;
 	}
@@ -642,19 +724,21 @@ Color shade( Object* object, Ray ray, Vector interceptionPoint, int depth )
 	float opacity = object->getColor( ).a;
 	if ( opacity < 1.0f && depth + 1 <= MAX_DEPTH)
 	{
-		Vector vT = normal * ( opRay * normal ) - opRay;
+		glm::vec3 vT = normal * ( opRay * normal ) - opRay;
         
 		float senAng = vT.length() * object->getRefractiveIndex( );
 		float cosAng = sqrt( 1 - senAng * senAng );
         
-		vT = vT / vT.length();
-		Vector rT = vT * senAng - normal * cosAng;
+//		vT = vT / vT.length();
+        vT = glm::normalize(vT);
+        
+		glm::vec3 rT = vT * senAng - normal * cosAng;
         
 		//Novo raio a ser lanÁado a partir do ponto de interseÁ„o
 		Ray newRay( interceptionPoint, rT );
         
 		//Obtendo a cor refletida
-		Color behindColor = rayTracing( newRay, depth + 1, object );
+		glm::vec3 behindColor = rayTracing( newRay, depth + 1, object );
         
 		//if ( !(behindColor.r == 0.0f && behindColor.g == 0.0f && behindColor.b == 0.0f) )
         color = color * opacity + behindColor * ( 1 - opacity );
@@ -663,7 +747,7 @@ Color shade( Object* object, Ray ray, Vector interceptionPoint, int depth )
 	return color;
 }
 
-Color rayTracing( Ray ray, int depth, Object* exceptionObject )
+glm::vec3 rayTracing( Ray ray, int depth, Object* exceptionObject )
 {
 	float minT = FLT_MAX;
     
@@ -686,13 +770,13 @@ Color rayTracing( Ray ray, int depth, Object* exceptionObject )
 		}
 	}
     
-	Color color( 0.0f, 0.0f, 0.0f );
+	glm::vec3 color( 0.0f, 0.0f, 0.0f );
     
 	if (minT < FLT_MAX)
 	{
 		Object *obj = scene->getObject(indexObj);
         
-		Vector point = ray.origin + ray.direction * minT;
+		glm::vec3 point = ray.origin + ray.direction * minT;
         
 		color = shade( obj, ray, point, depth );
 	}
@@ -717,7 +801,7 @@ void drawScene()
 		{
 			Ray ray = camera->getRay(x, y);
 			
-			Color color = rayTracing(ray);
+			glm::vec3 color = rayTracing(ray);
 			glColor3f(color.r, color.g, color.b);
 			glVertex2f(x, y);
 		}
@@ -740,7 +824,7 @@ void Initialize() {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	
 	glClear(GL_COLOR_BUFFER_BIT);
-	createScene();
+	createScene2();
 	//glTranslatef(0.375, 0.375, 0);
 }
 

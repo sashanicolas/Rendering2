@@ -27,7 +27,6 @@
 		B7FBA6521934EBF600E018F1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958B19074575007FDC87 /* OpenGL.framework */; };
 		B7FBA6541934EC4600E018F1 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FBA6531934EC4600E018F1 /* GLUT.framework */; };
 		B7FBA6551934ECC000E018F1 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FBA6531934EC4600E018F1 /* GLUT.framework */; };
-		B7FBA66E1934ED1300E018F1 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA6651934ED1300E018F1 /* vector.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,7 +90,6 @@
 		B7FBA64B1934EBEA00E018F1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B7FBA64D1934EBEA00E018F1 /* Trabalho1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Trabalho1.1; sourceTree = "<group>"; };
 		B7FBA6531934EC4600E018F1 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
-		B7FBA6651934ED1300E018F1 /* vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vector.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +184,6 @@
 		B7FBA63A1934E7AC00E018F1 /* Raytracing */ = {
 			isa = PBXGroup;
 			children = (
-				B7FBA6651934ED1300E018F1 /* vector.cpp */,
 				B7FBA63B1934E7AC00E018F1 /* main.cpp */,
 				B7FBA63D1934E7AC00E018F1 /* Raytracing.1 */,
 			);
@@ -324,7 +321,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7FBA63C1934E7AC00E018F1 /* main.cpp in Sources */,
-				B7FBA66E1934ED1300E018F1 /* vector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

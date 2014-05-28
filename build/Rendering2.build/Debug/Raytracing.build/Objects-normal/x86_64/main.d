@@ -1,7 +1,4 @@
 dependencies: /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp \
-  /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h \
-  /Users/sashanicolas/Projects/Rendering2/Raytracing/box.h \
-  /Users/sashanicolas/Projects/Rendering2/Raytracing/light.h \
   third_party/include/glm/glm.hpp \
   third_party/include/glm/detail/_fixes.hpp \
   third_party/include/glm/fwd.hpp \

@@ -3,9 +3,7 @@ v6
 r1
 cCheck dependencies
 cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o /Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing normal x86_64
 
 N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
 c0000000053471FE200000000000000AA
@@ -347,150 +345,23 @@ c0000000053471FCA0000000000001770
 t1397170122
 s6000
 
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp
-c0000000051CA112E0000000000000934
-t1372197166
-s2356
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h
-c00000000538515010000000000000141
-t1401230593
-s321
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp
-c0000000051C9B2E200000000000003F4
-t1372173026
-s1012
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp
-c0000000051CA46060000000000000186
-t1372210694
-s390
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/color.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h
-c00000000538514E300000000000001BE
-t1401230563
-s446
-
 N/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp
-c00000000538514F6000000000000379E
-t1401230582
-s14238
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp
-c0000000051D633780000000000000603
-t1372992376
-s1539
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/object.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp
-c0000000051C76EB0000000000000007F
-t1372024496
-s127
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp
-c0000000051C9B7360000000000000462
-t1372174134
-s1122
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp
-c0000000051C9AA3E000000000000031E
-t1372170814
-s798
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h
-c0000000053851501000000000000015A
-t1401230593
-s346
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp
-c0000000051C9A71200000000000003AB
-t1372170002
-s939
-
-N/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
-c0000000051C9A7120000000000000190
-t1372170002
-s400
+c0000000053853BE40000000000005ADE
+t1401240548
+s23262
 
 N/Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing
-t1401216739
-s60152
+t1401239655
+s61784
 
 N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/Raytracing.LinkFileList
-c000000005384B59B0000000000000413
-t1401206171
-s1043
-
-N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o
-t1401206172
-s11560
-
-N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o
-t1401206172
-s10472
-
-N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o
-t1401206172
-s5100
+c00000000538531250000000000000073
+t1401237797
+s115
 
 N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o
-t1401216920
-s63700
-
-N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o
-t1401206172
-s11432
-
-N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o
-t1401206172
-s4752
-
-N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o
-t1401206173
-s112376
-
-N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o
-t1401206172
-s9976
-
-N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o
-t1401206172
-s6912
-
-N/Users/sashanicolas/Projects/Rendering2/third_party/include/GL/glew.h
-c000000005356F91A00000000000E655A
-t1398208794
-s943450
-
-N/Users/sashanicolas/Projects/Rendering2/third_party/include/GL/glfw.h
-c000000005356EA700000000000004DD9
-t1398205040
-s19929
+t1401240552
+s174712
 
 N/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/common.hpp
 c0000000052D20E18000000000000065C
@@ -922,155 +793,17 @@ c000000005356EA700000000000019C48
 t1398205040
 s105544
 
-CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp
-r0
-
-CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp
-r0
-
-CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp
-r0
-
 CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp
-r0
-
-CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp
-r0
-
-CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp
-r0
-
-CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp
-r0
-
-CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp
-r0
-
-CBuild AST from /Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp
 r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies76a6f4814c35b941^778201824c35b941^---0#1#1#--18"Check dependencies36"26CF8D1C-F3F5-4CEB-BFF0-1D907BBBEFCD-
-
-CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s422923394.002760
-e422923394.249457
-r0
-xCompileC
-xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o
-x/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:6:25: error: expected class name
-oclass LinedBox : public Object
-o                        ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:9:12: error: unknown type name 'Vector'
-o        LinedBox( Vector minPoint, Vector maxPoint );
-o                  ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:9:29: error: unknown type name 'Vector'
-o        LinedBox( Vector minPoint, Vector maxPoint );
-o                                   ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:11:19: error: unknown type name 'Ray'
-o        bool intercepts( Ray r, float* point );
-o                         ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:12:2: error: unknown type name 'Vector'
-o        Vector getNormal( Vector point );
-o        ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:12:20: error: unknown type name 'Vector'
-o        Vector getNormal( Vector point );
-o                          ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:15:2: error: unknown type name 'Vector'
-o        Vector minPoint;
-o        ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:16:2: error: unknown type name 'Vector'
-o        Vector maxPoint;
-o        ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:18:2: error: unknown type name 'Vector'
-o        Vector lastCalcNormal;
-o        ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:22:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]
-o#endif;
-o      ^
-o      //
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:3:21: error: unknown type name 'Vector'
-oLinedBox::LinedBox( Vector minPoint, Vector maxPoint )
-o                    ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:3:38: error: unknown type name 'Vector'
-oLinedBox::LinedBox( Vector minPoint, Vector maxPoint )
-o                                     ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:9:28: error: unknown type name 'Ray'
-obool LinedBox::intercepts( Ray r, float* t )
-o                           ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:20:2: error: unknown type name 'Vector'
-o        Vector point;
-o        ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:29:21: error: use of undeclared identifier 'Vector'
-o                        lastCalcNormal = Vector( 1, 0, 0 );
-o                                         ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:41:21: error: use of undeclared identifier 'Vector'
-o                        lastCalcNormal = Vector( -1, 0, 0 );
-o                                         ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:53:21: error: use of undeclared identifier 'Vector'
-o                        lastCalcNormal = Vector( 0, 1, 0 );
-o                                         ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:65:21: error: use of undeclared identifier 'Vector'
-o                        lastCalcNormal = Vector( 0, -1, 0 );
-o                                         ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:77:21: error: use of undeclared identifier 'Vector'
-o                        lastCalcNormal = Vector( 0, 0, 1 );
-o                                         ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:89:21: error: use of undeclared identifier 'Vector'
-o                        lastCalcNormal = Vector( 0, 0, -1 );
-o                                         ^
-ofatal error: too many errors emitted, stopping now [-ferror-limit=]
-o1 warning and 20 errors generated.
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp163"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o Raytracing/box.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compilere3c601824c35b941^3d4340824c35b941^-3693"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:6:25: error: expected class nameclass LinedBox : public Object                        ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:9:12: error: unknown type name 'Vector'        LinedBox( Vector minPoint, Vector maxPoint );                  ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:9:29: error: unknown type name 'Vector'        LinedBox( Vector minPoint, Vector maxPoint );                                   ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:11:19: error: unknown type name 'Ray'        bool intercepts( Ray r, float* point );                         ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:12:2: error: unknown type name 'Vector'        Vector getNormal( Vector point );        ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:12:20: error: unknown type name 'Vector'        Vector getNormal( Vector point );                          ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:15:2: error: unknown type name 'Vector'        Vector minPoint;        ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:16:2: error: unknown type name 'Vector'        Vector maxPoint;        ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:18:2: error: unknown type name 'Vector'        Vector lastCalcNormal;        ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:22:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]#endif;      ^      ///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:3:21: error: unknown type name 'Vector'LinedBox::LinedBox( Vector minPoint, Vector maxPoint )                    ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:3:38: error: unknown type name 'Vector'LinedBox::LinedBox( Vector minPoint, Vector maxPoint )                                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:9:28: error: unknown type name 'Ray'bool LinedBox::intercepts( Ray r, float* t )                           ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:20:2: error: unknown type name 'Vector'        Vector point;        ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:29:21: error: use of undeclared identifier 'Vector'                        lastCalcNormal = Vector( 1, 0, 0 );                                         ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:41:21: error: use of undeclared identifier 'Vector'                        lastCalcNormal = Vector( -1, 0, 0 );                                         ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:53:21: error: use of undeclared identifier 'Vector'                        lastCalcNormal = Vector( 0, 1, 0 );                                         ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:65:21: error: use of undeclared identifier 'Vector'                        lastCalcNormal = Vector( 0, -1, 0 );                                         ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:77:21: error: use of undeclared identifier 'Vector'                        lastCalcNormal = Vector( 0, 0, 1 );                                         ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:89:21: error: use of undeclared identifier 'Vector'                        lastCalcNormal = Vector( 0, 0, -1 );                                         ^fatal error: too many errors emitted, stopping now [-ferror-limit=]1 warning and 20 errors generated.21(36%IDEClangDiagnosticActivityLogMessage2@19"Expected class name-422923394#18446744073709551615#0#1(2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:-422923394#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^5#24#5#24#81#0#11"Parse Issue--2@26"Unknown type name 'Vector'-422923394#18446744073709551615#0#1(2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:-422923394#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^8#11#8#11#112#0#11"Parse Issue--2@26"Unknown type name 'Vector'-422923394#18446744073709551615#0#1(2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:-422923394#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^8#28#8#28#129#0#11"Parse Issue--2@23"Unknown type name 'Ray'-422923394#18446744073709551615#0#1(2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:-422923394#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^10#18#10#18#169#0#11"Parse Issue--2@26"Unknown type name 'Vector'-422923394#18446744073709551615#0#1(2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:-422923394#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^11#1#11#1#194#0#11"Parse Issue--2@26"Unknown type name 'Vector'-422923394#18446744073709551615#0#1(2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:-422923394#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^11#19#11#19#212#0#11"Parse Issue--2@26"Unknown type name 'Vector'-422923394#18446744073709551615#0#1(2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:-422923394#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^14#1#14#1#242#0#11"Parse Issue--2@26"Unknown type name 'Vector'-422923394#18446744073709551615#0#1(2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:-422923394#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^15#1#15#1#261#0#11"Parse Issue--2@26"Unknown type name 'Vector'-422923394#18446744073709551615#0#1(2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:-422923394#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^17#1#17#1#282#0#11"Parse Issue--2@39"Extra tokens at end of #endif directive-422923394#18446744073709551615#0#1(2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp:1:-422923394#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^21#6#21#6#320#0#29"Lexical or Preprocessor Issue1(3@63"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.h0000000000000000^21#6#21#6#320#0#-2@26"Unknown type name 'Vector'-422923394#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^2#20#2#20#40#0#11"Parse Issue--2@26"Unknown type name 'Vector'-422923394#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^2#37#2#37#57#0#11"Parse Issue--2@23"Unknown type name 'Ray'-422923394#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^8#27#8#27#169#0#11"Parse Issue--2@26"Unknown type name 'Vector'-422923394#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^19#1#19#1#421#0#11"Parse Issue--2@37"Use of undeclared identifier 'Vector'-422923394#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^28#20#28#20#703#0#14"Semantic Issue--2@37"Use of undeclared identifier 'Vector'-422923394#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^40#20#40#20#997#0#14"Semantic Issue--2@37"Use of undeclared identifier 'Vector'-422923394#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^52#20#52#20#1312#0#14"Semantic Issue--2@37"Use of undeclared identifier 'Vector'-422923394#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^64#20#64#20#1606#0#14"Semantic Issue--2@37"Use of undeclared identifier 'Vector'-422923394#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^76#20#76#20#1920#0#14"Semantic Issue--2@37"Use of undeclared identifier 'Vector'-422923394#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^88#20#88#20#2213#0#14"Semantic Issue--2@37"Too many errors emitted, stopping now-422923394#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic-20"Apple LLVM 5.0 Error--0#0#1#-19%DVTDocumentLocation4@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp0000000000000000^2874"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o Raytracing/box.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/box.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o36"074A1C05-98B0-4C49-905B-2BF498D740D8-
-b96812B46-F897-4C5C-9BC0-450F48738AE9
-
-CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o /Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s422898972.569575
-e422898972.675735
-r1
-xCompileC
-xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o
-x/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp169"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o Raytracing/camera.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler8203921ced34b941^6341ad1ced34b941^---0#0#1#-19%DVTDocumentLocation2@68"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp0000000000000000^2892"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o Raytracing/camera.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/camera.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o36"1E4A721A-B64B-42C1-9A9D-19EF39B89F4E-
-b6618DE15-B572-4874-B38F-BFC245B3A130
-
-CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o /Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s422898971.985159
-e422898972.567623
-r1
-xCompileC
-xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o
-x/Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/color.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp167"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o Raytracing/color.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler6f4bfc1bed34b941^f166911ced34b941^---0#0#1#-19%DVTDocumentLocation2@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp0000000000000000^2886"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o Raytracing/color.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/color.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o36"5B95E441-8165-4573-82CD-5807535E882B-
-b6618DE15-B572-4874-B38F-BFC245B3A130
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies6f2ccc657335b941^daa8ce657335b941^---0#1#1#--18"Check dependencies36"BF783231-6698-455E-A444-E1C7E447538F-
 
 CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s422923393.999912
-e422923395.157559
-r0
+s422933349.820565
+e422933352.208476
+r1
 xCompileC
 xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o
 x/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp
@@ -1079,9 +812,6 @@ xx86_64
 xc++
 xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h
 d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/glm.hpp
 d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/detail/_fixes.hpp
 d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/fwd.hpp
@@ -1166,391 +896,166 @@ d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/constants.h
 d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/constants.inl
 d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl
 d/Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.inl
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:9:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:10:23: error: expected class name
-oclass Sphere : public Object
-o                      ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:13:10: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        Sphere( Vector center, float r );
-o                ^~~~~~
-o                hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:9:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:15:19: error: unknown type name 'Ray'
-o        bool intercepts( Ray r, float* point );
-o                         ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:16:2: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        Vector getNormal( Vector point );
-o        ^~~~~~
-o        hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:9:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:16:20: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        Vector getNormal( Vector point );
-o                          ^~~~~~
-o                          hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:9:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:19:2: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        Vector center;
-o        ^~~~~~
-o        hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
 oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:6:25: error: expected class name
-oclass LinedBox : public Object
-o                        ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:9:12: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        LinedBox( Vector minPoint, Vector maxPoint );
-o                  ^~~~~~
-o                  hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:9:29: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        LinedBox( Vector minPoint, Vector maxPoint );
-o                                   ^~~~~~
-o                                   hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:11:19: error: unknown type name 'Ray'
-o        bool intercepts( Ray r, float* point );
-o                         ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:12:2: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        Vector getNormal( Vector point );
-o        ^~~~~~
-o        hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:12:20: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        Vector getNormal( Vector point );
-o                          ^~~~~~
-o                          hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:15:2: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        Vector minPoint;
-o        ^~~~~~
-o        hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:16:2: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        Vector maxPoint;
-o        ^~~~~~
-o        hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:18:2: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        Vector lastCalcNormal;
-o        ^~~~~~
-o        hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:22:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]
-o#endif;
-o      ^
-o      //
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:11:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:10:9: error: unknown type name 'Vector'; did you mean 'hecto'?
-o        Light( Vector& position, Color& color )
-o               ^~~~~~
-o               hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:11:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:10:27: error: unknown type name 'Color'
-o        Light( Vector& position, Color& color )
-o                                 ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:18:19: error: unknown type name 'Color'
-o    void setColor(Color& color){
-o                  ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:21:22: error: unknown type name 'Vector'; did you mean 'hecto'?
-o    void setPosition(Vector& position){
-o                     ^~~~~~
-o                     hecto
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:
-oIn file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared here
-otypedef ratio<                100LL, 1LL> hecto;
-o                                          ^
-ofatal error: too many errors emitted, stopping now [-ferror-limit=]
-o1 warning and 20 errors generated.
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp165"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o Raytracing/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler82c901824c35b941^475828834c35b941^-19839"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:9:/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:10:23: error: expected class nameclass Sphere : public Object                      ^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:13:10: error: unknown type name 'Vector'; did you mean 'hecto'?        Sphere( Vector center, float r );                ^~~~~~                hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:9:/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:15:19: error: unknown type name 'Ray'        bool intercepts( Ray r, float* point );                         ^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:16:2: error: unknown type name 'Vector'; did you mean 'hecto'?        Vector getNormal( Vector point );        ^~~~~~        hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:9:/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:16:20: error: unknown type name 'Vector'; did you mean 'hecto'?        Vector getNormal( Vector point );                          ^~~~~~                          hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:9:/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:19:2: error: unknown type name 'Vector'; did you mean 'hecto'?        Vector center;        ^~~~~~        hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:6:25: error: expected class nameclass LinedBox : public Object                        ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:9:12: error: unknown type name 'Vector'; did you mean 'hecto'?        LinedBox( Vector minPoint, Vector maxPoint );                  ^~~~~~                  hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:9:29: error: unknown type name 'Vector'; did you mean 'hecto'?        LinedBox( Vector minPoint, Vector maxPoint );                                   ^~~~~~                                   hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:11:19: error: unknown type name 'Ray'        bool intercepts( Ray r, float* point );                         ^/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:12:2: error: unknown type name 'Vector'; did you mean 'hecto'?        Vector getNormal( Vector point );        ^~~~~~        hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:12:20: error: unknown type name 'Vector'; did you mean 'hecto'?        Vector getNormal( Vector point );                          ^~~~~~                          hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:15:2: error: unknown type name 'Vector'; did you mean 'hecto'?        Vector minPoint;        ^~~~~~        hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:16:2: error: unknown type name 'Vector'; did you mean 'hecto'?        Vector maxPoint;        ^~~~~~        hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:18:2: error: unknown type name 'Vector'; did you mean 'hecto'?        Vector lastCalcNormal;        ^~~~~~        hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:/Users/sashanicolas/Projects/Rendering2/Raytracing/box.h:22:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]#endif;      ^      //In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:11:/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:10:9: error: unknown type name 'Vector'; did you mean 'hecto'?        Light( Vector& position, Color& color )               ^~~~~~               hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:11:/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:10:27: error: unknown type name 'Color'        Light( Vector& position, Color& color )                                 ^/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:18:19: error: unknown type name 'Color'    void setColor(Color& color){                  ^/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:21:22: error: unknown type name 'Vector'; did you mean 'hecto'?    void setPosition(Vector& position){                     ^~~~~~                     hectoIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:2:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/iostream:38:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ios:216:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__locale:18:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/mutex:176:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/__mutex_base:15:In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/chrono:281:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/ratio:265:43: note: 'hecto' declared heretypedef ratio<                100LL, 1LL> hecto;                                          ^fatal error: too many errors emitted, stopping now [-ferror-limit=]1 warning and 20 errors generated.-0#0#1#-19%DVTDocumentLocation2@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^2880"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o Raytracing/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o36"C542C1D5-CEFA-48F5-AE40-3B180FAE38F2-
-b96812B46-F897-4C5C-9BC0-450F48738AE9
-
-CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o /Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s422898972.676020
-e422898972.717948
-r1
-xCompileC
-xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o
-x/Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/object.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/color.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp169"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o Raytracing/object.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compilerdf34ad1ced34b941^3ae7b71ced34b941^---0#0#1#-19%DVTDocumentLocation2@68"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp0000000000000000^2892"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o Raytracing/object.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/object.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o36"EE3C40C5-89AF-4463-A64F-681E25F754FB-
-b6618DE15-B572-4874-B38F-BFC245B3A130
-
-CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o /Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s422898971.984236
-e422898972.568255
-r1
-xCompileC
-xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o
-x/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp163"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o Raytracing/ray.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler9f1dfc1bed34b941^7c81911ced34b941^---0#0#1#-19%DVTDocumentLocation2@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp0000000000000000^2874"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o Raytracing/ray.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/ray.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o36"BB0A8087-54E5-40B5-B5DC-4C44A3D5C3FA-
-b6618DE15-B572-4874-B38F-BFC245B3A130
-
-CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s422898972.568118
-e422898973.059461
-r1
-xCompileC
-xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o
-x/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/camera.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/ray.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/object.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/color.h
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:1:
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h:9:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:29:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]
-o#endif;
-o      ^
-o      //
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:34:9: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
+oIn file included from third_party/include/glm/gtc/matrix_transform.hpp:292:
+othird_party/include/glm/gtc/matrix_transform.inl:58:11: warning: GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/matrix_transform.inl:99:11: warning: GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/matrix_transform.inl:232:11: warning: GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/matrix_transform.inl:264:11: warning: GLM: perspectiveFov function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: perspectiveFov function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/matrix_transform.inl:290:11: warning: GLM: infinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: infinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/matrix_transform.inl:318:11: warning: GLM: tweakedInfinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: tweakedInfinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:12:
+oIn file included from third_party/include/glm/gtc/type_ptr.hpp:63:
+oIn file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:
+othird_party/include/glm/gtc/quaternion.inl:626:11: warning: GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/quaternion.inl:653:11: warning: GLM: roll function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: roll function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/quaternion.inl:667:11: warning: GLM: pitch function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: pitch function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/quaternion.inl:681:11: warning: GLM: yaw function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: yaw function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/quaternion.inl:811:11: warning: GLM: angle function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: angle function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+othird_party/include/glm/gtc/quaternion.inl:841:11: warning: GLM: angleAxis function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]
+o#               pragma message("GLM: angleAxis function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")
+o                       ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:448:16: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
 o        return objects.size();
 o        ~~~~~~ ^~~~~~~~~~~~~~
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:46:12: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:456:19: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
 o        if (index >= 0 && index < objects.size())
 o            ~~~~~ ^  ~
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:54:9: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:462:16: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
 o        return lights.size();
 o        ~~~~~~ ^~~~~~~~~~~~~
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:66:12: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:470:19: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
 o        if (index >= 0 && index < lights.size())
 o            ~~~~~ ^  ~
-o5 warnings generated.
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp167"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o Raytracing/scene.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compilered9d911ced34b941^82380f1ded34b941^-1295"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:1:In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h:9:/Users/sashanicolas/Projects/Rendering2/Raytracing/light.h:29:7: warning: extra tokens at end of #endif directive [-Wextra-tokens]#endif;      ^      ///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:34:9: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]        return objects.size();        ~~~~~~ ^~~~~~~~~~~~~~/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:46:12: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]        if (index >= 0 && index < objects.size())            ~~~~~ ^  ~/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:54:9: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]        return lights.size();        ~~~~~~ ^~~~~~~~~~~~~/Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:66:12: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]        if (index >= 0 && index < lights.size())            ~~~~~ ^  ~5 warnings generated.5(36%IDEClangDiagnosticActivityLogMessage2@39"Extra tokens at end of #endif directive-422898973#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp:1:-422898973#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^0#9#0#9#9#0#21"Apple LLVM 5.0 Notice--2@83"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h:9:-422898973#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.h0000000000000000^8#9#8#9#130#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/light.h0000000000000000^28#6#28#6#441#0#29"Lexical or Preprocessor Issue1(3@65"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/light.h0000000000000000^28#6#28#6#441#0#-2@87"Implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int'-422898973#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^33#8#33#8#463#0#22"Value Conversion Issue2(3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^33#8#33#22#463#13#3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^33#1#33#7#456#0#-2@53"Comparison of unsigned expression >= 0 is always true-422898973#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^45#11#45#11#615#0#14"Semantic Issue2(3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^45#5#45#10#609#0#3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^45#14#45#15#618#0#-2@87"Implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int'-422898973#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^53#8#53#8#734#0#22"Value Conversion Issue2(3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^53#8#53#21#734#12#3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^53#1#53#7#727#0#-2@53"Comparison of unsigned expression >= 0 is always true-422898973#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^65#11#65#11#880#0#14"Semantic Issue2(3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^65#5#65#10#874#0#3@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^65#14#65#15#883#0#-0#0#1#-19%DVTDocumentLocation4@67"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp0000000000000000^2886"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o Raytracing/scene.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/scene.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o36"22517C1F-C999-45DA-938E-89619141986B-
-b6618DE15-B572-4874-B38F-BFC245B3A130
-
-CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s422923394.000546
-e422923394.353492
-r0
-xCompileC
-xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o
-x/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h
-oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:1:
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:10:23: error: expected class name
-oclass Sphere : public Object
-o                      ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:13:10: error: unknown type name 'Vector'
-o        Sphere( Vector center, float r );
-o                ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:15:19: error: unknown type name 'Ray'
-o        bool intercepts( Ray r, float* point );
-o                         ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:16:2: error: unknown type name 'Vector'
-o        Vector getNormal( Vector point );
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:502:6: warning: unused variable 'h' [-Wunused-variable]
+o        int h = INITIAL_HEIGHT;
+o            ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:501:6: warning: unused variable 'w' [-Wunused-variable]
+o        int w = INITIAL_WIDTH;
+o            ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:558:6: warning: unused variable 'w' [-Wunused-variable]
+o        int w = INITIAL_WIDTH;
+o            ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:559:6: warning: unused variable 'h' [-Wunused-variable]
+o        int h = INITIAL_HEIGHT;
+o            ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:618:2: warning: 'gluOrtho2D' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakeOrtho" [-Wdeprecated-declarations]
+o        gluOrtho2D(0, w, 0, h);
 o        ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:16:20: error: unknown type name 'Vector'
-o        Vector getNormal( Vector point );
-o                          ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:19:2: error: unknown type name 'Vector'
-o        Vector center;
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:61:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h:276:13: note: 'gluOrtho2D' declared here
+oextern void gluOrtho2D (GLdouble left, GLdouble right, GLdouble bottom, GLdouble top) OPENGL_DEPRECATED_MSG(10_0, 10_9, "Use GLKMatrix4MakeOrtho");
+o            ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:681:12: warning: unused variable 'objColor' [-Wunused-variable]
+o        glm::vec4 objColor = object->getColor();
+o                  ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:853:2: warning: 'glutSwapBuffers' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutSwapBuffers();
 o        ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:3:17: error: unknown type name 'Vector'
-oSphere::Sphere( Vector center, float r )
-o                ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:9:26: error: unknown type name 'Ray'
-obool Sphere::intercepts( Ray r, float* t )
-o                         ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:35:1: error: unknown type name 'Vector'
-oVector Sphere::getNormal( Vector point )
-o^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:35:27: error: unknown type name 'Vector'
-oVector Sphere::getNormal( Vector point )
-o                          ^
-o/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:37:2: error: unknown type name 'Vector'
-o        Vector normal = point - center;
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:448:22: note: 'glutSwapBuffers' declared here
+oextern void APIENTRY glutSwapBuffers(void) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:875:2: warning: 'glutInit' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutInit(&argc, argv);
 o        ^
-o11 errors generated.
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp169"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o Raytracing/sphere.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler32c801824c35b941^d07c5a824c35b941^-1844"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:1:/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:10:23: error: expected class nameclass Sphere : public Object                      ^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:13:10: error: unknown type name 'Vector'        Sphere( Vector center, float r );                ^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:15:19: error: unknown type name 'Ray'        bool intercepts( Ray r, float* point );                         ^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:16:2: error: unknown type name 'Vector'        Vector getNormal( Vector point );        ^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:16:20: error: unknown type name 'Vector'        Vector getNormal( Vector point );                          ^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.h:19:2: error: unknown type name 'Vector'        Vector center;        ^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:3:17: error: unknown type name 'Vector'Sphere::Sphere( Vector center, float r )                ^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:9:26: error: unknown type name 'Ray'bool Sphere::intercepts( Ray r, float* t )                         ^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:35:1: error: unknown type name 'Vector'Vector Sphere::getNormal( Vector point )^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:35:27: error: unknown type name 'Vector'Vector Sphere::getNormal( Vector point )                          ^/Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp:37:2: error: unknown type name 'Vector'        Vector normal = point - center;        ^11 errors generated.-0#0#1#-19%DVTDocumentLocation2@68"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp0000000000000000^2892"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o Raytracing/sphere.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/sphere.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o36"E0CFA89F-1C01-4E5B-B630-BFD87B16A5CE-
-b96812B46-F897-4C5C-9BC0-450F48738AE9
-
-CCompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o /Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s422898972.569070
-e422898972.668863
-r1
-xCompileC
-xbuild/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o
-x/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp
-d/Users/sashanicolas/Projects/Rendering2/Raytracing/vector.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp169"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o Raytracing/vector.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler91f0911ced34b941^8e3dab1ced34b941^---0#0#1#-19%DVTDocumentLocation2@68"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp0000000000000000^2892"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o Raytracing/vector.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/vector.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o36"7478280B-92B6-4F43-A0F4-6C9BDE5B51C5-
-b6618DE15-B572-4874-B38F-BFC245B3A130
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:431:22: note: 'glutInit' declared here
+oextern void APIENTRY glutInit(int *argcp, char **argv) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:876:2: warning: 'glutInitDisplayMode' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:432:22: note: 'glutInitDisplayMode' declared here
+oextern void APIENTRY glutInitDisplayMode(unsigned int mode) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:877:2: warning: 'glutInitWindowSize' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutInitWindowSize(INITIAL_WIDTH, INITIAL_HEIGHT);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:437:22: note: 'glutInitWindowSize' declared here
+oextern void APIENTRY glutInitWindowSize(int width, int height) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:878:2: warning: 'glutInitWindowPosition' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutInitWindowPosition(200, 200);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:436:22: note: 'glutInitWindowPosition' declared here
+oextern void APIENTRY glutInitWindowPosition(int x, int y) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:879:2: warning: 'glutCreateWindow' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutCreateWindow("Ray Tracing");
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:441:21: note: 'glutCreateWindow' declared here
+oextern int APIENTRY glutCreateWindow(const char *title) OPENGL_DEPRECATED(10_0, 10_9);
+o                    ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:880:5: warning: 'glutKeyboardFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o    glutKeyboardFunc(Keyboard);
+o    ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:507:22: note: 'glutKeyboardFunc' declared here
+oextern void APIENTRY glutKeyboardFunc(void (*func)(unsigned char key, int x, int y)) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:882:2: warning: 'glutReshapeFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutReshapeFunc(reshape);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:506:22: note: 'glutReshapeFunc' declared here
+oextern void APIENTRY glutReshapeFunc(void (*func)(int width, int height)) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:883:2: warning: 'glutDisplayFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutDisplayFunc(drawScene);
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:505:22: note: 'glutDisplayFunc' declared here
+oextern void APIENTRY glutDisplayFunc(void (*func)(void)) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:886:2: warning: 'glutMainLoop' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]
+o        glutMainLoop();
+o        ^
+oIn file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:
+o/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:438:22: note: 'glutMainLoop' declared here
+oextern void APIENTRY glutMainLoop(void) OPENGL_DEPRECATED(10_0, 10_9);
+o                     ^
+o32 warnings generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Compile /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp165"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o Raytracing/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compilered7fd4657335b941^245f35687335b941^-14400"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:third_party/include/glm/gtc/matrix_transform.inl:58:11: warning: GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/matrix_transform.inl:99:11: warning: GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/matrix_transform.inl:232:11: warning: GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/matrix_transform.inl:264:11: warning: GLM: perspectiveFov function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: perspectiveFov function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/matrix_transform.inl:290:11: warning: GLM: infinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: infinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/matrix_transform.inl:318:11: warning: GLM: tweakedInfinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: tweakedInfinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:12:In file included from third_party/include/glm/gtc/type_ptr.hpp:63:In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:third_party/include/glm/gtc/quaternion.inl:626:11: warning: GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/quaternion.inl:653:11: warning: GLM: roll function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: roll function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/quaternion.inl:667:11: warning: GLM: pitch function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: pitch function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/quaternion.inl:681:11: warning: GLM: yaw function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: yaw function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/quaternion.inl:811:11: warning: GLM: angle function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: angle function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^third_party/include/glm/gtc/quaternion.inl:841:11: warning: GLM: angleAxis function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message. [-W#pragma-messages]#               pragma message("GLM: angleAxis function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.")                       ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:448:16: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]        return objects.size();        ~~~~~~ ^~~~~~~~~~~~~~/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:456:19: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]        if (index >= 0 && index < objects.size())            ~~~~~ ^  ~/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:462:16: warning: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]        return lights.size();        ~~~~~~ ^~~~~~~~~~~~~/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:470:19: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]        if (index >= 0 && index < lights.size())            ~~~~~ ^  ~/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:502:6: warning: unused variable 'h' [-Wunused-variable]        int h = INITIAL_HEIGHT;            ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:501:6: warning: unused variable 'w' [-Wunused-variable]        int w = INITIAL_WIDTH;            ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:558:6: warning: unused variable 'w' [-Wunused-variable]        int w = INITIAL_WIDTH;            ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:559:6: warning: unused variable 'h' [-Wunused-variable]        int h = INITIAL_HEIGHT;            ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:618:2: warning: 'gluOrtho2D' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakeOrtho" [-Wdeprecated-declarations]        gluOrtho2D(0, w, 0, h);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:61:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h:276:13: note: 'gluOrtho2D' declared hereextern void gluOrtho2D (GLdouble left, GLdouble right, GLdouble bottom, GLdouble top) OPENGL_DEPRECATED_MSG(10_0, 10_9, "Use GLKMatrix4MakeOrtho");            ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:681:12: warning: unused variable 'objColor' [-Wunused-variable]        glm::vec4 objColor = object->getColor();                  ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:853:2: warning: 'glutSwapBuffers' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutSwapBuffers();        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:448:22: note: 'glutSwapBuffers' declared hereextern void APIENTRY glutSwapBuffers(void) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:875:2: warning: 'glutInit' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutInit(&argc, argv);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:431:22: note: 'glutInit' declared hereextern void APIENTRY glutInit(int *argcp, char **argv) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:876:2: warning: 'glutInitDisplayMode' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:432:22: note: 'glutInitDisplayMode' declared hereextern void APIENTRY glutInitDisplayMode(unsigned int mode) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:877:2: warning: 'glutInitWindowSize' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutInitWindowSize(INITIAL_WIDTH, INITIAL_HEIGHT);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:437:22: note: 'glutInitWindowSize' declared hereextern void APIENTRY glutInitWindowSize(int width, int height) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:878:2: warning: 'glutInitWindowPosition' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutInitWindowPosition(200, 200);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:436:22: note: 'glutInitWindowPosition' declared hereextern void APIENTRY glutInitWindowPosition(int x, int y) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:879:2: warning: 'glutCreateWindow' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutCreateWindow("Ray Tracing");        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:441:21: note: 'glutCreateWindow' declared hereextern int APIENTRY glutCreateWindow(const char *title) OPENGL_DEPRECATED(10_0, 10_9);                    ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:880:5: warning: 'glutKeyboardFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]    glutKeyboardFunc(Keyboard);    ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:507:22: note: 'glutKeyboardFunc' declared hereextern void APIENTRY glutKeyboardFunc(void (*func)(unsigned char key, int x, int y)) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:882:2: warning: 'glutReshapeFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutReshapeFunc(reshape);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:506:22: note: 'glutReshapeFunc' declared hereextern void APIENTRY glutReshapeFunc(void (*func)(int width, int height)) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:883:2: warning: 'glutDisplayFunc' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutDisplayFunc(drawScene);        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:505:22: note: 'glutDisplayFunc' declared hereextern void APIENTRY glutDisplayFunc(void (*func)(void)) OPENGL_DEPRECATED(10_0, 10_9);                     ^/Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:886:2: warning: 'glutMainLoop' is deprecated: first deprecated in OS X 10.9 [-Wdeprecated-declarations]        glutMainLoop();        ^In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:1:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h:438:22: note: 'glutMainLoop' declared hereextern void APIENTRY glutMainLoop(void) OPENGL_DEPRECATED(10_0, 10_9);                     ^32 warnings generated.32(36%IDEClangDiagnosticActivityLogMessage2@144"GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^9#9#9#9#169#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^57#10#57#10#2182#0#25"#pragma message Directive--2@149"GLM: rotate_slow function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^9#9#9#9#169#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^98#10#98#10#3632#0#25"#pragma message Directive--2@149"GLM: perspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^9#9#9#9#169#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^231#10#231#10#7391#0#25"#pragma message Directive--2@152"GLM: perspectiveFov function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^9#9#9#9#169#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^263#10#263#10#8391#0#25"#pragma message Directive--2@157"GLM: infinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^9#9#9#9#169#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^289#10#289#10#9269#0#25"#pragma message Directive--2@164"GLM: tweakedInfinitePerspective function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#2(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:10:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^9#9#9#9#169#0#21"Apple LLVM 5.0 Notice--2@75"In file included from third_party/include/glm/gtc/matrix_transform.hpp:292:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.hpp0000000000000000^291#9#291#9#11871#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@95"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/matrix_transform.inl0000000000000000^317#10#317#10#10091#0#25"#pragma message Directive--2@144"GLM: rotate function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:12:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^11#9#11#9#242#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^625#10#625#10#14879#0#25"#pragma message Directive--2@130"GLM: roll function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:12:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^11#9#11#9#242#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^652#10#652#10#15805#0#25"#pragma message Directive--2@131"GLM: pitch function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:12:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^11#9#11#9#242#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^666#10#666#10#16323#0#25"#pragma message Directive--2@129"GLM: yaw function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:12:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^11#9#11#9#242#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^680#10#680#10#16791#0#25"#pragma message Directive--2@131"GLM: angle function returning degrees is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:12:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^11#9#11#9#242#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^810#10#810#10#20209#0#25"#pragma message Directive--2@147"GLM: angleAxis function taking degrees as a parameter is deprecated. #define GLM_FORCE_RADIANS before including GLM headers to remove this message.-422933352#18446744073709551615#0#3(2@85"In file included from /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp:12:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^11#9#11#9#242#0#21"Apple LLVM 5.0 Notice--2@66"In file included from third_party/include/glm/gtc/type_ptr.hpp:63:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@87"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/type_ptr.hpp0000000000000000^62#9#62#9#2621#0#21"Apple LLVM 5.0 Notice--2@76"In file included from third_party/include/glm/gtc/../gtc/quaternion.hpp:401:-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.hpp0000000000000000^400#9#400#9#13241#0#21"Apple LLVM 5.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@89"file:///Users/sashanicolas/Projects/Rendering2/third_party/include/glm/gtc/quaternion.inl0000000000000000^840#10#840#10#21021#0#25"#pragma message Directive--2@87"Implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int'-422933352#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^447#15#447#15#10892#0#22"Value Conversion Issue2(3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^447#15#447#29#10892#13#3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^447#8#447#14#10885#0#-2@53"Comparison of unsigned expression >= 0 is always true-422933352#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^455#18#455#18#11050#0#14"Semantic Issue2(3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^455#12#455#17#11044#0#3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^455#21#455#22#11053#0#-2@87"Implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int'-422933352#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^461#15#461#15#11182#0#22"Value Conversion Issue2(3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^461#15#461#28#11182#12#3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^461#8#461#14#11175#0#-2@53"Comparison of unsigned expression >= 0 is always true-422933352#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^469#18#469#18#11331#0#14"Semantic Issue2(3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^469#12#469#17#11325#0#3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^469#21#469#22#11334#0#-2@19"Unused variable 'h'-422933352#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^501#5#501#5#11975#0#19"Unused Entity Issue--2@19"Unused variable 'w'-422933352#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^500#5#500#5#11951#0#19"Unused Entity Issue--2@19"Unused variable 'w'-422933352#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^557#5#557#5#13998#0#19"Unused Entity Issue--2@19"Unused variable 'h'-422933352#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^558#5#558#5#14022#0#19"Unused Entity Issue--2@85"'gluOrtho2D' is deprecated: first deprecated in OS X 10.9 - "Use GLKMatrix4MakeOrtho"-422933352#18446744073709551615#0#1(2@26"'gluOrtho2D' declared here-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@162"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h0000000000000000^275#12#275#12#15525#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^617#1#617#1#16028#0#12"Deprecations--2@26"Unused variable 'objColor'-422933352#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^680#11#680#11#17797#0#19"Unused Entity Issue--2@62"'glutSwapBuffers' is deprecated: first deprecated in OS X 10.9-422933352#18446744073709551615#0#1(2@31"'glutSwapBuffers' declared here-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^447#21#447#21#13979#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^852#1#852#1#22526#0#12"Deprecations--2@55"'glutInit' is deprecated: first deprecated in OS X 10.9-422933352#18446744073709551615#0#1(2@24"'glutInit' declared here-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^430#21#430#21#12845#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^874#1#874#1#22935#0#12"Deprecations--2@66"'glutInitDisplayMode' is deprecated: first deprecated in OS X 10.9-422933352#18446744073709551615#0#1(2@35"'glutInitDisplayMode' declared here-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^431#21#431#21#12931#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^875#1#875#1#22959#0#12"Deprecations--2@65"'glutInitWindowSize' is deprecated: first deprecated in OS X 10.9-422933352#18446744073709551615#0#1(2@34"'glutInitWindowSize' declared here-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^436#21#436#21#13273#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^876#1#876#1#23006#0#12"Deprecations--2@69"'glutInitWindowPosition' is deprecated: first deprecated in OS X 10.9-422933352#18446744073709551615#0#1(2@38"'glutInitWindowPosition' declared here-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^435#21#435#21#13184#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^877#1#877#1#23058#0#12"Deprecations--2@63"'glutCreateWindow' is deprecated: first deprecated in OS X 10.9-422933352#18446744073709551615#0#1(2@32"'glutCreateWindow' declared here-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^440#20#440#20#13465#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^878#1#878#1#23093#0#12"Deprecations--2@63"'glutKeyboardFunc' is deprecated: first deprecated in OS X 10.9-422933352#18446744073709551615#0#1(2@32"'glutKeyboardFunc' declared here-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^506#21#506#21#17667#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^879#4#879#4#23130#0#12"Deprecations--2@62"'glutReshapeFunc' is deprecated: first deprecated in OS X 10.9-422933352#18446744073709551615#0#1(2@31"'glutReshapeFunc' declared here-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^505#21#505#21#17562#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^881#1#881#1#23161#0#12"Deprecations--2@62"'glutDisplayFunc' is deprecated: first deprecated in OS X 10.9-422933352#18446744073709551615#0#1(2@31"'glutDisplayFunc' declared here-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^504#21#504#21#17474#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^882#1#882#1#23188#0#12"Deprecations--2@59"'glutMainLoop' is deprecated: first deprecated in OS X 10.9-422933352#18446744073709551615#0#1(2@28"'glutMainLoop' declared here-422933352#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@161"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/GLUT.framework/Headers/GLUT.h0000000000000000^437#21#437#21#13367#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^885#1#885#1#23234#0#12"Deprecations--0#0#1#-19%DVTDocumentLocation4@66"file:///Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp0000000000000000^2880"CompileC build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o Raytracing/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Raytracing-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Ithird_party/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.dia -c /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o36"9CA1DEA2-7259-4B7C-8C7B-EBCA4A78EC10-
+b8B512EA8-32C8-42AF-AC02-A9C0A3C86B83
 
 CLd /Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing normal x86_64
-s422909720.489846
-e422909720.868812
+s422933352.229404
+e422933352.516901
 r1
 xLd
 x/Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing
 xnormal
 xx86_64
 d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/Raytracing.LinkFileList
-d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/ray.o
 d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/main.o
-d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/sphere.o
-d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/color.o
-d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/scene.o
-d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/vector.o
-d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/camera.o
-d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/box.o
-d/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/object.o
 d/Users/sashanicolas/Projects/Rendering2/third_party/lib/libglfw.a
 d/Users/sashanicolas/Projects/Rendering2/third_party/lib/libGLEW.a
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/IOKit.framework/IOKit
@@ -1596,8 +1101,6 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libobjc.A.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreText.framework/CoreText
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
@@ -1609,6 +1112,8 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libobjc.A.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
@@ -1617,6 +1122,6 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Link /Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing39"Ld build/Debug/Raytracing normal x86_648d7d7d181735b941^616bde181735b941^---0#0#1#--980"Ld build/Debug/Raytracing normal x86_64    cd /Users/sashanicolas/Projects/Rendering2    export MACOSX_DEPLOYMENT_TARGET=10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/sashanicolas/Projects/Rendering2/build/Debug -Lthird_party/lib -F/Users/sashanicolas/Projects/Rendering2/build/Debug -filelist /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/Raytracing.LinkFileList -mmacosx-version-min=10.9 -lglfw -lglew -stdlib=libc++ -framework IOKit -framework OpenGL -framework GLUT -framework Cocoa -Xlinker -dependency_info -Xlinker /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/Raytracing_dependency_info.dat -o /Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing36"235778A1-DD3F-424B-B438-B9264CB12805-
-b0568B7DF-3EB2-4252-BE82-F16DAF61A989
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Link /Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing39"Ld build/Debug/Raytracing normal x86_646fd83a687335b941^695484687335b941^---0#0#1#--980"Ld build/Debug/Raytracing normal x86_64    cd /Users/sashanicolas/Projects/Rendering2    export MACOSX_DEPLOYMENT_TARGET=10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/sashanicolas/Projects/Rendering2/build/Debug -Lthird_party/lib -F/Users/sashanicolas/Projects/Rendering2/build/Debug -filelist /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/Raytracing.LinkFileList -mmacosx-version-min=10.9 -lglfw -lglew -stdlib=libc++ -framework IOKit -framework OpenGL -framework GLUT -framework Cocoa -Xlinker -dependency_info -Xlinker /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/Raytracing.build/Objects-normal/x86_64/Raytracing_dependency_info.dat -o /Users/sashanicolas/Projects/Rendering2/build/Debug/Raytracing36"21FA3F31-60BD-4916-865B-24A09275916B-
+b8B512EA8-32C8-42AF-AC02-A9C0A3C86B83
 
