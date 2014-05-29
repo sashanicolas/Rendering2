@@ -16,6 +16,7 @@ using namespace std;
 
 #define MAX_DEPTH 3
 
+#define rad(A) (A*3.141592653589793/180.0)
 
 class Ray
 {
@@ -23,10 +24,15 @@ public:
 	Ray( glm::vec3 origin, glm::vec3 direction ){
         this->origin = origin;
         this->direction = direction;
+        depth = 1;
+        length = FLT_MAX;
+        indexObj = -1;
     }
     
 	glm::vec3 origin;
 	glm::vec3 direction;
+    int depth, indexObj;
+    float length;
 };
 
 class Object
@@ -114,7 +120,7 @@ private:
 class Light
 {
 public:
-	Light( glm::vec3 & position, glm::vec3 & color )
+	Light( glm::vec3 position, glm::vec3 color )
 	{
 		this->position = position;
 		this->color = color;
@@ -122,10 +128,10 @@ public:
     Light(){
         
     }
-    void setColor(glm::vec3 & color){
+    void setColor(glm::vec3 color){
         this->color = color;
     }
-    void setPosition(glm::vec3 & position){
+    void setPosition(glm::vec3 position){
         this->position =position;
     }
 	glm::vec3 position;
@@ -282,17 +288,17 @@ private:
 	float ray;
 };
 
-
 class Camera
 {
 public:
-	Camera( glm::vec3 eye, glm::vec3 center, glm::vec3 up, float fov, float nearr, float farr, int w, int h ){
+	Camera( glm::vec3 eye, glm::vec3 center, glm::vec3 up, float fov, float near, float far, int w, int h ){
         this->eye = eye;
         this->center = center;
         this->up = up;
+        
         this->fov = fov;
-        this->nearr = nearr;
-        this->farr = farr;
+        this->near = near;
+        this->far = far;
         this->w = w;
         this->h = h;
         
@@ -300,89 +306,56 @@ public:
     }
     
 	Ray getRay(int x, int y){
-        glm::vec3 vX = xe * ( b * ( (float) x / w - 0.5f ) );
-        glm::vec3 vY = ye * ( a * ( (float) y / h - 0.5f ) );
+        glm::vec3 vX = xe * ( b * ( (float) x / (float)w - 0.5f ) );
+        glm::vec3 vY = ye * ( a * ( (float) y / (float)h - 0.5f ) );
         glm::vec3 vZ = ze * ( - df );
         
         return Ray( eye, vX + vY + vZ );
-    }
-    
-	glm::vec3 getEye( ){
-        return eye;
-    }
-	
-	int getWidth( ){
-        return w;
-    }
-	int getHeight( ){
-        return h;
-    }
-	void setWidth( int w ){
-        this->w = w;
-    }
-    
-	void setHeight( int h ){
-        this->h = h;
-    }
-    
-private:
-    
-    glm::vec3 macabra(glm::vec3 u, glm::vec3 v)
-    {
-        float uX = u.x;
-        float uY = u.y;
-        float uZ = u.z;
         
-        float vX = v.x;
-        float vY = v.y;
-        float vZ = v.z;
-        
-        float sX = uY * vZ - uZ * vY;
-        float sY = uZ * vX - uX * vZ;
-        float sZ = uX * vY - uY * vX;
-        
-        return glm::vec3( sX, sY, sZ );
+//        float ratio = (float)w/(float)h;
+//        float ratio2 = (float)h/(float)w;
+//        
+//        float normalized_x = b * ( ((float)x / (float)w) - 0.5f );
+//        float normalized_y = a * ( ((float)y / (float)h) - 0.5f );
+//        glm::vec3 image_point = normalized_x * camera_right + normalized_y * up + eye + camera_direction;
+//        glm::vec3 ray_direction = image_point - eye;
+//        return Ray(eye, ray_direction);
     }
-	//Calcula os par‚metros intrÌnsecos derivados
+    
 	void initialize(){
-        df = nearr;
+        df = near;
+        a = 2 * df * tan( rad(fov / 2.0f ));
         
-        a = 2 * df * tan( fov / 2.0f );
-        
-        b = ( (float) w / h ) * a;
+        b = ( (float) w / (float)h ) * a;
         
         ze = ( eye - center );
-        //        ze = ze / ze.length();
         ze = glm::normalize(ze);
         
-//        xe = up % ze;
-        xe = macabra(up, ze);
-        //        xe = xe / xe.length();
+        xe = glm::cross(up,ze);
         xe = glm::normalize(xe);
         
-//        ye = ze % xe;
-        ye = macabra(ze, xe);
+        ye = glm::cross(ze,xe);
+        
+        camera_direction = (center - eye);
+        camera_direction = glm::normalize(camera_direction);
+        
+        camera_right = glm::cross(camera_direction, up);
+        camera_right = glm::normalize(camera_right);
+        
+        printf("xe=(%f,%f,%f)\n", xe.x, xe.y, xe.z);
+        printf("ye=(%f,%f,%f)\n", ye.x, ye.y, ye.z);
+        printf("ze=(%f,%f,%f)\n\n", ze.x, ze.y, ze.z);
+        printf("cam-right=(%f,%f,%f)\n",camera_right.x,camera_right.y,camera_right.z);
+        printf("cam-up=(%f,%f,%f)\n",up.x,up.y,up.z);
+        printf("cam-direcao=(%f,%f,%f)\n",camera_direction.x,camera_direction.y,camera_direction.z);
+        printf("eye cam-dir=(%f,%f,%f)\n",(eye + camera_direction).x,(eye + camera_direction).y,(eye + camera_direction).z);
     }
     
-	/* Par‚metros extrÌnsecos */
-	glm::vec3 eye;
-	glm::vec3 center;
-	glm::vec3 up;
-    
-	/* Par‚metros intrÌnsecos */
-	float nearr;
-	float farr;
-	int w;
-	int h;
-	float fov;
-    
-	/* Par‚metros intrÌnsecos derivados */
-	float df;
-	float a;
-	float b;
-	glm::vec3 xe;
-	glm::vec3 ye;
-	glm::vec3 ze;
+	glm::vec3 eye, center, up, xe, ye, ze, camera_direction, camera_right;
+
+	float near, far, fov, df, a, b;
+	int w, h, aux;
+
 };
 
 class Scene
@@ -403,7 +376,7 @@ public:
     }
 	
 	int getNumObjects(){
-        return objects.size();
+        return (int) objects.size();
     }
     
 	void addObject( Object* o ){
@@ -411,13 +384,13 @@ public:
     }
     
 	Object* getObject( unsigned int index ){
-        if (index >= 0 && index < objects.size())
+        if (index < objects.size())
             return objects[index];
         return NULL;
     }
 	
 	int getNumLights(){
-        return lights.size();
+        return (int)lights.size();
     }
     
 	void addLight( Light* l ){
@@ -425,7 +398,7 @@ public:
     }
     
 	Light* getLight( unsigned int index ){
-        if (index >= 0 && index < lights.size())
+        if (index < lights.size())
             return lights[index];
         return NULL;
     }
@@ -506,19 +479,17 @@ void createScene()
 }
 void createScene2()
 {
-    //	Vector eye( 100, 40, 40 );
-    glm::vec3 eye( 100, 40, 40 );
+    glm::vec3 eye( 10, 80, 80 );
     glm::vec3 center( 0, 0, 0 );
     glm::vec3 up( 0, 1, 0);
 	float fov = 90.0f;
-	float nearr = 30.0f;
-	float farr = 230.0f;
+	float nearr = 10.0f;
+	float farr = 150.0f;
 	int w = INITIAL_WIDTH;
 	int h = INITIAL_HEIGHT;
     
 	scene = new Scene();
-	scene->createCamera( eye, center, up, fov, nearr, farr, INITIAL_WIDTH, INITIAL_HEIGHT );
-	//scene->setAmbientColor( 0.5f, 0.5f, 0.5f );
+	scene->createCamera( eye, center, up, fov, nearr, farr, w, h );
 	scene->setAmbientColor( 1.0f, 1.0f, 1.0f );
     
 	Sphere* sphere = new Sphere( glm::vec3(0, 20, 0), 25 );
@@ -526,48 +497,31 @@ void createScene2()
 	sphere->setDiffuseCoefficient( 0.3f );
 	sphere->setSpecularCoefficient( 0.7f );
     
-	LinedBox* box1 = new LinedBox( glm::vec3( -80.0f, -50.0f, -50.0f ), glm::vec3( 50.0f, -45.0f, 50.0f ) );
+	LinedBox* box1 = new LinedBox( glm::vec3( -100.0f, -1.0f, -100.0f ), glm::vec3( 100.0f, 1.0f, 100.0f ) );
 	box1->setColor( 0.7f, 0.7f, 0.0f );
 	box1->setDiffuseCoefficient( 0.3f );
-	box1->setSpecularCoefficient( 0.3f );
+	box1->setSpecularCoefficient( 0.01f );
 	box1->setReflectionCoefficient( 0.0f );
-//	box1->setRefractiveIndex( 1.0f );
-    
-	LinedBox* box2 = new LinedBox( glm::vec3( -80.0f, -50.0f, -60.0f ), glm::vec3( 50.0f, 50.0f, -50.0f ) );
-	box2->setColor( 0.7f, 0.7f, 0.0f );
-	box2->setDiffuseCoefficient( 0.3f );
-	box2->setSpecularCoefficient( 0.3f );
-	box2->setReflectionCoefficient( 0.8f );
-	//box1->setRefractiveIndex( 0.8f );
-    
-	LinedBox* box3 = new LinedBox( glm::vec3( 49.8, -44, -50 ), glm::vec3( 50, 35, 50 ) );
-	box3->setColor( 0.7f, 0.7f, 0.0f, 0.5f );
-	box3->setDiffuseCoefficient( 0.3f );
-	box3->setSpecularCoefficient( 0.3f );
-	box3->setReflectionCoefficient( 0.0f );
     
 	scene->addObject( (Object *) sphere );
 	scene->addObject( (Object *) box1 );
-	scene->addObject( (Object *) box2 );
-//	scene->addObject( (Object *) box3 );
     
-	Light* light = new Light( );
-    // Vector(60.0f, 120.0f, 40.0f), Color(1.0f, 1.0f, 1.0f)
+	Light* light = new Light();
+
     glm::vec3 c(1.0f, 1.0f, 1.0f);
     light->setColor(c);
     glm::vec3 v(60.0f, 120.0f, 40.0f);
     light->setPosition(v);
-	//Light* light2 = new Light( Vector(60.0f, 120.0f, -100.0f), Color(1.0f, 1.0f, 1.0f) );
+
 	scene->addLight(light);
-	//scene->addLight(light2);
 }
 
 void reshape(int w, int h)
 {
 	if (scene)
 	{
-		scene->getCamera()->setWidth( w );
-		scene->getCamera()->setHeight( h );
+		scene->getCamera()->w = w;
+		scene->getCamera()->h = h;
 	}
     
 	glViewport(0, 0, w, h);
@@ -619,19 +573,16 @@ glm::vec3 diffuseColor( Light* light, Object* object, Ray ray, glm::vec3 interce
 glm::vec3 specularColor( Light* light, Object* object, Ray ray, glm::vec3 interceptionPoint )
 {
 	glm::vec3 L = light->position - interceptionPoint;
-    //	L = L / L.length();
     L = glm::normalize(L);
 	
 	glm::vec3 normal = object->getNormal( interceptionPoint );
 	
-    glm::vec3 aux =  2.0f * glm::dot(L, normal) - glm::vec3(0,0,0);
-	glm::vec3 r = glm::dot(normal ,  aux) - L;
+	glm::vec3 r = (normal *  (2*glm::dot(L, normal)) ) - L;
     
 	glm::vec3 v = ray.origin - interceptionPoint;
-    //	v = v / v.length( );
     v = glm::normalize(v);
     
-	int n = 12;
+	int n = 24;
 	float bright = pow( glm::dot(r,v), n );
     
 	glm::vec3 color;
@@ -752,17 +703,13 @@ glm::vec3 rayTracing( Ray ray, int depth, Object* exceptionObject )
 	float minT = FLT_MAX;
     
 	int indexObj = -1;
-	for (int i = 0; i < scene->getNumObjects(); i++)
-	{
+	for (int i = 0; i < scene->getNumObjects(); i++){
 		Object* obj = scene->getObject(i);
 		
-		if ( obj != exceptionObject )
-		{
+		if ( obj != exceptionObject ){
 			float t;
-			if ( obj->intercepts(ray, &t) )
-			{
-				if (t > 0.0f && t < minT)
-				{
+			if ( obj->intercepts(ray, &t) ){
+				if (t > 0.0f && t < minT){
 					minT = t;
 					indexObj = i;
 				}
@@ -772,8 +719,7 @@ glm::vec3 rayTracing( Ray ray, int depth, Object* exceptionObject )
     
 	glm::vec3 color( 0.0f, 0.0f, 0.0f );
     
-	if (minT < FLT_MAX)
-	{
+	if (minT < FLT_MAX){
 		Object *obj = scene->getObject(indexObj);
         
 		glm::vec3 point = ray.origin + ray.direction * minT;
@@ -784,24 +730,103 @@ glm::vec3 rayTracing( Ray ray, int depth, Object* exceptionObject )
 	return color;
 }
 
-//FunÁ„o de desenho do colorChecker utilizando o OpenGL
+glm::vec3 RayShade(Ray &ray){
+    glm::vec3 localColor(0,0,0);
+
+    //calculo da luz no ponto de intersecao
+    for (int i=0; i < scene->getNumLights(); i++) {
+        Light* light = scene->getLight( i );
+        Object* obj = scene->getObject(ray.indexObj);
+        
+        localColor = ambientColor(obj);
+        
+        glm::vec3 interceptionPoint = ray.origin + ray.direction * ray.length;
+		Ray L( interceptionPoint, light->position - interceptionPoint );
+        
+		//Verifica se o vetor L atinge algum objeto antes de chegar ‡ luz
+		//Se sim, ele n„o est· sendo o ponto n„o est· sendo iluminado por esta luz,
+		//e ser· ump ponto de sombra
+		bool occlusion = false;
+//		for ( int j = 0; j < scene->getNumObjects(); j++ )
+//		{
+//			Object* obj = scene->getObject( j );
+//            
+//			if ( obj != object )
+//			{
+//				//t: interseÁ„o do raio L e o objeto obj
+//				float t;
+//				if ( obj->intercepts( L, &t ) ) //H· um objeto ocluindo a luz
+//				{
+//					//Somente interessa a interseÁ„o que ocorre entre ponto e a luz
+//					//Se t < 0, o vetor intercepta o objeto antes
+//					if ( t > 0.0f )
+//					{
+//						occlusion = true;
+//						break;
+//					}
+//				}
+//			}
+//		}
+		
+		//Se nao houve oclusao, nao ha sombra, entao a cor eh calculada:
+		if ( !occlusion )
+		{
+			//Calcula a cor resultante da reflex„o difusa
+			glm::vec3 dColor = diffuseColor( light, obj, ray, interceptionPoint );
+			
+			//Calcula a cor resultante da reflexao especulada (somente se houve reflexao difusa)
+			if ( dColor.r != -1.0f )
+				localColor = localColor + dColor + specularColor( light, obj, ray, interceptionPoint );
+		}
+    }
+
+//    Object* obj = scene->getObject(ray.indexObj);
+//    localColor = obj->getColor();
+    return glm::vec3(localColor.r,localColor.g,localColor.b);
+}
+
+
+void rayIntersect(Ray &ray){
+    for (int i = 0; i < scene->getNumObjects(); i++){
+		Object* obj = scene->getObject(i);
+        float t;
+        if ( obj->intercepts(ray, &t) ){
+            if (t > 0.0f && t < ray.length){
+                ray.length = t;
+                ray.indexObj = i;
+            }
+        }
+	}
+}
+
+glm::vec3 RayTrace(Ray &ray){
+    glm::vec3 color( 0.0f, 0.0f, 0.0f );
+
+    rayIntersect(ray);
+    if (ray.length < FLT_MAX) {
+        color = RayShade(ray);
+        
+    }
+    
+    return color;
+}
+
 void drawScene()
 {
-	glClearColor(0.7, 0.7, 0.7, 0.0);
+	glClearColor(0.7, 0.7, 0.7, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	
 	Camera* camera = scene->getCamera();
-	int w = camera->getWidth();
-	int h = camera->getHeight();
+	int w = camera->w;
+	int h = camera->h;
     
 	glBegin(GL_POINTS);
-	for (int y = 0; y < h; y++)
-	{
-		for (int x = 0; x < w; x++)
-		{
+	for (int y = 0; y < h; y++){
+		for (int x = 0; x < w; x++){
 			Ray ray = camera->getRay(x, y);
 			
-			glm::vec3 color = rayTracing(ray);
+			glm::vec3 color = RayTrace(ray);
+            
 			glColor3f(color.r, color.g, color.b);
 			glVertex2f(x, y);
 		}
@@ -810,22 +835,19 @@ void drawScene()
     
 	glutSwapBuffers();
 }
-// Keyboard callback
+
 static void Keyboard (unsigned char key, int x, int y){
     switch (key){
         case 27: exit(0); break;
     }
 }
 
-
-//ConfiguraÁ„o da visualizaÁ„o do OpenGL
-void Initialize() {
+void Init() {
 	glDisable(GL_DEPTH_TEST);
-	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClearColor(0.2, 0.2, 0.2, 1.0);
 	
 	glClear(GL_COLOR_BUFFER_BIT);
 	createScene2();
-	//glTranslatef(0.375, 0.375, 0);
 }
 
 int main(int argc, char**argv)
@@ -840,7 +862,7 @@ int main(int argc, char**argv)
 	glutReshapeFunc(reshape);
 	glutDisplayFunc(drawScene);
 	
-	Initialize();
+	Init();
 	glutMainLoop();
 	return 0;
 }
