@@ -82,4 +82,6 @@ dependencies: /Users/sashanicolas/Projects/Rendering2/Raytracing/main.cpp \
   third_party/include/glm/gtc/../gtc/constants.hpp \
   third_party/include/glm/gtc/constants.inl \
   third_party/include/glm/gtc/quaternion.inl \
-  third_party/include/glm/gtc/type_ptr.inl
+  third_party/include/glm/gtc/type_ptr.inl \
+  third_party/include/glm/gtx/rotate_vector.hpp \
+  third_party/include/glm/gtx/rotate_vector.inl

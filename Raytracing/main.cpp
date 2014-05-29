@@ -10,6 +10,7 @@ using namespace std;
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/rotate_vector.hpp>
 
 #define INITIAL_WIDTH 800
 #define INITIAL_HEIGHT 800
@@ -342,13 +343,13 @@ public:
         camera_right = glm::cross(camera_direction, up);
         camera_right = glm::normalize(camera_right);
         
-        printf("xe=(%f,%f,%f)\n", xe.x, xe.y, xe.z);
-        printf("ye=(%f,%f,%f)\n", ye.x, ye.y, ye.z);
-        printf("ze=(%f,%f,%f)\n\n", ze.x, ze.y, ze.z);
-        printf("cam-right=(%f,%f,%f)\n",camera_right.x,camera_right.y,camera_right.z);
-        printf("cam-up=(%f,%f,%f)\n",up.x,up.y,up.z);
-        printf("cam-direcao=(%f,%f,%f)\n",camera_direction.x,camera_direction.y,camera_direction.z);
-        printf("eye cam-dir=(%f,%f,%f)\n",(eye + camera_direction).x,(eye + camera_direction).y,(eye + camera_direction).z);
+//        printf("xe=(%f,%f,%f)\n", xe.x, xe.y, xe.z);
+//        printf("ye=(%f,%f,%f)\n", ye.x, ye.y, ye.z);
+//        printf("ze=(%f,%f,%f)\n\n", ze.x, ze.y, ze.z);
+//        printf("cam-right=(%f,%f,%f)\n",camera_right.x,camera_right.y,camera_right.z);
+//        printf("cam-up=(%f,%f,%f)\n",up.x,up.y,up.z);
+//        printf("cam-direcao=(%f,%f,%f)\n",camera_direction.x,camera_direction.y,camera_direction.z);
+//        printf("eye cam-dir=(%f,%f,%f)\n",(eye + camera_direction).x,(eye + camera_direction).y,(eye + camera_direction).z);
     }
     
 	glm::vec3 eye, center, up, xe, ye, ze, camera_direction, camera_right;
@@ -479,7 +480,7 @@ void createScene()
 }
 void createScene2()
 {
-    glm::vec3 eye( 10, 80, 80 );
+    glm::vec3 eye( 0, 200, 200 );
     glm::vec3 center( 0, 0, 0 );
     glm::vec3 up( 0, 1, 0);
 	float fov = 90.0f;
@@ -492,10 +493,20 @@ void createScene2()
 	scene->createCamera( eye, center, up, fov, nearr, farr, w, h );
 	scene->setAmbientColor( 1.0f, 1.0f, 1.0f );
     
-	Sphere* sphere = new Sphere( glm::vec3(0, 20, 0), 25 );
-	sphere->setColor( 0.0f, 0.0f, 1.0f, 1.0f );
+	Sphere* sphere = new Sphere( glm::vec3(50, 20, 30), 25 );
+	sphere->setColor( 1.0f, 0.0f, 1.0f, 1.0f );
 	sphere->setDiffuseCoefficient( 0.3f );
 	sphere->setSpecularCoefficient( 0.7f );
+    
+    Sphere* sphere2 = new Sphere( glm::vec3(-30, 40, 20), 15 );
+	sphere2->setColor( 0.0f, 0.0f, 1.0f, 1.0f );
+	sphere2->setDiffuseCoefficient( 0.3f );
+	sphere2->setSpecularCoefficient( 0.7f );
+    
+    Sphere* sphere3 = new Sphere( glm::vec3(-70, 20, -10), 5 );
+	sphere3->setColor( 0.0f, 1.0f, 1.0f, 1.0f );
+	sphere3->setDiffuseCoefficient( 0.3f );
+	sphere3->setSpecularCoefficient( 0.7f );
     
 	LinedBox* box1 = new LinedBox( glm::vec3( -100.0f, -1.0f, -100.0f ), glm::vec3( 100.0f, 1.0f, 100.0f ) );
 	box1->setColor( 0.7f, 0.7f, 0.0f );
@@ -503,7 +514,9 @@ void createScene2()
 	box1->setSpecularCoefficient( 0.01f );
 	box1->setReflectionCoefficient( 0.0f );
     
-	scene->addObject( (Object *) sphere );
+    scene->addObject( (Object *) sphere );
+    scene->addObject( (Object *) sphere2 );
+    scene->addObject( (Object *) sphere3 );
 	scene->addObject( (Object *) box1 );
     
 	Light* light = new Light();
@@ -582,7 +595,7 @@ glm::vec3 specularColor( Light* light, Object* object, Ray ray, glm::vec3 interc
 	glm::vec3 v = ray.origin - interceptionPoint;
     v = glm::normalize(v);
     
-	int n = 24;
+	int n = 16;
 	float bright = pow( glm::dot(r,v), n );
     
 	glm::vec3 color;
@@ -825,7 +838,7 @@ void drawScene()
 		for (int x = 0; x < w; x++){
 			Ray ray = camera->getRay(x, y);
 			
-			glm::vec3 color = RayTrace(ray);
+			glm::vec3 color = rayTracing(ray);
             
 			glColor3f(color.r, color.g, color.b);
 			glVertex2f(x, y);
@@ -834,11 +847,23 @@ void drawScene()
 	glEnd();
     
 	glutSwapBuffers();
+    
+    Light * l = scene->getLight(0);
+    glm::vec3 c = l->position;
+    glm::vec3 luz = glm::vec3(c.x,c.y,c.z);
+    luz = glm::rotateY(luz, 10.0f);
+    l->position.x = luz.x;
+    l->position.y = luz.y;
+    l->position.z = luz.z;
+    
+    glutPostRedisplay();
 }
 
 static void Keyboard (unsigned char key, int x, int y){
     switch (key){
-        case 27: exit(0); break;
+        case 27:
+            exit(0);
+            break;
     }
 }
 
