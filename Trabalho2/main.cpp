@@ -12,6 +12,11 @@
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "Camera.hpp"       // Include our Camera header so we can work with Camera objects
+
+// Define a pointer to our camera object
+Camera *cam;
+
 class Shader{
 public:
     //================ Variaveis ================//
@@ -93,7 +98,7 @@ public:
         glm::mat4 Projection = glm::perspective(45.0f, 1.0f/*4.0f / 3.0f*/, 0.1f, 100.0f);
         // Camera matrix
         glm::mat4 View = glm::lookAt(
-                                     glm::vec3(0,4,8), // Camera is at (x,y,z), in World Space
+                                     glm::vec3(cam->getXPos(), cam->getYPos(), cam->getZPos()), // Camera is at (x,y,z), in World Space
                                      glm::vec3(0,0,0), // and looks at the origin
                                      glm::vec3(0,1,0) // Head is up (set to 0,-1,0 to look upside-down)
                                      );
@@ -631,6 +636,61 @@ Shader * myShader;
 Sphere * s[10][10];
 Grid *g;
 
+// Callback function to handle keypresses
+void handleKeypress(int theKey, int theAction)
+{
+	// If a key is pressed, toggle the relevant key-press flag
+	if (theAction == GLFW_PRESS)
+	{
+		switch (theKey)
+		{
+            case 'W':
+                cam->holdingForward = true;
+                break;
+            case 'S':
+                cam->holdingBackward = true;
+                break;
+            case 'A':
+                cam->holdingLeftStrafe = true;
+                break;
+            case 'D':
+                cam->holdingRightStrafe = true;
+                break;
+            default:
+                // Do nothing...
+                break;
+		}
+	}
+	else // If a key is released, toggle the relevant key-release flag
+	{
+		switch (theKey)
+		{
+            case 'W':
+                cam->holdingForward = false;
+                break;
+            case 'S':
+                cam->holdingBackward = false;
+                break;
+            case 'A':
+                cam->holdingLeftStrafe = false;
+                break;
+            case 'D':
+                cam->holdingRightStrafe = false;
+                break;
+            default:
+                // Do nothing...
+                break;
+		}
+	}
+}
+
+// Callback function to handle mouse movements
+void handleMouseMove(int mouseX, int mouseY)
+{
+	cam->handleMouseMove(mouseX, mouseY);
+}
+
+
 int main () {
 	// Initialize GLFW
 	if ( !glfwInit()) {
@@ -645,7 +705,7 @@ int main () {
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
     
 	// Open a window and attach an OpenGL rendering context to the window surface
-	if( !glfwOpenWindow(800, 800, 8, 8, 8, 0, 0, 0, GLFW_WINDOW)) {
+	if( !glfwOpenWindow(800, 800, 8, 8, 8, 8, 24, 8, GLFW_WINDOW)) {
 		std::cerr << "Failed to open a window! I'm out!" << std::endl;
 		glfwTerminate();
 		exit(-1);
@@ -672,7 +732,16 @@ int main () {
 	// Register a callback function for window resize events
 	glfwSetWindowSizeCallback( window_resized );
     // Register a callback function for keyboard pressed events
-	glfwSetKeyCallback(keyboard);
+//	glfwSetKeyCallback(keyboard);
+    
+    // Instantiate our pointer to a Camera object providing it the size of the window
+	cam = new Camera(800, 800);
+	// Set the mouse cursor to the centre of our window
+	glfwSetMousePos(400, 400);
+	// Specify the function which should execute when a key is pressed or released
+	glfwSetKeyCallback(handleKeypress);
+	// Specify the function which should execute when the mouse is moved
+	glfwSetMousePosCallback(handleMouseMove);
     
     // Create a vertex array object
     GLuint VertexArrayID;
@@ -687,6 +756,9 @@ int main () {
     
 	while(running) {
 		// Display scene
+
+        // Calculate our camera movement
+		cam->move(10.0);
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -713,7 +785,7 @@ int main () {
 		// Pool for events
 		glfwPollEvents();
 		// Check if the window was closed
-		running = glfwGetWindowParam(GLFW_OPENED);
+		running = !glfwGetKey(GLFW_KEY_ESC) && glfwGetWindowParam(GLFW_OPENED);
 	}
     
 	// Terminate GLFW

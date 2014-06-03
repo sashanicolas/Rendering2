@@ -480,7 +480,7 @@ void createScene()
 }
 void createScene2()
 {
-    glm::vec3 eye( 0, 200, 200 );
+    glm::vec3 eye( 0, 100, 100 );
     glm::vec3 center( 0, 0, 0 );
     glm::vec3 up( 0, 1, 0);
 	float fov = 90.0f;
@@ -493,46 +493,64 @@ void createScene2()
 	scene->createCamera( eye, center, up, fov, nearr, farr, w, h );
 	scene->setAmbientColor( 1.0f, 1.0f, 1.0f );
     
-	Sphere* sphere = new Sphere( glm::vec3(50, 20, 30), 25 );
+	Sphere* sphere = new Sphere( glm::vec3(50, 25, 30), 25 );
 	sphere->setColor( 1.0f, 0.0f, 1.0f, 1.0f );
 	sphere->setDiffuseCoefficient( 0.3f );
 	sphere->setSpecularCoefficient( 0.7f );
+//	sphere->setReflectionCoefficient( 0.3f );
+    sphere->setRefractiveIndex( 0.8f );
     
-    Sphere* sphere2 = new Sphere( glm::vec3(-30, 40, 20), 15 );
-	sphere2->setColor( 0.0f, 0.0f, 1.0f, 1.0f );
-	sphere2->setDiffuseCoefficient( 0.3f );
-	sphere2->setSpecularCoefficient( 0.7f );
+    Sphere* sphere2 = new Sphere( glm::vec3(-30, 15, 20), 15 );
+	sphere2->setColor( 0.0f, 1.0f, 1.0f, 1.0f );
+	sphere2->setDiffuseCoefficient( 0.4f );
+	sphere2->setSpecularCoefficient( 0.9f );
+//    sphere2->setReflectionCoefficient( 0.3f );
+    sphere2->setRefractiveIndex( 0.8f );
     
-    Sphere* sphere3 = new Sphere( glm::vec3(-70, 20, -10), 5 );
-	sphere3->setColor( 0.0f, 1.0f, 1.0f, 1.0f );
+    Sphere* sphere3 = new Sphere( glm::vec3(-70, 5, 10), 5 );
+	sphere3->setColor( 1.0f, 1.0f, 0.0f, 1.0f );
 	sphere3->setDiffuseCoefficient( 0.3f );
 	sphere3->setSpecularCoefficient( 0.7f );
+//	sphere3->setReflectionCoefficient( 0.3f );
+    sphere3->setRefractiveIndex( 0.8f );
     
-	LinedBox* box1 = new LinedBox( glm::vec3( -100.0f, -1.0f, -100.0f ), glm::vec3( 100.0f, 1.0f, 100.0f ) );
-	box1->setColor( 0.7f, 0.7f, 0.0f );
+	LinedBox* box1 = new LinedBox( glm::vec3( -100.0f, -1.0f, -100.0f ), glm::vec3( 100.0f, 0.0f, 100.0f ) );
+	box1->setColor( 0.9f, 0.5f, 0.1f );
 	box1->setDiffuseCoefficient( 0.3f );
 	box1->setSpecularCoefficient( 0.01f );
 	box1->setReflectionCoefficient( 0.0f );
+
+    LinedBox* box2 = new LinedBox( glm::vec3( -101.0f, -1.0f, -101.0f ), glm::vec3( 100.0f, 50.0f, -100.0f ) );
+	box2->setColor( 0.9f, 0.5f, 0.1f );
+	box2->setDiffuseCoefficient( 0.3f );
+	box2->setSpecularCoefficient( 0.01f );
+	box2->setReflectionCoefficient( 0.3f );
+    
+    LinedBox* box3 = new LinedBox( glm::vec3( -101.0f, -1.0f, -101.0f ), glm::vec3( -100.0f, 50.0f, 100.0f ) );
+	box3->setColor( 0.9f, 0.5f, 0.1f );
+	box3->setDiffuseCoefficient( 0.3f );
+	box3->setSpecularCoefficient( 0.01f );
+	box3->setReflectionCoefficient( 0.3f );
     
     scene->addObject( (Object *) sphere );
     scene->addObject( (Object *) sphere2 );
     scene->addObject( (Object *) sphere3 );
 	scene->addObject( (Object *) box1 );
+	scene->addObject( (Object *) box2 );
+	scene->addObject( (Object *) box3 );
     
 	Light* light = new Light();
-
+    
     glm::vec3 c(1.0f, 1.0f, 1.0f);
     light->setColor(c);
-    glm::vec3 v(60.0f, 120.0f, 40.0f);
+    glm::vec3 v(200.0f, 120.0f, 200.0f);
     light->setPosition(v);
-
+    
 	scene->addLight(light);
 }
 
-void reshape(int w, int h)
-{
-	if (scene)
-	{
+void reshape(int w, int h){
+	if (scene){
 		scene->getCamera()->w = w;
 		scene->getCamera()->h = h;
 	}
@@ -824,8 +842,7 @@ glm::vec3 RayTrace(Ray &ray){
     return color;
 }
 
-void drawScene()
-{
+void drawScene(){
 	glClearColor(0.7, 0.7, 0.7, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	
@@ -848,13 +865,13 @@ void drawScene()
     
 	glutSwapBuffers();
     
-    Light * l = scene->getLight(0);
-    glm::vec3 c = l->position;
-    glm::vec3 luz = glm::vec3(c.x,c.y,c.z);
-    luz = glm::rotateY(luz, 10.0f);
-    l->position.x = luz.x;
-    l->position.y = luz.y;
-    l->position.z = luz.z;
+//    Light * l = scene->getLight(0);
+//    glm::vec3 c = l->position;
+//    glm::vec3 luz = glm::vec3(c.x,c.y,c.z);
+//    luz = glm::rotateY(luz, 10.0f);
+//    l->position.x = luz.x;
+//    l->position.y = luz.y;
+//    l->position.z = luz.z;
     
     glutPostRedisplay();
 }
@@ -875,13 +892,12 @@ void Init() {
 	createScene2();
 }
 
-int main(int argc, char**argv)
-{
+int main(int argc, char**argv){
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowSize(INITIAL_WIDTH, INITIAL_HEIGHT);
 	glutInitWindowPosition(200, 200);
-	glutCreateWindow("Ray Tracing");
+	glutCreateWindow("Ray Tracing - Sasha Nicolas");
     glutKeyboardFunc(Keyboard);
 	
 	glutReshapeFunc(reshape);

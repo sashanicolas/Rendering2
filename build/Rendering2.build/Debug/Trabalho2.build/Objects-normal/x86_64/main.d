@@ -83,4 +83,5 @@ dependencies: /Users/sashanicolas/Projects/Rendering2/Trabalho2/main.cpp \
   third_party/include/glm/gtc/../gtc/constants.hpp \
   third_party/include/glm/gtc/constants.inl \
   third_party/include/glm/gtc/quaternion.inl \
-  third_party/include/glm/gtc/type_ptr.inl
+  third_party/include/glm/gtc/type_ptr.inl \
+  /Users/sashanicolas/Projects/Rendering2/Trabalho2/Camera.hpp

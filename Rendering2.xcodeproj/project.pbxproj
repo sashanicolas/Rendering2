@@ -12,6 +12,9 @@
 		B7CA958A19074571007FDC87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958919074571007FDC87 /* Cocoa.framework */; };
 		B7CA958C19074575007FDC87 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958B19074575007FDC87 /* OpenGL.framework */; };
 		B7CA958E19074579007FDC87 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958D19074579007FDC87 /* IOKit.framework */; };
+		B7ED2C24193C1334001BCF5B /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7ED2C23193C1334001BCF5B /* Camera.cpp */; };
+		B7ED2C25193C1361001BCF5B /* Camera.hpp in Sources */ = {isa = PBXBuildFile; fileRef = B7ED2C22193C1289001BCF5B /* Camera.hpp */; };
+		B7ED2C26193C1361001BCF5B /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7ED2C23193C1334001BCF5B /* Camera.cpp */; };
 		B7FBA62C1934E28800E018F1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7FBA62B1934E28800E018F1 /* main.cpp */; };
 		B7FBA62E1934E28800E018F1 /* Trabalho2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B7FBA62D1934E28800E018F1 /* Trabalho2.1 */; };
 		B7FBA6321934E2B800E018F1 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958D19074579007FDC87 /* IOKit.framework */; };
@@ -80,6 +83,8 @@
 		B7CA958B19074575007FDC87 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		B7CA958D19074579007FDC87 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		B7CA959019076516007FDC87 /* third_party */ = {isa = PBXFileReference; lastKnownFileType = folder; path = third_party; sourceTree = "<group>"; };
+		B7ED2C22193C1289001BCF5B /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
+		B7ED2C23193C1334001BCF5B /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		B7FBA6291934E28700E018F1 /* Trabalho2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Trabalho2; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7FBA62B1934E28800E018F1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B7FBA62D1934E28800E018F1 /* Trabalho2.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Trabalho2.1; sourceTree = "<group>"; };
@@ -177,6 +182,8 @@
 			children = (
 				B7FBA62B1934E28800E018F1 /* main.cpp */,
 				B7FBA62D1934E28800E018F1 /* Trabalho2.1 */,
+				B7ED2C22193C1289001BCF5B /* Camera.hpp */,
+				B7ED2C23193C1334001BCF5B /* Camera.cpp */,
 			);
 			path = Trabalho2;
 			sourceTree = "<group>";
@@ -313,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7FBA62C1934E28800E018F1 /* main.cpp in Sources */,
+				B7ED2C24193C1334001BCF5B /* Camera.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +336,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7ED2C25193C1361001BCF5B /* Camera.hpp in Sources */,
+				B7ED2C26193C1361001BCF5B /* Camera.cpp in Sources */,
 				B7FBA64C1934EBEA00E018F1 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +568,7 @@
 				B7FBA6301934E28800E018F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B7FBA63F1934E7AC00E018F1 /* Build configuration list for PBXNativeTarget "Raytracing" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +577,7 @@
 				B7FBA6411934E7AC00E018F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B7FBA64F1934EBEA00E018F1 /* Build configuration list for PBXNativeTarget "Trabalho1" */ = {
 			isa = XCConfigurationList;
@@ -574,6 +586,7 @@
 				B7FBA6511934EBEA00E018F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
