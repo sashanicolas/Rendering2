@@ -44,7 +44,7 @@ public:
         diffuseCf = glm::vec4( 0.0f, 0.0f, 0.0f, 1.0f );
         specularCf = glm::vec4( 0.0f, 0.0f, 0.0f, 1.0f );
         reflectionCf = 0.0f;
-        refractiveIndex = 1.0f;
+        refractiveIndex = 0.0f;
         
     }
     
@@ -480,7 +480,7 @@ void createScene()
 }
 void createScene2()
 {
-    glm::vec3 eye( 0, 100, 100 );
+    glm::vec3 eye( 0, 60, 130 );
     glm::vec3 center( 0, 0, 0 );
     glm::vec3 up( 0, 1, 0);
 	float fov = 90.0f;
@@ -515,22 +515,25 @@ void createScene2()
     sphere3->setRefractiveIndex( 0.8f );
     
 	LinedBox* box1 = new LinedBox( glm::vec3( -100.0f, -1.0f, -100.0f ), glm::vec3( 100.0f, 0.0f, 100.0f ) );
-	box1->setColor( 0.9f, 0.5f, 0.1f );
+	box1->setColor( 0.9f, 0.9f, 0.9f );
 	box1->setDiffuseCoefficient( 0.3f );
 	box1->setSpecularCoefficient( 0.01f );
-	box1->setReflectionCoefficient( 0.0f );
-
+//	box1->setReflectionCoefficient( 0.4f );
+//    box1->setRefractiveIndex( 0.8f );
+    
     LinedBox* box2 = new LinedBox( glm::vec3( -101.0f, -1.0f, -101.0f ), glm::vec3( 100.0f, 50.0f, -100.0f ) );
 	box2->setColor( 0.9f, 0.5f, 0.1f );
 	box2->setDiffuseCoefficient( 0.3f );
 	box2->setSpecularCoefficient( 0.01f );
-	box2->setReflectionCoefficient( 0.3f );
+	box2->setReflectionCoefficient( 0.1f );
+//    box2->setRefractiveIndex( 0.8f );
     
     LinedBox* box3 = new LinedBox( glm::vec3( -101.0f, -1.0f, -101.0f ), glm::vec3( -100.0f, 50.0f, 100.0f ) );
 	box3->setColor( 0.9f, 0.5f, 0.1f );
 	box3->setDiffuseCoefficient( 0.3f );
 	box3->setSpecularCoefficient( 0.01f );
-	box3->setReflectionCoefficient( 0.3f );
+	box3->setReflectionCoefficient( 0.1f );
+//    box3->setRefractiveIndex( 0.8f );
     
     scene->addObject( (Object *) sphere );
     scene->addObject( (Object *) sphere2 );
@@ -563,12 +566,11 @@ void reshape(int w, int h){
 	glLoadIdentity();
 }
 
-glm::vec3 ambientColor( Object *object )
-{
+glm::vec3 ambientColor( Object *object ){
 	glm::vec3 color;
-	glm::vec3 ambientColor = scene->getAmbientColor( );
-	glm::vec4 objColor = object->getColor( );
-	glm::vec4 diffuseCf = object->getDiffuseCoefficient( );
+	glm::vec3 ambientColor = scene->getAmbientColor();
+	glm::vec4 objColor = object->getColor();
+	glm::vec4 diffuseCf = object->getDiffuseCoefficient();
     
 	color.r = ambientColor.r * objColor.r * diffuseCf.r;
 	color.g = ambientColor.g * objColor.g * diffuseCf.g;
@@ -577,20 +579,16 @@ glm::vec3 ambientColor( Object *object )
 	return color;
 }
 
-glm::vec3 diffuseColor( Light* light, Object* object, Ray ray, glm::vec3 interceptionPoint )
-{
+glm::vec3 diffuseColor( Light* light, Object* object, Ray ray, glm::vec3 interceptionPoint ){
 	glm::vec3 L = light->position - interceptionPoint;
-    //	L = L / L.length();
     L = glm::normalize(L);
-    
     
 	glm::vec3 normal = object->getNormal( interceptionPoint );
     
 	float cosAng = glm::dot(L , normal);
 	
 	glm::vec3 color = glm::vec3( -1.0f, -1.0f, -1.0f );
-	if ( cosAng > 0 )
-	{
+	if ( cosAng > 0 ){
 		glm::vec4 objColor = object->getColor();
 		glm::vec4 diffuseCf = object->getDiffuseCoefficient();
 		color.r = light->color.r * diffuseCf.r * cosAng * objColor.r;
@@ -601,166 +599,31 @@ glm::vec3 diffuseColor( Light* light, Object* object, Ray ray, glm::vec3 interce
 	return color;
 }
 
-glm::vec3 specularColor( Light* light, Object* object, Ray ray, glm::vec3 interceptionPoint )
-{
+glm::vec3 specularColor( Light* light, Object* object, Ray ray, glm::vec3 interceptionPoint ){
 	glm::vec3 L = light->position - interceptionPoint;
     L = glm::normalize(L);
 	
 	glm::vec3 normal = object->getNormal( interceptionPoint );
-	
-	glm::vec3 r = (normal *  (2*glm::dot(L, normal)) ) - L;
+	glm::vec3 r = (normal * (2*glm::dot(L, normal)) ) - L;
     
 	glm::vec3 v = ray.origin - interceptionPoint;
     v = glm::normalize(v);
     
-	int n = 16;
+	int n = 64;
 	float bright = pow( glm::dot(r,v), n );
     
 	glm::vec3 color;
 	
 	glm::vec4 objColor = object->getColor();
 	glm::vec4 specularCf = object->getSpecularCoefficient();
-	color.r = light->color.r * specularCf.r * bright;
-	color.g = light->color.g * specularCf.g * bright;
-	color.b = light->color.b * specularCf.b * bright;
+	color.r = light->color.r * specularCf.r * bright * objColor.r;
+	color.g = light->color.g * specularCf.g * bright * objColor.g;
+	color.b = light->color.b * specularCf.b * bright * objColor.b;
     
 	return color;
 }
 
-glm::vec3 rayTracing(Ray ray, int depth = 1, Object* exceptionObject = NULL);
-
-glm::vec3 shade( Object* object, Ray ray, glm::vec3 interceptionPoint, int depth )
-{
-	//Por default, a cor ser· a resultante da iluminaÁ„o ambiente
-	glm::vec3 color = ambientColor( object );
-	
-	//Calcular a contribuiÁ„o de todas as luzes da cena para essa cor
-	for (int i = 0; i < scene->getNumLights(); i++)
-	{
-		Light* light = scene->getLight( i );
-        
-		/* Sombra */
-		
-		//Vetor do ponto de interseÁ„o atÈ a luz
-		Ray L( interceptionPoint, light->position - interceptionPoint );
-        
-		//Verifica se o vetor L atinge algum objeto antes de chegar ‡ luz
-		//Se sim, ele n„o est· sendo o ponto n„o est· sendo iluminado por esta luz,
-		//e ser· ump ponto de sombra
-		bool occlusion = false;
-		for ( int j = 0; j < scene->getNumObjects(); j++ )
-		{
-			Object* obj = scene->getObject( j );
-            
-			if ( obj != object )
-			{
-				//t: interseÁ„o do raio L e o objeto obj
-				float t;
-				if ( obj->intercepts( L, &t ) ) //H· um objeto ocluindo a luz
-				{
-					//Somente interessa a interseÁ„o que ocorre entre ponto e a luz
-					//Se t < 0, o vetor intercepta o objeto antes
-					if ( t > 0.0f )
-					{
-						occlusion = true;
-						break;
-					}
-				}
-			}
-		}
-		
-		//Se n„o houve oclus„o, n„o h· sombra, ent„o a cor È calculada:
-		if ( !occlusion )
-		{
-			//Calcula a cor resultante da reflex„o difusa
-			glm::vec3 dColor = diffuseColor( light, object, ray, interceptionPoint );
-			
-			//Calcula a cor resultante da reflex„o especulada (somente se houve reflex„o difusa)
-			if ( dColor.r != -1.0f )
-				color = color + dColor + specularColor( light, object, ray, interceptionPoint );
-		}
-	}
-	
-	//Normal do objeto
-	glm::vec3 normal = object->getNormal( interceptionPoint );
-	
-	//Raio ray na direÁ„o oposta
-	glm::vec3 opRay = ray.origin - interceptionPoint;
-//	opRay = opRay / opRay.length( );
-    opRay = glm::normalize(opRay);
-    
-	/* Reflex„o de outros objetos */
-	float objReflection = object->getReflectionCoefficient( );
-	if ( objReflection > 0.0f && depth + 1 <= MAX_DEPTH)
-	{
-		//Novo raio a ser lanÁado a partir do ponto de interseÁ„o
-		Ray newRay( interceptionPoint, glm::dot(normal, 2* glm::dot( opRay , normal ) - glm::vec3(0,0,0) )  - opRay );
-        
-		//Obtendo a cor refletida
-		glm::vec3 reflectedColor = rayTracing( newRay, depth + 1 );
-        
-		color = color * ( 1 - objReflection ) + reflectedColor * objReflection;
-	}
-    
-	/* TransparÍncia */
-	float opacity = object->getColor( ).a;
-	if ( opacity < 1.0f && depth + 1 <= MAX_DEPTH)
-	{
-		glm::vec3 vT = normal * ( opRay * normal ) - opRay;
-        
-		float senAng = vT.length() * object->getRefractiveIndex( );
-		float cosAng = sqrt( 1 - senAng * senAng );
-        
-//		vT = vT / vT.length();
-        vT = glm::normalize(vT);
-        
-		glm::vec3 rT = vT * senAng - normal * cosAng;
-        
-		//Novo raio a ser lanÁado a partir do ponto de interseÁ„o
-		Ray newRay( interceptionPoint, rT );
-        
-		//Obtendo a cor refletida
-		glm::vec3 behindColor = rayTracing( newRay, depth + 1, object );
-        
-		//if ( !(behindColor.r == 0.0f && behindColor.g == 0.0f && behindColor.b == 0.0f) )
-        color = color * opacity + behindColor * ( 1 - opacity );
-	}
-	
-	return color;
-}
-
-glm::vec3 rayTracing( Ray ray, int depth, Object* exceptionObject )
-{
-	float minT = FLT_MAX;
-    
-	int indexObj = -1;
-	for (int i = 0; i < scene->getNumObjects(); i++){
-		Object* obj = scene->getObject(i);
-		
-		if ( obj != exceptionObject ){
-			float t;
-			if ( obj->intercepts(ray, &t) ){
-				if (t > 0.0f && t < minT){
-					minT = t;
-					indexObj = i;
-				}
-			}
-		}
-	}
-    
-	glm::vec3 color( 0.0f, 0.0f, 0.0f );
-    
-	if (minT < FLT_MAX){
-		Object *obj = scene->getObject(indexObj);
-        
-		glm::vec3 point = ray.origin + ray.direction * minT;
-        
-		color = shade( obj, ray, point, depth );
-	}
-    
-	return color;
-}
-
+//segundo
 glm::vec3 RayShade(Ray &ray){
     glm::vec3 localColor(0,0,0);
 
@@ -774,35 +637,29 @@ glm::vec3 RayShade(Ray &ray){
         glm::vec3 interceptionPoint = ray.origin + ray.direction * ray.length;
 		Ray L( interceptionPoint, light->position - interceptionPoint );
         
-		//Verifica se o vetor L atinge algum objeto antes de chegar ‡ luz
-		//Se sim, ele n„o est· sendo o ponto n„o est· sendo iluminado por esta luz,
-		//e ser· ump ponto de sombra
+		//Verifica se o vetor L atinge algum objeto antes de chegar a luz
+		//Se sim, ele nao esta sendo o ponto nao esta sendo iluminado por esta luz,
+		//e sera um ponto de sombra
 		bool occlusion = false;
-//		for ( int j = 0; j < scene->getNumObjects(); j++ )
-//		{
-//			Object* obj = scene->getObject( j );
-//            
-//			if ( obj != object )
-//			{
-//				//t: interseÁ„o do raio L e o objeto obj
-//				float t;
-//				if ( obj->intercepts( L, &t ) ) //H· um objeto ocluindo a luz
-//				{
-//					//Somente interessa a interseÁ„o que ocorre entre ponto e a luz
-//					//Se t < 0, o vetor intercepta o objeto antes
-//					if ( t > 0.0f )
-//					{
-//						occlusion = true;
-//						break;
-//					}
-//				}
-//			}
-//		}
+		for ( int j = 0; j < scene->getNumObjects(); j++ ){
+			Object* object = scene->getObject( j );
+            if ( obj != object ){
+				//ta intersecao do raio L e o objeto obj
+				float t;
+				if ( object->intercepts( L, &t ) ){ //Ha um objeto ocluindo a luz
+					//Somente interessa a intersecaoo que ocorre entre ponto e a luz
+					//Se t < 0, o vetor intercepta o objeto antes
+					if ( t > 0.0f ){
+						occlusion = true;
+						break;
+					}
+				}
+			}
+		}
 		
 		//Se nao houve oclusao, nao ha sombra, entao a cor eh calculada:
-		if ( !occlusion )
-		{
-			//Calcula a cor resultante da reflex„o difusa
+		if ( !occlusion ){
+			//Calcula a cor resultante da reflexao difusa
 			glm::vec3 dColor = diffuseColor( light, obj, ray, interceptionPoint );
 			
 			//Calcula a cor resultante da reflexao especulada (somente se houve reflexao difusa)
@@ -811,11 +668,8 @@ glm::vec3 RayShade(Ray &ray){
 		}
     }
 
-//    Object* obj = scene->getObject(ray.indexObj);
-//    localColor = obj->getColor();
     return glm::vec3(localColor.r,localColor.g,localColor.b);
 }
-
 
 void rayIntersect(Ray &ray){
     for (int i = 0; i < scene->getNumObjects(); i++){
@@ -829,6 +683,43 @@ void rayIntersect(Ray &ray){
         }
 	}
 }
+bool ObjectIsReflexive(Ray &ray){
+    Object* obj = scene->getObject(ray.indexObj);
+    return obj->getReflectionCoefficient() > 0;
+}
+bool ObjectIsTransparent(Ray &ray){
+    Object* obj = scene->getObject(ray.indexObj);
+    return obj->getColor().a < 1.0f;
+}
+Ray getReflectedRay(Ray &ray){
+    glm::vec3 interceptionPoint = ray.origin + ray.direction * ray.length;
+    glm::vec3 opRay = ray.origin - interceptionPoint;
+    opRay = glm::normalize(opRay);
+    Object* object = scene->getObject(ray.indexObj);
+    glm::vec3 normal = object->getNormal( interceptionPoint );
+    Ray r(interceptionPoint, normal * (2 * glm::dot( opRay , normal)) - opRay);
+    r.depth = ray.depth+1;
+    return r;
+}
+Ray getRefractedRay(Ray &ray){
+    glm::vec3 interceptionPoint = ray.origin + ray.direction * ray.length;
+    glm::vec3 opRay = ray.origin - interceptionPoint;
+    opRay = glm::normalize(opRay);
+    Object* object = scene->getObject(ray.indexObj);
+    glm::vec3 normal = object->getNormal( interceptionPoint );
+    
+    glm::vec3 vT = normal * ( opRay * normal ) - opRay;
+    float senAng = vT.length() * object->getRefractiveIndex( );
+    float cosAng = sqrt( 1 - senAng * senAng );
+    
+    vT = glm::normalize(vT);
+    glm::vec3 rT = vT * senAng - normal * cosAng;
+    
+    Ray r(interceptionPoint, rT );
+    r.depth = ray.depth+1;
+    
+    return r;
+}
 
 glm::vec3 RayTrace(Ray &ray){
     glm::vec3 color( 0.0f, 0.0f, 0.0f );
@@ -836,7 +727,18 @@ glm::vec3 RayTrace(Ray &ray){
     rayIntersect(ray);
     if (ray.length < FLT_MAX) {
         color = RayShade(ray);
-        
+        if ( ray.depth <= MAX_DEPTH){
+            if(ObjectIsReflexive(ray)){
+                Ray reflectedRay = getReflectedRay(ray);
+                color += RayTrace(reflectedRay);
+            }
+            if(ObjectIsTransparent(ray)){
+                Ray refractedRay = getRefractedRay(ray);
+                Object* object = scene->getObject(ray.indexObj);
+                float opacity = object->getColor( ).a;
+                color = color * opacity + RayTrace(refractedRay) * ( 1 - opacity );
+            }
+        }
     }
     
     return color;
@@ -855,7 +757,7 @@ void drawScene(){
 		for (int x = 0; x < w; x++){
 			Ray ray = camera->getRay(x, y);
 			
-			glm::vec3 color = rayTracing(ray);
+			glm::vec3 color = RayTrace(ray);
             
 			glColor3f(color.r, color.g, color.b);
 			glVertex2f(x, y);
@@ -865,13 +767,13 @@ void drawScene(){
     
 	glutSwapBuffers();
     
-//    Light * l = scene->getLight(0);
-//    glm::vec3 c = l->position;
-//    glm::vec3 luz = glm::vec3(c.x,c.y,c.z);
-//    luz = glm::rotateY(luz, 10.0f);
-//    l->position.x = luz.x;
-//    l->position.y = luz.y;
-//    l->position.z = luz.z;
+    Light * l = scene->getLight(0);
+    glm::vec3 c = l->position;
+    glm::vec3 luz = glm::vec3(c.x,c.y,c.z);
+    luz = glm::rotateY(luz, 3.0f);
+    l->position.x = luz.x;
+    l->position.y = luz.y;
+    l->position.z = luz.z;
     
     glutPostRedisplay();
 }
@@ -889,7 +791,7 @@ void Init() {
 	glClearColor(0.2, 0.2, 0.2, 1.0);
 	
 	glClear(GL_COLOR_BUFFER_BIT);
-	createScene2();
+	createScene();
 }
 
 int main(int argc, char**argv){
