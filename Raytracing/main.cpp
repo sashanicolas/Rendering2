@@ -500,7 +500,7 @@ void createScene()
 }
 
 void createScene2(){
-    glm::vec3 eye( 0, 60, 130 );
+    glm::vec3 eye( 0, 40, 130 );
     glm::vec3 center( 0, 0, 0 );
     glm::vec3 up( 0, 1, 0);
 	float fov = 90.0f;
@@ -526,7 +526,7 @@ void createScene2(){
 
 //caixas
 	LinedBox* box1 = new LinedBox( glm::vec3( -100.0f, -1.0f, -100.0f ), glm::vec3( 100.0f, 0.0f, 100.0f ),
-                                  glm::vec4( 0.9f, 0.9f, 0.9f, 1.0f), 0.5f, 0.01f, 0.3f, 0.0f);
+                                  glm::vec4( 0.9f, 0.9f, 0.9f, 1.0f), 0.5f, 0.01f, 0.5f, 0.0f);
     
     LinedBox* box2 = new LinedBox( glm::vec3( -101.0f, -1.0f, -101.0f ), glm::vec3( 100.0f, 50.0f, -100.0f ),
                                   glm::vec4( 0.9f, 0.5f, 0.1f, 1.0f ), 0.5f, 0.01f, 0.5f, 0.0f);
@@ -545,17 +545,17 @@ void createScene2(){
     
 	scene->addObject( (Object *) box1 );
 	scene->addObject( (Object *) box2 );
-	scene->addObject( (Object *) box3 );
+//	scene->addObject( (Object *) box3 );
     
 	Light* light = new Light();
     light->setColor(glm::vec3(1.0f, 1.0f, 1.0f));
     light->setPosition(glm::vec3(200.0f, 120.0f, 200.0f));
 	scene->addLight(light);
     
-    Light* light2 = new Light();
-    light2->setColor(glm::vec3(1.0f, 1.0f, 1.0f));
-    light2->setPosition(glm::vec3(-200.0f, 50.0f, 200.0f));
-	scene->addLight(light2);
+//    Light* light2 = new Light();
+//    light2->setColor(glm::vec3(1.0f, 1.0f, 1.0f));
+//    light2->setPosition(glm::vec3(-200.0f, 50.0f, 200.0f));
+//	scene->addLight(light2);
 }
 
 void reshape(int w, int h){
@@ -710,26 +710,10 @@ Ray getReflectedRay(Ray &ray){
 
 Ray getRefractedRay(Ray &ray){
     glm::vec3 interceptionPoint = ray.origin + ray.direction * ray.length;
-    glm::vec3 opRay = ray.origin - interceptionPoint;
-    opRay = glm::normalize(opRay);
     Object* object = scene->getObject(ray.indexObj);
-    glm::vec3 normal = object->getNormal( interceptionPoint );
-    
-    glm::vec3 vT = normal * ( opRay * normal ) - opRay;
-    float senAng = vT.length() * object->getRefractiveIndex( );
-    float cosAng = sqrt( 1 - senAng * senAng );
-    
-    vT = glm::normalize(vT);
-//    glm::vec3 rT = vT * senAng - normal * cosAng;
-    glm::vec3 rT = glm::refract(glm::normalize(ray.direction), object->getNormal( interceptionPoint ), 1.0f);
-    
-    Ray r(interceptionPoint, rT );
-    
-    r.depth = ray.depth+1;
-    return r;
+    return Ray(interceptionPoint, glm::refract(glm::normalize(ray.direction), object->getNormal( interceptionPoint ), 1.0f), ray.depth+1);
 }
 
-int transparentes=0,reflexivos=0;
 glm::vec3 RayTrace(Ray &ray){
     glm::vec3 color( 0.0f, 0.0f, 0.0f );
 
@@ -738,21 +722,18 @@ glm::vec3 RayTrace(Ray &ray){
         color = RayShade(ray);
         if ( ray.depth <= MAX_DEPTH){
             if(ObjectIsReflexive(ray)){
-                reflexivos++;
                 Ray reflectedRay = getReflectedRay(ray);
                 reflectedRay.previousObj = ray.indexObj;
                 glm::vec3 reflectedColor = RayTrace(reflectedRay);
                 
                 float objReflection = scene->getObject(ray.indexObj)->getReflectionCoefficient( );
                 color = color * ( 1 - objReflection ) + reflectedColor * objReflection;
-
             }
             if(ObjectIsTransparent(ray)){
-                transparentes++;
                 Ray refractedRay = getRefractedRay(ray);
                 refractedRay.previousObj = ray.indexObj;
                 Object* object = scene->getObject(ray.indexObj);
-                float opacity = object->getColor( ).a;
+                float opacity = object->getColor().a;
                 color = color * opacity + RayTrace(refractedRay) * ( 1 - opacity );
             }
         }
@@ -784,7 +765,7 @@ void drawScene(){
     
 	glutSwapBuffers();
     
-    printf("reflexivos=%d, transparentes=%d\n",reflexivos, transparentes);
+//    printf("reflexivos=%d, transparentes=%d\n",reflexivos, transparentes);
 //    Light * l = scene->getLight(0);
 //    glm::vec3 c = l->position;
 //    glm::vec3 luz = glm::vec3(c.x,c.y,c.z);
