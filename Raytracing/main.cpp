@@ -15,7 +15,7 @@ using namespace std;
 #define INITIAL_WIDTH 800
 #define INITIAL_HEIGHT 800
 
-#define MAX_DEPTH 3
+#define MAX_DEPTH 4
 
 #define rad(A) (A*3.141592653589793/180.0)
 
@@ -28,16 +28,25 @@ public:
         depth = 1;
         length = FLT_MAX;
         indexObj = -1;
+        previousObj = -1;
+    }
+    Ray( glm::vec3 origin, glm::vec3 direction, int depth){
+        this->origin = origin;
+        this->direction = direction;
+        this->depth = depth;
+        length = FLT_MAX;
+        indexObj = -1;
+        previousObj = -1;
     }
     
 	glm::vec3 origin;
 	glm::vec3 direction;
     int depth, indexObj;
     float length;
+    int previousObj;
 };
 
-class Object
-{
+class Object{
 public:
 	Object( ){
         color = glm::vec4( 0.0f, 0.0f, 0.0f, 1.0f);
@@ -45,7 +54,6 @@ public:
         specularCf = glm::vec4( 0.0f, 0.0f, 0.0f, 1.0f );
         reflectionCf = 0.0f;
         refractiveIndex = 0.0f;
-        
     }
     
 	virtual bool intercepts( Ray r, float* point ) = 0;
@@ -118,8 +126,7 @@ private:
 	float refractiveIndex;
 };
 
-class Light
-{
+class Light{
 public:
 	Light( glm::vec3 position, glm::vec3 color )
 	{
@@ -139,12 +146,20 @@ public:
 	glm::vec3 color;
 };
 
-class LinedBox : public Object
-{
+class LinedBox : public Object{
 public:
 	LinedBox( glm::vec3 minPoint, glm::vec3 maxPoint ){
         this->minPoint = minPoint;
         this->maxPoint = maxPoint;
+    }
+    LinedBox( glm::vec3 minPoint, glm::vec3 maxPoint, glm::vec4 color, float diffuse, float specular, float reflection, float refraction ){
+        this->minPoint = minPoint;
+        this->maxPoint = maxPoint;
+        this->setColor(color.r, color.g, color.b, color.a);
+        this->setDiffuseCoefficient(diffuse);
+        this->setSpecularCoefficient(specular);
+        this->setReflectionCoefficient(reflection);
+        this->setRefractiveIndex(refraction);
     }
     
 	bool intercepts( Ray r, float* t ){
@@ -244,14 +259,21 @@ private:
 	glm::vec3 lastCalcNormal;
 };
 
-class Sphere : public Object
-{
+class Sphere : public Object{
 public:
 	Sphere( glm::vec3 center, float r ){
         this->center = center;
         this->ray = r;
     }
-    
+    Sphere( glm::vec3 center, float r, glm::vec4 color, float diffuse, float specular, float reflection, float refraction){
+        this->center = center;
+        this->ray = r;
+        this->setColor(color.r, color.g, color.b, color.a);
+        this->setDiffuseCoefficient(diffuse);
+        this->setSpecularCoefficient(specular);
+        this->setReflectionCoefficient(reflection);
+        this->setRefractiveIndex(refraction);
+    }
 	bool intercepts( Ray r, float* t ){
         //        float a = r.direction *  r.direction;
         float a = glm::dot(r.direction, r.direction);
@@ -289,8 +311,7 @@ private:
 	float ray;
 };
 
-class Camera
-{
+class Camera{
 public:
 	Camera( glm::vec3 eye, glm::vec3 center, glm::vec3 up, float fov, float near, float far, int w, int h ){
         this->eye = eye;
@@ -359,8 +380,7 @@ public:
 
 };
 
-class Scene
-{
+class Scene{
 public:
 	Scene(){
         
@@ -478,8 +498,8 @@ void createScene()
 	scene->addLight(light);
 	//scene->addLight(light2);
 }
-void createScene2()
-{
+
+void createScene2(){
     glm::vec3 eye( 0, 60, 130 );
     glm::vec3 center( 0, 0, 0 );
     glm::vec3 up( 0, 1, 0);
@@ -493,63 +513,49 @@ void createScene2()
 	scene->createCamera( eye, center, up, fov, nearr, farr, w, h );
 	scene->setAmbientColor( 1.0f, 1.0f, 1.0f );
     
-	Sphere* sphere = new Sphere( glm::vec3(50, 25, 30), 25 );
-	sphere->setColor( 1.0f, 0.0f, 1.0f, 1.0f );
-	sphere->setDiffuseCoefficient( 0.3f );
-	sphere->setSpecularCoefficient( 0.7f );
-//	sphere->setReflectionCoefficient( 0.3f );
-    sphere->setRefractiveIndex( 0.8f );
+//esferas
+	Sphere* sphere1 = new Sphere( glm::vec3(50, 25, 30), 25, glm::vec4(1.0f, 0.0f, 1.0f, 0.9f), 0.3f, 0.7f, 0.5f, 1.5f);
     
-    Sphere* sphere2 = new Sphere( glm::vec3(-30, 15, 20), 15 );
-	sphere2->setColor( 0.0f, 1.0f, 1.0f, 1.0f );
-	sphere2->setDiffuseCoefficient( 0.4f );
-	sphere2->setSpecularCoefficient( 0.9f );
-//    sphere2->setReflectionCoefficient( 0.3f );
-    sphere2->setRefractiveIndex( 0.8f );
+    Sphere* sphere2 = new Sphere( glm::vec3(-70, 15, -20), 15 , glm::vec4(0.0f, 1.0f, 1.0f, 0.7f), 0.4f, 0.9f, 0.5f, 1.0f);
+    Sphere* sphere3 = new Sphere( glm::vec3(0, 15, 20), 15 , glm::vec4(1.0f, 1.0f, 1.0f, 1.0f), 0.4f, 0.9f, 1.0f, 1.0f);
+    Sphere* sphere4 = new Sphere( glm::vec3(-20, 15, 50), 15 , glm::vec4(1.0f, 1.0f, 0.0f, 0.7f), 0.4f, 0.9f, 0.5f, 1.0f);
+
+    Sphere* sphere7 = new Sphere( glm::vec3(-70, 5, 30), 5, glm::vec4(1.0f, 0.0f, 0.0f, 1.0f), 0.3f, 0.7f, 0.5f, 1.0f);
+    Sphere* sphere8 = new Sphere( glm::vec3(-70, 5, 50), 5, glm::vec4(0.0f, 1.0f, 0.0f, 1.0f), 0.3f, 0.7f, 0.5f, 1.0f);
+    Sphere* sphere9 = new Sphere( glm::vec3(-20, 5, 70), 5, glm::vec4(0.0f, 0.0f, 1.0f, 1.0f), 0.3f, 0.7f, 0.5f, 1.0f);
+
+//caixas
+	LinedBox* box1 = new LinedBox( glm::vec3( -100.0f, -1.0f, -100.0f ), glm::vec3( 100.0f, 0.0f, 100.0f ),
+                                  glm::vec4( 0.9f, 0.9f, 0.9f, 1.0f), 0.5f, 0.01f, 0.3f, 0.0f);
     
-    Sphere* sphere3 = new Sphere( glm::vec3(-70, 5, 10), 5 );
-	sphere3->setColor( 1.0f, 1.0f, 0.0f, 1.0f );
-	sphere3->setDiffuseCoefficient( 0.3f );
-	sphere3->setSpecularCoefficient( 0.7f );
-//	sphere3->setReflectionCoefficient( 0.3f );
-    sphere3->setRefractiveIndex( 0.8f );
+    LinedBox* box2 = new LinedBox( glm::vec3( -101.0f, -1.0f, -101.0f ), glm::vec3( 100.0f, 50.0f, -100.0f ),
+                                  glm::vec4( 0.9f, 0.5f, 0.1f, 1.0f ), 0.5f, 0.01f, 0.5f, 0.0f);
     
-	LinedBox* box1 = new LinedBox( glm::vec3( -100.0f, -1.0f, -100.0f ), glm::vec3( 100.0f, 0.0f, 100.0f ) );
-	box1->setColor( 0.9f, 0.9f, 0.9f );
-	box1->setDiffuseCoefficient( 0.3f );
-	box1->setSpecularCoefficient( 0.01f );
-//	box1->setReflectionCoefficient( 0.4f );
-//    box1->setRefractiveIndex( 0.8f );
+    LinedBox* box3 = new LinedBox( glm::vec3( -101.0f, -1.0f, -101.0f ), glm::vec3( -100.0f, 50.0f, 100.0f ),
+                                  glm::vec4(  0.9f, 0.5f, 0.1f, 1.0f), 0.5f, 0.01f, 0.5f, 0.0f);
     
-    LinedBox* box2 = new LinedBox( glm::vec3( -101.0f, -1.0f, -101.0f ), glm::vec3( 100.0f, 50.0f, -100.0f ) );
-	box2->setColor( 0.9f, 0.5f, 0.1f );
-	box2->setDiffuseCoefficient( 0.3f );
-	box2->setSpecularCoefficient( 0.01f );
-	box2->setReflectionCoefficient( 0.1f );
-//    box2->setRefractiveIndex( 0.8f );
-    
-    LinedBox* box3 = new LinedBox( glm::vec3( -101.0f, -1.0f, -101.0f ), glm::vec3( -100.0f, 50.0f, 100.0f ) );
-	box3->setColor( 0.9f, 0.5f, 0.1f );
-	box3->setDiffuseCoefficient( 0.3f );
-	box3->setSpecularCoefficient( 0.01f );
-	box3->setReflectionCoefficient( 0.1f );
-//    box3->setRefractiveIndex( 0.8f );
-    
-    scene->addObject( (Object *) sphere );
+    scene->addObject( (Object *) sphere1 );
     scene->addObject( (Object *) sphere2 );
     scene->addObject( (Object *) sphere3 );
+    scene->addObject( (Object *) sphere4 );
+
+    scene->addObject( (Object *) sphere7 );
+    scene->addObject( (Object *) sphere8 );
+    scene->addObject( (Object *) sphere9 );
+    
 	scene->addObject( (Object *) box1 );
 	scene->addObject( (Object *) box2 );
 	scene->addObject( (Object *) box3 );
     
 	Light* light = new Light();
-    
-    glm::vec3 c(1.0f, 1.0f, 1.0f);
-    light->setColor(c);
-    glm::vec3 v(200.0f, 120.0f, 200.0f);
-    light->setPosition(v);
-    
+    light->setColor(glm::vec3(1.0f, 1.0f, 1.0f));
+    light->setPosition(glm::vec3(200.0f, 120.0f, 200.0f));
 	scene->addLight(light);
+    
+    Light* light2 = new Light();
+    light2->setColor(glm::vec3(1.0f, 1.0f, 1.0f));
+    light2->setPosition(glm::vec3(-200.0f, 50.0f, 200.0f));
+	scene->addLight(light2);
 }
 
 void reshape(int w, int h){
@@ -623,7 +629,6 @@ glm::vec3 specularColor( Light* light, Object* object, Ray ray, glm::vec3 interc
 	return color;
 }
 
-//segundo
 glm::vec3 RayShade(Ray &ray){
     glm::vec3 localColor(0,0,0);
 
@@ -674,33 +679,35 @@ glm::vec3 RayShade(Ray &ray){
 void rayIntersect(Ray &ray){
     for (int i = 0; i < scene->getNumObjects(); i++){
 		Object* obj = scene->getObject(i);
+        int previousObj = ray.previousObj;
         float t;
-        if ( obj->intercepts(ray, &t) ){
-            if (t > 0.0f && t < ray.length){
-                ray.length = t;
-                ray.indexObj = i;
+        if ( i != previousObj ){
+            if ( obj->intercepts(ray, &t) ){
+                if (t > 0.0f && t < ray.length){
+                    ray.length = t;
+                    ray.indexObj = i;
+                }
             }
         }
 	}
 }
+
 bool ObjectIsReflexive(Ray &ray){
     Object* obj = scene->getObject(ray.indexObj);
     return obj->getReflectionCoefficient() > 0;
 }
+
 bool ObjectIsTransparent(Ray &ray){
     Object* obj = scene->getObject(ray.indexObj);
     return obj->getColor().a < 1.0f;
 }
+
 Ray getReflectedRay(Ray &ray){
     glm::vec3 interceptionPoint = ray.origin + ray.direction * ray.length;
-    glm::vec3 opRay = ray.origin - interceptionPoint;
-    opRay = glm::normalize(opRay);
     Object* object = scene->getObject(ray.indexObj);
-    glm::vec3 normal = object->getNormal( interceptionPoint );
-    Ray r(interceptionPoint, normal * (2 * glm::dot( opRay , normal)) - opRay);
-    r.depth = ray.depth+1;
-    return r;
+    return Ray(interceptionPoint, glm::reflect(glm::normalize(ray.direction), object->getNormal( interceptionPoint )), ray.depth+1);
 }
+
 Ray getRefractedRay(Ray &ray){
     glm::vec3 interceptionPoint = ray.origin + ray.direction * ray.length;
     glm::vec3 opRay = ray.origin - interceptionPoint;
@@ -713,14 +720,16 @@ Ray getRefractedRay(Ray &ray){
     float cosAng = sqrt( 1 - senAng * senAng );
     
     vT = glm::normalize(vT);
-    glm::vec3 rT = vT * senAng - normal * cosAng;
+//    glm::vec3 rT = vT * senAng - normal * cosAng;
+    glm::vec3 rT = glm::refract(glm::normalize(ray.direction), object->getNormal( interceptionPoint ), 1.0f);
     
     Ray r(interceptionPoint, rT );
-    r.depth = ray.depth+1;
     
+    r.depth = ray.depth+1;
     return r;
 }
 
+int transparentes=0,reflexivos=0;
 glm::vec3 RayTrace(Ray &ray){
     glm::vec3 color( 0.0f, 0.0f, 0.0f );
 
@@ -729,11 +738,19 @@ glm::vec3 RayTrace(Ray &ray){
         color = RayShade(ray);
         if ( ray.depth <= MAX_DEPTH){
             if(ObjectIsReflexive(ray)){
+                reflexivos++;
                 Ray reflectedRay = getReflectedRay(ray);
-                color += RayTrace(reflectedRay);
+                reflectedRay.previousObj = ray.indexObj;
+                glm::vec3 reflectedColor = RayTrace(reflectedRay);
+                
+                float objReflection = scene->getObject(ray.indexObj)->getReflectionCoefficient( );
+                color = color * ( 1 - objReflection ) + reflectedColor * objReflection;
+
             }
             if(ObjectIsTransparent(ray)){
+                transparentes++;
                 Ray refractedRay = getRefractedRay(ray);
+                refractedRay.previousObj = ray.indexObj;
                 Object* object = scene->getObject(ray.indexObj);
                 float opacity = object->getColor( ).a;
                 color = color * opacity + RayTrace(refractedRay) * ( 1 - opacity );
@@ -767,15 +784,16 @@ void drawScene(){
     
 	glutSwapBuffers();
     
-    Light * l = scene->getLight(0);
-    glm::vec3 c = l->position;
-    glm::vec3 luz = glm::vec3(c.x,c.y,c.z);
-    luz = glm::rotateY(luz, 3.0f);
-    l->position.x = luz.x;
-    l->position.y = luz.y;
-    l->position.z = luz.z;
+    printf("reflexivos=%d, transparentes=%d\n",reflexivos, transparentes);
+//    Light * l = scene->getLight(0);
+//    glm::vec3 c = l->position;
+//    glm::vec3 luz = glm::vec3(c.x,c.y,c.z);
+//    luz = glm::rotateY(luz, 3.0f);
+//    l->position.x = luz.x;
+//    l->position.y = luz.y;
+//    l->position.z = luz.z;
     
-    glutPostRedisplay();
+//    glutPostRedisplay();
 }
 
 static void Keyboard (unsigned char key, int x, int y){
@@ -791,7 +809,7 @@ void Init() {
 	glClearColor(0.2, 0.2, 0.2, 1.0);
 	
 	glClear(GL_COLOR_BUFFER_BIT);
-	createScene();
+	createScene2();
 }
 
 int main(int argc, char**argv){
