@@ -16,12 +16,14 @@ using namespace std;
 #define INITIAL_HEIGHT 800
 
 #define MAX_DEPTH 4
+#define ANTIALIAS 1
 
 #define rad(A) (A*3.141592653589793/180.0)
 
 class Ray
 {
 public:
+    Ray(){}
 	Ray( glm::vec3 origin, glm::vec3 direction ){
         this->origin = origin;
         this->direction = direction;
@@ -343,11 +345,17 @@ public:
 //        glm::vec3 ray_direction = image_point - eye;
 //        return Ray(eye, ray_direction);
     }
+    Ray getRay(int x, int y, float j, float k){
+        glm::vec3 vX = xe * ( b * ( (float) x / (float)w + j ) );
+        glm::vec3 vY = ye * ( a * ( (float) y / (float)h + k ) );
+        glm::vec3 vZ = ze * ( - df );
+        
+        return Ray( eye, vX + vY + vZ );
+    }
     
 	void initialize(){
         df = near;
         a = 2 * df * tan( rad(fov / 2.0f ));
-        
         b = ( (float) w / (float)h ) * a;
         
         ze = ( eye - center );
@@ -742,6 +750,11 @@ glm::vec3 RayTrace(Ray &ray){
     return color;
 }
 
+float getRand(){
+    if(rand()%1) return (rand()%10)/10000.f;
+    else return -(rand()%10)/10000.f;
+}
+
 void drawScene(){
 	glClearColor(0.7, 0.7, 0.7, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
@@ -749,16 +762,27 @@ void drawScene(){
 	Camera* camera = scene->getCamera();
 	int w = camera->w;
 	int h = camera->h;
-    
+    printf("%d",rand()%1);
 	glBegin(GL_POINTS);
 	for (int y = 0; y < h; y++){
 		for (int x = 0; x < w; x++){
+#if (!ANTIALIAS)
 			Ray ray = camera->getRay(x, y);
-			
 			glm::vec3 color = RayTrace(ray);
-            
 			glColor3f(color.r, color.g, color.b);
 			glVertex2f(x, y);
+#endif
+#if (ANTIALIAS)
+            Ray ray;
+            glm::vec3 color(0);
+            int numRays = 60;
+            for(int k=0;k<numRays;k++){
+                ray = camera->getRay(x, y, -0.5f + getRand() , -0.5f + getRand());
+                color += RayTrace(ray);
+            }
+			glColor3f(color.r/(float)numRays, color.g/(float)numRays, color.b/(float)numRays);
+			glVertex2f(x, y);
+#endif
 		}
 	}
 	glEnd();
@@ -777,6 +801,7 @@ void drawScene(){
 //    glutPostRedisplay();
 }
 
+
 static void Keyboard (unsigned char key, int x, int y){
     switch (key){
         case 27:
@@ -794,6 +819,7 @@ void Init() {
 }
 
 int main(int argc, char**argv){
+    srand (time(NULL));
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowSize(INITIAL_WIDTH, INITIAL_HEIGHT);
