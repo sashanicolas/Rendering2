@@ -26,6 +26,7 @@
 #define WINDOW_HEIGHT 1024
 
 glm::vec3 camera = glm::vec3(-5,5,0);
+glm::vec3 centro = glm::vec3(0,0,0);
 glm::vec3 lightInvDir = glm::vec3(-5,5,5);
 
 class Luz{
@@ -186,7 +187,7 @@ public:
         Projection = glm::perspective(45.0f, 1.0f, 0.1f, 100.0f);
 
         // Camera matrix
-        View = glm::lookAt(camera,glm::vec3(0,0,0),glm::vec3(0,1,0));
+        View = glm::lookAt(camera,centro,glm::vec3(0,1,0));
         
         // Our ModelViewProjection : multiplication of our 3 matrices
         MVP = Projection * View * Model; // Remember, matrix multiplication is the other way around
@@ -542,7 +543,6 @@ public:
         
         myShader->setModelMatrix(Model);
         
-//        glm::mat4 MVP = myShader->Projection * myShader->View * Model;
         glm::mat4 biasMatrix(
                              0.5, 0.0, 0.0, 0.0,
                              0.0, 0.5, 0.0, 0.0,
@@ -551,10 +551,6 @@ public:
                              );
         glm::mat4 depthBiasMVP = biasMatrix * depthMVP;
         
-        // Send our transformation to the currently bound shader,
-        // in the "MVP" uniform
-//        myShader->SetUniform("M", Model);
-//        myShader->SetUniform("MVP", MVP);
         myShader->SetUniform("DepthBiasMVP", depthBiasMVP);
         
         myShader->SetUniformMVP2();
@@ -831,7 +827,8 @@ public:
         Model = glm::mat4(1.0f); // Changes for each model !
         Model = glm::translate(Model, glm::vec3(x, y, z));
         Model = glm::scale(Model, glm::vec3(0.2f,0.2f,0.2f));
-        
+//        Model = glm::rotate(Model, 150.0f,glm::vec3(0,1,0));
+
         myShader->setModelMatrix(Model);
         
         glm::mat4 biasMatrix(
@@ -884,6 +881,7 @@ public:
     
     ShadowMap(){
         FramebufferName = 0;
+        depthTexture = 0;
     }
     
     bool Init(unsigned int WindowWidth, unsigned int WindowHeight){
@@ -900,7 +898,7 @@ public:
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_R_TO_TEXTURE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
         
         glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, depthTexture, 0);
         
@@ -942,7 +940,7 @@ int main () {
     
     configuraCena();
     // Dark blue background
-	glClearColor(0,0,0, 0.0f);
+	glClearColor(0,0,0,0);
 	// Enable depth test
 	glEnable(GL_DEPTH_TEST);
 	// Accept fragment if it closer to the camera than the former one
@@ -966,10 +964,10 @@ int main () {
     depthShader->setViewMatrix(depthViewMatrix);
     
     //============================================================
-//    Shader * shadowShader = new Shader("shadowmapShaders/ShadowMapping_SimpleVersion.vertexshader",
-//                                       "shadowmapShaders/ShadowMapping_SimpleVersion.fragmentshader");
-    Shader * shadowShader = new Shader("shadowmapShaders/ShadowMapping.vertexshader",
-                                       "shadowmapShaders/ShadowMapping.fragmentshader");
+    Shader * shadowShader = new Shader("shadowmapShaders/ShadowMapping_SimpleVersion.vertexshader",
+                                       "shadowmapShaders/ShadowMapping_SimpleVersion.fragmentshader");
+//    Shader * shadowShader = new Shader("shadowmapShaders/ShadowMapping.vertexshader",
+//                                       "shadowmapShaders/ShadowMapping.fragmentshader");
     camera = glm::vec3(0,4,8);
 
     //============================================================
@@ -993,18 +991,19 @@ int main () {
     quadShader = new Shader("shadowmapShaders/Passthrough.vertexshader", "shadowmapShaders/SimpleTexture.fragmentshader");
     texID = glGetUniformLocation(quadShader->programID(), "mytexture");
     
+    glDisable(GL_CULL_FACE);
     //============================================================
     
     // Create a rendering loop
 	int running = GL_TRUE;
 	while(running) {
-        glBindTexture(GL_TEXTURE_2D, shadowMap->depthTexture);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_R_TO_TEXTURE);
+//        glBindTexture(GL_TEXTURE_2D, shadowMap->depthTexture);
+//        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
         //============================================================
         
-        lightInvDir = glm::rotateY(lightInvDir, 0.3f);
-        depthViewMatrix = glm::lookAt(lightInvDir, glm::vec3(0,0,0), glm::vec3(0,1,0));
-        depthShader->setViewMatrix(depthViewMatrix);
+//        lightInvDir = glm::rotateY(lightInvDir, 0.3f);
+//        depthViewMatrix = glm::lookAt(lightInvDir, glm::vec3(0,0,0), glm::vec3(0,1,0));
+//        depthShader->setViewMatrix(depthViewMatrix);
         
         // Render to our framebuffer
         glBindFramebuffer(GL_FRAMEBUFFER, shadowMap->FramebufferName);
@@ -1013,46 +1012,49 @@ int main () {
         // We don't use bias in the shader, but instead we draw back faces,
         // which are already separated from the front faces by a small distance
         // (if your geometry is made this way)
-        glEnable(GL_CULL_FACE);
+//        glEnable(GL_CULL_FACE);
         //glCullFace(GL_FRONT); // Cull front-facing triangles -> draw only back-facing triangles
-        glCullFace(GL_BACK); // Cull back-facing triangles -> draw only front-facing triangles
+//        glCullFace(GL_BACK); // Cull back-facing triangles -> draw only front-facing triangles
         
         // Clear
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        
-        
+
+
         for (int i=0;i<10;i++){
             for (int j=0; j<10; j++) {
                 s[i][j]->drawDepthShader(depthShader);
             }
         }
         g->drawDepthShader(depthShader);
+
         
         //============================================================
         // Render to the screen
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glViewport(0,0,1024,1024); // Render on the whole framebuffer, complete from the lower left corner to the upper right
         
-        glEnable(GL_CULL_FACE);
-        glCullFace(GL_BACK); // Cull back-facing triangles -> draw only front-facing triangles
+//        glEnable(GL_CULL_FACE);
+//        glCullFace(GL_BACK); // Cull back-facing triangles -> draw only front-facing triangles
         
         // Clear the screen
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
 //        camera = glm::rotateY(camera, 0.3f);
+
         g->drawShadowShader(shadowShader,shadowMap->depthTexture);
         for (int i=0;i<10;i++){
             for (int j=0; j<10; j++) {
                 s[i][j]->drawShadowShader(shadowShader,shadowMap->depthTexture);
             }
         }
+
         //*/
         
         //============================================================
         
         // Render Shadow Map
         // Render only on a corner of the window (or we we won't see the real rendering...)
-        glViewport(0,0,128,128);
+        /*glViewport(0,0,128,128);
 
         // Use our shader
         glUseProgram(quadShader->programID());
@@ -1207,8 +1209,59 @@ void GLFWCALL window_resized(int width, int height) {
 
 // Called for keyboard events
 void keyboard(int key, int action) {
-	if( key == 'Q' && action == GLFW_PRESS) {
+	if( key == GLFW_KEY_ESC && action == GLFW_PRESS) {
 		glfwTerminate();
 		exit(0);
+	}
+    float offset = 0.5;
+    if( key == 'W' && action == GLFW_PRESS) {
+        //printf("frente\n");
+        glm::vec3 dir = centro - camera;
+        dir = glm::normalize(dir);
+        centro = centro + dir;
+        camera = camera + dir;
+	}
+    if( key == 'S' && action == GLFW_PRESS) {
+        //printf("tras\n");
+        glm::vec3 dir = centro - camera;
+        dir = glm::normalize(dir);
+        centro = centro - dir;
+        camera = camera - dir;
+	}
+    if( key == 'D' && action == GLFW_PRESS) {
+        //printf("direita\n");
+        glm::vec3 dir = centro - camera;
+        dir = glm::normalize(dir);
+        dir = glm::cross(dir, glm::vec3 (0,1,0));
+        centro = centro + dir*offset;
+        camera = camera + dir*offset;
+	}
+    if( key == 'A' && action == GLFW_PRESS) {
+        //printf("esquerda\n");
+        glm::vec3 dir = centro - camera;
+        dir = glm::normalize(dir);
+        dir = glm::cross(dir, glm::vec3 (0,1,0));
+        centro = centro - dir*offset;
+        camera = camera - dir*offset;
+	}
+    if( key == GLFW_KEY_UP && action == GLFW_PRESS) {
+        glm::vec3 dir = centro - camera;
+        dir = glm::rotateX(dir, 1.0f);
+        centro = camera + dir;
+	}
+    if( key == GLFW_KEY_DOWN && action == GLFW_PRESS) {
+        glm::vec3 dir = centro - camera;
+        dir = glm::rotateX(dir, -1.0f);
+        centro = camera + dir;
+	}
+    if( key == GLFW_KEY_RIGHT && action == GLFW_PRESS) {
+        glm::vec3 dir = centro - camera;
+        dir = glm::rotateY(dir, -1.0f);
+        centro = camera + dir;
+	}
+    if( key == GLFW_KEY_LEFT && action == GLFW_PRESS) {
+        glm::vec3 dir = centro - camera;
+        dir = glm::rotateY(dir, 1.0f);
+        centro = camera + dir;
 	}
 }
