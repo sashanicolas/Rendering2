@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B76DFCEC194342E300D237D8 /* AmbOcclusionA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B76DFCEB194342E300D237D8 /* AmbOcclusionA.1 */; };
+		B76DFCF01943432C00D237D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958919074571007FDC87 /* Cocoa.framework */; };
+		B76DFCF11943433100D237D8 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958B19074575007FDC87 /* OpenGL.framework */; };
+		B76DFCF31943445C00D237D8 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958D19074579007FDC87 /* IOKit.framework */; };
+		B76DFCF41943446300D237D8 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FBA6531934EC4600E018F1 /* GLUT.framework */; };
+		B78FA52B19434578004AF7D5 /* helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B78FA52419434578004AF7D5 /* helper.cpp */; };
+		B78FA52C19434578004AF7D5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B78FA52619434578004AF7D5 /* main.cpp */; };
+		B78FA52D19434578004AF7D5 /* shaderFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B78FA52719434578004AF7D5 /* shaderFunctions.cpp */; };
+		B78FA52E19434578004AF7D5 /* textfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B78FA52919434578004AF7D5 /* textfile.cpp */; };
+		B78FA53619434C60004AF7D5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B78FA53519434C60004AF7D5 /* main.cpp */; };
+		B78FA53819434C60004AF7D5 /* AmbientOcclusion.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B78FA53719434C60004AF7D5 /* AmbientOcclusion.1 */; };
+		B78FA53C19434C6B004AF7D5 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958D19074579007FDC87 /* IOKit.framework */; };
+		B78FA53D19434C6F004AF7D5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958B19074575007FDC87 /* OpenGL.framework */; };
+		B78FA53E19434C73004AF7D5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958919074571007FDC87 /* Cocoa.framework */; };
+		B78FA54619435ABF004AF7D5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B78FA54519435ABF004AF7D5 /* main.cpp */; };
+		B78FA54819435ABF004AF7D5 /* ShadowMap.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B78FA54719435ABF004AF7D5 /* ShadowMap.1 */; };
+		B78FA54C19435ADF004AF7D5 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958D19074579007FDC87 /* IOKit.framework */; };
+		B78FA54D19435AE2004AF7D5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958B19074575007FDC87 /* OpenGL.framework */; };
+		B78FA54E19435AE5004AF7D5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958919074571007FDC87 /* Cocoa.framework */; };
 		B7CA957F190743FC007FDC87 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7CA957E190743FC007FDC87 /* main.cpp */; };
 		B7CA9581190743FC007FDC87 /* Rendering2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B7CA9580190743FC007FDC87 /* Rendering2.1 */; };
 		B7CA958A19074571007FDC87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CA958919074571007FDC87 /* Cocoa.framework */; };
@@ -33,6 +52,36 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B76DFCE5194342E300D237D8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				B76DFCEC194342E300D237D8 /* AmbOcclusionA.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		B78FA53119434C60004AF7D5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				B78FA53819434C60004AF7D5 /* AmbientOcclusion.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		B78FA54119435ABF004AF7D5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				B78FA54819435ABF004AF7D5 /* ShadowMap.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		B7CA9579190743FC007FDC87 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,6 +125,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B76DFCE7194342E300D237D8 /* AmbOcclusionA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AmbOcclusionA; sourceTree = BUILT_PRODUCTS_DIR; };
+		B76DFCEB194342E300D237D8 /* AmbOcclusionA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = AmbOcclusionA.1; sourceTree = "<group>"; };
+		B78FA52419434578004AF7D5 /* helper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helper.cpp; sourceTree = "<group>"; };
+		B78FA52519434578004AF7D5 /* helper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = helper.hpp; sourceTree = "<group>"; };
+		B78FA52619434578004AF7D5 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B78FA52719434578004AF7D5 /* shaderFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shaderFunctions.cpp; sourceTree = "<group>"; };
+		B78FA52819434578004AF7D5 /* shaderFunctions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = shaderFunctions.hpp; sourceTree = "<group>"; };
+		B78FA52919434578004AF7D5 /* textfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = textfile.cpp; sourceTree = "<group>"; };
+		B78FA52A19434578004AF7D5 /* textfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = textfile.h; sourceTree = "<group>"; };
+		B78FA53319434C60004AF7D5 /* AmbientOcclusion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AmbientOcclusion; sourceTree = BUILT_PRODUCTS_DIR; };
+		B78FA53519434C60004AF7D5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B78FA53719434C60004AF7D5 /* AmbientOcclusion.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = AmbientOcclusion.1; sourceTree = "<group>"; };
+		B78FA54319435ABF004AF7D5 /* ShadowMap */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ShadowMap; sourceTree = BUILT_PRODUCTS_DIR; };
+		B78FA54519435ABF004AF7D5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B78FA54719435ABF004AF7D5 /* ShadowMap.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ShadowMap.1; sourceTree = "<group>"; };
+		B78FA54F19437988004AF7D5 /* myutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myutils.h; sourceTree = "<group>"; };
 		B7CA957B190743FC007FDC87 /* Rendering2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Rendering2; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7CA957E190743FC007FDC87 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B7CA9580190743FC007FDC87 /* Rendering2.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Rendering2.1; sourceTree = "<group>"; };
@@ -98,6 +163,37 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B76DFCE4194342E300D237D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B76DFCF01943432C00D237D8 /* Cocoa.framework in Frameworks */,
+				B76DFCF11943433100D237D8 /* OpenGL.framework in Frameworks */,
+				B76DFCF41943446300D237D8 /* GLUT.framework in Frameworks */,
+				B76DFCF31943445C00D237D8 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78FA53019434C60004AF7D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78FA53C19434C6B004AF7D5 /* IOKit.framework in Frameworks */,
+				B78FA53D19434C6F004AF7D5 /* OpenGL.framework in Frameworks */,
+				B78FA53E19434C73004AF7D5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78FA54019435ABF004AF7D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78FA54C19435ADF004AF7D5 /* IOKit.framework in Frameworks */,
+				B78FA54D19435AE2004AF7D5 /* OpenGL.framework in Frameworks */,
+				B78FA54E19435AE5004AF7D5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7CA9578190743FC007FDC87 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,6 +237,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B76DFCE8194342E300D237D8 /* AmbOcclusionA */ = {
+			isa = PBXGroup;
+			children = (
+				B78FA52419434578004AF7D5 /* helper.cpp */,
+				B78FA52519434578004AF7D5 /* helper.hpp */,
+				B78FA52619434578004AF7D5 /* main.cpp */,
+				B78FA52719434578004AF7D5 /* shaderFunctions.cpp */,
+				B78FA52819434578004AF7D5 /* shaderFunctions.hpp */,
+				B78FA52919434578004AF7D5 /* textfile.cpp */,
+				B78FA52A19434578004AF7D5 /* textfile.h */,
+				B76DFCEB194342E300D237D8 /* AmbOcclusionA.1 */,
+			);
+			path = AmbOcclusionA;
+			sourceTree = "<group>";
+		};
+		B78FA53419434C60004AF7D5 /* AmbientOcclusion */ = {
+			isa = PBXGroup;
+			children = (
+				B78FA53519434C60004AF7D5 /* main.cpp */,
+				B78FA53719434C60004AF7D5 /* AmbientOcclusion.1 */,
+			);
+			path = AmbientOcclusion;
+			sourceTree = "<group>";
+		};
+		B78FA54419435ABF004AF7D5 /* ShadowMap */ = {
+			isa = PBXGroup;
+			children = (
+				B78FA54519435ABF004AF7D5 /* main.cpp */,
+				B78FA54719435ABF004AF7D5 /* ShadowMap.1 */,
+				B78FA54F19437988004AF7D5 /* myutils.h */,
+			);
+			path = ShadowMap;
+			sourceTree = "<group>";
+		};
 		B7CA9572190743FC007FDC87 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +283,9 @@
 				B7FBA62A1934E28800E018F1 /* Trabalho2 */,
 				B7FBA63A1934E7AC00E018F1 /* Raytracing */,
 				B7FBA64A1934EBEA00E018F1 /* Trabalho1 */,
+				B76DFCE8194342E300D237D8 /* AmbOcclusionA */,
+				B78FA53419434C60004AF7D5 /* AmbientOcclusion */,
+				B78FA54419435ABF004AF7D5 /* ShadowMap */,
 				B7CA957C190743FC007FDC87 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -164,6 +297,9 @@
 				B7FBA6291934E28700E018F1 /* Trabalho2 */,
 				B7FBA6391934E7AC00E018F1 /* Raytracing */,
 				B7FBA6491934EBEA00E018F1 /* Trabalho1 */,
+				B76DFCE7194342E300D237D8 /* AmbOcclusionA */,
+				B78FA53319434C60004AF7D5 /* AmbientOcclusion */,
+				B78FA54319435ABF004AF7D5 /* ShadowMap */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +345,57 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B76DFCE6194342E300D237D8 /* AmbOcclusionA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B76DFCEF194342E300D237D8 /* Build configuration list for PBXNativeTarget "AmbOcclusionA" */;
+			buildPhases = (
+				B76DFCE3194342E300D237D8 /* Sources */,
+				B76DFCE4194342E300D237D8 /* Frameworks */,
+				B76DFCE5194342E300D237D8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AmbOcclusionA;
+			productName = AmbOcclusionA;
+			productReference = B76DFCE7194342E300D237D8 /* AmbOcclusionA */;
+			productType = "com.apple.product-type.tool";
+		};
+		B78FA53219434C60004AF7D5 /* AmbientOcclusion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B78FA53919434C60004AF7D5 /* Build configuration list for PBXNativeTarget "AmbientOcclusion" */;
+			buildPhases = (
+				B78FA52F19434C60004AF7D5 /* Sources */,
+				B78FA53019434C60004AF7D5 /* Frameworks */,
+				B78FA53119434C60004AF7D5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AmbientOcclusion;
+			productName = AmbientOcclusion;
+			productReference = B78FA53319434C60004AF7D5 /* AmbientOcclusion */;
+			productType = "com.apple.product-type.tool";
+		};
+		B78FA54219435ABF004AF7D5 /* ShadowMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B78FA54919435ABF004AF7D5 /* Build configuration list for PBXNativeTarget "ShadowMap" */;
+			buildPhases = (
+				B78FA53F19435ABF004AF7D5 /* Sources */,
+				B78FA54019435ABF004AF7D5 /* Frameworks */,
+				B78FA54119435ABF004AF7D5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShadowMap;
+			productName = ShadowMap;
+			productReference = B78FA54319435ABF004AF7D5 /* ShadowMap */;
+			productType = "com.apple.product-type.tool";
+		};
 		B7CA957A190743FC007FDC87 /* Rendering2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B7CA9584190743FC007FDC87 /* Build configuration list for PBXNativeTarget "Rendering2" */;
@@ -302,11 +489,41 @@
 				B7FBA6281934E28700E018F1 /* Trabalho2 */,
 				B7FBA6381934E7AC00E018F1 /* Raytracing */,
 				B7FBA6481934EBEA00E018F1 /* Trabalho1 */,
+				B76DFCE6194342E300D237D8 /* AmbOcclusionA */,
+				B78FA53219434C60004AF7D5 /* AmbientOcclusion */,
+				B78FA54219435ABF004AF7D5 /* ShadowMap */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B76DFCE3194342E300D237D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78FA52D19434578004AF7D5 /* shaderFunctions.cpp in Sources */,
+				B78FA52E19434578004AF7D5 /* textfile.cpp in Sources */,
+				B78FA52B19434578004AF7D5 /* helper.cpp in Sources */,
+				B78FA52C19434578004AF7D5 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78FA52F19434C60004AF7D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78FA53619434C60004AF7D5 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78FA53F19435ABF004AF7D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78FA54619435ABF004AF7D5 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7CA9577190743FC007FDC87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +562,120 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		B76DFCED194342E300D237D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					third_party/include,
+				);
+				LIBRARY_SEARCH_PATHS = third_party/lib;
+				OTHER_LDFLAGS = (
+					"-lglfw",
+					"-lglew",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B76DFCEE194342E300D237D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					third_party/include,
+				);
+				LIBRARY_SEARCH_PATHS = third_party/lib;
+				OTHER_LDFLAGS = (
+					"-lglfw",
+					"-lglew",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B78FA53A19434C60004AF7D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					third_party/include,
+				);
+				LIBRARY_SEARCH_PATHS = third_party/lib;
+				OTHER_LDFLAGS = (
+					"-lglfw",
+					"-lglew",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B78FA53B19434C60004AF7D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					third_party/include,
+				);
+				LIBRARY_SEARCH_PATHS = third_party/lib;
+				OTHER_LDFLAGS = (
+					"-lglfw",
+					"-lglew",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B78FA54A19435ABF004AF7D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					third_party/include,
+				);
+				LIBRARY_SEARCH_PATHS = third_party/lib;
+				OTHER_LDFLAGS = (
+					"-lglfw",
+					"-lglew",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B78FA54B19435ABF004AF7D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					third_party/include,
+				);
+				LIBRARY_SEARCH_PATHS = third_party/lib;
+				OTHER_LDFLAGS = (
+					"-lglfw",
+					"-lglew",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		B7CA9582190743FC007FDC87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -543,6 +874,31 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B76DFCEF194342E300D237D8 /* Build configuration list for PBXNativeTarget "AmbOcclusionA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B76DFCED194342E300D237D8 /* Debug */,
+				B76DFCEE194342E300D237D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B78FA53919434C60004AF7D5 /* Build configuration list for PBXNativeTarget "AmbientOcclusion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B78FA53A19434C60004AF7D5 /* Debug */,
+				B78FA53B19434C60004AF7D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B78FA54919435ABF004AF7D5 /* Build configuration list for PBXNativeTarget "ShadowMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B78FA54A19435ABF004AF7D5 /* Debug */,
+				B78FA54B19435ABF004AF7D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B7CA9576190743FC007FDC87 /* Build configuration list for PBXProject "Rendering2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

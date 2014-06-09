@@ -16,7 +16,7 @@ using namespace std;
 #define INITIAL_HEIGHT 800
 
 #define MAX_DEPTH 4
-#define ANTIALIAS 1
+#define ANTIALIAS 0
 
 #define rad(A) (A*3.141592653589793/180.0)
 
@@ -88,9 +88,16 @@ public:
         specularCf.b = scB;
     }
     
-	glm::vec4 getColor( ){
+	glm::vec4 getColor(){
         return color;
     }
+    
+    int getColor(glm::vec3 point){
+        int x = abs(ceil(point.x));
+        int y = abs(ceil(point.z));
+        return (x+y)%2;
+    }
+    
 	void getColor( float* r, float* g, float* b ){
         (*r) = color.r;
         (*g) = color.g;
@@ -253,7 +260,6 @@ public:
 	glm::vec3 getNormal( glm::vec3 point ){
         return lastCalcNormal;
     }
-    
 private:
 	glm::vec3 minPoint;
 	glm::vec3 maxPoint;
@@ -566,6 +572,33 @@ void createScene2(){
 //	scene->addLight(light2);
 }
 
+void createScene3(){
+    glm::vec3 eye( 0, 5, 10 );
+    glm::vec3 center( 0, 0, 0 );
+    glm::vec3 up( 0, 1, 0);
+	float fov = 90.0f;
+	float nearr = 10.0f;
+	float farr = 150.0f;
+	int w = INITIAL_WIDTH;
+	int h = INITIAL_HEIGHT;
+    
+	scene = new Scene();
+	scene->createCamera( eye, center, up, fov, nearr, farr, w, h );
+	scene->setAmbientColor( 1.0f, 1.0f, 1.0f );
+    
+    //caixas
+	LinedBox* box1 = new LinedBox( glm::vec3( -100.0f, -1.0f, -100.0f ), glm::vec3( 100.0f, 0.0f, 100.0f ),
+                                  glm::vec4( 0.9f, 0.9f, 0.9f, 1.0f), 0.5f, 0.01f, 0.5f, 0.0f);
+    
+	scene->addObject( (Object *) box1 );
+    
+	Light* light = new Light();
+    light->setColor(glm::vec3(1.0f, 1.0f, 1.0f));
+    light->setPosition(glm::vec3(200.0f, 120.0f, 200.0f));
+	scene->addLight(light);
+    
+}
+
 void reshape(int w, int h){
 	if (scene){
 		scene->getCamera()->w = w;
@@ -722,11 +755,25 @@ Ray getRefractedRay(Ray &ray){
     return Ray(interceptionPoint, glm::refract(glm::normalize(ray.direction), object->getNormal( interceptionPoint ), 1.0f), ray.depth+1);
 }
 
+glm::vec3 getCorDoObjeto(Ray &ray){
+    glm::vec3 interceptionPoint = ray.origin + ray.direction * ray.length;
+    Object* object = scene->getObject(ray.indexObj);
+    if (dynamic_cast<Sphere*>(object) == NULL){
+        return glm::vec3(object->getColor(interceptionPoint));
+    }
+    if (dynamic_cast<LinedBox*>(object) == NULL){
+        return glm::vec3(object->getColor());
+    }
+    return glm::vec3(0.5);
+
+}
+
 glm::vec3 RayTrace(Ray &ray){
     glm::vec3 color( 0.0f, 0.0f, 0.0f );
 
     rayIntersect(ray);
     if (ray.length < FLT_MAX) {
+//        color = getCorDoObjeto(ray);
         color = RayShade(ray);
         if ( ray.depth <= MAX_DEPTH){
             if(ObjectIsReflexive(ray)){
@@ -762,7 +809,6 @@ void drawScene(){
 	Camera* camera = scene->getCamera();
 	int w = camera->w;
 	int h = camera->h;
-    printf("%d",rand()%1);
 	glBegin(GL_POINTS);
 	for (int y = 0; y < h; y++){
 		for (int x = 0; x < w; x++){

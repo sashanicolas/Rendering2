@@ -1,0 +1,58 @@
+TAmbientOcclusion
+v6
+r1
+cCheck dependencies
+cCompileC build/Rendering2.build/Debug/AmbientOcclusion.build/Objects-normal/x86_64/main.o /Users/sashanicolas/Projects/Rendering2/AmbientOcclusion/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c000000005268268B000000000000044C
+t1382557323
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000532B9B4600000000000001DE
+t1395366726
+s478
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
+c00000000532B9B490000000000000ADC
+t1395366729
+s2780
+
+N/Users/sashanicolas/Projects/Rendering2/AmbientOcclusion/main.cpp
+c0000000053931535000000000000B723
+t1402148149
+s46883
+
+N/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/AmbientOcclusion.build/Objects-normal/x86_64/main.o
+t2
+s0
+
+CBuild AST from /Users/sashanicolas/Projects/Rendering2/AmbientOcclusion/main.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesd9b49e204d43b941^f911a3204d43b941^---0#1#1#--18"Check dependencies36"19578823-83A1-47EA-AE5D-E3432707FF33-
+
+CCompileC build/Rendering2.build/Debug/AmbientOcclusion.build/Objects-normal/x86_64/main.o /Users/sashanicolas/Projects/Rendering2/AmbientOcclusion/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s423841056.637656
+e423841057.111219
+r0
+xCompileC
+xbuild/Rendering2.build/Debug/AmbientOcclusion.build/Objects-normal/x86_64/main.o
+x/Users/sashanicolas/Projects/Rendering2/AmbientOcclusion/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/sashanicolas/Projects/Rendering2/AmbientOcclusion/main.cpp:2:10: fatal error: 'GL/glew.h' file not found
+o#include <GL/glew.h>
+o         ^
+o1 error generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Compile /Users/sashanicolas/Projects/Rendering2/AmbientOcclusion/main.cpp177"CompileC build/Rendering2.build/Debug/AmbientOcclusion.build/Objects-normal/x86_64/main.o AmbientOcclusion/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler0052a3204d43b941^ee771c214d43b941^-163"/Users/sashanicolas/Projects/Rendering2/AmbientOcclusion/main.cpp:2:10: fatal error: 'GL/glew.h' file not found#include <GL/glew.h>         ^1 error generated.1(36%IDEClangDiagnosticActivityLogMessage2@26"'GL/glew.h' file not found-423841057#18446744073709551615#0#-2#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@72"file:///Users/sashanicolas/Projects/Rendering2/AmbientOcclusion/main.cpp0000000000000000^1#9#1#9#52#0#29"Lexical or Preprocessor Issue--0#0#1#-19%DVTDocumentLocation4@72"file:///Users/sashanicolas/Projects/Rendering2/AmbientOcclusion/main.cpp0000000000000000^2954"CompileC build/Rendering2.build/Debug/AmbientOcclusion.build/Objects-normal/x86_64/main.o AmbientOcclusion/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sashanicolas/Projects/Rendering2    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fmodules -fmodules-cache-path=/Users/sashanicolas/Projects/Rendering2/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.9 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/AmbientOcclusion.build/AmbientOcclusion-generated-files.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/AmbientOcclusion.build/AmbientOcclusion-own-target-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/AmbientOcclusion.build/AmbientOcclusion-all-target-headers.hmap -iquote /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/AmbientOcclusion.build/AmbientOcclusion-project-headers.hmap -I/Users/sashanicolas/Projects/Rendering2/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/AmbientOcclusion.build/DerivedSources/x86_64 -I/Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/AmbientOcclusion.build/DerivedSources -F/Users/sashanicolas/Projects/Rendering2/build/Debug -MMD -MT dependencies -MF /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/AmbientOcclusion.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/AmbientOcclusion.build/Objects-normal/x86_64/main.dia -c /Users/sashanicolas/Projects/Rendering2/AmbientOcclusion/main.cpp -o /Users/sashanicolas/Projects/Rendering2/build/Rendering2.build/Debug/AmbientOcclusion.build/Objects-normal/x86_64/main.o36"E19CD6AC-856A-470C-B370-E5A99D6F99C5-
+b7154CF80-689C-48E5-868D-9AC2435F79BE
+
+CLd /Users/sashanicolas/Projects/Rendering2/build/Debug/AmbientOcclusion normal x86_64
+r0
+

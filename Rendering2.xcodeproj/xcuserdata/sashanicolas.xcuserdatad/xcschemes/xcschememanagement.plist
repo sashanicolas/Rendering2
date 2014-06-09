@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AmbOcclusionA.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>AmbientOcclusion.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Raytracing.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +23,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>ShadowMap.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>Trabalho1.xcscheme</key>
 		<dict>
@@ -27,6 +42,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>B76DFCE6194342E300D237D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B78FA53219434C60004AF7D5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B78FA54219435ABF004AF7D5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B791EA37191C1324005A03F7</key>
 		<dict>
 			<key>primary</key>
