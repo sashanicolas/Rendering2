@@ -639,6 +639,10 @@ Grid *g;
 // Callback function to handle keypresses
 void handleKeypress(int theKey, int theAction)
 {
+    if( theKey == 'Q' && theAction == GLFW_PRESS) {
+		glfwTerminate();
+		exit(0);
+	}
 	// If a key is pressed, toggle the relevant key-press flag
 	if (theAction == GLFW_PRESS)
 	{

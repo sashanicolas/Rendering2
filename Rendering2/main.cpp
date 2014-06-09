@@ -1217,6 +1217,10 @@ void configuraContexto(){
 		exit(-1);
 	}
     
+    int vp[10];
+    glGetIntegerv(GL_VIEWPORT, vp);
+    printf("tela x = %d, tela y =%d",vp[2],vp[3]);
+    
     // Dark blue background
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
     // Enable depth test
