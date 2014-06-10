@@ -1340,14 +1340,18 @@ void keyboard(int key, int action) {
 	}
     if( key == '4' && action == GLFW_PRESS) {
         typeOfShadow = 4;
-        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with Poissom");
+        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with Poisson");
 	}
     if( key == '5' && action == GLFW_PRESS) {
         typeOfShadow = 5;
-        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with Poissom (No Banding, Screen)");
+        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with Poisson (No Banding, Screen)");
 	}
     if( key == '6' && action == GLFW_PRESS) {
         typeOfShadow = 6;
-        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with Poissom (World)");
+        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with Poisson (World)");
+	}
+    if( key == '7' && action == GLFW_PRESS) {
+        typeOfShadow = 7;
+        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping (Sem acne)");
 	}
 }

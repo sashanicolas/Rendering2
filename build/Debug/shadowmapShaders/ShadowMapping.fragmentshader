@@ -176,6 +176,10 @@ void main(){
 			// 0.2 potentially remain, which is quite dark.
 			visibility -= 0.2*(1.0-texture( shadowMap, vec3(ShadowCoord.xy + poissonDisk[index]/700.0,  (ShadowCoord.z-bias)/ShadowCoord.w) ));
 		}
+	}else if(typeOfFactorCalc == 7){ //puro shadowmap
+		if ( texture( shadowMap, vec3(ShadowCoord.xy, (ShadowCoord.z-bias)/ShadowCoord.w) ) <  ShadowCoord.z ){
+ 	  		visibility = 0.5;
+		}
 	}
 	
 
