@@ -85,5 +85,4 @@ dependencies: /Users/sashanicolas/Projects/Rendering2/ShadowMap/main.cpp \
   third_party/include/glm/gtx/rotate_vector.hpp \
   third_party/include/glm/gtx/../gtx/transform.hpp \
   third_party/include/glm/gtx/transform.inl \
-  third_party/include/glm/gtx/rotate_vector.inl \
-  /Users/sashanicolas/Projects/Rendering2/ShadowMap/myutils.h
+  third_party/include/glm/gtx/rotate_vector.inl

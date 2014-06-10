@@ -15,10 +15,12 @@ using namespace std;
 #define INITIAL_WIDTH 800
 #define INITIAL_HEIGHT 800
 
-#define MAX_DEPTH 4
+#define MAX_DEPTH 3
 #define ANTIALIAS 0
 
 #define rad(A) (A*3.141592653589793/180.0)
+
+glm::vec3 intersectionPoint(0);
 
 class Ray
 {
@@ -31,6 +33,7 @@ public:
         length = FLT_MAX;
         indexObj = -1;
         previousObj = -1;
+        previousIndex = 1;
     }
     Ray( glm::vec3 origin, glm::vec3 direction, int depth){
         this->origin = origin;
@@ -39,10 +42,12 @@ public:
         length = FLT_MAX;
         indexObj = -1;
         previousObj = -1;
+        previousIndex = 1;
     }
     
 	glm::vec3 origin;
 	glm::vec3 direction;
+    float previousIndex;
     int depth, indexObj;
     float length;
     int previousObj;
@@ -56,6 +61,11 @@ public:
         specularCf = glm::vec4( 0.0f, 0.0f, 0.0f, 1.0f );
         reflectionCf = 0.0f;
         refractiveIndex = 0.0f;
+        textura = 0;
+    }
+    int textura;
+    void setTextura(){
+        textura = 1;
     }
     
 	virtual bool intercepts( Ray r, float* point ) = 0;
@@ -89,12 +99,17 @@ public:
     }
     
 	glm::vec4 getColor(){
+        if(textura){
+            int cor = (float)getColor(intersectionPoint);
+            glm::vec3 aux = glm::vec3(cor);
+            return glm::vec4(aux,1.0f);
+        }
         return color;
     }
     
     int getColor(glm::vec3 point){
-        int x = abs(ceil(point.x));
-        int y = abs(ceil(point.z));
+        int x = abs(ceil(point.x/10.0));
+        int y = abs(ceil(point.z/10.0));
         return (x+y)%2;
     }
     
@@ -528,11 +543,11 @@ void createScene2(){
 	scene->setAmbientColor( 1.0f, 1.0f, 1.0f );
     
 //esferas
-	Sphere* sphere1 = new Sphere( glm::vec3(50, 25, 30), 25, glm::vec4(1.0f, 0.0f, 1.0f, 0.9f), 0.3f, 0.7f, 0.5f, 1.5f);
+	Sphere* sphere1 = new Sphere( glm::vec3(50, 25, 30), 25, glm::vec4(1.0f, 0.0f, 1.0f, 0.9f), 0.3f, 0.7f, 0.5f, 2.5f);
     
-    Sphere* sphere2 = new Sphere( glm::vec3(-70, 15, -20), 15 , glm::vec4(0.0f, 1.0f, 1.0f, 0.7f), 0.4f, 0.9f, 0.5f, 1.0f);
+    Sphere* sphere2 = new Sphere( glm::vec3(-70, 15, -20), 15 , glm::vec4(0.0f, 1.0f, 1.0f, 0.7f), 0.4f, 0.9f, 0.5f, 1.5f);
     Sphere* sphere3 = new Sphere( glm::vec3(0, 15, 20), 15 , glm::vec4(1.0f, 1.0f, 1.0f, 1.0f), 0.4f, 0.9f, 1.0f, 1.0f);
-    Sphere* sphere4 = new Sphere( glm::vec3(-20, 15, 50), 15 , glm::vec4(1.0f, 1.0f, 0.0f, 0.7f), 0.4f, 0.9f, 0.5f, 1.0f);
+    Sphere* sphere4 = new Sphere( glm::vec3(-20, 15, 50), 15 , glm::vec4(1.0f, 1.0f, 0.0f, 0.7f), 0.4f, 0.9f, 0.0f, 1.0f);
 
     Sphere* sphere7 = new Sphere( glm::vec3(-70, 5, 30), 5, glm::vec4(1.0f, 0.0f, 0.0f, 1.0f), 0.3f, 0.7f, 0.5f, 1.0f);
     Sphere* sphere8 = new Sphere( glm::vec3(-70, 5, 50), 5, glm::vec4(0.0f, 1.0f, 0.0f, 1.0f), 0.3f, 0.7f, 0.5f, 1.0f);
@@ -541,6 +556,7 @@ void createScene2(){
 //caixas
 	LinedBox* box1 = new LinedBox( glm::vec3( -100.0f, -1.0f, -100.0f ), glm::vec3( 100.0f, 0.0f, 100.0f ),
                                   glm::vec4( 0.9f, 0.9f, 0.9f, 1.0f), 0.5f, 0.01f, 0.5f, 0.0f);
+    box1->setTextura();
     
     LinedBox* box2 = new LinedBox( glm::vec3( -101.0f, -1.0f, -101.0f ), glm::vec3( 100.0f, 50.0f, -100.0f ),
                                   glm::vec4( 0.9f, 0.5f, 0.1f, 1.0f ), 0.5f, 0.01f, 0.5f, 0.0f);
@@ -591,6 +607,54 @@ void createScene3(){
                                   glm::vec4( 0.9f, 0.9f, 0.9f, 1.0f), 0.5f, 0.01f, 0.5f, 0.0f);
     
 	scene->addObject( (Object *) box1 );
+    
+	Light* light = new Light();
+    light->setColor(glm::vec3(1.0f, 1.0f, 1.0f));
+    light->setPosition(glm::vec3(200.0f, 120.0f, 200.0f));
+	scene->addLight(light);
+    
+}
+
+void createScene4(){
+    glm::vec3 eye( 0, 40, 50 );
+    glm::vec3 center( 0, 0, 0 );
+    glm::vec3 up( 0, 1, 0);
+	float fov = 90.0f;
+	float nearr = 10.0f;
+	float farr = 150.0f;
+	int w = INITIAL_WIDTH;
+	int h = INITIAL_HEIGHT;
+    
+	scene = new Scene();
+	scene->createCamera( eye, center, up, fov, nearr, farr, w, h );
+	scene->setAmbientColor( 1.0f, 1.0f, 1.0f );
+    
+    //esferas
+	Sphere* sphere1 = new Sphere( glm::vec3(50, 25, 30), 25, glm::vec4(1.0f, 0.0f, 1.0f, 0.9f), 0.3f, 0.7f, 0.5f, 2.5f);
+    
+    Sphere* sphere2 = new Sphere( glm::vec3(-70, 15, -20), 15 , glm::vec4(0.0f, 1.0f, 1.0f, 0.7f), 0.4f, 0.9f, 0.5f, 1.5f);
+    Sphere* sphere3 = new Sphere( glm::vec3(0, 15, 20), 15 , glm::vec4(1.0f, 1.0f, 1.0f, 1.0f), 0.4f, 0.9f, 1.0f, 1.0f);
+    Sphere* sphere4 = new Sphere( glm::vec3(-20, 15, 50), 15 , glm::vec4(1.0f, 1.0f, 0.0f, 0.7f), 0.4f, 0.9f, 0.0f, 1.0f);
+    
+    Sphere* sphere7 = new Sphere( glm::vec3(-70, 5, 30), 5, glm::vec4(1.0f, 0.0f, 0.0f, 1.0f), 0.3f, 0.7f, 0.5f, 1.0f);
+    Sphere* sphere8 = new Sphere( glm::vec3(-70, 5, 50), 5, glm::vec4(0.0f, 1.0f, 0.0f, 1.0f), 0.3f, 0.7f, 0.5f, 1.0f);
+    Sphere* sphere9 = new Sphere( glm::vec3(-20, 5, 70), 5, glm::vec4(0.0f, 0.0f, 1.0f, 1.0f), 0.3f, 0.7f, 0.5f, 1.0f);
+    
+    //caixas
+	LinedBox* box1 = new LinedBox( glm::vec3( -100.0f, -1.0f, -100.0f ), glm::vec3( 100.0f, 0.0f, 100.0f ),
+                                  glm::vec4( 0.9f, 0.9f, 0.9f, 1.0f), 0.5f, 0.01f, 0.0f, 0.0f);
+    box1->setTextura();
+    
+    LinedBox* box2 = new LinedBox( glm::vec3( -101.0f, -1.0f, -101.0f ), glm::vec3( 100.0f, 50.0f, -100.0f ),
+                                  glm::vec4( 0.9f, 0.5f, 0.1f, 1.0f ), 0.5f, 0.01f, 0.5f, 0.0f);
+    
+//    scene->addObject( (Object *) sphere1 );
+//    scene->addObject( (Object *) sphere2 );
+//    scene->addObject( (Object *) sphere3 );
+//    scene->addObject( (Object *) sphere4 );
+    
+	scene->addObject( (Object *) box1 );
+	scene->addObject( (Object *) box2 );
     
 	Light* light = new Light();
     light->setColor(glm::vec3(1.0f, 1.0f, 1.0f));
@@ -682,7 +746,7 @@ glm::vec3 RayShade(Ray &ray){
         
         glm::vec3 interceptionPoint = ray.origin + ray.direction * ray.length;
 		Ray L( interceptionPoint, light->position - interceptionPoint );
-        
+        intersectionPoint = interceptionPoint;
 		//Verifica se o vetor L atinge algum objeto antes de chegar a luz
 		//Se sim, ele nao esta sendo o ponto nao esta sendo iluminado por esta luz,
 		//e sera um ponto de sombra
@@ -752,7 +816,8 @@ Ray getReflectedRay(Ray &ray){
 Ray getRefractedRay(Ray &ray){
     glm::vec3 interceptionPoint = ray.origin + ray.direction * ray.length;
     Object* object = scene->getObject(ray.indexObj);
-    return Ray(interceptionPoint, glm::refract(glm::normalize(ray.direction), object->getNormal( interceptionPoint ), 1.0f), ray.depth+1);
+    float ratio = ray.previousIndex/object->getRefractiveIndex();
+    return Ray(interceptionPoint, glm::refract(glm::normalize(ray.direction), object->getNormal( interceptionPoint ), ratio), ray.depth+1);
 }
 
 glm::vec3 getCorDoObjeto(Ray &ray){
@@ -779,6 +844,7 @@ glm::vec3 RayTrace(Ray &ray){
             if(ObjectIsReflexive(ray)){
                 Ray reflectedRay = getReflectedRay(ray);
                 reflectedRay.previousObj = ray.indexObj;
+                reflectedRay.previousIndex = ray.previousIndex;
                 glm::vec3 reflectedColor = RayTrace(reflectedRay);
                 
                 float objReflection = scene->getObject(ray.indexObj)->getReflectionCoefficient( );
@@ -787,6 +853,7 @@ glm::vec3 RayTrace(Ray &ray){
             if(ObjectIsTransparent(ray)){
                 Ray refractedRay = getRefractedRay(ray);
                 refractedRay.previousObj = ray.indexObj;
+                refractedRay.previousIndex = ray.previousIndex;
                 Object* object = scene->getObject(ray.indexObj);
                 float opacity = object->getColor().a;
                 color = color * opacity + RayTrace(refractedRay) * ( 1 - opacity );
@@ -821,7 +888,7 @@ void drawScene(){
 #if (ANTIALIAS)
             Ray ray;
             glm::vec3 color(0);
-            int numRays = 60;
+            int numRays = 30;
             for(int k=0;k<numRays;k++){
                 ray = camera->getRay(x, y, -0.5f + getRand() , -0.5f + getRand());
                 color += RayTrace(ray);
@@ -861,7 +928,7 @@ void Init() {
 	glClearColor(0.2, 0.2, 0.2, 1.0);
 	
 	glClear(GL_COLOR_BUFFER_BIT);
-	createScene2();
+	createScene4();
 }
 
 int main(int argc, char**argv){

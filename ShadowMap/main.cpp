@@ -18,7 +18,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/rotate_vector.hpp>
 
-#include "myutils.h"
+//#include "myutils.h"
 
 #define ARRAY_SIZE_IN_ELEMENTS(a) (sizeof(a)/sizeof(a[0]))
 #define ZERO_MEM(a) memset(a, 0, sizeof(a))
