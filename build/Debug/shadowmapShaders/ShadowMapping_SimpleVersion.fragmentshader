@@ -5,7 +5,8 @@ in vec3 color;
 in vec4 ShadowCoord;
 
 // Ouput data
-layout(location = 0) out vec3 colorOut;
+//layout(location = 0) out vec3 colorOut;
+out vec3 colorOut;
 
 // Values that stay constant for the whole mesh.
 uniform sampler2DShadow shadowMap;
@@ -18,7 +19,11 @@ void main(){
 	// Material properties
 	vec3 MaterialDiffuseColor = color;
 
-	float visibility = texture( shadowMap, vec3(ShadowCoord.xy, (ShadowCoord.z)/ShadowCoord.w) );
+//	float visibility = texture( shadowMap, vec3(ShadowCoord.xy, (ShadowCoord.z)/ShadowCoord.w) );
+	float visibility = 1.0;
+	if ( texture( shadowMap, vec3(ShadowCoord.x,ShadowCoord.y, ShadowCoord.z ) ) <  ShadowCoord.z -0.607){
+ 	  	visibility = 0.5;
+	}
 
 	colorOut = visibility * MaterialDiffuseColor * LightColor;
 

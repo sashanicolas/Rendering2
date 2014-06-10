@@ -25,9 +25,15 @@
 #define WINDOW_WIDTH  1024
 #define WINDOW_HEIGHT 1024
 
+int typeOfShadow = 0;
 glm::vec3 camera = glm::vec3(-5,5,0);
 glm::vec3 centro = glm::vec3(0,0,0);
-glm::vec3 lightInvDir = glm::vec3(-5,5,5);
+glm::vec3 lightInvDir = glm::vec3(-5,3,5);
+
+//flags
+bool moveLight = true;
+bool moveCamera = false;
+bool showTextura = false;
 
 class Luz{
 public:
@@ -151,12 +157,7 @@ public:
         Projection = glm::perspective(45.0f, 1.0f, 0.1f, 100.0f);
         
         // Camera matrix
-        View = glm::lookAt(
-                           //                           glm::vec3(c.x,c.y,c.z), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
-                           glm::vec3(0,4,8), // Camera is at (x,y,z), in World Space, bom = 0,-2.0f,4.0f
-                           glm::vec3(0, 0, 0), // and looks at the origin
-                           glm::vec3(0,1.0f,0) // Head is up (set to 0,-1,0 to look upside-down)
-                           );
+        View = glm::lookAt(camera,centro,glm::vec3(0,1,0));
         
         // Our ModelViewProjection : multiplication of our 3 matrices
         MVP = Projection * View * Model; // Remember, matrix multiplication is the other way around
@@ -541,6 +542,7 @@ public:
         Model = glm::translate(Model, glm::vec3(-4.0f, 0, -4.0f));
         Model = glm::scale(Model, glm::vec3(8,1,8));
         
+        
         myShader->setModelMatrix(Model);
         
         glm::mat4 biasMatrix(
@@ -589,6 +591,7 @@ public:
     glm::mat4 Model;
     glm::mat4 depthMVP;
     float x, y, z;
+    glm::vec3 cor, escala;
     
     //buffers
     GLuint vertexbuffer, colorsbuffer, normalsbuffer;
@@ -597,7 +600,36 @@ public:
         this->m_nx = slices;
         this->m_ny = stack;
         y=0.2f;
+        cor = glm::vec3(1,0,0);
+        escala = glm::vec3(0.2f,0.2f,0.2f);
+        //sector = slice
+        //ring = stack
         
+        this->genSphere();
+        
+        // Create a Vector Buffer Object that will store the vertices on video memory
+        glGenBuffers(1, &vertexbuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+        glBufferData(GL_ARRAY_BUFFER, this->sizeOfAllFloats(), this->vertices_position, GL_STATIC_DRAW);
+        
+        // Create a Vector Buffer Object that will store the colors on video memory
+        glGenBuffers(1, &colorsbuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, colorsbuffer);
+        glBufferData(GL_ARRAY_BUFFER, this->sizeOfAllFloats(), this->colors, GL_STATIC_DRAW);
+        
+        // Create a Vector Buffer Object that will store the colors on video memory
+        glGenBuffers(1, &normalsbuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, normalsbuffer);
+        glBufferData(GL_ARRAY_BUFFER, this->sizeOfAllFloats(), this->normals, GL_STATIC_DRAW);
+    }
+
+    Sphere (glm::vec3 cor){
+        this->m_nx = 16;
+        this->m_ny = 16;
+//        y=0.1f;
+        escala = glm::vec3(0.1f,0.1f,0.1f);
+        
+        this->cor = cor;
         //sector = slice
         //ring = stack
         
@@ -664,9 +696,9 @@ public:
         
         int k = 0;
         for (int j=0; j<m_nx*m_ny*6; j++) {
-            colors[k++]=1;
-            colors[k++]=0;
-            colors[k++]=0;
+            colors[k++]=cor.x;
+            colors[k++]=cor.y;
+            colors[k++]=cor.z;
         }
         
         
@@ -724,7 +756,7 @@ public:
         // Model matrix : an identity matrix (model will be at the origin)
         Model = glm::mat4(1.0f); // Changes for each model !
         Model = glm::translate(Model, glm::vec3(x, y, z));
-        Model = glm::scale(Model, glm::vec3(0.2f,0.2f,0.2f));
+        Model = glm::scale(Model, escala);
         
         myShader->setModelMatrix(Model);
         myShader->SetUniform("M", Model);
@@ -764,7 +796,7 @@ public:
         myShader->setModelMatrix(Model);
         
         glm::mat4 depthModelMatrix = Model;
-        glm::mat4 depthMVP = myShader->Projection * myShader->View * depthModelMatrix;
+        depthMVP = myShader->Projection * myShader->View * depthModelMatrix;
         // Send our transformation to the currently bound shader,
         // in the "MVP" uniform
         myShader->SetUniform("depthMVP", depthMVP);
@@ -828,6 +860,7 @@ public:
         Model = glm::translate(Model, glm::vec3(x, y, z));
         Model = glm::scale(Model, glm::vec3(0.2f,0.2f,0.2f));
 //        Model = glm::rotate(Model, 150.0f,glm::vec3(0,1,0));
+        Model = glm::rotate(Model, 50.0f,glm::vec3(0,1,0));
 
         myShader->setModelMatrix(Model);
         
@@ -904,6 +937,7 @@ public:
         
         // No color output in the bound framebuffer, only depth.
         glDrawBuffer(GL_NONE);
+        glReadBuffer(GL_NONE);
         
         // Always check that our framebuffer is ok
         if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
@@ -951,25 +985,30 @@ int main () {
     //============================================================
     
 	ShadowMap * shadowMap = new ShadowMap();
-    shadowMap->Init(1024, 1024);
+    shadowMap->Init(WINDOW_WIDTH, WINDOW_HEIGHT);
     
     //============================================================
     Shader * depthShader = new Shader("shadowmapShaders/DepthRTT.vertexshader",
                                       "shadowmapShaders/DepthRTT.fragmentshader");
     
     // Compute the MVP matrix from the light's point of view
-    glm::mat4 depthProjectionMatrix = glm::ortho<float>(-5,5,-5,5,-20,20);
+    glm::mat4 depthProjectionMatrix = glm::ortho<float>(-8,8,-8,8,-20,20);
     glm::mat4 depthViewMatrix = glm::lookAt(lightInvDir, glm::vec3(0,0,0), glm::vec3(0,1,0));
     depthShader->setProjectionMatrix(depthProjectionMatrix);
     depthShader->setViewMatrix(depthViewMatrix);
     
     //============================================================
-    Shader * shadowShader = new Shader("shadowmapShaders/ShadowMapping_SimpleVersion.vertexshader",
-                                       "shadowmapShaders/ShadowMapping_SimpleVersion.fragmentshader");
-//    Shader * shadowShader = new Shader("shadowmapShaders/ShadowMapping.vertexshader",
-//                                       "shadowmapShaders/ShadowMapping.fragmentshader");
+//    Shader * shadowShader = new Shader("shadowmapShaders/ShadowMapping_SimpleVersion.vertexshader",
+//                                       "shadowmapShaders/ShadowMapping_SimpleVersion.fragmentshader");
+    Shader * shadowShader = new Shader("shadowmapShaders/ShadowMapping.vertexshader",
+                                       "shadowmapShaders/ShadowMapping.fragmentshader");
     camera = glm::vec3(0,4,8);
-
+    GLuint typeID = glGetUniformLocation(shadowShader->programID(), "typeOfFactorCalc");
+    
+    //============================================================
+    Shader * simpleShader = new Shader("shadowmapShaders/vert.cpp",
+                                      "shadowmapShaders/frag.cpp");
+    
     //============================================================
     
     Shader * quadShader;
@@ -997,25 +1036,30 @@ int main () {
     // Create a rendering loop
 	int running = GL_TRUE;
 	while(running) {
-//        glBindTexture(GL_TEXTURE_2D, shadowMap->depthTexture);
-//        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
+        
+        glBindTexture(GL_TEXTURE_2D, shadowMap->depthTexture);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
+        
         //============================================================
         
-//        lightInvDir = glm::rotateY(lightInvDir, 0.3f);
-//        depthViewMatrix = glm::lookAt(lightInvDir, glm::vec3(0,0,0), glm::vec3(0,1,0));
-//        depthShader->setViewMatrix(depthViewMatrix);
+        if(moveLight){
+            lightInvDir = glm::rotateY(lightInvDir, -0.3f);
+            depthViewMatrix = glm::lookAt(lightInvDir, glm::vec3(0,0,0), glm::vec3(0,1,0));
+            depthShader->setViewMatrix(depthViewMatrix);
+            luz->setPosition(lightInvDir);
+        }
         
         // Render to our framebuffer
         glBindFramebuffer(GL_FRAMEBUFFER, shadowMap->FramebufferName);
-        glViewport(0,0,1024,1024); // Render on the whole framebuffer, complete from the lower left corner to the upper right
+        glViewport(0,0,WINDOW_WIDTH,WINDOW_HEIGHT); // Render on the whole framebuffer, complete from the lower left corner to the upper right
         
         // We don't use bias in the shader, but instead we draw back faces,
         // which are already separated from the front faces by a small distance
         // (if your geometry is made this way)
 //        glEnable(GL_CULL_FACE);
-        //glCullFace(GL_FRONT); // Cull front-facing triangles -> draw only back-facing triangles
+//        glCullFace(GL_FRONT); // Cull front-facing triangles -> draw only back-facing triangles
 //        glCullFace(GL_BACK); // Cull back-facing triangles -> draw only front-facing triangles
-        
+
         // Clear
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -1031,7 +1075,7 @@ int main () {
         //============================================================
         // Render to the screen
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
-        glViewport(0,0,1024,1024); // Render on the whole framebuffer, complete from the lower left corner to the upper right
+        glViewport(0,0,WINDOW_WIDTH,WINDOW_HEIGHT); // Render on the whole framebuffer, complete from the lower left corner to the upper right
         
 //        glEnable(GL_CULL_FACE);
 //        glCullFace(GL_BACK); // Cull back-facing triangles -> draw only front-facing triangles
@@ -1039,50 +1083,54 @@ int main () {
         // Clear the screen
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
-//        camera = glm::rotateY(camera, 0.3f);
-
-        g->drawShadowShader(shadowShader,shadowMap->depthTexture);
+        if(moveCamera) camera = glm::rotateY(camera, 0.3f);
+        
+        shadowShader->Load();
+        glUniform1i(typeID, typeOfShadow);
+        
+        luz->draw(simpleShader);
         for (int i=0;i<10;i++){
             for (int j=0; j<10; j++) {
                 s[i][j]->drawShadowShader(shadowShader,shadowMap->depthTexture);
             }
         }
-
+        g->drawShadowShader(shadowShader,shadowMap->depthTexture);
         //*/
         
         //============================================================
-        
-        // Render Shadow Map
-        // Render only on a corner of the window (or we we won't see the real rendering...)
-        /*glViewport(0,0,128,128);
-
-        // Use our shader
-        glUseProgram(quadShader->programID());
-        
-        // Bind our texture in Texture Unit 0
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, shadowMap->depthTexture);
-        glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_NONE );
-        //        glTexParameteri( GL_TEXTURE_2D, GL_DEPTH_TEXTURE_MODE, GL_LUMINANCE );
-        // Set our "renderedTexture" sampler to user Texture Unit 0
-        glUniform1i(texID, 0);
-        
-        // 1rst attribute buffer : vertices
-        glEnableVertexAttribArray(0);
-        glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
-        glVertexAttribPointer(
-                              0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-                              3,                  // size
-                              GL_FLOAT,           // type
-                              GL_FALSE,           // normalized?
-                              0,                  // stride
-                              (void*)0            // array buffer offset
-                              );
-        
-        // Draw the triangle !
-        // You have to disable GL_COMPARE_R_TO_TEXTURE above in order to see anything !
-        glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
-        glDisableVertexAttribArray(0); //*/
+        if(showTextura){
+            // Render Shadow Map
+            // Render only on a corner of the window (or we we won't see the real rendering...)
+            glViewport(0,0,512,512);
+            
+            // Use our shader
+            glUseProgram(quadShader->programID());
+            
+            // Bind our texture in Texture Unit 0
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, shadowMap->depthTexture);
+            glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_NONE );
+            //        glTexParameteri( GL_TEXTURE_2D, GL_DEPTH_TEXTURE_MODE, GL_LUMINANCE );
+            // Set our "renderedTexture" sampler to user Texture Unit 0
+            glUniform1i(texID, 0);
+            
+            // 1rst attribute buffer : vertices
+            glEnableVertexAttribArray(0);
+            glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
+            glVertexAttribPointer(
+                                  0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+                                  3,                  // size
+                                  GL_FLOAT,           // type
+                                  GL_FALSE,           // normalized?
+                                  0,                  // stride
+                                  (void*)0            // array buffer offset
+                                  );
+            
+            // Draw the triangle !
+            // You have to disable GL_COMPARE_R_TO_TEXTURE above in order to see anything !
+            glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
+            glDisableVertexAttribArray(0); //*/
+        }
         //============================================================
         
         //Swap buffers
@@ -1122,7 +1170,8 @@ void configuraCena(){
         }
     }
     g = new Grid(64,64);
-    luz = new Sphere(32,32);
+    luz = new Sphere(glm::vec3(1));
+    luz->setPosition(lightInvDir);
 }
 
 void configuraContexto(){
@@ -1139,7 +1188,7 @@ void configuraContexto(){
 	glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
     
 	// Open a window and attach an OpenGL rendering context to the window surface
-	if( !glfwOpenWindow(1024, 1024, 8, 8, 8, 8, 24, 8, GLFW_WINDOW)) {
+	if( !glfwOpenWindow(WINDOW_WIDTH, WINDOW_HEIGHT, 8, 8, 8, 8, 24, 8, GLFW_WINDOW)) {
 		std::cerr << "Failed to open a window! I'm out!" << std::endl;
 		glfwTerminate();
 		exit(-1);
@@ -1263,5 +1312,42 @@ void keyboard(int key, int action) {
         glm::vec3 dir = centro - camera;
         dir = glm::rotateY(dir, 1.0f);
         centro = camera + dir;
+	}
+    if( key == 'L' && action == GLFW_PRESS) {
+        moveLight = !moveLight;
+	}
+    if( key == 'C' && action == GLFW_PRESS) {
+        moveCamera = !moveCamera;
+	}
+    if( key == 'T' && action == GLFW_PRESS) {
+        showTextura = !showTextura;
+	}
+    if( key == '0' && action == GLFW_PRESS) {
+        typeOfShadow = 0;
+        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping - Simples");
+	}
+    if( key == '1' && action == GLFW_PRESS) {
+        typeOfShadow = 1;
+        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with PCF - 3x3");
+	}
+    if( key == '2' && action == GLFW_PRESS) {
+        typeOfShadow = 2;
+        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with PCF - 5x5");
+	}
+    if( key == '3' && action == GLFW_PRESS) {
+        typeOfShadow = 3;
+        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with PCF - 7x7");
+	}
+    if( key == '4' && action == GLFW_PRESS) {
+        typeOfShadow = 4;
+        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with Poissom");
+	}
+    if( key == '5' && action == GLFW_PRESS) {
+        typeOfShadow = 5;
+        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with Poissom (No Banding, Screen)");
+	}
+    if( key == '6' && action == GLFW_PRESS) {
+        typeOfShadow = 6;
+        glfwSetWindowTitle( "Sasha Nicolas - Shadow Mapping with Poissom (World)");
 	}
 }
